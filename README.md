@@ -1,6 +1,7 @@
-# Impact Lab Berlin 2026
+# Claude Impact Lab Berlin 2026
 
-Materials of the [Berlin | Claude Impact Lab x Foresight Institute — AI Research Loops for Open Science Problems](https://luma.com/claude-wmbq).
+Materials of the [Berlin | Claude Impact Lab x Foresight Institute — AI Research Loops for Open Science Problems](https://luma.com/claude-wmbq),
+co-hosted by [Foresight Institute](https://foresight.org/).
 
 Scientists bring the open problems in their research they most want AI help with,
 and we spend a day building on them.
