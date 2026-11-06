@@ -25,7 +25,7 @@ Join the [xemantic Discord server](https://discord.gg/vQktqqN2Vn) and say hi.
 
 - [Foresight Institute](https://foresight.org/)
 - [Claude Science](https://claude.com/product/claude-science)
-- [Aethos](https://aethos.org/)
+- [Æthos](https://aethos.org/)
 
 ## License
 
