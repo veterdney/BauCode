@@ -21,12 +21,11 @@ See [Building research loops with Claude](RESEARCH-LOOPS.md) for practical hints
 Questions, team formation, or want to keep your research loop going after the event?
 Join the [xemantic Discord server](https://discord.gg/vQktqqN2Vn) and say hi.
 
-## Useful links
+## Links
 
 - [Foresight Institute](https://foresight.org/)
 - [Claude Science](https://claude.com/product/claude-science)
-- [plenty-of-room](https://github.com/xemantic/plenty-of-room) — a research loop in nanotech
-- [claude-plugins](https://github.com/xemantic/claude-plugins) — a bug-fixing loop towards perfection
+- [Aethos](https://aethos.org/)
 
 ## License
 
