@@ -31,7 +31,15 @@ For each submission, in its own subagent:
 1. Read the issue with `gh issue view <n>`, and clone its repository into the scratchpad.
 2. Check every claim in the issue against the repository: open the linked files and the code that produced them.
    Is it supported, partly supported, unsupported or contradicted?
-3. Score from 1 to 5, with a sentence of evidence each:
+3. Check that the repository can be donated as open source, without scoring it:
+   a license file at the root (code and text may have separate ones),
+   OSI-approved for code and CC BY or CC BY-SA for text;
+   the license matches the one named in the issue;
+   GPL or AGPL dependencies or copied code are consistent with it;
+   and nothing is copied from sources that forbid reuse.
+   Report **OK**, **OK, non-default license** (name it, when it is not Apache 2.0 for code and CC BY 4.0 for text),
+   or **Needs attention** (one sentence on what to fix).
+4. Score from 1 to 5, with a sentence of evidence each:
    - **Problem**: open, significant, and checkable by computation.
    - **Loop**: reads literature, writes and runs code, checks its own results, keeps its state in files.
    - **Evidence**: the findings are backed by artifacts in the repository.
@@ -40,7 +48,7 @@ For each submission, in its own subagent:
 
    Do not reward length or polish.
    An honest, well-verified negative result beats an impressive claim the repository does not support.
-4. Describe the potential impact, without scoring it:
+5. Describe the potential impact, without scoring it:
    what would change in the field if the loop succeeded, who would use the result,
    and how far the loop is from getting there.
    Ground it in the problem and the evidence, and do not compare the importance of fields.
@@ -64,10 +72,11 @@ Write each assessment to `assessments/<issue number>-<team-slug>.md`:
 
 ## Claims checked
 ## Potential impact
+## License
 ## Strengths
 ## What would make it stronger
 ```
 
-Then update `assessments/README.md` with a table of all submissions and their scores, linking to each assessment,
+Then update `assessments/README.md` with a table of all submissions, their scores and their license check, linking to each assessment,
 and commit the assessments.
 Write all Markdown with semantic line breaks.

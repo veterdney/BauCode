@@ -27,6 +27,16 @@ Join the [xemantic Discord server](https://discord.gg/vQktqqN2Vn) and say hi.
 - [Claude Science](https://claude.com/product/claude-science)
 - [Æthos](https://aethos.org/)
 
+## Licenses of your projects
+
+By default, everything built today is shared under
+Apache 2.0 for code and CC BY 4.0 for text,
+and donated to Foresight Institute.
+Your team may choose another open-source license
+if every member agrees:
+add the license file to your repository and name it in your submission issue.
+If your work builds on GPL or AGPL code, that license may apply.
+
 ## License
 
 This repository is dual-licensed:

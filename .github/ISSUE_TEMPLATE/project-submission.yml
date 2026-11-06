@@ -53,6 +53,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: The open-source license of the repository. Name it if it is not the default.
+      value: Apache 2.0 for code, CC BY 4.0 for text
+    validations:
+      required: true
+
   - type: textarea
     id: problem
     attributes:
