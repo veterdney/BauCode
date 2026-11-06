@@ -1,0 +1,148 @@
+name: Project submission
+description: Submit your team's research loop for judging.
+title: "[Submission] <team name>: <one-line project title>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit one issue per team, before the demos start.
+        Every field here will be read by the judges, and Claude will also evaluate all submissions,
+        so be concrete and link to evidence in your repository instead of only describing it.
+        You can edit the issue until judging closes.
+
+  - type: input
+    id: team
+    attributes:
+      label: Team name
+    validations:
+      required: true
+
+  - type: textarea
+    id: members
+    attributes:
+      label: Team members
+      description: One per line, with GitHub handle and role, e.g. `Jane Doe (@janedoe), scientist, problem owner`.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: Field
+      options:
+        - Protein / molecular design
+        - Chemistry / materials
+        - Mathematics
+        - Genomics
+        - Nanotechnology
+        - Physics
+        - Climate science
+        - Biomedical imaging
+        - Neuroscience
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: Public GitHub repository with the open-source research loop.
+      placeholder: https://github.com/<owner>/<repo>
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Open problem
+      description: |
+        What open scientific problem does the loop target?
+        Why is it still open, and why does it matter?
+        How can its results be checked computationally?
+    validations:
+      required: true
+
+  - type: textarea
+    id: loop
+    attributes:
+      label: The research loop
+      description: |
+        How the loop works, step by step.
+        Cover how it reads literature, how it writes and runs code,
+        and how it checks its own results.
+        Point to the files in the repository that implement each part.
+    validations:
+      required: true
+
+  - type: textarea
+    id: findings
+    attributes:
+      label: What the loop found
+      description: |
+        Concrete results, with links to outputs, logs or plots in the repository.
+        Say how you verified them, and how confident you are.
+    validations:
+      required: true
+
+  - type: textarea
+    id: stuck
+    attributes:
+      label: Where it got stuck
+      description: Failures, dead ends, wrong results the loop produced, and the limits you hit.
+    validations:
+      required: true
+
+  - type: textarea
+    id: next
+    attributes:
+      label: What it would need next
+      description: Data, compute, tools, expertise or changes to the loop that would take it further.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to run it
+      description: Minimal steps to reproduce the run, including required data, environment and API keys (never paste keys here).
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: data
+    attributes:
+      label: Data and sources
+      description: Datasets, papers and databases used, with their licenses. State whether the data is public or anonymized.
+    validations:
+      required: false
+
+  - type: textarea
+    id: claude
+    attributes:
+      label: How Claude was used
+      description: Models, tools, agent setup (Claude Code, Agent SDK, Claude Science, MCP servers, …) and which parts of the loop Claude drives.
+    validations:
+      required: false
+
+  - type: input
+    id: demo
+    attributes:
+      label: Demo materials
+      description: Optional link to slides, a video or a write-up.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: The repository is public and has an open-source license.
+          required: true
+        - label: The submission contains no secrets, API keys or non-anonymized private data.
+          required: true
+        - label: We agree that this submission text is published under CC BY 4.0, like the other written material in this repository.
+          required: true
