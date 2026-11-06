@@ -72,6 +72,7 @@ e.g. "the model reproduces Figure 3 of <paper> within 5%">
 Work in a loop:
 - Keep a prioritized task list in TASKS.md. Take the top task, do it, then update the list.
 - Run each atomic step in its own subagent.
+- Before writing any code, write a test showing how it will be used. Then make it pass.
 - Keep PROMPT.md up to date, so that a new session told
   "continue the goal described in PROMPT.md" can pick up where you left off.
 - Append every result, decision and exchange with me to JOURNAL.md,
@@ -81,6 +82,23 @@ Work in a loop:
 
 If the session ends, start a new one with
 `/goal continue the goal described in PROMPT.md`.
+
+## Test first
+
+Test-driven development (TDD) is a very important guideline for any research loop:
+before writing any code, write a test showing how it would be used.
+
+- The test pins down what the code should do before Claude decides how to do it.
+- A passing test is a condition Claude can check by itself, which makes it a natural `/goal`.
+- Tests that stay in the repository catch regressions when a later loop iteration changes the code.
+- In research code, a test can check a known result: an analytic solution, a published value, a conservation law.
+
+Ask for it explicitly, for example:
+
+```
+Before implementing anything, write a failing test that shows how the code will be used.
+Then write the code that makes it pass.
+```
 
 ## Examples
 
