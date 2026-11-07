@@ -1,0 +1,194 @@
+[
+ {
+  "test": "CodeChecks.test_bool_and_nonfinite_values_fail",
+  "purpose": "bool is not a number and NaN/inf never match.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "CodeChecks.test_loose_keys_kept_but_collisions_rejected",
+  "purpose": "L03 loose scenario keys stay valid; one candidate key cannot satisfy two gold keys.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "CodeChecks.test_set_one_to_one_matching",
+  "purpose": "A single generic name used to satisfy several gold names (M09 min_match 2); now one name = one match.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "CodeChecks.test_single_item_rank_no_crash",
+  "purpose": "kendall() divided by zero for one-item rankings.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_code_fail_not_rescued_and_code_pass_waits",
+  "purpose": "code+rubric: a code FAIL stays FAIL even with a judge PASS; a code pass alone is PENDING, never PASS.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_judge_main_rejects_duplicate_queue",
+  "purpose": "A queue with a repeated (id, run) is refused before any judge call.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_judge_one_fake_client",
+  "purpose": "judge_one records requested+served model; refusal, exceptions, non-JSON, NaN and bad verdicts become errors.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_judge_results_binding",
+  "purpose": "Valid judge PASS is retained; stale, duplicate, error, served-model-differs and malformed results never pass.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_threshold_unrounded_and_gate_fail",
+  "purpose": "Share uses exact arithmetic (>= 0.8); any gate FAIL fails.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_verdict_contract",
+  "purpose": "Exact unique gates/points, integer 0..2 scores (bool rejected), nothing extra.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Judge.test_zero_point_policy",
+  "purpose": "No points -> judged on gates only (share 1.0); no gates and no points -> invalid; zero gates with points valid.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_complete_valid_runs_retained",
+  "purpose": "Valid complete code-graded runs still PASS and the report is integrity-clean.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_duplicate_run_rejected",
+  "purpose": "Duplicate (id, run) records could inflate pass@1; the cell becomes DUPLICATE.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_empty_candidate",
+  "purpose": "An empty candidate file is all MISSING, never an empty 'all pass'.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_error_refusal_invalid_states",
+  "purpose": "API errors are integrity gaps; refusals are scored failures; malformed records are INVALID.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_manifest_model_binding",
+  "purpose": "Under a manifest every record must carry the manifest's requested model and its served models.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_missing_run_stays_in_denominator",
+  "purpose": "Old grader counted only supplied rows (1 of 3 runs -> 100%). Missing runs must be visible and non-passing.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_reference_checks_fail_visibly",
+  "purpose": "A stale or unavailable reference fingerprint is an integrity problem, not a warning to ignore.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_served_model_differs_not_credited",
+  "purpose": "With server-side fallback the served model can differ; such runs must not earn credit.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_unknown_and_out_of_range_reported",
+  "purpose": "Unknown ids, run 0/-1/k+1, bool/null/string runs are reported, not silently skipped.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Runner.test_cli_exit_codes",
+  "purpose": "grade.py main: 3 = incomplete or unverifiable (no manifest), 0 = complete under a manifest even with\nscored FAILs, 1 only with --fail-on-fail; --k 0 is a usage error.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Runner.test_cli_validation_before_spend",
+  "purpose": "--k 0/-1/true, --workers 0, --max-turns 0 are argparse errors; bad --ids fail planning.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Runner.test_offline_end_to_end_no_append",
+  "purpose": "Fake-client run -> manifest -> grade (PASS, integrity clean) -> judge merge; rerun into same --out refused.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Runner.test_run_case_records_models_and_errors",
+  "purpose": "Records carry requested+served models; API errors, refusals and missing submits are typed error records.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Selection.test_gold_contract",
+  "purpose": "Duplicate gold ids and boolean runs_k are refused; the X04 duplicate gate is reported and applied once.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Selection.test_invalid_ids_rejected",
+  "purpose": "Empty, blank, duplicate or unknown ids must fail before any run, not be dropped.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Selection.test_invalid_k_rejected",
+  "purpose": "k=0 used to fall back to the full runs_k (cost hazard) and k<0 gave zero jobs; both must be refused.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "SourceData.test_find_csv_ambiguity_and_provenance",
+  "purpose": "Several matching exports must be refused (was: silently the last); provenance hashes the bytes used.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "SourceData.test_reference_fingerprint_stdlib_and_missing_file",
+  "purpose": "The reference fingerprint no longer needs pandas, matches the gold, and a missing file raises.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "StrictJson.test_atomic_write_leaves_no_temp",
+  "purpose": "Outputs are written via temp file + os.replace; no torn or leftover files.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "StrictJson.test_malformed_candidate_line_is_fatal",
+  "purpose": "A malformed JSONL line is an integrity error with its line number, not a skipped row.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "StrictJson.test_nonfinite_and_duplicate_keys_rejected",
+  "purpose": "NaN/Infinity/1e999 and duplicate keys must not parse (they could smuggle non-finite scores or shadow fields).",
+  "outcome": "ok",
+  "detail": ""
+ }
+]

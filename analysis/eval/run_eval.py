@@ -10,14 +10,22 @@ tokens) is kept, so you can grade the path as well as the answer.
 
 Needs the anthropic package and credentials (ANTHROPIC_API_KEY or an `ant auth login` profile).
 Every run spends money: a full pass is 248 agent runs.
+
+Before any model call the selection is validated (unknown/empty/duplicate --ids, and --k, --workers,
+--max-turns that are not positive integers, are refused). Results stream to <out>.partial, which is
+created exclusively; on completion it is renamed to <out> and <out>.manifest.json is written atomically
+with the selection, gold and reference fingerprints, the export's sha256/size/rows, the candidate
+config, runtime versions and git commit. An existing <out> or <out>.partial is never appended to.
+Each record carries requested_model and served_models (resp.model of every turn); the server-side
+fallback can serve a different model, and grade.py does not credit such runs.
 """
-import argparse, json, sys, time
+import argparse, json, os, sys, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from obd_tools import TOOLS, ObdTools
+import contract as C
 
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
 SYSTEM = """You are a building-materials analyst. You answer questions about construction materials and structural systems for developers and architects in Germany.
@@ -53,28 +61,33 @@ def user_message(case):
     return "\n\n".join(parts)
 
 
-def request(model, effort, messages):
-    return dict(model=model, max_tokens=16000, system=SYSTEM, tools=TOOLS + [SUBMIT],
+def request(model, effort, messages, tools):
+    return dict(model=model, max_tokens=16000, system=SYSTEM, tools=list(tools) + [SUBMIT],
                 output_config={"effort": effort}, betas=[FALLBACK_BETA], fallbacks="default", messages=messages)
 
 
-def run_case(client, tools, case, run, model, effort, max_turns):
+def run_case(client, tools, case, run, model, effort, max_turns, schemas, sleep=time.sleep):
     import anthropic
     messages = [{"role": "user", "content": user_message(case)}]
-    trace, usage, t0 = [], {"input_tokens": 0, "output_tokens": 0}, time.time()
+    trace, usage, t0, served = [], {"input_tokens": 0, "output_tokens": 0}, time.time(), []
+    ident = {"id": case["id"], "run": run, "model": model, "requested_model": model, "served_models": served,
+             "effort": effort, "max_turns": max_turns}
     for turn in range(1, max_turns + 1):
         try:
-            resp = client.beta.messages.create(**request(model, effort, messages))
+            resp = client.beta.messages.create(**request(model, effort, messages, schemas))
         except anthropic.RateLimitError:
-            time.sleep(30)
+            sleep(30)
             continue
-        except anthropic.APIStatusError as exc:
-            return {"id": case["id"], "run": run, "error": f"API {exc.status_code}: {exc.message}", "trace": trace}
+        except anthropic.APIError as exc:
+            return {**ident, "error": f"API {getattr(exc, 'status_code', None)}: {getattr(exc, 'message', exc)}",
+                    "error_kind": "api", "trace": trace, "usage": usage}
+        if getattr(resp, "model", None) not in served:
+            served.append(getattr(resp, "model", None))
         usage["input_tokens"] += resp.usage.input_tokens
         usage["output_tokens"] += resp.usage.output_tokens
         if resp.stop_reason == "refusal":
             cat = resp.stop_details.category if resp.stop_details else None
-            return {"id": case["id"], "run": run, "error": f"refusal ({cat})", "trace": trace, "usage": usage}
+            return {**ident, "error": f"refusal ({cat})", "error_kind": "refusal", "trace": trace, "usage": usage}
         messages.append({"role": "assistant", "content": resp.content})
         calls = [b for b in resp.content if b.type == "tool_use"]
         submit = next((b for b in calls if b.name == "submit_answer"), None)
@@ -84,7 +97,7 @@ def run_case(client, tools, case, run, model, effort, max_turns):
                 value = json.loads(raw)
             except json.JSONDecodeError:
                 value = raw
-            return {"id": case["id"], "run": run, "model": model, "effort": effort, "answer": submit.input.get("answer", ""),
+            return {**ident, "answer": submit.input.get("answer", ""),
                     "structured": {"value": value, "in_data": submit.input.get("in_data")},
                     "turns": turn, "trace": trace, "usage": usage, "seconds": round(time.time() - t0, 1)}
         if not calls:
@@ -96,50 +109,91 @@ def run_case(client, tools, case, run, model, effort, max_turns):
             trace.append({"turn": turn, "tool": b.name, "input": b.input, "error": is_err, "chars": len(out)})
             results.append({"type": "tool_result", "tool_use_id": b.id, "content": out, "is_error": is_err})
         messages.append({"role": "user", "content": results})
-    return {"id": case["id"], "run": run, "error": f"no submit_answer within {max_turns} turns", "trace": trace, "usage": usage}
+    return {**ident, "error": f"no submit_answer within {max_turns} turns", "error_kind": "no_submit", "trace": trace, "usage": usage}
 
 
-def main():
+def parse_args(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--effort", default="high", choices=["low", "medium", "high", "xhigh", "max"])
     ap.add_argument("--ids", help="comma-separated case ids (default: all)")
-    ap.add_argument("--k", type=int, help="runs per case (default: each case's runs_k)")
-    ap.add_argument("--max-turns", type=int, default=20)
-    ap.add_argument("--workers", type=int, default=4)
-    ap.add_argument("--csv", help="path to the OBD export (default: data/OBD_2024_II_*.csv)")
+    ap.add_argument("--k", type=C.parse_positive_int_arg, help="runs per case (default: each case's runs_k)")
+    ap.add_argument("--max-turns", type=C.parse_positive_int_arg, default=20)
+    ap.add_argument("--workers", type=C.parse_positive_int_arg, default=4)
+    ap.add_argument("--csv", help="path to the OBD export (default: the single data/OBD_2024_II_*.csv)")
     ap.add_argument("--out", default="analysis/eval/runs/candidate.jsonl")
     ap.add_argument("--dry-run", action="store_true")
-    a = ap.parse_args()
+    return ap.parse_args(argv)
 
-    cases = [json.loads(l) for l in open(HERE / "golden_v1.jsonl", encoding="utf-8")]
-    if a.ids:
-        want = set(a.ids.split(","))
-        cases = [c for c in cases if c["id"] in want]
-    jobs = [(c, r) for c in cases for r in range(1, (a.k or c["runs_k"]) + 1)]
-    if a.dry_run:
-        req = request(a.model, a.effort, [{"role": "user", "content": user_message(cases[0])}])
-        req["system"] = req["system"][:200] + " …"
-        print(json.dumps(req, ensure_ascii=False, indent=1))
-        print(f"\n{len(jobs)} runs would be made with {a.model} at effort {a.effort}.")
-        return
 
-    import anthropic
-    client = anthropic.Anthropic()
-    tools = ObdTools(a.csv)
+def plan(a, gold):
+    """Validated selection and job list; raises ContractError before anything is spent."""
+    sel = C.plan_selection(gold, C.parse_ids_arg(a.ids), a.k)
+    return sel, [(gold[cid], r) for cid in sel["ids"] for r in range(1, sel["k"][cid] + 1)]
+
+
+def build_manifest(a, sel, source, completed):
+    from obd_data import REFERENCE_FILES, reference_fingerprint, REPO
+    return {"contract": C.CONTRACT_VERSION, "selection": sel, "gold_sha256": C.sha256_file(HERE / "golden_v1.jsonl"),
+            "reference_fingerprint": reference_fingerprint(REFERENCE_FILES), "source": source,
+            "candidate": {"requested_model": a.model, "effort": a.effort, "max_turns": a.max_turns,
+                          "fallbacks": "default", "betas": [FALLBACK_BETA]},
+            "runs_written": completed, "runtime": C.runtime_info(), "git": C.git_info(REPO),
+            "note": "Source sha256 shows which bytes were used (integrity), not that they are the authentic export."}
+
+
+def execute(a, gold, client, tools, schemas, source):
+    sel, jobs = plan(a, gold)
     out = Path(a.out)
+    partial = Path(str(out) + ".partial")
+    if out.exists() or partial.exists() or C.manifest_path_for(out).exists():
+        raise C.ContractError(f"{out} (or its .partial/.manifest.json) already exists; choose a new --out. Results are never appended.")
     out.parent.mkdir(parents=True, exist_ok=True)
     done = 0
-    with open(out, "a", encoding="utf-8") as fh, ThreadPoolExecutor(a.workers) as pool:
-        futs = [pool.submit(run_case, client, tools, c, r, a.model, a.effort, a.max_turns) for c, r in jobs]
+    with open(partial, "x", encoding="utf-8") as fh, ThreadPoolExecutor(a.workers) as pool:
+        futs = [pool.submit(run_case, client, tools, c, r, a.model, a.effort, a.max_turns, schemas) for c, r in jobs]
         for f in as_completed(futs):
             res = f.result()
-            fh.write(json.dumps(res, ensure_ascii=False) + "\n")
+            fh.write(json.dumps(res, ensure_ascii=False, allow_nan=False, default=str) + "\n")
             fh.flush()
             done += 1
             print(f"[{done}/{len(jobs)}] {res['id']} run {res['run']}: {res.get('error') or 'ok'}", flush=True)
+        fh.flush()
+        os.fsync(fh.fileno())
+    os.replace(partial, out)
+    C.write_atomic(C.manifest_path_for(out), json.dumps(build_manifest(a, sel, source, done), ensure_ascii=False, indent=1, allow_nan=False) + "\n")
+    return out
+
+
+def main(argv=None):
+    a = parse_args(argv)
+    try:
+        gold = C.load_gold(HERE / "golden_v1.jsonl")
+        sel, jobs = plan(a, gold)
+    except C.ContractError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
+    if a.dry_run:
+        from obd_tools import TOOLS
+        req = request(a.model, a.effort, [{"role": "user", "content": user_message(jobs[0][0])}], TOOLS)
+        req["system"] = req["system"][:200] + " …"
+        print(json.dumps(req, ensure_ascii=False, indent=1))
+        print(f"\n{len(jobs)} runs would be made with {a.model} at effort {a.effort}.")
+        return 0
+    import anthropic
+    from obd_data import find_csv, file_provenance
+    from obd_tools import TOOLS, ObdTools
+    csv_path = find_csv(a.csv)
+    tools = ObdTools(str(csv_path))
+    source = file_provenance(csv_path, rows=len(tools.df))
+    try:
+        out = execute(a, gold, anthropic.Anthropic(), tools, TOOLS, source)
+    except C.ContractError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
     print(f"Wrote {out}. Grade with: python3 -I analysis/eval/grade.py {out}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
