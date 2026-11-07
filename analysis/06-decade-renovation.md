@@ -39,8 +39,6 @@ Source: `results_decade_timeline.csv`.
 - **The big event is 2066.** Render and ETICS reach 40 years, then plasterboard at 50.
   Bonded EPS/rock-wool ETICS (X4, X5) must be replaced as one piece; X4 costs 33 kg.
   Wood-fibre and mechanically fixed systems cost 12–29 kg, and wood fibre could be reused if fixed with screws.
-- **Budget timing.** The 2066 events fall after the API range (ends 2050).
-  Budgets for 2036 and 2046 apply to the 2036/2046 events: the repaint events are ≤ 2.7 kg/m² wall, so well inside any budget.
 - **Design for future decades.**
   1. Fix cladding and insulation mechanically, not by adhesive.
   2. Keep one finish layer that can be renewed without touching the others.

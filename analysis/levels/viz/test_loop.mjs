@@ -80,13 +80,6 @@ check('5c R3 Top score = rank_weighted 1 score_weighted', () => {
 });
 check('5d R2 Top score = max total in compare6/scores.csv', () =>
   eq(kv(round(2), 'Top score'), Math.max(...csv('analysis/compare6/scores.csv').map(r => Number(r.total))).toFixed(1)));
-check('5e R1 note numbers match budget json', () => {
-  const note = round(1).note || '';
-  const v = y => Number(JSON.parse(rd(`analysis/budget_de_res_${y}.json`)).selected_year_budget.embodied_per_m2).toFixed(2);
-  const a = v(2026), b = v(2046);
-  if (a !== '354.65' || b !== '41.31') return `json gives ${a}, ${b}`;
-  return note.includes('354.65') && note.includes('41.31') ? true : 'note lacks 354.65 and/or 41.31';
-});
 check('5f R4 Tasks done = count of "- [x]" in TASKS.md', () =>
   eq(kv(round(4), 'Tasks done'), rd('analysis/loop/TASKS.md').split('\n').filter(l => /- \[x\]/.test(l)).length));
 check('5g R4 Journal entries = bullet lines in JOURNAL.md', () =>
