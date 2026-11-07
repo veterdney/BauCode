@@ -1,0 +1,41 @@
+When you start from scratch, choosing materials means trading off roughly ten factors. Here they are, grouped the way a developer and architect would work through them together.
+
+1. Regulatory and site constraints (non-negotiable)
+Building codes: fire rating and reaction-to-fire class (e.g. Euroclass A1/A2 for façades on taller buildings), structural, acoustic and accessibility rules.
+Energy regulations: U-values and airtightness under the national energy code, which in Germany is the GEG.
+Zoning and planning: height, density and heritage or design guidelines. Some cities require particular façade materials or colours.
+Site conditions: soil and foundation loads, climate (freeze-thaw, humidity, wind, seismic zone) and flood risk.
+Embodied-carbon rules (new and growing): the EU EPBD whole-life-carbon reporting (from 2028 for large buildings, 2030 for all new buildings), Denmark’s and France’s carbon caps (RE2020), and city-level limits.
+2. Cost, beyond the purchase price
+Upfront capex: the material plus installation labour. A cheap material that is slow to install often costs more overall.
+Lifecycle cost (TCO): maintenance, replacement cycles and energy performance over 30 to 60 years.
+Price volatility: steel, timber and copper prices swing a lot. Watch how much risk your contractor passes back to you.
+Financing effects: green loans and ESG-linked financing can offer better terms for certified, low-carbon buildings.
+3. Schedule and constructability
+Lead times and supply-chain risk: whether supply is local or imported, and whether you need a single source.
+Speed of construction: prefab and modular systems (CLT, precast concrete) can cut months off the programme, which lowers financing costs.
+Labour availability: whether local trades know how to install the material. A shortage of skilled labour is a real constraint.
+Weather sensitivity: wet trades versus dry construction.
+4. Performance
+Structural capacity and spans, which determine floor-plate flexibility.
+Thermal performance, thermal mass and moisture behaviour.
+Acoustic separation, which matters a great deal in residential buildings.
+Durability and service life in your specific climate.
+Fire behaviour. Mass timber, for example, needs careful engineering here.
+5. Sustainability and ESG
+Embodied carbon: you need EPDs for each product. This is where datasets like Sphera MLC, ecoinvent and ÖKOBAUDAT come in.
+Operational carbon: the effect of the envelope on heating and cooling loads.
+Circularity: whether the building can be designed for disassembly, how much recycled content the material has, and whether it can be reused at end of life.
+Health: VOC emissions, formaldehyde and Red List chemicals, which affect indoor air quality and WELL certification.
+Certification targets: DGNB, LEED, BREEAM, plus EU Taxonomy alignment, which institutional investors increasingly require.
+6. Market and exit value
+Target tenant or buyer expectations: premium office tenants now demand ESG credentials, and “brown discounts” on inefficient buildings are real.
+Stranding risk: whether the building will still meet carbon and energy rules in 2035 or 2040, or will need an expensive retrofit.
+Aesthetics and brand: materials shape perceived quality and the rent premium you can charge.
+Insurance: some insurers price combustible façades or mass timber differently.
+7. Operations and future-proofing
+Maintenance burden for the facility manager.
+Adaptability: whether the structure can be repurposed later (office to residential).
+Easy integration of building services (MEP) and future technology.
+
+How it plays out in practice: most decisions come down to a three-way tension between cost, speed and carbon/ESG, constrained by code. The main shift in the last five years is that embodied carbon has moved from a nice-to-have to a regulatory and financing requirement. As a result, getting good material-level data early in design is becoming a bottleneck, and that pain point is where Sphera, One Click LCA, EPD platforms and similar tools sit.
