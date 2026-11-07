@@ -68,3 +68,10 @@ M={ #name: pool, kind, lam, mu, life, mfp, voc, buf, snd, cost, job, move, fire,
 }
 # nominal thickness (m) used only for the volume share of area-declared layers (ASSUMPTION)
 NOMT={'Paint/covering':0.001,'VCL':0.0005,'Sealing foil':0.0005,'Roof membrane':0.003,'Roof tile':0.015,'Window PVC':0.07,'Window timber':0.07,'Wood-concrete slab':0.20}
+
+# Fill earlier assumptions from the Building material property dataset (switch off with MATERIAL_DATASET=0 to reproduce the baseline)
+import os
+FILL_LOG=[]
+if os.environ.get('MATERIAL_DATASET','1')=='1':
+    import dataset_fill
+    dataset_fill.apply(M,FILL_LOG)

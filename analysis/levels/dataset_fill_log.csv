@@ -1,0 +1,149 @@
+material,field,old_assumption,new_value,dataset_row_and_provenance,rule,status
+RC,lam,2.0,2.4,M02 CITED,dataset range midpoint,changed
+RC,mu,80,80,M02 UNVERIFIED-STD,kept: inside dataset range 80-130,same
+RC,life,100,50,M02 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+RC,tech,,80,M02 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+RC,mfp,5,5,M02 ASSUMED,dataset R_D2 moisture resistance,same
+RC,voc,5,5,M02 ASSUMED,dataset IAQ risk L,same
+RC,buf,2,2,M02 ASSUMED,dataset R_WB3 sensory/hygric score,same
+RC,cost,470,700.0,"M02 ASSUMED (indicative, +/-30%)",EUR/m3,changed
+Brick,lam,0.12,0.12,M05 TYPICAL,kept: inside dataset range 0.07-0.77,same
+Brick,mu,8,8,M05 UNVERIFIED-STD,kept: inside dataset range 5-10,same
+Brick,life,100,50,M05 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Brick,tech,,80,M05 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Brick,mfp,5,4,M05 ASSUMED,dataset R_D2 moisture resistance,changed
+Brick,voc,5,5,M05 ASSUMED,dataset IAQ risk L,same
+Brick,cost,420,410.9589,"M05 ASSUMED (indicative, +/-30%)",EUR/m3 = 150 EUR/m2 / 0.365 m,changed
+Sand-lime,lam,0.99,0.99,M06 UNVERIFIED-STD,kept: inside dataset range 0.7-1.1,same
+Sand-lime,mu,20,20,M06 UNVERIFIED-STD,kept: inside dataset range 5-25,same
+Sand-lime,life,100,50,M06 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Sand-lime,tech,,80,M06 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Sand-lime,mfp,5,4,M06 ASSUMED,dataset R_D2 moisture resistance,changed
+Sand-lime,voc,5,5,M06 ASSUMED,dataset IAQ risk L,same
+Sand-lime,buf,3,2,M06 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+Sand-lime,cost,380,485.7143,"M06 ASSUMED (indicative, +/-30%)",EUR/m3 = 85 EUR/m2 / 0.175 m,changed
+AAC,lam,0.1,0.1,M07 CITED (500/700) / UNVERIFIED-STD (range),kept: inside dataset range 0.07-0.21,same
+AAC,mu,8,8,M07 UNVERIFIED-STD,kept: inside dataset range 5-10,same
+AAC,life,100,50,M07 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+AAC,tech,,80,M07 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+AAC,mfp,4,3,M07 ASSUMED,dataset R_D2 moisture resistance,changed
+AAC,voc,5,5,M07 ASSUMED,dataset IAQ risk L,same
+AAC,cost,330,342.4658,"M07 ASSUMED (indicative, +/-30%)",EUR/m3 = 125 EUR/m2 / 0.365 m,changed
+CLT,lam,0.13,0.13,M14 UNVERIFIED-STD/TYPICAL,kept: inside dataset range 0.12-0.13,same
+CLT,mu,50,50,M14 UNVERIFIED-STD/TYPICAL,kept: inside dataset range 20-50,same
+CLT,life,100,50,M14 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+CLT,mfp,3,3,M14 ASSUMED,dataset R_D2 moisture resistance,same
+CLT,voc,3,4,M14 ASSUMED,dataset IAQ risk L-M,changed
+CLT,buf,5,4,M14 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+CLT,cost,850,1350.0,"M14 ASSUMED (indicative, +/-30%)",EUR/m3,changed
+KVH,lam,0.13,0.13,M12 CITED (0.13) / UNVERIFIED-STD (0.12),kept: inside dataset range 0.12-0.13,same
+KVH,mu,50,50,M12 UNVERIFIED-STD,kept: inside dataset range 20-50,same
+KVH,life,100,50,M12 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+KVH,voc,4,4,M12 ASSUMED,dataset IAQ risk L-M,same
+KVH,buf,5,4,M12 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+KVH,cost,650,1100.0,"M12 ASSUMED (indicative, +/-30%)",EUR/m3,changed
+Steel frame,lam,50,50.0,M09 CITED,dataset single value,same
+Steel frame,life,100,50,M09 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Steel frame,voc,5,5,M09 ASSUMED,dataset IAQ risk L,same
+Steel frame,buf,1,1,M09 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Steel frame,cost,14800,29437.5,"M09 ASSUMED (indicative, +/-30%)",EUR/m3 steel (3750 EUR/t),changed
+EPS,lam,0.035,0.035,M18 TYPICAL (SEAI values CITED),kept: inside dataset range 0.031-0.04,same
+EPS,mu,40,40,M18 UNVERIFIED-STD,kept: inside dataset range 20-100,same
+EPS,life,60,50,M18 CITED (BNB 2017; verify against PDF); ty,dataset 40 (ETICS context) -> 50 inside constructions; ETICS builds keep 40,changed
+EPS,mfp,3,3,M18 ASSUMED,dataset R_D2 moisture resistance,same
+EPS,voc,3,4,M18 ASSUMED,dataset IAQ risk L-M,changed
+EPS,buf,1,3,M18 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+EPS,cost,140,403.3333,"M18 CITED (reduco.ai, early 2026)",EUR/m3 = 60.5 EUR/m2 / 0.15 m,changed
+XPS,lam,0.035,0.035,M19 TYPICAL (SEAI value CITED),kept: inside dataset range 0.029-0.04,same
+XPS,mu,100,100,M19 UNVERIFIED-STD,kept: inside dataset range 80-250,same
+XPS,life,60,50,M19 CITED (BNB 2017; verify against PDF),dataset 40 (ETICS context) -> 50 inside constructions; ETICS builds keep 40,changed
+XPS,mfp,4,5,M19 ASSUMED,dataset R_D2 moisture resistance,changed
+XPS,voc,3,4,M19 ASSUMED,dataset IAQ risk L-M,changed
+XPS,buf,1,3,M19 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+XPS,cost,250,582.1429,"M19 CITED (reduco.ai, early 2026)",EUR/m3 = 81.5 EUR/m2 / 0.14 m,changed
+Rock wool,lam,0.036,0.036,M20 TYPICAL,kept: inside dataset range 0.035-0.04,same
+Rock wool,mu,1,1.0,M20 CITED,dataset single value,same
+Rock wool,life,60,50,M20 CITED (BNB 2017; verify against PDF); ty,dataset 40 (ETICS context) -> 50 inside constructions; ETICS builds keep 40,changed
+Rock wool,mfp,4,4,M20 ASSUMED,dataset R_D2 moisture resistance,same
+Rock wool,voc,3,5,M20 ASSUMED,dataset IAQ risk L,changed
+Rock wool,buf,2,3,M20 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+Rock wool,cost,180,440.625,"M20 CITED (reduco.ai, early 2026) (min",EUR/m3 = 70.5 EUR/m2 / 0.16 m,changed
+Wood fibre,lam,0.04,0.04,M23 TYPICAL,kept: inside dataset range 0.036-0.05,same
+Wood fibre,mu,5,5,M23 TYPICAL,kept: inside dataset range 3-5,same
+Wood fibre,life,60,50,M23 CITED (BNB 2017; verify against PDF); ty,dataset 40 (ETICS context) -> 50 inside constructions; ETICS builds keep 40,changed
+Wood fibre,mfp,3,3,M23 ASSUMED,dataset R_D2 moisture resistance,same
+Wood fibre,voc,4,4,M23 ASSUMED,dataset IAQ risk L-M,same
+Wood fibre,buf,4,4,M23 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Wood fibre,cost,300,541.6667,"M23 CITED (reduco.ai, early 2026)",EUR/m3 = 97.5 EUR/m2 / 0.18 m,changed
+Cellulose,lam,0.039,0.039,M24 TYPICAL (SEAI value CITED),kept: inside dataset range 0.037-0.042,same
+Cellulose,mu,2,2,M24 TYPICAL,kept: inside dataset range 1-2,same
+Cellulose,life,60,50,M24 ASSUMED mapping to BNB group (core/roof ,dataset service_life_years_used,changed
+Cellulose,mfp,3,2,M24 ASSUMED,dataset R_D2 moisture resistance,changed
+Cellulose,voc,4,5,M24 ASSUMED,dataset IAQ risk L,changed
+Cellulose,buf,4,4,M24 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Cellulose,cost,200,163.6364,"M24 CITED (reduco.ai, early 2026)",EUR/m3 = 36 EUR/m2 / 0.22 m,changed
+Straw bale,lam,0.052,0.052,M26 TYPICAL,kept: inside dataset range 0.049-0.08,same
+Straw bale,mu,2,2.0,M26 TYPICAL,dataset single value,same
+Straw bale,life,60,50,M26 ASSUMED mapping to BNB group (core/roof ,dataset service_life_years_used,changed
+Straw bale,mfp,2,1,M26 ASSUMED,dataset R_D2 moisture resistance,changed
+Straw bale,voc,5,5,M26 ASSUMED,dataset IAQ risk L,same
+Straw bale,cost,180,154.7619,"M26 ASSUMED (indicative, +/-30%) very ",EUR/m3 = 65 EUR/m2 / 0.42 m,changed
+Foam glass,lam,0.045,0.045,M28 TYPICAL,kept: inside dataset range 0.036-0.05,same
+Foam glass,life,100,50,M28 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Foam glass,mfp,5,5,M28 ASSUMED,dataset R_D2 moisture resistance,same
+Foam glass,voc,5,5,M28 ASSUMED,dataset IAQ risk L,same
+Foam glass,buf,1,3,M28 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+Foam glass,cost,900,843.75,"M28 CITED (reduco.ai, early 2026)",EUR/m3 = 135 EUR/m2 / 0.16 m,changed
+Gypsum board,lam,0.25,0.25,M16 CITED,dataset single value,same
+Gypsum board,mu,8,8,M16 CITED,kept: inside dataset range 4-10,same
+Gypsum board,life,50,50,M16 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,same
+Gypsum board,mfp,2,2,M16 ASSUMED,dataset R_D2 moisture resistance,same
+Gypsum board,voc,4,5,M16 ASSUMED,dataset IAQ risk L,changed
+Gypsum board,buf,3,3,M16 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Gypsum board,cost,1440,1350.0,"M16 ASSUMED (indicative, +/-30%)",EUR/m3 = 67.5 EUR/m2 / 0.05 m,changed
+OSB,lam,0.13,0.13,M15 CITED,dataset single value,same
+OSB,mu,50,50,M15 UNVERIFIED-STD,kept: inside dataset range 30-50,same
+OSB,life,100,50,M15 ASSUMED mapping to BNB group (wood-based,dataset service_life_years_used,changed
+OSB,mfp,2,2,M15 ASSUMED,dataset R_D2 moisture resistance,same
+OSB,voc,2,3,M15 ASSUMED,dataset IAQ risk M,changed
+OSB,cost,450.0,1375.0,"M15 ASSUMED (indicative, +/-30%)",EUR/m3 = 27.5 EUR/m2 / 0.02 m,changed
+Mineral render,lam,0.8,1.0,M38 CITED,dataset single value,changed
+Mineral render,mu,20,20,M38 UNVERIFIED-STD,kept: inside dataset range 15-35,same
+Mineral render,life,40,40,M38 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,same
+Mineral render,tech,,50,M38 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Mineral render,voc,4,5,M38 ASSUMED,dataset IAQ risk L,changed
+Mineral render,cost,4600,3392.8571,"M38 ASSUMED (indicative, +/-30%)",EUR/m3 = 47.5 EUR/m2 / 0.014 m,changed
+Clay plaster,lam,0.8,0.8,M30 UNVERIFIED-STD,kept: inside dataset range 0.47-0.91,same
+Clay plaster,mu,8,8,M30 UNVERIFIED-STD,kept: inside dataset range 5-10,same
+Clay plaster,life,60,50,M30 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Clay plaster,tech,,80,M30 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Clay plaster,mfp,2,2,M30 ASSUMED,dataset R_D2 moisture resistance,same
+Clay plaster,voc,5,5,M30 ASSUMED,dataset IAQ risk L,same
+Clay plaster,buf,5,5,M30 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Clay plaster,cost,2250,2285.7143,"M30 ASSUMED (indicative, +/-30%)",EUR/m3 = 40 EUR/m2 / 0.0175 m,changed
+Lime plaster,lam,0.8,0.8,M29 UNVERIFIED-STD,kept: inside dataset range 0.7-1,same
+Lime plaster,mu,10,25.0,M29 UNVERIFIED-STD,dataset range midpoint,changed
+Lime plaster,life,40,50,M29 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Lime plaster,tech,,80,M29 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Lime plaster,mfp,4,4,M29 ASSUMED,dataset R_D2 moisture resistance,same
+Lime plaster,voc,5,5,M29 ASSUMED,dataset IAQ risk L,same
+Lime plaster,buf,4,3,M29 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+Lime plaster,cost,2800,2166.6667,"M29 ASSUMED (indicative, +/-30%)",EUR/m3 = 32.5 EUR/m2 / 0.015 m,changed
+Screed,lam,1.2,1.4,M03 UNVERIFIED-STD,dataset single value,changed
+Screed,mu,25,25,M03 UNVERIFIED-STD,kept: inside dataset range 15-35,same
+Screed,life,60,50,M03 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,changed
+Screed,voc,4,5,M03 ASSUMED,dataset IAQ risk L,changed
+Screed,buf,2,2,M03 ASSUMED,dataset R_WB3 sensory/hygric score,same
+Screed,cost,400,570.1754,"M03 ASSUMED (indicative, +/-30%)",EUR/m3 = 32.5 EUR/m2 / 0.057 m,changed
+Roof membrane,life,30,30,M36 CITED (BNB 2017; verify against PDF),dataset service_life_years_used,same
+Roof membrane,voc,3,5,M36 ASSUMED,dataset IAQ risk L (outside envelope),changed
+Roof membrane,buf,1,3,M36 ASSUMED,dataset R_WB3 sensory/hygric score,changed
+Roof membrane,cost,25,42.5,"M36 ASSUMED (indicative, +/-30%)",EUR/m2,changed
+Window PVC,life,35,30,M37 CITED (BNB 2017; verify against PDF); li,dataset service_life_years_used,changed
+Window PVC,tech,,40,M37 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Window PVC,voc,3,5,M37 ASSUMED,dataset IAQ risk L,changed
+Window PVC,cost,520,675.0,"M37 ASSUMED (indicative, +/-30%)",EUR/m2,changed
+Window timber,life,35,30,M37 CITED (BNB 2017; verify against PDF); li,dataset service_life_years_used,changed
+Window timber,tech,,40,M37 CITED (Baunetz Wissen / IfB 20,"dataset technical life, used for the durability indicator only",changed
+Window timber,voc,4,5,M37 ASSUMED,dataset IAQ risk L,changed
+Window timber,cost,780,675.0,"M37 ASSUMED (indicative, +/-30%)",EUR/m2,changed

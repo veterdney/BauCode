@@ -16,5 +16,9 @@ for a in ALT:
              sc=[round(l['sc'][c],1) for c in('Durability','Environment','Well-being','Cost')],a13=round(l['env_a13'],2),lg=round(l['env_life'],2),cost=round(l['cost0']+l['cost_ren'],1),pool=l['pool'],n=l['n']) for l in P['layers']],
           ifs=[dict(A=i['A'],B=i['B'],c=[i['checks']['moisture'],i['checks']['structural'],i['checks']['fireacoustic'],i['checks']['disassembly']],r=i['rating'],s=round(i['score']),fx=i['fixes'],note=i['note']) for i in P['ifs']])
     d['alts'].append(al)
+import csv as _c
+d['base']={r['alt']:dict(w=float(r['score_weighted']),rk=int(r['rank_weighted']),life=float(r['life_GWP_kgCO2e_per_m2GFA']),cost=float(r['cost_50y_EUR_per_m2GFA'])) for r in _c.DictReader(open('analysis/levels/baseline/scores_alternatives.csv'))}
+d['fill']=[r for r in _c.DictReader(open('analysis/levels/dataset_fill_log.csv')) if r['status']=='changed']
+d['fill']=[[r['material'],r['field'],r['old_assumption'],r['new_value'],r['dataset_row_and_provenance'].split(' ')[0],r['rule']] for r in d['fill']]
 json.dump(d,open('analysis/levels/viz/data.json','w'),separators=(',',':'))
 print(len(open('analysis/levels/viz/data.json').read()))

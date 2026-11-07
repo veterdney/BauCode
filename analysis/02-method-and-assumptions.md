@@ -54,8 +54,3 @@ The best products are chosen later (step 07).
 
 Total = mean of the three.
 Sensitivity: carbon-heavy (0.5/0.25/0.25) and well-being-heavy (0.25/0.25/0.5), both in `results_wall_systems.csv`.
-
-## Wall area per floor area (for the budget comparison)
-
-0.6 m² exterior wall and 0.8 m² interior wall per m² gross floor area.
-Typical residential values, not project-specific.
