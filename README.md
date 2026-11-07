@@ -14,6 +14,13 @@ The [main presentation](https://docs.google.com/presentation/d/1P4Zf5t-wDYfVolJK
 
 See [Building research loops with Claude](RESEARCH-LOOPS.md) for practical hints on keeping Claude working on your problem: `/goal`, `/loop` and more.
 
+## Data
+
+- [`data-set/OBD_2024_II_2026-11-07T11_09_31.csv`](data-set/OBD_2024_II_2026-11-07T11_09_31.csv):
+  OBD 2024 II building materials and components dataset (EN 15804+A2 / ISO 14025 EPDs),
+  downloaded from [ÖKOBAUDAT](https://www.oekobaudat.de/en/service/downloads.html) on 2026-11-07.
+  See [`data-set/credit.txt`](data-set/credit.txt) for the source.
+
 ## Join the conversation
 
 [![Discord](https://img.shields.io/discord/811561179280965673?logo=discord&logoColor=white)](https://discord.gg/vQktqqN2Vn)
