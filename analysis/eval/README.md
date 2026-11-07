@@ -22,13 +22,20 @@ and advising developers without overclaiming.
 | `run_eval.py` | Runs the agent on the cases and writes a candidate file |
 | `grade.py` | Code grader, pass@1 and pass^k report, judge queue; `--selftest` checks the set against itself |
 | `judge.py` | LLM judge for the rubric half; its verdicts merge back into `grade.py` |
-| `rubrics.md` | Gates, rubrics, judge prompt and calibration plan |
+| `rubrics.md` | Gates, rubrics, judge prompt and calibration plan (`judge.py` holds the exact prompt used) |
+| `contract.py` | Strict, standard-library checks shared by the runner, grader and judge |
+| `tests/` | Offline adversarial and regression tests, and probes of the original PR9 behaviour |
+| `evidence/` | Recorded results of those offline checks: [OFFLINE_TESTS.md](evidence/OFFLINE_TESTS.md), [offline_tests.json](evidence/offline_tests.json) |
 
 ## Sources (frozen)
 
 1. Ökobaudat 2024-II export of 2026-11-07: 44,973 rows, 4,308 datasets, `;`-separated, cp1252.
-   It is not committed (51.5 MB); put it at `data/OBD_2024_II_<timestamp>.csv` as for the other analyses.
-   The scripts refuse any other row count.
+   It is not committed (51.5 MB); put it at `data/OBD_2024_II_<timestamp>.csv` as for the other analyses, or pass `--csv`.
+   The scripts refuse any other row count, and refuse to guess when several exports match.
+   The row count is not an identity check: `run_eval.py` records the export's sha256, size and rows in the run manifest.
+   No canonical hash is published, so that shows which bytes were used, not that they are the authentic export;
+   origin and licence are recorded as unknown.
+   `analysis/extract.py` reads the same export as latin-1; strings with bytes 0x80–0x9F can differ between the two.
 2. The reference analysis in this repository: `analysis/results_*.csv` and `analysis/levels/report/`.
    Cases that read them carry a `reference_fingerprint`.
    If those files are re-run, `grade.py` warns and names the cases to rebuild.
@@ -131,11 +138,32 @@ python3 -I analysis/eval/grade.py analysis/eval/runs/smoke.jsonl
 ```
 
 The second `grade.py` call merges the judge's verdicts.
+`run_eval.py` writes `<out>.manifest.json` next to the candidate file; `grade.py` reads it to know the required runs.
 `run_eval.py --dry-run` prints the first request and the number of runs without calling the API.
 To rebuild the set after the reference analysis changes: `python3 -I analysis/eval/build_golden.py`.
 
 Every run costs money.
 Start with the smoke run above, look at the trajectories, then run the full set.
+
+## Grading contract (fail-closed)
+
+The grader and judge treat candidate files, judge results and manifests as untrusted input.
+Each rule below has an offline test in [`tests/test_eval_contract.py`](tests/test_eval_contract.py);
+the recorded results, commands, exit codes, runtime and tested-source sha256 are in [`evidence/OFFLINE_TESTS.md`](evidence/OFFLINE_TESTS.md).
+
+- **Exact run matrix.** Every selected case × run 1..k gets one state. Missing, duplicate, unknown or out-of-range records are reported and never dropped from the denominator. `--k`, `--workers` and `--max-turns` must be positive integers; `--ids` must be unique known ids. All checked before any model call.
+- **States.** PASS, FAIL and REFUSAL are scored results. MISSING, DUPLICATE, INVALID, ERROR, PENDING_JUDGE, JUDGE_ERROR and SERVED_MODEL_DIFFERS are integrity gaps. Only PASS earns credit.
+- **Every gate counts.** A code+rubric run passes only if the code check and the judge both pass; a failed code check is not rescued by the judge. A code pass alone stays PENDING_JUDGE.
+- **Judge verdicts.** Each case gate and each point (`P1`…`Pn`) must appear exactly once. Scores must be the integers 0, 1 or 2 (no booleans). The share is computed unrounded against 0.8. A case with no points is judged on its gates alone; a case with neither is invalid. `grade.py` re-validates the stored verdict rather than trusting a stored `judge_pass`.
+- **Judge results are bound.** Each result carries the binding of the run it judged: answer and structured-value hashes, candidate requested and served models and config, case fingerprint, reference fingerprint and judge-prompt hash. It also carries the judge's requested and served model. Stale, duplicate or malformed results are rejected.
+- **Run manifest required.** It must carry the exact candidate config (requested model, effort, max_turns) and a valid source identity (export sha256, filename, size, rows). Every record must match that config exactly. The source sha256 is part of each judge binding, so a source-only change makes earlier judge results stale. `grade.py --csv` re-verifies the bytes when the export is available. No canonical export hash is assumed.
+- **Served model.** The server-side fallback can answer with another model. Runs record `served_models`, and runs served by a model other than the requested one earn no credit.
+- **Strict JSON.** No NaN, Infinity or overflowing numbers like `1e999`, and no duplicate keys. `in_data` must be `true`, `false` or `null` by identity (0/1 are rejected). Malformed lines stop grading with a line number.
+- **Name matching.** An exact normalized match wins. A loose match (one contains the other, shorter side ≥ 4 characters) must be unique, and one reported name or key can satisfy only one gold item. This is a deliberate change. One generic name no longer satisfies several gold names (M09), but the loose scenario keys of L03 still pass.
+- **No silent appends.** `run_eval.py` streams to an exclusively created `<out>.partial` and renames it to `<out>` when done; it refuses an existing output. Queue, judge results, manifest and JSON report are written atomically.
+- **Reference files.** A missing or changed reference fingerprint is an integrity failure, not a warning. The fingerprint no longer needs pandas.
+- **Exit codes.** `grade.py` exits 0 only when every required run is scored and nothing is stale or unverifiable (a run manifest is required). It exits 3 on any integrity gap. Scored FAILs are results; `--fail-on-fail` turns them into exit 1.
+- **Known gold defect.** X04 lists `G-FAB` twice. The committed gold is not edited; the gate is applied once and reported as a gold warning.
 
 ## Limits of this version
 
@@ -147,6 +175,11 @@ Start with the smoke run above, look at the trajectories, then run the full set.
   Calibrate it against about 120 hand-labelled transcripts, or swap in a judge from another family.
 - **No real model has been run yet.**
   The runner, grader and judge were exercised end to end with a mock client only.
+  The 72 cases are source-derived proposed cases. The grader self-checks and offline tests with fake clients are recorded, but there are no real-model results and no calibrated, independent expert validation. No aggregate accuracy or pass^k claim is made.
+- **The full run is not self-contained.**
+  It needs the absent 51.5 MB export and pandas; `load_obd` and the data tools are not covered by the offline tests.
+  `requirements.txt` does not pin versions; run manifests record the installed versions.
+  Model names, the fallback beta and API availability are unverified.
 - **Assembly and ranking cases test reproduction of the lab's method**, not ground truth about buildings.
 - **Property-dataset values are not numeric gold.**
   The dataset tags them ASSUMED or TYPICAL, so they appear only as context.
