@@ -9,6 +9,7 @@ saying "not in the data" instead of inventing,
 and advising developers without overclaiming.
 
 72 cases, version `v1`, data frozen at **2026-11-07**.
+Browse them at [veterdney.github.io/claude-impact-lab-2026/eval.html](https://veterdney.github.io/claude-impact-lab-2026/eval.html).
 
 ## Files
 
@@ -23,6 +24,7 @@ and advising developers without overclaiming.
 | `grade.py` | Code grader, pass@1 and pass^k report, judge queue; `--selftest` checks the set against itself |
 | `judge.py` | LLM judge for the rubric half; its verdicts merge back into `grade.py` |
 | `rubrics.md` | Gates, rubrics, judge prompt and calibration plan |
+| `build_page.py`, `page_template.html` | Write `docs/eval.html`, the case browser on GitHub Pages; re-run when the cases change |
 
 ## Sources (frozen)
 

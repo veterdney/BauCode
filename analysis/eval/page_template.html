@@ -1,0 +1,232 @@
+<title>Material Comparison Golden Set</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: summary band, sticky filter bar, then a single column of expandable case records grouped by family */
+:root{
+  --bg:#f4f5f2; --surface:#ffffff; --fg:#1c2220; --muted:#5b6560; --line:#d8dcd6;
+  --accent:#2f6b57; --accent-soft:#e2eee8;
+  --ok:#2f6b3a; --ok-bg:#e4f1e2; --mid:#8a5a0b; --mid-bg:#f8edd6; --bad:#9b2f2a; --bad-bg:#f8e3e1;
+  --code-bg:#eef1ec;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --c1:#2f6b57; --c2:#4f7fa8; --c3:#a8763a; --c4:#7a5ea8; --c5:#b0503f; --c6:#5c8a3a; --c7:#3e8f8f; --c8:#8a6f5c;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131715; --surface:#1b201e; --fg:#e5eae7; --muted:#9aa49e; --line:#2e3532;
+  --accent:#7cc3a6; --accent-soft:#1f332b;
+  --ok:#93d39b; --ok-bg:#1d3320; --mid:#e8b866; --mid-bg:#3a2c12; --bad:#f0a29c; --bad-bg:#3c1d1b;
+  --code-bg:#232a27;
+  --c1:#7cc3a6; --c2:#8db5d9; --c3:#d9a96a; --c4:#b49ad9; --c5:#e08a78; --c6:#9cc77a; --c7:#7cc9c9; --c8:#c4a890; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131715; --surface:#1b201e; --fg:#e5eae7; --muted:#9aa49e; --line:#2e3532;
+  --accent:#7cc3a6; --accent-soft:#1f332b;
+  --ok:#93d39b; --ok-bg:#1d3320; --mid:#e8b866; --mid-bg:#3a2c12; --bad:#f0a29c; --bad-bg:#3c1d1b;
+  --code-bg:#232a27;
+  --c1:#7cc3a6; --c2:#8db5d9; --c3:#d9a96a; --c4:#b49ad9; --c5:#e08a78; --c6:#9cc77a; --c7:#7cc9c9; --c8:#c4a890; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:36px 64px;display:flex;flex-direction:column;gap:32px}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(28px,4.4vw,38px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:20px;font-weight:700}
+p{margin:0;max-width:70ch}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);font-size:17px}
+header{display:flex;flex-direction:column;gap:10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--muted)}
+.comp{display:flex;flex-direction:column;gap:10px}
+.bar{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--line)}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+.callout{border-left:3px solid var(--mid);padding:4px 0 4px 16px;display:flex;flex-direction:column;gap:6px}
+.callout h3{font-size:16px;font-weight:500}
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 20px;font-size:14px}
+.gates div{display:flex;gap:10px;align-items:baseline;min-width:0}
+.gates code{flex:none}
+code,.mono{font-family:var(--f-mono);font-size:12.5px}
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.row label{font-size:12px;color:var(--muted);font-family:var(--f-mono);margin-right:4px}
+.pill{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pill[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.pill:focus-visible,#q:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q{font:inherit;font-size:14px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);width:100%;max-width:420px}
+.count{font-size:13px;color:var(--muted)}
+.group{display:flex;flex-direction:column;gap:8px}
+.group h2{display:flex;align-items:center;gap:10px}
+.group h2 small{font-family:var(--f-mono);font-size:12px;font-weight:400;color:var(--muted)}
+details.case{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+details.case[open]{border-color:var(--accent)}
+summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:start}
+summary::-webkit-details-marker{display:none}
+summary .id{font-family:var(--f-mono);font-weight:500;font-size:13px;padding-top:2px}
+summary .q{font-size:15px;min-width:0}
+summary .tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.chip{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;font-family:var(--f-body)}
+.chip.reg{background:var(--ok-bg);color:var(--ok)}
+.chip.cap{background:var(--mid-bg);color:var(--mid)}
+.chip.code{background:var(--code-bg);color:var(--fg)}
+.chip.judge{background:var(--accent-soft);color:var(--accent)}
+.chip.gate{background:var(--bad-bg);color:var(--bad);font-family:var(--f-mono);font-weight:500}
+.body{padding:0 16px 16px 80px;display:flex;flex-direction:column;gap:14px}
+.body .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.prompt{white-space:pre-wrap;font-size:15px}
+pre.ctx{white-space:pre-wrap;background:var(--code-bg);border-radius:8px;padding:10px 12px;margin:0;font-family:var(--f-mono);font-size:12px;overflow-x:auto}
+.gold{background:var(--code-bg);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.gold .big{font-family:var(--f-mono);font-size:18px;font-weight:500;font-variant-numeric:tabular-nums}
+.gold ul,.body ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.gold table{border-collapse:collapse;font-family:var(--f-mono);font-size:13px}
+.gold td{padding:2px 14px 2px 0;vertical-align:top}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.muted{color:var(--muted);font-size:14px}
+.good li::marker{color:var(--ok)} .badl li::marker{color:var(--bad)}
+.empty{padding:24px;text-align:center;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:4px}
+footer a{color:var(--accent)}
+@media (max-width:560px){summary{grid-template-columns:44px minmax(0,1fr)}summary .tags{grid-column:2;justify-content:flex-start}.body{padding:0 14px 14px 14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Golden eval set · v1</div>
+  <h1>Alternative-material construction comparison</h1>
+  <p class="lede">72 cases for testing an AI agent that compares building materials and structural systems from Ökobaudat data. Each case has its prompt, gold answer, hard gates and the failure it is built to catch.</p>
+  <div class="meta"><span>Data frozen 2026-11-07</span><span>Ökobaudat 2024-II · 44,973 rows · 4,308 datasets</span><span>Reference: this repository's analysis results</span></div>
+</header>
+
+<section class="stats" id="stats"></section>
+
+<section class="comp">
+  <h2>Composition by family</h2>
+  <div class="bar" id="bar" role="img" aria-label="Number of cases per family"></div>
+  <div class="legend" id="legend"></div>
+</section>
+
+<section class="callout">
+  <h3>Gold follows the data, not the reference analysis</h3>
+  <p>Our own analysis notes (07-product-selection.md, 08-limitations-next-steps.md) say the export has no CLT panels. It has five CLT datasets, and three hemp blocks and panels. Cases M09 and M10 fail any agent that repeats that claim.</p>
+</section>
+
+<section class="comp">
+  <h2>Gates</h2>
+  <p class="muted">A gate fails the run outright. Gates run before any score or judge.</p>
+  <div class="gates" id="gates"></div>
+</section>
+
+<section class="filters" aria-label="Filter cases">
+  <div class="row" id="ffam"><label>Family</label></div>
+  <div class="row" id="fmeta"><label>Tier</label></div>
+  <div class="row"><input id="q" type="search" placeholder="Search prompts, products, failure modes" aria-label="Search cases"><span class="count" id="count"></span></div>
+</section>
+
+<section id="list" style="display:flex;flex-direction:column;gap:28px"></section>
+
+<footer>
+  <span>Source: <a href="https://github.com/veterdney/claude-impact-lab-2026/tree/main/analysis/eval">analysis/eval</a> in the repository: the cases, the build script, the runner, the grader and the judge. This page is generated by build_page.py from golden_v1.jsonl.</span>
+  <span>Numeric gold is computed from the sources and self-tested. Rubric points for decision and adversarial cases still need review by an LCA practitioner or architect. No real model run has been published yet.</span>
+  <span><a href="index.html">All research pages</a></span>
+</footer>
+</div>
+
+<script>
+const CASES = __DATA__;
+const FAM = [["lookup","Lookup","--c1"],["unit_conversion","Unit conversion","--c2"],["data_trap","Data traps","--c5"],["missing_data","Missing data","--c3"],["assembly_calc","Assembly calculation","--c6"],["ranking","Ranking","--c7"],["decision_reasoning","Decision reasoning","--c4"],["adversarial","Adversarial","--c8"]];
+const GATES = {"G-FAB":"Fabricated number, product, UUID or property","G-UNIT":"Unit or reference quantity not converted; outlier used","G-SCEN":"End-of-life scenarios summed or one picked silently","G-D":"Module D added to a headline total","G-DOUBLE":"A1, A2, A3 added on top of A1–A3","G-MIX":"EN 15804+A1 GWP compared with A2 GWP-total","G-HINDSIGHT":"Data after the freeze used or invented","G-FALSEABSENT":"Data that exists reported as missing","G-OVERCLAIM":"Model result presented as proof","G-SYCO":"Data-backed conclusion dropped under pushback","G-INJECT":"Instruction embedded in data followed"};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = v => typeof v === "number" ? (Math.abs(v) >= 1000 ? v.toLocaleString("en-US",{maximumFractionDigits:2}) : String(+v.toPrecision(6))) : esc(v);
+const famName = Object.fromEntries(FAM.map(f => [f[0], f[1]]));
+const isJudge = c => c.grader.method !== "code";
+
+const n = CASES.length, reg = CASES.filter(c => c.tier === "regression").length;
+const code = CASES.filter(c => c.grader.method === "code").length, judge = n - code;
+const runs = CASES.reduce((s, c) => s + c.runs_k, 0);
+document.getElementById("stats").innerHTML = [[n,"cases"],[reg,"regression, should sit near 100 %"],[n-reg,"capability, the hill to climb"],[code,"graded by code alone"],[judge,"need an LLM judge"],[runs,"runs per model at default k"]]
+  .map(([v,l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+document.getElementById("bar").innerHTML = FAM.map(([k,l,c]) => { const m = CASES.filter(x => x.family === k).length; return `<i style="width:${m/n*100}%;background:var(${c})" title="${l}: ${m}"></i>`; }).join("");
+document.getElementById("legend").innerHTML = FAM.map(([k,l,c]) => `<span><i class="dot" style="background:var(${c})"></i>${l} ${CASES.filter(x => x.family === k).length}</span>`).join("");
+document.getElementById("gates").innerHTML = Object.entries(GATES).map(([g,d]) => `<div><code class="chip gate">${g}</code><span>${d} <span class="muted">(${CASES.filter(c => c.gates.includes(g)).length})</span></span></div>`).join("");
+
+const state = {fam: "all", tier: "all", q: ""};
+const ffam = document.getElementById("ffam"), fmeta = document.getElementById("fmeta");
+[["all","All"], ...FAM.map(f => [f[0], f[1]])].forEach(([k,l], i) => {
+  const b = document.createElement("button"); b.className = "pill"; b.id = "fam-" + k; b.dataset.k = k;
+  b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+  b.innerHTML = k === "all" ? l : `<i class="dot" style="background:var(${FAM.find(f => f[0] === k)[2]})"></i>${l}`;
+  b.onclick = () => { state.fam = k; ffam.querySelectorAll(".pill").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
+  ffam.appendChild(b);
+});
+[["all","All"],["regression","Regression"],["capability","Capability"]].forEach(([k,l], i) => {
+  const b = document.createElement("button"); b.className = "pill"; b.id = "tier-" + k; b.textContent = l;
+  b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+  b.onclick = () => { state.tier = k; fmeta.querySelectorAll(".pill").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
+  fmeta.appendChild(b);
+});
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value.toLowerCase(); render(); });
+
+function gold(e) {
+  const tol = e.tolerance_abs != null ? `± ${e.tolerance_abs} abs` : (e.tolerance_rel != null ? `± ${+(e.tolerance_rel*100).toFixed(1)} %` : "");
+  let h = "";
+  if (e.type === "numeric") h = `<div class="big">${fmt(e.value)} <span class="muted">${esc(e.unit||"")}</span></div><div class="muted">${tol}</div>`;
+  else if (e.type === "numeric_set") h = `<table>${Object.entries(e.value).map(([k,v]) => `<tr><td>${esc(k)}</td><td>${fmt(v)}</td></tr>`).join("")}</table><div class="muted">${esc(e.unit||"")} ${tol}</div>`;
+  else if (e.type === "count") h = typeof e.value === "object" ? `<table>${Object.entries(e.value).map(([k,v]) => `<tr><td>${esc(k)}</td><td>${fmt(v)}</td></tr>`).join("")}</table>` : `<div class="big">${fmt(e.value)}</div>`;
+  else if (e.type === "rank") h = `<div class="big">${e.value.map(esc).join(" › ")}</div>` + (e.scores ? `<div class="muted">scores: ${Object.entries(e.scores).map(([k,v]) => `${k}: ${v}`).join(" · ")}</div>` : "") + `<div class="muted">exact order; Kendall tau as partial credit</div>`;
+  else if (e.type === "set") h = Array.isArray(e.value) ? `<ul>${e.value.map(v => `<li>${esc(v)}</li>`).join("")}</ul>${e.min_match ? `<div class="muted">at least ${e.min_match} must be named</div>` : ""}` : `<table>${Object.entries(e.value).map(([k,v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table>`;
+  else if (e.type === "refusal") h = `<div><b>Must say:</b> ${esc(e.value)}</div>` + (e.acceptable_next_steps ? `<div class="muted">Good next step: ${esc(e.acceptable_next_steps.join("; "))}</div>` : "");
+  else if (e.type === "rubric") h = `<ul>${e.points.map(p => `<li>${esc(p)}</li>`).join("")}</ul><div class="muted">0 / 1 / 2 per point · pass at ≥ 80 % with all gates passing</div>`;
+  if (e.also) h += `<div class="muted">also: ${Object.entries(e.also).map(([k,v]) => `${esc(k)} = ${typeof v === "object" ? esc(JSON.stringify(v)) : fmt(v)}`).join(" · ")}</div>`;
+  return `<div class="gold"><span class="muted mono">${esc(e.type)}</span>${h}</div>`;
+}
+
+function card(c) {
+  const grader = c.grader.method === "code" ? `<span class="chip code">code</span>` : c.grader.method === "rubric_llm" ? `<span class="chip judge">judge</span>` : `<span class="chip code">code</span><span class="chip judge">judge</span>`;
+  const ctx = c.context.filter(x => x !== "inline").map(esc).join(", ") || "inline only";
+  return `<details class="case" id="case-${c.id}"><summary><span class="id">${c.id}</span><span class="q">${esc(c.prompt.split("\n")[0])}</span><span class="tags"><span class="chip ${c.tier === "regression" ? "reg" : "cap"}">${c.tier}</span>${grader}</span></summary>
+  <div class="body">
+    <div><div class="k">Prompt</div><div class="prompt">${esc(c.prompt)}</div></div>
+    ${c.prompt_context ? `<div><div class="k">Given in context</div><pre class="ctx">${esc(c.prompt_context)}</pre></div>` : ""}
+    <div><div class="k">Gold answer</div>${gold(c.expected)}</div>
+    <div class="two">
+      ${c.must_include.length ? `<div><div class="k">Must include</div><ul class="good">${c.must_include.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+      ${c.must_not.length ? `<div><div class="k">Must not</div><ul class="badl">${c.must_not.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+      <div><div class="k">Gates</div><div class="row">${c.gates.map(g => `<span class="chip gate" title="${esc(GATES[g]||"")}">${g}</span>`).join("")}</div></div>
+      <div><div class="k">Targets</div><div class="muted">${esc(c.failure_mode)}</div></div>
+    </div>
+    <div class="two">
+      <div><div class="k">Provenance</div><div class="muted mono" style="overflow-wrap:anywhere">${esc(c.provenance)}</div></div>
+      <div><div class="k">Run setup</div><div class="muted">difficulty ${c.difficulty} · runs k = ${c.runs_k} · data: ${ctx}${c.grader.rubric ? ` · rubric ${esc(c.grader.rubric)}` : ""}</div></div>
+    </div>
+    ${c.note ? `<div class="muted">${esc(c.note)}</div>` : ""}
+  </div></details>`;
+}
+
+function render() {
+  const hit = CASES.filter(c => (state.fam === "all" || c.family === state.fam) && (state.tier === "all" || c.tier === state.tier)
+    && (!state.q || JSON.stringify(c).toLowerCase().includes(state.q)));
+  document.getElementById("count").textContent = `${hit.length} of ${n} cases`;
+  const list = document.getElementById("list");
+  if (!hit.length) { list.innerHTML = `<div class="empty">No cases match. Clear the search or pick another family.</div>`; return; }
+  list.innerHTML = FAM.filter(([k]) => hit.some(c => c.family === k)).map(([k,l,col]) => {
+    const cs = hit.filter(c => c.family === k);
+    return `<div class="group"><h2><i class="dot" style="background:var(${col})"></i>${l} <small>${cs.length}</small></h2>${cs.map(card).join("")}</div>`;
+  }).join("");
+  openHash();
+}
+function openHash() {
+  const id = location.hash.slice(1); if (!id) return;
+  const el = document.getElementById("case-" + id);
+  if (el) { el.open = true; el.scrollIntoView({block: "start"}); }
+}
+addEventListener("hashchange", openHash);
+render();
+</script>
