@@ -1,0 +1,158 @@
+<title>Research Loop Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* layout: loop diagram left, stage detail right; cycle switcher on top drives both */
+:root{--bg:#f5f4f0;--panel:#fff;--ink:#1c2230;--mute:#5f6676;--line:#d9d9d2;--soft:#ebeae4;--accent:#d9480f;--ok:#2b7a4b;--c1:#3b5bdb;--c2:#0b7285;--c3:#9c36b5;--c4:#1a8f6f;
+ --f-d:"Familjen Grotesk","Public Sans",system-ui,sans-serif;--f-b:"Public Sans",system-ui,sans-serif;--f-m:"JetBrains Mono",ui-monospace,monospace}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--f-b);padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto;padding:22px 0 48px;display:grid;gap:16px}
+h1,h2,h3{font-family:var(--f-d);margin:0;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(26px,4.4vw,38px)}h2{font-size:19px}h3{font-size:15px}
+.sub{color:var(--mute);max-width:70ch;margin:6px 0 0}
+.top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:end}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:600 13px var(--f-b);padding:8px 14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;cursor:pointer;text-align:left}
+.tab small{display:block;font:400 11px var(--f-m);color:var(--mute)}
+.tab[aria-pressed="true"]{border-color:var(--cc);box-shadow:inset 0 -3px 0 var(--cc)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.theme{font:500 12px var(--f-b);background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;color:var(--mute);cursor:pointer}
+.grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px}
+@media(max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--f-b);fill:var(--ink)}
+.node{cursor:pointer}
+.node circle.b{fill:var(--panel);stroke:var(--line);stroke-width:2}
+.node.on circle.b{stroke:var(--cc);stroke-width:4}
+.node:hover circle.b{stroke:var(--cc)}
+.node text.t{font:600 11.5px var(--f-b);text-anchor:middle}
+.node text.n{font:600 13px var(--f-m);text-anchor:middle;fill:var(--mute)}
+.badge circle{fill:var(--accent)}.badge text{fill:#fff;font:700 11px var(--f-m);text-anchor:middle}
+.edge{fill:none;stroke:var(--mute);stroke-width:1.6;opacity:.6}
+.back{stroke:var(--accent);stroke-dasharray:5 5;opacity:.9}
+@media(prefers-reduced-motion:no-preference){.back{animation:dash 1.6s linear infinite}@keyframes dash{to{stroke-dashoffset:-20}}}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:12px}
+.kv div{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.kv small{display:block;color:var(--mute);font-size:11px}
+.kv b{font:600 18px var(--f-m)}
+.cap{font:500 11px var(--f-m);text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.tag{display:inline-block;font:500 11px var(--f-m);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin:2px 4px 2px 0;color:var(--mute)}
+ul.c{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+ul.c li{border-left:3px solid var(--accent);background:var(--soft);padding:7px 11px;border-radius:0 8px 8px 0;font-size:13px}
+ul.c li b{font-weight:600}
+ul.c li small{display:block;color:var(--mute);font:400 11px var(--f-m);margin-top:2px}
+.flow{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.flow span{font:500 11px var(--f-m);padding:3px 8px;border-radius:6px;background:var(--soft)}
+.bars{display:grid;gap:6px;margin-top:10px}
+.bars .r{display:grid;grid-template-columns:130px minmax(0,1fr) 28px;gap:8px;align-items:center;font-size:12px}
+.bars i{display:block;height:10px;border-radius:2px;background:var(--cc)}
+.bars .r.dim i{background:var(--soft)}
+.legend{font-size:12px;color:var(--mute)}
+.pt{width:100%;border-collapse:collapse;font-size:13px;min-width:460px}
+.pt th,.pt td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center}
+.pt th:first-child,.pt td:first-child{text-align:left}
+.pt th{font:500 11px var(--f-m);text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.pt td small{display:block;font:400 11px var(--f-m);color:var(--mute)}
+.pt .sel{background:color-mix(in srgb,var(--cc) 14%,transparent);color:var(--cc);font-weight:700}
+.pt .no{color:var(--mute)}
+.ptw{overflow-x:auto;margin-top:10px}
+</style>
+<div class="wrap">
+<div class="top"><div><h1>Research Loop Map</h1><p class="sub">How each analysis round ran: frame, profile the data, build a model, score, cross-check, verify every claim, report. Four rounds so far. Rounds 1 to 3 were seven stages each, each one wider than the last; the Record stage was added in round 4, and rounds 1 to 3 did not do it (their Record badge count is 0). Orange badges count the errors that stage caught.</p></div><button class="theme" id="th">◐ Theme</button></div>
+<div class="tabs" id="tabs"></div>
+<div class="grid">
+  <div class="panel"><svg id="svg" viewBox="0 0 460 460" role="img" aria-label="Loop of eight stages"></svg><p class="legend" style="margin:6px 0 0">Click a stage. The dashed arrow is the hand-off to the next round: the previous result becomes the next brief.</p></div>
+  <div style="display:grid;gap:16px;align-content:start"><div class="panel" id="stage"></div><div class="panel" id="round"></div></div>
+</div>
+<div class="panel"><h2>Which practices each round used</h2><p class="sub" style="margin:4px 0 0">The five practices from RESEARCH-LOOPS.md. The selected round is highlighted.</p><div class="ptw" id="pr"></div></div>
+<div class="panel"><h2>What each round caught</h2><p class="sub" style="margin:4px 0 0">Errors found by the loop itself, by stage. Click a bar to filter the list; the list is every item for the selected round.</p><div class="bars" id="bars"></div><ul class="c" id="log"></ul></div>
+</div>
+<script>
+const ST=[
+ {id:'frame',n:'Frame',d:'Turn the brief into scope, criteria and rules: what to compare, which data may be used, what counts as an assumption.',tools:['loop skill','brief','data rules'],out:'Scope, criteria, assumption rule'},
+ {id:'profile',n:'Profile data',d:'Read the Ökobaudat export (44,973 rows, 4,308 products, one row per product and life-cycle module), find usable categories and units, reduce to one record per latest product.',tools:['Python csv','extract.py','products.csv'],out:'Clean per-product table'},
+ {id:'model',n:'Build model',d:'Define layers and build-ups, convert declared units to per m², solve insulation to the U-value target, add thermal, moisture and compatibility logic.',tools:['model.py','engine.py','Glaser'],out:'Per-layer and per-part indicators'},
+ {id:'score',n:'Score',d:'Min–max normalise indicators, roll up layer to part to building, apply the weights, rank.',tools:['score.py','run.py'],out:'Scores and ranks'},
+ {id:'check',n:'Cross-check',d:'Compare with the carbonbudget.eu API, run sensitivity scenarios and random draws, test whether the ranking survives the assumptions.',tools:['carbon-budget-api skill','Monte Carlo','scenarios'],out:'Budgets, rank stability'},
+ {id:'verify',n:'Verify claims',d:'Read each sentence of the report against the computed numbers. Fix or delete anything not backed by a table or a file.',tools:['numbers vs text','CSV diff'],out:'Corrected statements'},
+ {id:'report',n:'Report',d:'Write tables, one file per alternative, CSVs with a period as decimal separator, an interactive page, then branch and pull request.',tools:['Markdown','CSV','Artifact','gh pr'],out:'Files, page, PR #3'},
+ {id:'record',n:'Record',d:'Tick the task in TASKS.md, append the result and decisions to JOURNAL.md, keep PROMPT.md current, commit the finished task.',tools:['TASKS.md','JOURNAL.md','PROMPT.md','git commit'],out:'Updated state files, one commit per task'}];
+const R=[
+ {id:1,c:'var(--c1)',t:'Wall materials',sub:'8 exterior, 7 interior wall systems',kv:[['Systems','15'],['Criteria','3'],['Budget years','3'],['Markdown files','9']],
+  head:'Straw-bale outer wall 0.94 · clay-panel partition 0.78',
+  flow:['OBD CSV','60-year life cycle','carbonbudget.eu DE 2026/36/46','decade renovation timeline','product shortlist'],
+  note:'Median EPD per layer; embodied budget falls from 354.65 to 41.31 kgCO₂e/m² between 2026 and 2046, so mineral exterior walls use up to 111 % of the 2046 budget.'},
+ {id:2,c:'var(--c2)',t:'Six structural systems',sub:'500 m², 50 years, four criteria',kv:[['Alternatives','6'],['Indicators','17'],['Random draws','2,000'],['Top score','57.5']],
+  head:'Timber frame + straw 57.5 of 100',
+  flow:['six alternatives','structure + envelope','cost and ratings flagged as assumptions','sensitivity','report + 3 csv'],
+  note:'Only Environment and two well-being indicators come from the data; cost, service life and ratings are assumptions, listed with their effect on rank.'},
+ {id:3,c:'var(--c3)',t:'Three-level scoring',sub:'layer, building part, whole building',kv:[['Build-ups','42'],['Interfaces rated','142'],['Criteria','5'],['Top score','67.0']],
+  head:'Timber frame + straw 67.0 · steel second',
+  flow:['7 parts × 6 alternatives','Glaser per DIN 4108-3','interface compatibility','volume-weighted total','interactive page'],
+  note:'Two critical interfaces: bonded render on EPS (alternative 1) and lime plaster on straw (alternative 6, condensation 1.055 kg/m² against a 1.0 limit).'},
+ {id:4,c:'var(--c4)',t:'Research-loop practices',sub:'update this very page using RESEARCH-LOOPS.md',kv:[['Tasks done',2],['Journal entries',5],['Subagents','2'],['Test checks','11']],
+  head:'All five practices used: goal, task list, subagents, test first, journal',
+  flow:['goal in PROMPT.md','test written first and red','subagent per atomic step','journal + commit per task','same URL republished'],
+  note:'Rounds 1 to 3 used /loop only. Round 4 follows RESEARCH-LOOPS.md: a checkable goal, TASKS.md, PROMPT.md, JOURNAL.md, a subagent per atomic step, a failing test before the page change, and a commit per finished task.'}];
+const C=[ // round, stage, text, detail
+ [1,'profile','Rock wool looked like 1,353 kgCO₂e/m³','Facade panels (density ≈ 1,000 kg/m³) sat in the insulation category. Added a density cap of 200 kg/m³.'],
+ [1,'profile','One concrete entry at 45,279 kgCO₂e/m³','Unit error. Values above 1,500 per m³ are dropped.'],
+ [1,'check','2056 and 2066 budgets do not exist','The API range ends in 2050. Reported 2026, 2036, 2046 only.'],
+ [1,'verify','Renovation timeline buckets did not match the decade windows','Events at years 12, 24, 40 were keyed by exact year. Re-bucketed into the next decade window.'],
+ [1,'verify','Claim “over 70 % of carbon is in the build stage” was false','Checked against the table: it ranges from 48 % to 100 %. Rewritten.'],
+ [2,'model','KeyError ‘layers’ when summing wall indicators','A list key was added to the dict being iterated. Iterate a fixed key list instead.'],
+ [2,'verify','Six sentences in the report were not supported by the numbers','Examples: a durability effect of 1.4 points that was never computed; “halves renewal events” when it is one third; “near the middle” for a mid-to-low result.'],
+ [2,'report','Module D values were missing from the summary','Added the per-alternative D values.'],
+ [3,'model','Flat roofs showed condensation','Vapour control layer sd was 10 m for every roof. Warm flat roofs use sd 100 m.'],
+ [3,'model','Straw wall limit too strict','Absorbent layers allow 1.0 kg/m² in DIN 4108-3 Glaser, not 0.5. The result stays critical, now by a small margin.'],
+ [3,'model','Mass law made CLT outer walls fail sound','The estimate ignored the insulation and render layers. Used typical tested values for those build-ups.'],
+ [3,'check','A sensitivity scenario changed nothing','Scaling all lives in a job group is invisible to min–max scoring. Replaced by cutting only timber and bio-based layer lives by 30 %.'],
+ [3,'report','Report script crashed on a nested-quote f-string; a layer label read “Brick 365 365”','Precomputed the strings; renamed the material.'],
+ [3,'verify','Hard-coded sentences contradicted the computed tables','Ranks 3/4 swap claim, clay-plaster claim, and the “best mix” paragraph were rewritten from the numbers.'],
+ [4,'frame','RESEARCH-LOOPS.md was never read in rounds 1 to 3','Found only when asked. Round 4 starts from its template: goal, task list, prompt file, journal.'],
+ [4,'verify','Test took the first CSV row as the top score','scores_alternatives.csv is not ordered by rank; the test selects rank_weighted = 1.'],
+ [4,'record','No state files existed','TASKS.md, PROMPT.md and JOURNAL.md were created in analysis/loop/ before any other work.']];
+const PR=[
+ {k:'Goal with a checkable condition',file:'PROMPT.md',used:[false,false,false,true]},
+ {k:'Prioritized task list',file:'TASKS.md',used:[false,false,false,true]},
+ {k:'Subagent per atomic step',file:'(subagents)',used:[false,false,false,true]},
+ {k:'Test first',file:'test_loop.mjs',used:[false,false,false,true]},
+ {k:'Journal of every result',file:'JOURNAL.md',used:[false,false,false,true]}];
+const S={r:3,s:'verify'};
+const $=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild};
+function cnt(r,s){return C.filter(x=>x[0]===r&&x[1]===s).length}
+function draw(){
+  const cx=230,cy=230,rad=164,svg=document.getElementById('svg'),r=R[S.r-1];svg.style.setProperty('--cc',r.c);
+  const P=ST.map((s,i)=>{const a=-Math.PI/2+i*2*Math.PI/ST.length;return [cx+rad*Math.cos(a),cy+rad*Math.sin(a),a]});
+  let h='<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--mute)"/></marker><marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>';
+  for(let i=0;i<ST.length;i++){const a=P[i],b=P[(i+1)%ST.length],last=i===ST.length-1;
+    const ang=(Math.atan2(b[1]-a[1],b[0]-a[0])),d=34;
+    const x1=a[0]+Math.cos(ang)*d,y1=a[1]+Math.sin(ang)*d,x2=b[0]-Math.cos(ang)*(d+4),y2=b[1]-Math.sin(ang)*(d+4);
+    h+=`<path class="edge ${last?'back':''}" d="M${x1} ${y1} Q${cx+(x1+x2-2*cx)/2*.82} ${cy+(y1+y2-2*cy)/2*.82} ${x2} ${y2}" marker-end="url(#${last?'ao':'ar'})"/>`}
+  ST.forEach((s,i)=>{const [x,y]=P[i],k=cnt(S.r,s.id);
+    h+=`<g class="node ${S.s===s.id?'on':''}" data-s="${s.id}" tabindex="0" role="button" aria-label="${s.n}" transform="translate(${x} ${y})"><circle class="b" r="34"/><text class="n" y="-4">${i+1}</text><text class="t" y="12">${s.n.split(' ')[0]}</text>${s.n.split(' ')[1]?`<text class="t" y="24">${s.n.split(' ').slice(1).join(' ')}</text>`:''}${k?`<g class="badge" transform="translate(25 -25)"><circle r="10"/><text y="4">${k}</text></g>`:''}</g>`});
+  h+=`<text x="${cx}" y="${cy-14}" text-anchor="middle" font-family="Familjen Grotesk" font-weight="700" font-size="30" style="fill:${r.c}">Round ${r.id}</text><text x="${cx}" y="${cy+8}" text-anchor="middle" font-size="13">${r.t}</text><text x="${cx}" y="${cy+26}" text-anchor="middle" font-size="11" style="fill:var(--mute)">${r.sub}</text>`;
+  svg.innerHTML=h;
+  svg.querySelectorAll('.node').forEach(n=>{n.onclick=()=>{S.s=n.dataset.s;render()};n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();n.onclick()}}})}
+function panels(){
+  const s=ST.find(x=>x.id===S.s),i=ST.indexOf(s),r=R[S.r-1],k=C.filter(x=>x[0]===S.r&&x[1]===s.id);
+  document.getElementById('stage').innerHTML=`<div class="cap">Stage ${i+1} of ${ST.length}</div><h2 style="margin-top:2px">${s.n}</h2><p style="margin:6px 0 0">${s.d}</p><div style="margin-top:8px">${s.tools.map(t=>`<span class="tag">${t}</span>`).join('')}</div><p style="margin:8px 0 0"><span class="cap">Produces</span><br>${s.out}</p><p style="margin:8px 0 0"><span class="cap">Caught in round ${S.r}</span><br>${k.length?k.map(x=>x[2]).join('; '):'Nothing at this stage in this round.'}</p>`;
+  document.getElementById('round').innerHTML=`<div class="cap">Round ${r.id} result</div><h2 style="margin-top:2px;color:${r.c}">${r.head}</h2><div class="kv">${r.kv.map(x=>`<div><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}</div><div class="flow">${r.flow.map(x=>`<span>${x}</span>`).join('')}</div><p style="margin:10px 0 0;color:var(--mute)">${r.note}</p>`}
+function log(){
+  const bars=document.getElementById('bars'),mx=Math.max(1,...ST.map(s=>cnt(S.r,s.id)));
+  bars.style.setProperty('--cc',R[S.r-1].c);
+  bars.innerHTML=ST.map(s=>{const k=cnt(S.r,s.id);return `<button class="r ${S.s===s.id?'':'dim'}" data-s="${s.id}" style="all:unset;display:grid;grid-template-columns:130px minmax(0,1fr) 28px;gap:8px;align-items:center;font-size:12px;cursor:pointer"><span>${s.n}</span><i style="display:block;height:10px;border-radius:2px;width:${k?Math.max(6,100*k/mx):0}%;background:${S.s===s.id?R[S.r-1].c:'var(--soft)'};outline:1px solid var(--line)"></i><span class="mono" style="font-family:var(--f-m);text-align:right">${k}</span></button>`}).join('');
+  bars.querySelectorAll('button').forEach(b=>b.onclick=()=>{S.s=b.dataset.s;render()});
+  document.getElementById('log').innerHTML=C.filter(x=>x[0]===S.r).map(x=>`<li style="${x[1]===S.s?'border-left-color:'+R[S.r-1].c:''}"><b>${x[2]}</b><small>${ST.find(s=>s.id===x[1]).n} · ${x[3]}</small></li>`).join('')}
+function tabs(){const t=document.getElementById('tabs');t.innerHTML='';R.forEach(r=>{const b=$(`<button class="tab" style="--cc:${r.c}" aria-pressed="${r.id===S.r}">Round ${r.id}: ${r.t}<small>${C.filter(x=>x[0]===r.id).length} errors caught</small></button>`);b.onclick=()=>{S.r=r.id;render()};t.appendChild(b)})}
+function prac(){
+  const el=document.getElementById('pr');el.style.setProperty('--cc',R[S.r-1].c);
+  el.innerHTML=`<table class="pt"><thead><tr><th scope="col">Practice</th>${R.map(r=>`<th scope="col" class="${r.id===S.r?'sel':''}">Round ${r.id}</th>`).join('')}</tr></thead><tbody>${PR.map(p=>`<tr><td>${p.k}<small>${p.file}</small></td>${p.used.map((u,i)=>`<td class="${R[i].id===S.r?'sel':''}${u?'':' no'}" aria-label="${u?'used':'not used'}">${u?'✓':'–'}</td>`).join('')}</tr>`).join('')}</tbody></table>`}
+function render(){tabs();draw();panels();log();prac()}
+document.getElementById('th').onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=dark?'light':'dark'};
+render();
+</script>
