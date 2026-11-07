@@ -1,0 +1,50 @@
+{
+  "schema": "baucode-sparse-presentation-content/1",
+  "accepted_commit": "4ccebbc4e784d9eb6bd4549cc4bbfbf51ca4f889",
+  "latest_fetched_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "presentation_only": true,
+  "no_implementation_test_rerun": true,
+  "prior_tested_scope_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "prior_tested_scope_count": 199,
+  "prior199_match_accepted_git_commit": true,
+  "prior_nonwrapper_files_unchanged": 194,
+  "unchanged_accepted_tracked_scope": "All219 tracked files outside exactly five wrapper paths; includes implementation/tests/oracles/results/human website/photo. New provenance/evidence paths excluded from this pre-existing scope.",
+  "unchanged_accepted_tracked_scope_sha256": "de440559b21ab35d6ca1244c6a62c6b70cbb7f03eb6244f11eee8ccc3992d16b",
+  "unchanged_scope_count": 219,
+  "changed_tracked_paths": [
+    "demo/presentation/README.md",
+    "demo/presentation/index.html",
+    "demo/presentation/publication_manifest.json",
+    "demo/presentation/style.css",
+    "demo/presentation/wrapper_checks.json"
+  ],
+  "new_provenance_paths": [
+    "HUMAN_WEBSITE_SOURCE_IDENTITY.json",
+    "demo/presentation/HUMAN_WEBSITE_PACKAGING.md"
+  ],
+  "visual_gate": {
+    "source": "Parent relayed Lila/grokker final visual PASS; not a new browser run by publisher.",
+    "reported_time": "2026-11-07 16:40 CET (Europe/Berlin)",
+    "exact_html_sha256": "95a53ace050aab67b85b22cfe0528f24ae780fabcab2dd32f1018085e1dca29c",
+    "exact_css_sha256": "14ed5f30c94e9eb50de91a9b981eab360afcbe785c96b7f51d286fa85e7e74d8",
+    "wide": "PASS reported",
+    "250_percent_stacked_proxy": "PASS reported; proxy only, not all-device certification.",
+    "merge_authorized": false
+  },
+  "html_sha256": "95a53ace050aab67b85b22cfe0528f24ae780fabcab2dd32f1018085e1dca29c",
+  "css_sha256": "14ed5f30c94e9eb50de91a9b981eab360afcbe785c96b7f51d286fa85e7e74d8",
+  "manifest_sha256": "65315afccf8ba514537f79c8df464273c4a5c3b50c6fea14c977a4e7c60db419",
+  "manifest_entries": 38,
+  "manifest_all_entries_present_and_match": true,
+  "static_wrapper_relative_links": 54,
+  "limits": "No fresh functional/test claims; prior exact20 19/20 FAIL and gallery28/29 FAIL retained; separate preservation50paths, optional UNKNOWN/NOTRUN and scientific limits unchanged. Human docs are unchanged; their inline JS/external fonts remain authored.",
+  "publication_allowlist_sha256": {
+    "HUMAN_WEBSITE_SOURCE_IDENTITY.json": "f363122bd5f3a7811631c8e468cdd74bff05928b17a3fa72c7fc9a008d42a841",
+    "demo/presentation/HUMAN_WEBSITE_PACKAGING.md": "0d5c10f6692ccf7e5210d69f8ba0015253f5e2416a2e3022c1b1bfc328c80864",
+    "demo/presentation/README.md": "481b62b5f39371038922b04065812dcf188ab3a259ea52691db6ca53d065267a",
+    "demo/presentation/index.html": "95a53ace050aab67b85b22cfe0528f24ae780fabcab2dd32f1018085e1dca29c",
+    "demo/presentation/publication_manifest.json": "65315afccf8ba514537f79c8df464273c4a5c3b50c6fea14c977a4e7c60db419",
+    "demo/presentation/style.css": "14ed5f30c94e9eb50de91a9b981eab360afcbe785c96b7f51d286fa85e7e74d8",
+    "demo/presentation/wrapper_checks.json": "ec0431516fb67dba939a03ce824f582892ff343dfd8e2958548015cf829f3d69"
+  }
+}

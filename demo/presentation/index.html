@@ -3,180 +3,249 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="BauCode landscape pitch: why, research question, loop, saved synthetic response and honest limits. Offline HTML; no live calculation.">
-<title>BauCode · landscape 180s pitch</title>
+<meta name="description" content="BauCode sparse landscape pitch: why, research question, loop diagram, saved 185→230 synthetic response, limits. Offline HTML; no live calculation.">
+<title>BauCode · sparse landscape pitch</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#why">Skip to pitch</a>
 <nav class="topnav" aria-label="Pitch panels">
-  <span class="brand">BauCode · 180s landscape · SYNTHETIC saved outputs</span>
+  <span class="brand">BauCode · 180s · SYNTHETIC saved · proposal only</span>
   <ul>
-    <li><a href="#why">1 Why · 20s</a></li>
-    <li><a href="#question">2 Question · 45s</a></li>
-    <li><a href="#loop">3 Loop · 40s</a></li>
-    <li><a href="#result">4 Result · 35s</a></li>
-    <li><a href="#limits">5 Limits · 25s</a></li>
-    <li><a href="#next">6 Next · 15s</a></li>
+    <li><a href="#why">1 Why</a></li>
+    <li><a href="#question">2 Question</a></li>
+    <li><a href="#loop">3 Loop</a></li>
+    <li><a href="#result">4 Result</a></li>
+    <li><a href="#limits">5 Limits</a></li>
+    <li><a href="#next">6 Next</a></li>
+    <li><a href="#appendix">Appendix</a></li>
   </ul>
 </nav>
 <div class="deck" tabindex="0" aria-label="Horizontal pitch deck; scroll or use panel anchors">
 
+<!-- 1 WHY · 20s -->
 <section class="panel" id="why" aria-labelledby="why-title">
   <div class="panel-inner">
-    <span class="badge">SYNTHETIC · draft presentation · not ready to merge</span>
-    <p class="time">00:00–00:20 · 20 seconds</p>
-    <div class="grid-2">
+    <span class="badge">SYNTHETIC · not ready to merge</span>
+    <p class="time">00:00–00:20 · 20s</p>
+    <div class="grid-team">
       <div>
-        <h1 id="why-title">Why an architect benefits</h1>
-        <p class="lead">Before interpreting a carbon number, the architect needs the wall area, each layer, the reference quantity and the selected lifecycle modules in view. A missing declaration must stay visible—not become zero, a preferred material or a health claim.</p>
-        <p>BauCode is a compact offline walkthrough around an existing Python demo of <strong>saved</strong> synthetic inputs and outputs—not a live browser calculator.</p>
-        <p class="links"><a class="button" href="../output/gallery/gallery.html">Open saved assembly gallery</a><a href="README.md">Portable run guide</a></p>
+        <h1 id="why-title">Team website first, then our checks</h1>
+        <p class="one-liner">Lead with the human team site; this pitch then adds the synthetic reliability loop and stronger evaluations—support, not a replacement.</p>
+        <p class="links">
+          <a class="button" href="../../docs/index.html">Open team website</a>
+          <a href="../../docs/lab.html">Lab</a>
+          <a href="../../docs/loop.html">Research loop</a>
+        </p>
+        <p class="site-caveat">Human website uses JavaScript and external Google Fonts; exploratory structural-system rankings are not validated recommendations. This pitch stays offline / noJS support.</p>
+        <p class="provenance">AI-assisted implementation; agent-derived synthetic expectations, not independent human or scientific validation.</p>
+        <p class="links"><a href="../output/gallery/gallery.html">Saved gallery</a><a href="#question">Our added checks →</a><a href="#appendix">Appendix</a></p>
       </div>
-      <div class="team">
-        <figure>
+      <div>
+        <figure class="team-photo">
           <img src="team.jpg" width="1500" height="1125" loading="lazy" alt="Supplied team photograph; names below are a roster, not face-position labels.">
-          <figcaption>Owner-supplied photo. Roster roles are supplied labels, not claims about authorship of particular changes.</figcaption>
+          <figcaption>Owner-supplied photo. Roster roles are labels, not face-position or contribution claims.</figcaption>
         </figure>
-        <div>
-          <h3>Team</h3>
-          <ul>
-            <li>Mariia Liaschchenko — Architect &amp; Researcher</li>
-            <li>Emre Yurtseven — AI Engineer</li>
-            <li>Huyen Tran — PM/AI Engineer</li>
-            <li>Salahuddin Uqaili — AI Coach</li>
-          </ul>
-        </div>
+        <ul class="roster">
+          <li>Mariia Liaschchenko — Architect &amp; Researcher</li>
+          <li>Emre Yurtseven — AI Engineer</li>
+          <li>Huyen Tran — PM/AI Engineer</li>
+          <li>Salahuddin Uqaili — AI Coach</li>
+        </ul>
       </div>
     </div>
-    <nav class="panel-nav" aria-label="Why panel"><span></span><a href="#question">Next · research question →</a></nav>
+    <nav class="panel-nav" aria-label="Why"><span></span><a href="#question">Next →</a></nav>
   </div>
 </section>
 
+<!-- 2 QUESTION · 45s -->
 <section class="panel" id="question" aria-labelledby="question-title">
   <div class="panel-inner">
-    <p class="time">00:20–01:05 · 45 seconds</p>
-    <h2 id="question-title">2. Bounded research question</h2>
-    <p class="rq">Can this synthetic pipeline keep selected module boundaries and missing data explicit, respond to a known input change, and detect a deliberately injected fault?</p>
-    <p>Scope is a small, replaceable synthetic example with exposed agent-derived expectations—not GOLD, holdout, real-wall equivalence, health, compliance or general accuracy.</p>
-    <p>Same invented <strong>10 m², three-layer wall</strong>; the known input change is L2 thickness <strong>100 mm → 160 mm</strong> (distinct wall identifier). No functional or thermal equivalence is established.</p>
+    <p class="time">00:20–01:05 · 45s</p>
+    <h2 id="question-title">One bounded question</h2>
+    <p class="rq-brief">Explicit modules. Known input change. Detectable fault.</p>
+    <div class="chips" aria-label="Scope chips">
+      <span class="chip">10 m² · 3 layers · SYNTHETIC</span>
+      <span class="chip">L2 100 → 160 mm</span>
+      <span class="chip muted">Not GOLD / holdout / real-wall</span>
+    </div>
+    <details class="soft">
+      <summary>Full research question</summary>
+      <p>Can this synthetic pipeline keep selected module boundaries and missing data explicit, respond to a known input change, and detect a deliberately injected fault?</p>
+    </details>
     <p class="links">
-      <a href="../input/synthetic_wall.json">Original input JSON</a>
-      <a href="../input/synthetic_wall_replaced.json">Replacement input JSON</a>
-      <a href="../../docs/INPUT_SCHEMA.md">Replaceable input schema</a>
+      <a href="../input/synthetic_wall.json">Original input</a>
+      <a href="../input/synthetic_wall_replaced.json">Replacement input</a>
+      <a href="../../docs/INPUT_SCHEMA.md">Input schema</a>
     </p>
-    <nav class="panel-nav" aria-label="Question panel"><a href="#why">← Previous</a><a href="#loop">Next · the loop →</a></nav>
+    <nav class="panel-nav" aria-label="Question"><a href="#why">← Prev</a><a href="#loop">Next →</a></nav>
   </div>
 </section>
 
+<!-- 3 LOOP · 40s -->
 <section class="panel" id="loop" aria-labelledby="loop-title">
   <div class="panel-inner">
-    <p class="time">01:05–01:45 · 40 seconds</p>
-    <h2 id="loop-title">3. Hypothesis → test → failure → fix → retest</h2>
-    <p>AI-assisted work stays bounded by inspectable artifacts: fixed synthetic expectations, malformed-input probes, saved failure evidence and human-main preservation. Review inspects inputs, source and exits rather than generated confidence.</p>
-    <div class="loop" role="list">
-      <article role="listitem"><strong>Hypothesis</strong><p>Selected modules and missing data can stay explicit under a replaceable SYNTHETIC recipe.</p></article>
-      <article role="listitem"><strong>Test</strong><p>Frozen original suite of exposed synthetic regressions; gallery structural checks; saved default, replacement and gallery generation.</p></article>
-      <article role="listitem"><strong>Failure</strong><p class="notice" style="padding:.45rem .55rem;margin:0">Not all green: original suite <strong>19/20</strong> (78/79 probes), exit 1; gallery <strong>28/29</strong>, exit 1—old-base preservation assertions, left immutable.</p></article>
-      <article role="listitem"><strong>Fix (separate)</strong><p>Preservation v1 protects <strong>50 paths</strong> (40 bytes + 9 deletions + run.py AST); <strong>4</strong> mutation controls rejected. Not all-green 20 or whole-repo protection.</p></article>
-      <article role="listitem"><strong>Retest</strong><p>Deliberate density fault C07 exits 1 (C19 remains). Saved P2 <strong>15/15</strong>; HumanNode <strong>14 PASS</strong>. History guards <strong>2/15 → 15/15</strong> are recorded prior before/after—not a new measurement here.</p></article>
+    <p class="time">01:05–01:45 · 40s</p>
+    <h2 id="loop-title">Inspectable loop</h2>
+    <div class="flow" role="list" aria-label="Hypothesis to retest">
+      <div class="flow-step" role="listitem"><strong>Hypothesis</strong><span>Keep modules &amp; gaps explicit</span></div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem"><strong>Test</strong><span>Frozen synthetic suite</span></div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step fail-step" role="listitem"><strong>Failure</strong><span>19/20 · gallery 28/29 · exit 1</span></div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step ok-step" role="listitem"><strong>Fix</strong><span>Separate 50-path v1 gate</span></div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem"><strong>Retest</strong><span>C07 fault exits 1</span></div>
     </div>
-    <p class="links">
-      <a href="../../review-evidence/preservation-v1-20261107/03_exact20_original.json">Original suite record</a>
-      <a href="../../tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md">Preservation report</a>
-      <a href="../../tests/human_main_preservation_v1.json">Frozen v1 policy</a>
-      <a href="../../review-evidence/preservation-v1-20261107/02_policy_falsification.json">Mutation controls</a>
-      <a href="../../review-evidence/preservation-v1-20261107/10_p2.json">P2 15/15</a>
-      <a href="../../review-evidence/preservation-v1-20261107/11_human_node.json">HumanNode record</a>
-    </p>
-    <nav class="panel-nav" aria-label="Loop panel"><a href="#question">← Previous</a><a href="#result">Next · saved result →</a></nav>
+    <div class="chips">
+      <span class="chip fail">Original FAIL kept</span>
+      <span class="chip ok">v1 50/50 · not all-green 20</span>
+      <span class="chip warn">C19 remains on fault run</span>
+    </div>
+    <details class="soft">
+      <summary>Evidence links &amp; recorded detail</summary>
+      <p>Old-base preservation assertions left immutable. Fix scope: 40 byte paths + 9 deletions + run.py AST; 4 mutation controls rejected—not whole-repo protection. P2 15/15 and HumanNode 14 PASS are saved records. History guards 2/15→15/15 are prior before/after only—not a new measurement here.</p>
+      <p class="links">
+        <a href="../../review-evidence/preservation-v1-20261107/03_exact20_original.json">Exact20 record</a>
+        <a href="../../review-evidence/preservation-v1-20261107/08_original_gallery_checks.json">Gallery 28/29</a>
+        <a href="../../tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md">Preservation report</a>
+        <a href="../../tests/human_main_preservation_v1.json">v1 policy</a>
+        <a href="../../review-evidence/preservation-v1-20261107/02_policy_falsification.json">Mutation controls</a>
+        <a href="../../review-evidence/preservation-v1-20261107/10_p2.json">P2</a>
+        <a href="../../review-evidence/preservation-v1-20261107/11_human_node.json">HumanNode</a>
+      </p>
+    </details>
+    <nav class="panel-nav" aria-label="Loop"><a href="#question">← Prev</a><a href="#result">Next →</a></nav>
   </div>
 </section>
 
+<!-- 4 RESULT · 35s -->
 <section class="panel" id="result" aria-labelledby="result-title">
   <div class="panel-inner">
-    <p class="time">01:45–02:20 · 35 seconds</p>
-    <h2 id="result-title">4. One saved response + negative control</h2>
-    <div class="grid-2">
-      <div>
-        <div class="table">
-          <table>
-            <caption>Saved results · kgCO₂e for the whole 10 m² wall, not per m²</caption>
-            <thead><tr><th scope="col">Quantity</th><th scope="col">100 mm</th><th scope="col">160 mm</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">A1–A3</th><td><span class="big-num">185</span></td><td><span class="big-num">230</span></td></tr>
-              <tr><th scope="row">C1–C4 known subtotal</th><td>21.2</td><td>30.2</td></tr>
-              <tr><th scope="row">A1–A3 + C1–C4 selected</th><td>206.2</td><td>260.2</td></tr>
-              <tr><th scope="row">D — separate, partial</th><td>−2; incomplete</td><td>−2; incomplete</td></tr>
-              <tr><th scope="row">Known mass subtotal</th><td>150 kg; incomplete</td><td>180 kg; incomplete</td></tr>
-            </tbody>
-          </table>
+    <p class="time">01:45–02:20 · 35s</p>
+    <h2 id="result-title">Saved response</h2>
+    <div class="result-stage">
+      <div class="bars" aria-label="A1–A3 whole-wall kgCO2e bar comparison">
+        <p class="unit">A1–A3 · kgCO₂e · whole 10 m² wall · saved, not live</p>
+        <div class="stat-pair" aria-hidden="true">
+          <span class="from">185</span><span class="arrow">→</span><span class="to">230</span>
         </div>
-        <p>L2 A1–A3 responds <strong>75 → 120</strong>; L1 and L3 remain 60 and 50. L2 D and L3 mass stay <strong>UNKNOWN</strong>. D is never subtracted. No “best wall” claim.</p>
+        <svg viewBox="0 0 640 220" role="img" aria-labelledby="bar-title bar-desc">
+          <title id="bar-title">Saved A1–A3: 185 to 230 kgCO2e</title>
+          <desc id="bar-desc">Two bars only. 100 mm input A1–A3 equals 185. 160 mm input A1–A3 equals 230. Scale maximum 230.</desc>
+          <!-- scale max = 230; plot height 160px; 185→128.7; 230→160 -->
+          <text x="40" y="24" fill="#52646b" font-size="14" font-family="system-ui,sans-serif">100 mm L2</text>
+          <text x="360" y="24" fill="#52646b" font-size="14" font-family="system-ui,sans-serif">160 mm L2</text>
+          <rect x="40" y="48" width="200" height="160" fill="#edf3f4" rx="8"></rect>
+          <rect x="360" y="48" width="200" height="160" fill="#edf3f4" rx="8"></rect>
+          <rect x="40" y="79.3" width="200" height="128.7" fill="#7a929a" rx="8"></rect>
+          <rect x="360" y="48" width="200" height="160" fill="#00576b" rx="8"></rect>
+          <text x="140" y="155" text-anchor="middle" fill="#fff" font-size="36" font-weight="800" font-family="system-ui,sans-serif">185</text>
+          <text x="460" y="140" text-anchor="middle" fill="#fff" font-size="36" font-weight="800" font-family="system-ui,sans-serif">230</text>
+        </svg>
+        <p class="bars-caption">L2 A1–A3 75→120; L1/L3 stay 60 &amp; 50. L2 D and L3 mass stay <strong>UNKNOWN</strong>. D never subtracted. No “best wall”.</p>
       </div>
-      <div>
-        <p class="notice"><strong>Negative control (saved):</strong> <code>--fault-hook C07-density-x2</code> deliberately distorts the density path. C07 fails and the harness exits <strong>1</strong>; existing C19 failure remains. Not a browser execution.</p>
+      <div class="control-card">
+        <p><strong>Negative control</strong></p>
+        <p><code>--fault-hook C07-density-x2</code> → C07 FAIL, harness exit <strong>1</strong>. Existing C19 remains.</p>
+        <p class="footnote">Saved record—not browser execution. Charts here are static facts from saved outputs.</p>
         <p class="links">
-          <a href="../output/default/result.json">Original result</a>
-          <a href="../output/replaced/result.json">Replacement result</a>
-          <a href="../output/replaced/layers.csv">Layer CSV</a>
-          <a href="../output/replaced/report.md">Replacement report</a>
-          <a href="../../review-evidence/preservation-v1-20261107/04_fault_original.json">Density fault exit 1</a>
-          <a href="../../tests/results_preservation_v1_fault_20261107.json">Fault details</a>
-          <a href="../../review-evidence/preservation-v1-20261107/08_original_gallery_checks.json">Gallery 28/29</a>
-          <a href="../output/gallery/gallery.html">200 records / 25 assemblies</a>
+          <a href="../output/default/result.json">185 result</a>
+          <a href="../output/replaced/result.json">230 result</a>
+          <a href="../../review-evidence/preservation-v1-20261107/04_fault_original.json">Fault exit 1</a>
         </p>
-        <p class="footnote">Generated records are a larger demonstration, not 200 independent evaluations. Default/replacement/gallery generation exit 0 (saved).</p>
       </div>
     </div>
-    <nav class="panel-nav" aria-label="Result panel"><a href="#loop">← Previous</a><a href="#limits">Next · limits →</a></nav>
+    <nav class="panel-nav" aria-label="Result"><a href="#loop">← Prev</a><a href="#limits">Next →</a></nav>
   </div>
 </section>
 
+<!-- 5 LIMITS · 25s -->
 <section class="panel" id="limits" aria-labelledby="limits-title">
   <div class="panel-inner">
-    <p class="time">02:20–02:45 · 25 seconds</p>
-    <h2 id="limits-title">5. Honest limits</h2>
-    <ul class="compact">
-      <li>All values are invented SYNTHETIC data. No real-wall, GOLD, holdout, general accuracy, health, safety or compliance claim.</li>
-      <li>A1–A3 + C1–C4 is a selected-module subtotal, not a complete lifecycle: A4, A5 and B are excluded. D remains separate; unknown is not zero.</li>
-      <li>Wall C/D coverage is conservatively coupled to A1–A3-known layers—not an independent completeness guarantee. C/D subtotals omit layers with unknown A1–A3. Some policies remain DRAFT; optional probes remain <strong>1 PASS / 4 UNKNOWN / 2 NOT RUN</strong>.</li>
-      <li>No U-value is calculated. U-value means thermal transmittance W/(m²K), not conductivity; functional equivalence remains unverified. Unit/reference-equivalence caveats already present in the demo artifacts.</li>
-      <li>Legacy health-report findings are distinct from newer synthetic C19 rendering checks. Minor gallery chart clipping has a table fallback. Legacy missing <code>products.csv</code> remains a separate pipeline limitation.</li>
-      <li>Preservation v1 is a narrow, separately versioned gate—not a claim that the original 20 cases are all green or that the whole repository is protected.</li>
-    </ul>
-    <nav class="panel-nav" aria-label="Limits panel"><a href="#result">← Previous</a><a href="#next">Next · reproduce →</a></nav>
+    <p class="time">02:20–02:45 · 25s</p>
+    <h2 id="limits-title">Limits stay visible</h2>
+    <div class="limits-grid">
+      <article class="limit-card"><strong>Synthetic only</strong><p>Invented data. No real-wall, GOLD, holdout, accuracy, health, safety or compliance claim.</p></article>
+      <article class="limit-card"><strong>Selected modules</strong><p>A1–A3 + C1–C4 only. A4/A5/B excluded. <strong>D separate</strong>. Unknown ≠ 0.</p></article>
+      <article class="limit-card"><strong>C/D coupling</strong><p>C/D omit layers with unknown A1–A3—not independent completeness.</p></article>
+      <article class="limit-card"><strong>Not all green</strong><p>19/20 and gallery 28/29 stay FAIL. Separate 50-path v1 ≠ whole-repo PASS.</p></article>
+      <article class="limit-card"><strong>Optional probes</strong><p>1 PASS / 4 UNKNOWN / 2 NOT RUN. Legacy <code>products.csv</code> missing.</p></article>
+      <article class="limit-card"><strong>No U-value / equivalence</strong><p>No thermal transmittance calculated; functional equivalence unverified.</p></article>
+    </div>
+    <p class="footnote">Human team report reviewed separately outside this pitch; preexisting inconsistencies there are not imported (no rankings, health, superiority, Monte Carlo or engineering guidance).</p>
+    <nav class="panel-nav" aria-label="Limits"><a href="#result">← Prev</a><a href="#next">Next →</a></nav>
   </div>
 </section>
 
+<!-- 6 NEXT · 15s -->
 <section class="panel" id="next" aria-labelledby="next-title">
   <div class="panel-inner">
-    <p class="time">02:45–03:00 · 15 seconds</p>
-    <h2 id="next-title">6. Reproduce, then replace the input</h2>
-    <p>Viewing this page or the saved gallery works offline. <strong>Actual recalculation requires Python 3 in a terminal</strong>, from the extracted bundle root; stdlib only—no API, login or pip dependencies.</p>
-    <pre><code>python3 demo/run_demo.py
+    <p class="time">02:45–03:00 · 15s</p>
+    <h2 id="next-title">Next step</h2>
+    <p class="rq-brief">Adjudicate real sources and intended policies before any decision support.</p>
+    <p class="one-liner">This page shows <strong>saved</strong> outputs. Regeneration needs Python 3 in a terminal—not the browser.</p>
+    <p class="links">
+      <a class="button" href="#appendix">Terminal recipes</a>
+      <a href="../output/gallery/gallery.html">Gallery</a>
+      <a href="README.md">Run guide</a>
+      <a href="publication_manifest.json">Content hashes</a>
+    </p>
+    <p class="footer-note">Proposal only · no merge authorization · navigation does not execute tests · <a href="#why">Restart</a></p>
+    <nav class="panel-nav" aria-label="Next"><a href="#limits">← Prev</a><a href="#appendix">Appendix →</a></nav>
+  </div>
+</section>
+
+<!-- APPENDIX (untimed detail) -->
+<section class="panel" id="appendix" aria-labelledby="appendix-title">
+  <div class="panel-inner">
+    <p class="time">Appendix · detail, not pitch timing</p>
+    <h2 id="appendix-title">Recipes, table, evidence</h2>
+    <div class="appendix-cols">
+      <div>
+        <h3>Terminal regeneration (Python 3 stdlib)</h3>
+        <pre><code>python3 demo/run_demo.py
 python3 demo/run_demo.py --input demo/input/synthetic_wall_replaced.json --out demo/output/replaced
 python3 demo/run_gallery.py
 
-# Windows launcher (same scripts):
 py -3 demo/run_demo.py
 py -3 demo/run_demo.py --input demo/input/synthetic_wall_replaced.json --out demo/output/replaced
 py -3 demo/run_gallery.py</code></pre>
-    <details>
-      <summary>Own-input recipe and scope of replay</summary>
-      <p>Copy the original JSON to <code>my_wall.json</code>, keep its SYNTHETIC label and edit according to the linked schema. Then:</p>
-      <pre><code>python3 demo/run_demo.py --input my_wall.json --out demo/output/mine --no-expected
-# or: py -3 demo/run_demo.py --input my_wall.json --out demo/output/mine --no-expected</code></pre>
-      <p><code>--no-expected</code> provides no independent oracle comparison. Default/replacement expected files are linked below; derive any new expected values independently. Full repository tests and preservation replay need the original Git checkout and pinned objects, not just this portable bundle.</p>
-      <p class="links">
-        <a href="../expected/synthetic_wall.expected.json">Original expected</a>
-        <a href="../expected/synthetic_wall_replaced.expected.json">Replacement expected</a>
-        <a href="../../review-evidence/preservation-v1-20261107/after.json">Saved candidate content hashes</a>
-      </p>
-    </details>
-    <p><strong>Next step:</strong> independently adjudicate real source data, intended policies and equivalent wall functions before using this as decision support. This HTML edit proposal is not a merge authorization.</p>
-    <p class="footer-note">Static presentation only. Navigation opens local saved artifacts; it does not execute tests. Original evidence stays immutable. Readiness is not implied by opening this page. · <a href="#why">Back to start</a> · <a href="publication_manifest.json">Portable content hashes</a></p>
-    <nav class="panel-nav" aria-label="Next panel"><a href="#limits">← Previous</a><a href="#why">↻ Restart</a></nav>
+        <details class="soft">
+          <summary>Own-input recipe</summary>
+          <pre><code>python3 demo/run_demo.py --input my_wall.json --out demo/output/mine --no-expected
+# or: py -3 …</code></pre>
+          <p><code>--no-expected</code> has no oracle. Full suite/preservation replay needs the original Git checkout.</p>
+        </details>
+      </div>
+      <div>
+        <h3>Saved subtotals (whole 10 m²)</h3>
+        <div class="table">
+          <table>
+            <thead><tr><th scope="col">Quantity</th><th scope="col">100 mm</th><th scope="col">160 mm</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A1–A3</th><td>185</td><td>230</td></tr>
+              <tr><th scope="row">C1–C4 known</th><td>21.2</td><td>30.2</td></tr>
+              <tr><th scope="row">A1–A3 + C1–C4</th><td>206.2</td><td>260.2</td></tr>
+              <tr><th scope="row">D separate</th><td>−2; incomplete</td><td>−2; incomplete</td></tr>
+              <tr><th scope="row">Known mass</th><td>150 kg; incomplete</td><td>180 kg; incomplete</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="links">
+          <a href="../output/replaced/layers.csv">Layer CSV</a>
+          <a href="../output/replaced/report.md">Replacement report</a>
+          <a href="../expected/synthetic_wall.expected.json">Expected 185</a>
+          <a href="../expected/synthetic_wall_replaced.expected.json">Expected 230</a>
+          <a href="../../tests/results_preservation_v1_fault_20261107.json">Fault details</a>
+          <a href="../../review-evidence/preservation-v1-20261107/after.json">Candidate hashes</a>
+          <a href="../output/gallery/gallery.html">200 / 25 demo gallery</a>
+        </p>
+        <p class="footnote">200 records / 25 assemblies = demonstration, not 200 evaluations. Default/replacement/gallery generation exit 0 (saved).</p>
+      </div>
+    </div>
+    <nav class="panel-nav" aria-label="Appendix"><a href="#next">← Prev</a><a href="#why">↻ Start</a></nav>
   </div>
 </section>
 
