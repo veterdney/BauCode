@@ -1,54 +1,50 @@
 # SYNTHETIC wall demo
 
-**What.** A one-command, stdlib-only demo that turns a synthetic wall description (JSON) into
-`result.json`, `layers.csv` and `report.md`,
-using the same production conversion code as `analysis/` (`lib.py`, `model.py`).
-It needs no real data: `analysis/products.csv` is not required.
+Start with the unchanged human [team website](../docs/index.html), [lab](../docs/lab.html) and [research loop](../docs/loop.html); then open the [sparse presentation](presentation/index.html) for added checks. Human-site JavaScript and external Google Fonts remain authored; exploratory rankings are not validated recommendations or this demo's evaluation method. The presentation wrapper is offline/no-JavaScript and displays saved outputs, not a browser calculator. Repository HTML links are files, not a verified deployed Pages URL.
 
-**Why.** The legacy pipeline (`python analysis/run.py`) cannot run without the Oekobaudat-derived `analysis/products.csv`,
-which is not in the repository.
-The demo exercises the reference-quantity, unit, density, module-coverage and unknown-handling paths on invented numbers,
-so they can be checked by hand.
+## Run from the repository root
 
-**Run** (from the repository root):
+Python 3 standard library only: no pip packages, API or real dataset needed. `run_demo.py` uses production conversions in `analysis/lib.py` and `analysis/model.py` and writes JSON, CSV and Markdown.
 
-```
-python demo/run_demo.py
+Linux / macOS:
+```sh
+python3 demo/run_demo.py
+python3 demo/run_demo.py --input demo/input/synthetic_wall_replaced.json --out demo/output/replaced
+python3 demo/run_gallery.py
 ```
 
-Expected: `EVALUATED`, exit 0, A1-A3 total 185 kgCO2e, and
-`matches synthetic_wall.expected.json (23 agent hand-derived values)`.
-Outputs land in `demo/output/default/`.
-
-**Replace the input.** See the recipe in [`docs/INPUT_SCHEMA.md`](../docs/INPUT_SCHEMA.md#replacing-the-input-recipe).
-Worked example:
-
-```
-python demo/run_demo.py --input demo/input/synthetic_wall_replaced.json --out demo/output/replaced
+Windows, if the Python launcher is installed:
+```powershell
+py -3 demo/run_demo.py
+py -3 demo/run_demo.py --input demo/input/synthetic_wall_replaced.json --out demo/output/replaced
+py -3 demo/run_gallery.py
 ```
 
-**Generated gallery.** `python demo/run_gallery.py` writes a standalone HTML/JSON/CSV gallery of 25 generated fictional assemblies;
-see [`GALLERY.md`](GALLERY.md). Generated records are a demonstration, not evaluation cases.
+These commands genuinely regenerate outputs; opening saved HTML or evidence does not execute Python/tests. The default and replacement use the same declared 10 m2 wall area with L2 thickness 100 -> 160 mm, yielding A1-A3 185 -> 230 kgCO2e in the saved examples. Same area does not establish functional/thermal equivalence. Files are in `demo/output/default/` and `demo/output/replaced/`; the [standalone gallery](output/gallery/gallery.html) covers 200 generated records / 25 fictional assemblies, not 200 independent evaluations. See [gallery scope](GALLERY.md).
 
-**Regression cases.** `python tests/run_exact20.py --out tests/results_after.json --label after --overwrite`
-runs the 20 frozen synthetic cases; details in [`tests/REPORT.md`](../tests/REPORT.md).
+## Replace the input
 
-**Limits.**
+Follow the [schema and replacement recipe](../docs/INPUT_SCHEMA.md#replacing-the-input-recipe). Copy a sample to `my_wall.json`, retain the SYNTHETIC label, and edit documented fields:
 
-- SYNTHETIC only; the input must say so and the output says so on every artefact.
-- Expected values are agent hand-derived and not human-reviewed.
-- GWP only; no B modules, replacement cycles, U-values, rankings or scores.
-- The partial-C, A1-A3 overlap, D and scenario rules are DRAFT policies (see `docs/INPUT_SCHEMA.md`).
-- Nothing here validates the legacy rankings, the "preferred" systems or the well-being/health scores in `analysis/`.
-- "A1-A3 + C1-C4 known subtotal" covers the selected modules only; A4, A5 and B modules are outside scope,
-  so "complete for selected modules" never means a complete life cycle.
-  The result key stays `a1_c_known_subtotal` because the frozen expected files address it by that path.
+```sh
+python3 demo/run_demo.py --input my_wall.json --out demo/output/mine --no-expected
+# Windows: py -3 demo/run_demo.py --input my_wall.json --out demo/output/mine --no-expected
+```
 
-**Compatibility and scope (upstream dataset).**
-Upstream PR #4 (commit `63f8bdb3`) adds `data/Building material property dataset.csv` and `.md`,
-a curated dataset mixing sources and assumed values.
-This branch stays on base `f3575fb2` and does not contain that commit (not present in this checkout),
-so nothing here touches it; when merged, it is preserved untouched.
-The demo does not consume it, and it is not a drop-in `analysis/products.csv` (different columns and provenance).
-This synthetic addition has no adapter for it (note: upstream PR #5, dddec8d5, separately adds analysis/levels/dataset_fill.py for the 3-level scoring; not integrated or tested here), its ratings are not an oracle for any check here,
-and this branch performs no dataset validation.
+`--no-expected` provides no independent oracle comparison. Default/replacement expectations are [agent-derived files](expected/synthetic_wall.expected.json), not human-reviewed GOLD; all fixed cases are exposed regressions, not holdout. Do not overwrite historical audit results when replaying checks; use new result names in a full Git checkout.
+
+## Recorded evidence, not a new audit
+
+- [Final command/exit report](../review-evidence/landscape-final-20261107/REPORT.md) and [detailed summary](../review-evidence/landscape-final-20261107/SUMMARY.json).
+- [Presentation-only binding](../review-evidence/sparse-presentation-20261107/SOURCE_BINDING.json) distinguishes prior tested source from later wrapper changes. This docs-only follow-up has no functional changes or new test/CI-green claim.
+- Original unchanged exact20: **19 PASS / 1 FAIL**, 78/79 required probes; gallery: **28 PASS / 1 FAIL**. Failures remain FAIL (old-base preservation assertions). Deliberate C07 density fault exits 1 alongside existing C19.
+- Separate historical preservation v1: **50 protected paths**, four isolated mutation controls rejected. Not all-green20 or whole-repository protection. [Pinned policy](../tests/human_main_preservation_v1.json) and [scope/report](../tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md) remain unchanged. These two README paths are outside that pinned human-main delta (which includes `analysis/README.md`); the historical PASS is not a whole-repository guarantee or a fresh docs-candidate audit. No new preservation PASS is claimed.
+- Optional probes remain 1 PASS / 4 UNKNOWN / 2 NOT RUN. Full preservation replay requires original Git objects/checkout; saved files or a portable ZIP are not a full audit.
+
+## Limits and current integration
+
+SYNTHETIC only. No scientific, general-accuracy, real-wall, health, compliance or preferred-system claim. Legacy rankings/scores are exploratory and unvalidated here; no U-value or functional equivalence is calculated. Historical legacy health findings are separate from synthetic C19 rendered checks.
+
+Selected A1-A3 + C1-C4 known subtotal excludes A4/A5/B: it is not a complete lifecycle. D is separate and never netted against A-C; UNKNOWN is not zero. Wall C/D coverage conservatively counts only A1-A3-known layers, not independently complete C/D coverage. Partial C, aggregate/submodule overlap and scenario rules remain DRAFT; see the schema. Incoming numeric hardening is bounded, not universal overflow handling.
+
+The integrated repository now includes the human [curated dataset](../data/Building%20material%20property%20dataset.csv) and [levels dataset adapter](../analysis/levels/dataset_fill.py). The synthetic demo does not consume that dataset/adapter or validate their ratings, assumptions or equivalence. They are not a drop-in `analysis/products.csv` for the legacy pipeline, which still cannot run without that missing file. This follow-up changes only the two README files; human website/report, calculations, datasets, tests/oracles and recorded results are untouched.
