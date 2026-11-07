@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* layout: loop diagram left, stage detail right; cycle switcher on top drives both */
-:root{--bg:#f5f4f0;--panel:#fff;--ink:#1c2230;--mute:#5f6676;--line:#d9d9d2;--soft:#ebeae4;--accent:#d9480f;--ok:#2b7a4b;--c1:#3b5bdb;--c2:#0b7285;--c3:#9c36b5;--c4:#1a8f6f;
+:root{--bg:#f5f4f0;--panel:#fff;--ink:#1c2230;--mute:#5f6676;--line:#d9d9d2;--soft:#ebeae4;--accent:#d9480f;--ok:#2b7a4b;--c1:#3b5bdb;--c2:#0b7285;--c3:#9c36b5;--c4:#1a8f6f;--c5:#b8860b;
  --f-d:"Familjen Grotesk","Public Sans",system-ui,sans-serif;--f-b:"Public Sans",system-ui,sans-serif;--f-m:"JetBrains Mono",ui-monospace,monospace}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;color-scheme:dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;--c5:#e0b04f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151c;--panel:#1a1f29;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--soft:#232a36;--accent:#ff8a4c;--ok:#5fc08a;--c1:#7c93f0;--c2:#4cc3d6;--c3:#d08be6;--c4:#4fd1a5;--c5:#e0b04f;color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--f-b);padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1120px;margin:0 auto;padding:22px 0 48px;display:grid;gap:16px}
@@ -62,7 +62,7 @@ ul.c li small{display:block;color:var(--mute);font:400 11px var(--f-m);margin-to
 .ptw{overflow-x:auto;margin-top:10px}
 </style>
 <div class="wrap">
-<div class="top"><div><h1>Research Loop Map</h1><p class="sub">How each analysis round ran: frame, profile the data, build a model, score, cross-check, verify every claim, report. Four rounds so far. Rounds 1 to 3 were seven stages each, each one wider than the last; the Record stage was added in round 4, and rounds 1 to 3 did not do it (their Record badge count is 0). Orange badges count the errors that stage caught.</p></div><button class="theme" id="th">◐ Theme</button></div>
+<div class="top"><div><h1>Research Loop Map</h1><p class="sub">How each analysis round ran: frame, profile the data, build a model, score, cross-check, verify every claim, report. Five rounds so far; round 5 replaced my assumptions with the material property dataset. Rounds 1 to 3 were seven stages each, each one wider than the last; the Record stage was added in round 4, and rounds 1 to 3 did not do it (their Record badge count is 0). Orange badges count the errors that stage caught.</p></div><button class="theme" id="th">◐ Theme</button></div>
 <div class="tabs" id="tabs"></div>
 <div class="grid">
   <div class="panel"><svg id="svg" viewBox="0 0 460 460" role="img" aria-label="Loop of eight stages"></svg><p class="legend" style="margin:6px 0 0">Click a stage. The dashed arrow is the hand-off to the next round: the previous result becomes the next brief.</p></div>
@@ -94,10 +94,14 @@ const R=[
   head:'Timber frame + straw 67.0 · steel second',
   flow:['7 parts × 6 alternatives','Glaser per DIN 4108-3','interface compatibility','volume-weighted total','interactive page'],
   note:'Two critical interfaces: bonded render on EPS (alternative 1) and lime plaster on straw (alternative 6, condensation 1.055 kg/m² against a 1.0 limit).'},
- {id:4,c:'var(--c4)',t:'Research-loop practices',sub:'applies RESEARCH-LOOPS.md',kv:[['Tasks done',4],['Journal entries',8],['Subagents','2'],['Test checks','10']],
+ {id:4,c:'var(--c4)',t:'Research-loop practices',sub:'applies RESEARCH-LOOPS.md',kv:[['Tasks done',8],['Journal entries',13],['Subagents','2'],['Test checks','10']],
   head:'All five practices used: goal, task list, subagents, test first, journal',
   flow:['goal in PROMPT.md','test written first and red','subagent per atomic step','journal + commit per task','same URL republished'],
-  note:'Rounds 1 to 3 used /loop only. Round 4 follows RESEARCH-LOOPS.md: a checkable goal, TASKS.md, PROMPT.md, JOURNAL.md, a subagent per atomic step, a failing test before the page change, and a commit per finished task.'}];
+  note:'Rounds 1 to 3 used /loop only. Round 4 follows RESEARCH-LOOPS.md: a checkable goal, TASKS.md, PROMPT.md, JOURNAL.md, a subagent per atomic step, a failing test before the page change, and a commit per finished task.'},
+ {id:5,c:'var(--c5)',t:'Material dataset fill',sub:'assumptions replaced by dataset values',kv:[['Materials',40],['Values changed',83],['Rank changes',2],['Top score','68.6']],
+  head:'Same winner, timber frame + straw 68.6; solid timber and RC frame swap 5th and 6th',
+  flow:['Building material property dataset','λ, μ, lives, cost, ratings, U-values','before and after run','dataset_fill_log.csv','page rebuilt'],
+  note:'The dataset is mostly ASSUMED or TYPICAL itself, so the ranking is better grounded but not measured. Structural service life fell from 100 to 50 years with no renewals inside 50 years; installed costs rose, timber most.'}];
 const C=[ // round, stage, text, detail
  [1,'profile','Rock wool looked like 1,353 kgCO₂e/m³','Facade panels (density ≈ 1,000 kg/m³) sat in the insulation category. Added a density cap of 200 kg/m³.'],
  [1,'profile','One concrete entry at 45,279 kgCO₂e/m³','Unit error. Values above 1,500 per m³ are dropped.'],
@@ -114,13 +118,19 @@ const C=[ // round, stage, text, detail
  [3,'verify','Hard-coded sentences contradicted the computed tables','Ranks 3/4 swap claim, clay-plaster claim, and the “best mix” paragraph were rewritten from the numbers.'],
  [4,'frame','RESEARCH-LOOPS.md was never read in rounds 1 to 3','Found only when asked. Round 4 starts from its template: goal, task list, prompt file, journal.'],
  [4,'verify','Test took the first CSV row as the top score','scores_alternatives.csv is not ordered by rank; the test selects rank_weighted = 1.'],
- [4,'record','No state files existed','TASKS.md, PROMPT.md and JOURNAL.md were created in analysis/loop/ before any other work.']];
+ [4,'record','No state files existed','TASKS.md, PROMPT.md and JOURNAL.md were created in analysis/loop/ before any other work.'],
+ [5,'frame','Earlier U-value targets were stricter than the dataset','Replaced 0.20 / 0.14 / 0.25 W/m²K with the GModG Anlage 1 reference 0.28 / 0.20 / 0.35.'],
+ [5,'profile','Hollow-brick conductivity spans 0.07 to 0.77','Kept 0.12, inside the range, rather than the midpoint 0.42 that would model dense brick.'],
+ [5,'model','Dataset service lives are lower bounds (50 years)','Structure fell from 100 to 50 years. The 80-year technical life now drives the durability indicator.'],
+ [5,'model','Insulation life of 40 years applies to ETICS only','The dataset says 50 years inside constructions. ETICS build-ups keep 40, others use 50.'],
+ [5,'verify','Round 3 headline went stale','The test compared 67.0 with the new 68.6. Round 3 now reads the baseline file; round 5 carries the new score.'],
+ [5,'report','Assumptions tables still listed the old values','Rewrote section 6 and the page table from the fill log.']];
 const PR=[
- {k:'Goal with a checkable condition',file:'PROMPT.md',used:[false,false,false,true]},
- {k:'Prioritized task list',file:'TASKS.md',used:[false,false,false,true]},
- {k:'Subagent per atomic step',file:'(subagents)',used:[false,false,false,true]},
- {k:'Test first',file:'test_loop.mjs',used:[false,false,false,true]},
- {k:'Journal of every result',file:'JOURNAL.md',used:[false,false,false,true]}];
+ {k:'Goal with a checkable condition',file:'PROMPT.md',used:[false,false,false,true,true]},
+ {k:'Prioritized task list',file:'TASKS.md',used:[false,false,false,true,true]},
+ {k:'Subagent per atomic step',file:'(subagents)',used:[false,false,false,true,false]},
+ {k:'Test first',file:'test_loop.mjs',used:[false,false,false,true,true]},
+ {k:'Journal of every result',file:'JOURNAL.md',used:[false,false,false,true,true]}];
 const S={r:3,s:'verify'};
 const $=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild};
 function cnt(r,s){return C.filter(x=>x[0]===r&&x[1]===s).length}

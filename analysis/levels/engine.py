@@ -74,6 +74,10 @@ def glaser(stack,Rsi,Rse):
 
 # ---------- build-up resolution ----------
 PART_RS={'OW':(0.13,0.04,0.20),'RF':(0.10,0.04,0.14),'GS':(0.17,0.0,0.25)}
+import os
+if os.environ.get('MATERIAL_DATASET','1')=='1':
+    from dataset_fill import U_REF
+    PART_RS={'OW':(0.13,0.04,U_REF['OW']),'RF':(0.10,0.04,U_REF['RF']),'GS':(0.17,0.0,U_REF['GS'])}   # GModG Anlage 1 reference building
 def resolve(part,spec):
     lay=[dict(x) for x in spec]
     # thermal groups: consecutive layers with frac<1 and same t, or a solve layer

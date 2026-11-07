@@ -124,9 +124,10 @@ for _ in range(N):
 o=[]; A=o.append
 A("# Three-level scoring of six structural systems — 500 m² residential, Germany, 2–3 storeys, 50 years\n")
 A("Level 1: layer (material) · Level 2: building part (incl. layer compatibility) · Level 3: whole building. All scores 0–100, 100 = best.\n")
-A("Facts come only from the Ökobaudat 2024-II CSV (`data/OBD_2024_II_2026-11-07T11_09_31.csv`, reduced to `analysis/products.csv`): GWP (`GWPtotal (A2)`), PERT, PENRT, SM, HWD, NHWD, density, modules A1-A3 and C1–C4.")
-A("The data set has **no** cost, service-life, VOC, moisture-buffering, sound, fire or vapour-resistance data. These are marked **[A]** (ASSUMPTION) and listed in section 6.")
-A("Read the ranking as a transparent model: the Environment criterion and part of Well-being are data-driven; Durability, Cost, Compatibility and the rest of Well-being rest on assumptions.\n")
+A("Environmental facts come from the Ökobaudat 2024-II CSV (`data/OBD_2024_II_2026-11-07T11_09_31.csv`, reduced to `analysis/products.csv`): GWP (`GWPtotal (A2)`), PERT, PENRT, SM, HWD, NHWD, density, modules A1-A3 and C1–C4.")
+A("Material properties come from `data/Building material property dataset.csv` (40 materials, M01–M40): λ, μ, service life, technical life, moisture resistance, indoor-air risk, hygric score, installed cost and the U-value references (GModG Anlage 1). Every value that replaced an earlier assumption is in `analysis/levels/dataset_fill_log.csv` with the dataset row and its provenance tag. The dataset itself marks most of these as ASSUMED, TYPICAL or UNVERIFIED-STD, so they are better grounded than my first guesses but still not measured data.")
+A("Still **[A]** (ASSUMPTION, mine): sound ratings and Rw estimates, fire and sound requirements, building geometry, materials the dataset does not cover (paint, vapour control layer, sealing foil, gravel, dry fill, roof tile, composite slabs), operating cost, and every build-up. Section 6 lists them.")
+A("Read the ranking as a transparent model: Environment is data-driven (OBD); Durability, Cost, Compatibility and Well-being now use the material property dataset, whose own provenance is mostly ASSUMED or TYPICAL.\n")
 A("Files: `alt-1.md` … `alt-6.md` (all layer and compatibility tables), `scores_*.csv` (comma-separated, `.` decimal): alternatives, parts, layers, interfaces.\n")
 A("## 1. Summary\n")
 A("Points per criterion are the volume-weighted mean of the part points (each criterion max 20, total max 100).\n")
@@ -201,21 +202,17 @@ A(f"Foundation: all six alternatives use a reinforced concrete ground slab; alte
 A("## 6. Assumptions, data gaps, sensitivity\n")
 A("None of the following is in the OBD data set.\n")
 A("| # | ASSUMPTION | Value used | Reason |\n|---|---|---|---|")
-rows=[("Building geometry per m² GFA","outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floor/ceiling 0.60, roof 0.40, ground slab 0.40 m²","2–3 storeys, ~200 m² footprint, 20 % glazing; no plan given"),
-("U-value targets","outer wall 0.20, roof 0.14, ground slab 0.25 W/m²K; windows not solved","stricter than GEG reference values (0.28/0.20/0.35) so the walls need no early retrofit"),
-("Thermal conductivity λ","rock wool 0.036, EPS/XPS 0.035, wood fibre 0.040, cellulose 0.039, straw 0.052, foam glass 0.045, brick 0.12, RC 2.0, CLT/KVH 0.13","no λ in OBD; typical declared values"),
-("Vapour resistance μ / sd","e.g. RC 80, brick 8, CLT 50, EPS 40, rock wool 1, wood fibre 5, straw 2; VCL sd 10 m (pitched) or 100 m (flat roof), roof membrane sd 100 m","no μ in OBD; Glaser steady state, Berlin-type design climate per DIN 4108-3 (−5 °C/80 %, 20 °C/50 %, 90 d)"),
-("Layer thicknesses and build-ups","see alt-*.md","typical practice; thickness of insulation solved and rounded up to 10 mm"),
-("Fire requirement","REI/EI 30 (Gebäudeklasse 3)","2–3 storeys, ≤ 7 m; GK 4 would need REI 60 and change timber ratings"),
-("Sound requirement","Rw ≥ 53 dB separating wall, 54 dB floor, 40 dB outer wall/roof, 35 dB partition, 32 dB window","DIN 4109 style; estimated by mass law R = 32.4 lg m′ − 26 (+4 dB floating screed), or typical framed values for lightweight walls"),
-("Service lives (y)","structure 100 (CLT/KVH 100, composite slabs 100), render/ETICS 40, plasterboard 50, paint 12, membranes 30–50, windows 35","no service-life field in OBD"),
-("Ratings 1–5 for moisture/fire/pest, VOC, buffering, sound contribution","per material in `materials.py`","qualitative judgement; OBD has no emissions or hygric data"),
-("Cost (€/m³, €/m², € per renewal)","e.g. RC 470 €/m³, CLT 850, rock wool 180, render 4,600 (≈ 55 €/m²), plastic window 520 €/m², timber window 780 €/m²","no cost data in OBD; indicative German installed prices"),
-("Operating-cost effect","none (equal for all alternatives)","same GEG standard, floor plan and U-values; not included as an indicator"),
+rows=[("Building geometry per m² GFA","outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floor/ceiling 0.60, roof 0.40, ground slab 0.40 m²","2–3 storeys, ~200 m² footprint, 20 % glazing; the dataset's 4-storey reference house (wall 0.55, roof 0.27, windows 0.18) does not fit the brief"),
+("U-value targets","FILLED from the dataset (GModG Anlage 1 reference building): outer wall 0.28, flat/pitched roof 0.20, ground slab 0.35 W/m²K (earlier assumption 0.20 / 0.14 / 0.25)","GEG was replaced by the GModG on 29 July 2026; component limits carried over. EH40 guideline values (0.16 / 0.11) not used"),
+("λ and μ","FILLED: single dataset value where given (RC 2.4, mineral render 1.0, screed 1.4); for ranges the earlier value kept when inside the range, else midpoint (lime plaster μ 25)","dataset provenance mostly TYPICAL / UNVERIFIED-STD (DIN 4108-4 and EN ISO 10456 not opened)"),
+("Service life and technical life","FILLED: BNB service life 50 y for structure, masonry, plaster and screed (earlier 100); insulation 50 y inside constructions and 40 y as ETICS; windows 30 y; technical life (80 y for concrete and brick, clay plaster) drives the durability indicator","dataset cites BNB 2017 via a summariser; ≥ 50 y is a lower bound"),
+("Moisture resistance, indoor-air risk, hygric score","FILLED: dataset ratings (R_D2, IAQ L–H mapped to 5–1, R_WB3) where present; earlier ratings kept for steel, paint and other gaps","dataset marks all of these ASSUMED; no chamber or buffering data except clay vs lime plaster"),
+("Cost","FILLED: dataset mid values converted to €/m³ of layer using the thickness the dataset names (e.g. RC 700 €/m³, CLT 1,350, KVH 1,100, rock wool 441, EPS 403, window 675 €/m²); steel 3,750 €/t","only the insulation costs are CITED (reduco.ai); the rest are ASSUMED ±30 % in the dataset"),
+("Not covered by the dataset (earlier assumptions kept)","paint/covering, vapour control layer, sealing foil, gravel, dry fill, roof tile, steel-concrete and wood-concrete composite slabs, sound rating 1–5, fire and sound requirements (REI/EI 30 GK 3; Rw 53/54/40/35/32 dB), operating cost","no dataset row; see `materials.py`"),
 ("Level-2 criterion weights","five criteria × 20 pts; interface = mean of four checks (good 100, caution 50, critical 0); criterion 5 = mean of interface mean and whole-build-up score","prescribed by the brief"),
 ("Gravel and fill","natural-stone EPD scaled to 1,600 kg/m³ bulk density; pumice fill EPD","no gravel EPD in OBD"),
-("Clay block","fired brick EPD 'Brick (unfilled)' 365 mm; sand-lime brick for inner walls","clay-block unit EPD not found by name; swap allowed"),
-("Hempcrete","straw bale used in alternative 6","no hempcrete wall EPD in OBD (hemp stone: 2 EPDs)"),
+("Clay block","fired brick EPD 'Brick (unfilled)' 365 mm; sand-lime brick for inner walls","clay-block unit EPD not found by name; dataset M05 covers hollow clay brick (λ 0.07–0.77, kept 0.12)"),
+("Hempcrete","straw bale used in alternative 6","no hempcrete wall EPD in OBD"),
 ("Wood-concrete slab","one OBD EPD, 274 kg/m²","only one in OBD")]
 for i,(x,y,z) in enumerate(rows,1): A(f"| {i} | {x} | {y} | {z} |")
 A("\n**Data gaps in OBD:** `SM` is empty for most bio-based EPDs (recycled share looks 0); steel sections 3 EPDs, straw 2, cellulose 2, fired brick 3, roof tile 1, timber window 1, composite slab 1; EPDs mix generic, average and specific datasets and are medians; biogenic carbon (negative A1–A3, positive C3) is shown without dynamic accounting; windows are whole-unit EPDs, so frame, glazing and sealant cannot be scored separately; mass-law sound estimates ignore decoupling.\n")

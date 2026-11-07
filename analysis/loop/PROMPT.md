@@ -1,6 +1,8 @@
 # Session prompt
 
-Goal (checkable): the research-loop artifact is updated to show round 4, which applies every practice in `RESEARCH-LOOPS.md`.
+Round 5 goal (checkable): `analysis/levels/report` is re-run with values from `data/Building material property dataset.csv`, the change is logged in `analysis/levels/dataset_fill_log.csv`, the scoring-lab artifact (https://claude.ai/artifact/G5d7rnLrZXmDZvH7zGKLn5) and the loop page are rebuilt, and `node analysis/levels/viz/test_loop.mjs` exits 0.
+
+Round 4 goal (done): the research-loop artifact is updated to show round 4, which applies every practice in `RESEARCH-LOOPS.md`.
 Done when all of these hold:
 
 1. `node analysis/levels/viz/test_loop.mjs` exits 0.

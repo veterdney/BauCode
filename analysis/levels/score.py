@@ -25,7 +25,7 @@ for a,(aname,pp) in ALT.items():
             elif x['mat']=='Composite slab steel-concrete': cost0=m['cost']*vol+ 22.0   # + deck/mesh installed (ASSUMPTION 22 EUR/m2)
             else: cost0=m['cost']*vol
             r=dict(alt=a,part=p,idx=i,mat=x['mat'],t=x['t'],frac=x['frac'],vol=vol,life=life,nrep=nrep,job=m['job'],
-                   dur_life=life,dur_ren=nrep,dur_mfp=m['mfp'],
+                   dur_life=max(life,m.get('tech',0)),dur_ren=nrep,dur_mfp=m['mfp'],
                    env_a13=ind['a13'],env_life=(ind['a13']+ind['c'])*(1+nrep),env_pen=ind['penrt']*(1+nrep),
                    env_ren=ind['pert']/(ind['pert']+ind['penrt']) if (ind['pert']+ind['penrt'])>0 else 0.0,
                    env_rec=ind['sm_kg']/ind['mass'] if ind['mass'] else 0.0,env_waste=ind['waste']*(1+nrep),
