@@ -1,7 +1,7 @@
 alt,name,score_weighted,score_unweighted,rank_weighted,rank_unweighted,pts_Durability_weighted,pts_Environment_weighted,pts_Well-being_weighted,pts_Cost_weighted,pts_Compatibility_weighted,life_GWP_kgCO2e_per_m2GFA,A1A3_GWP_kgCO2e_per_m2GFA,cost_50y_EUR_per_m2GFA
-1,Reinforced concrete frame + EPS ETICS,54.51,56.33,6,5,10.71,6.03,9.83,11.36,16.58,304.5,204.3,872.6
-2,Steel frame + composite slabs + mineral wool,61.21,62.31,2,2,10.46,8.67,10.02,13.16,18.89,205.3,133.5,793.0
-3,Monolithic masonry (clay block / sand-lime) + mineral insulation,56.76,59.32,4,3,11.89,6.57,10.41,10.37,17.51,261.2,187.2,952.1
-4,Timber-concrete hybrid (CLT walls + composite slabs),57.08,58.08,3,4,9.79,9.69,8.86,10.48,18.26,177.5,-66.2,885.4
-5,Solid timber (CLT) + wood-fibre insulation,55.25,55.9,5,6,8.81,10.53,10.15,9.44,16.31,191.7,-156.0,870.9
-6,Timber frame + straw infill + clay plaster,67.01,66.85,1,1,10.94,12.29,13.78,14.31,15.69,149.3,-24.7,784.7
+1,Reinforced concrete frame + EPS ETICS,55.84,55.53,5,6,12.04,6.04,10.98,10.08,16.7,288.1,197.6,1086.6
+2,Steel frame + composite slabs + mineral wool,63.98,63.57,2,2,13.44,8.32,11.47,11.77,18.97,197.3,129.0,930.2
+3,Monolithic masonry (clay block / sand-lime) + mineral insulation,58.65,58.82,4,4,12.37,6.28,11.38,10.6,18.01,243.5,182.8,1018.1
+4,Timber-concrete hybrid (CLT walls + composite slabs),59.56,60.85,3,3,10.51,9.66,10.86,10.16,18.36,169.6,-72.4,986.9
+5,Solid timber (CLT) + wood-fibre insulation,55.26,56.15,6,5,8.44,10.63,10.74,8.94,16.5,171.8,-151.2,1009.2
+6,Timber frame + straw infill + clay plaster,68.57,68.2,1,1,13.14,11.9,13.44,14.09,16.01,140.4,-15.5,760.7

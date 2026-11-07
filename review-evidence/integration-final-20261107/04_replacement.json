@@ -1,0 +1,19 @@
+{
+  "cwd": "<repo>",
+  "head": "93471028e7a8fe92f83cbe759887733fdd8dba45",
+  "upstream": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "merge_pending": true,
+  "command": [
+    "python",
+    "demo/run_demo.py",
+    "--input",
+    "demo/input/synthetic_wall_replaced.json",
+    "--out",
+    "demo/output/replaced"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "exit_matches": true,
+  "stdout": "SYNTHETIC demo: EVALUATED -> demo/output/replaced/result.json, layers.csv, report.md\r\n  A1-A3 total=230 known subtotal=230 | C known=30.2 complete=yes | D separate=-2 complete=no (kgCO2e)\r\n  matches synthetic_wall_replaced.expected.json (17 agent hand-derived values)\r\n",
+  "stderr": ""
+}

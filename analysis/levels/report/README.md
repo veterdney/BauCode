@@ -2,9 +2,10 @@
 
 Level 1: layer (material) · Level 2: building part (incl. layer compatibility) · Level 3: whole building. All scores 0–100, 100 = best.
 
-Facts come only from the Ökobaudat 2024-II CSV (`data/OBD_2024_II_2026-11-07T11_09_31.csv`, reduced to `analysis/products.csv`): GWP (`GWPtotal (A2)`), PERT, PENRT, SM, HWD, NHWD, density, modules A1-A3 and C1–C4.
-The data set has **no** cost, service-life, VOC, moisture-buffering, sound, fire or vapour-resistance data. These are marked **[A]** (ASSUMPTION) and listed in section 6.
-Read the ranking as a transparent model: the Environment criterion and part of Well-being are data-driven; Durability, Cost, Compatibility and the rest of Well-being rest on assumptions.
+Environmental facts come from the Ökobaudat 2024-II CSV (`data/OBD_2024_II_2026-11-07T11_09_31.csv`, reduced to `analysis/products.csv`): GWP (`GWPtotal (A2)`), PERT, PENRT, SM, HWD, NHWD, density, modules A1-A3 and C1–C4.
+Material properties come from `data/Building material property dataset.csv` (40 materials, M01–M40): λ, μ, service life, technical life, moisture resistance, indoor-air risk, hygric score, installed cost and the U-value references (GModG Anlage 1). Every value that replaced an earlier assumption is in `analysis/levels/dataset_fill_log.csv` with the dataset row and its provenance tag. The dataset itself marks most of these as ASSUMED, TYPICAL or UNVERIFIED-STD, so they are better grounded than my first guesses but still not measured data.
+Still **[A]** (ASSUMPTION, mine): sound ratings and Rw estimates, fire and sound requirements, building geometry, materials the dataset does not cover (paint, vapour control layer, sealing foil, gravel, dry fill, roof tile, composite slabs), operating cost, and every build-up. Section 6 lists them.
+Read the ranking as a transparent model: Environment is data-driven (OBD); Durability, Cost, Compatibility and Well-being now use the material property dataset, whose own provenance is mostly ASSUMED or TYPICAL.
 
 Files: `alt-1.md` … `alt-6.md` (all layer and compatibility tables), `scores_*.csv` (comma-separated, `.` decimal): alternatives, parts, layers, interfaces.
 
@@ -14,49 +15,49 @@ Points per criterion are the volume-weighted mean of the part points (each crite
 
 | Rank | Alternative | Weighted total | Unweighted | Durability /20 | Environment /20 | Well-being /20 | Cost /20 | Compatibility /20 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 6. Timber frame + straw infill + clay plaster | **67.0** | 66.8 (rank 1) | 10.9 | 12.3 | 13.8 | 14.3 | 15.7 |
-| 2 | 2. Steel frame + composite slabs + mineral wool | **61.2** | 62.3 (rank 2) | 10.5 | 8.7 | 10.0 | 13.2 | 18.9 |
-| 3 | 4. Timber-concrete hybrid (CLT walls + composite slabs) | **57.1** | 58.1 (rank 4) | 9.8 | 9.7 | 8.9 | 10.5 | 18.3 |
-| 4 | 3. Monolithic masonry (clay block / sand-lime) + mineral insulation | **56.8** | 59.3 (rank 3) | 11.9 | 6.6 | 10.4 | 10.4 | 17.5 |
-| 5 | 5. Solid timber (CLT) + wood-fibre insulation | **55.3** | 55.9 (rank 6) | 8.8 | 10.5 | 10.2 | 9.4 | 16.3 |
-| 6 | 1. Reinforced concrete frame + EPS ETICS | **54.5** | 56.3 (rank 5) | 10.7 | 6.0 | 9.8 | 11.4 | 16.6 |
+| 1 | 6. Timber frame + straw infill + clay plaster | **68.6** | 68.2 (rank 1) | 13.1 | 11.9 | 13.4 | 14.1 | 16.0 |
+| 2 | 2. Steel frame + composite slabs + mineral wool | **64.0** | 63.6 (rank 2) | 13.4 | 8.3 | 11.5 | 11.8 | 19.0 |
+| 3 | 4. Timber-concrete hybrid (CLT walls + composite slabs) | **59.6** | 60.8 (rank 3) | 10.5 | 9.7 | 10.9 | 10.2 | 18.4 |
+| 4 | 3. Monolithic masonry (clay block / sand-lime) + mineral insulation | **58.6** | 58.8 (rank 4) | 12.4 | 6.3 | 11.4 | 10.6 | 18.0 |
+| 5 | 1. Reinforced concrete frame + EPS ETICS | **55.8** | 55.5 (rank 6) | 12.0 | 6.0 | 11.0 | 10.1 | 16.7 |
+| 6 | 5. Solid timber (CLT) + wood-fibre insulation | **55.3** | 56.1 (rank 5) | 8.4 | 10.6 | 10.7 | 8.9 | 16.5 |
 
-Volume weighting changes the totals by -2.6 to +0.2 points. Ranks differ between weighted and unweighted for: 1 (6 vs 5), 3 (4 vs 3), 4 (3 vs 4), 5 (5 vs 6). Ground slab, outer wall, roof and floor carry most of the volume weight; windows carry 1–2 %.
+Volume weighting changes the totals by -1.3 to +0.4 points. Ranks differ between weighted and unweighted for: 1 (5 vs 6), 5 (6 vs 5). Ground slab, outer wall, roof and floor carry most of the volume weight; windows carry 1–2 %.
 
 Part scores (0–100):
 
 | Part | 1. RC + EPS | 2. Steel + mineral wool | 3. Masonry | 4. Timber-concrete | 5. Solid timber | 6. Timber frame + straw |
 |---|---|---|---|---|---|---|
-| Outer wall | 46.7 | 66.4 | 48.4 | 50.6 | 45.3 | 65.3 |
-| Inner wall, load-bearing | 58.8 | 65.4 | 60.0 | 64.4 | 63.4 | 72.5 |
-| Inner wall, partition | 52.6 | 64.2 | 62.6 | 63.7 | 53.4 | 72.2 |
-| Floor slab / ceiling | 58.0 | 55.0 | 58.7 | 51.4 | 54.0 | 71.8 |
-| Roof | 56.6 | 63.6 | 64.0 | 61.9 | 60.6 | 70.6 |
-| Foundation / ground slab | 57.4 | 57.4 | 57.4 | 58.6 | 58.6 | 59.6 |
-| Windows | 64.3 | 64.3 | 64.3 | 56.0 | 56.0 | 56.0 |
+| Outer wall | 46.7 | 71.3 | 51.4 | 50.4 | 43.8 | 67.2 |
+| Inner wall, load-bearing | 60.0 | 68.7 | 59.8 | 66.0 | 63.4 | 69.3 |
+| Inner wall, partition | 51.9 | 68.2 | 63.0 | 67.3 | 52.6 | 70.7 |
+| Floor slab / ceiling | 60.9 | 60.1 | 61.6 | 58.7 | 54.2 | 73.9 |
+| Roof | 57.8 | 65.4 | 64.7 | 62.6 | 58.2 | 74.6 |
+| Foundation / ground slab | 59.5 | 59.5 | 59.5 | 59.9 | 59.9 | 60.8 |
+| Windows | 51.8 | 51.8 | 51.8 | 61.0 | 61.0 | 61.0 |
 
 Weights (share of building material volume, per alternative):
 
 | Part | 1 | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|---|
-| Outer wall | 25 % | 19 % | 29 % | 20 % | 21 % | 23 % |
-| Inner wall, load-bearing | 7 % | 7 % | 6 % | 8 % | 7 % | 8 % |
-| Inner wall, partition | 6 % | 8 % | 6 % | 7 % | 4 % | 5 % |
-| Floor slab / ceiling | 18 % | 15 % | 16 % | 19 % | 21 % | 24 % |
-| Roof | 20 % | 21 % | 19 % | 18 % | 17 % | 15 % |
-| Foundation / ground slab | 23 % | 29 % | 22 % | 27 % | 27 % | 24 % |
+| Outer wall | 24 % | 16 % | 28 % | 17 % | 18 % | 20 % |
+| Inner wall, load-bearing | 8 % | 7 % | 7 % | 9 % | 8 % | 9 % |
+| Inner wall, partition | 7 % | 9 % | 7 % | 8 % | 5 % | 5 % |
+| Floor slab / ceiling | 19 % | 16 % | 17 % | 21 % | 24 % | 27 % |
+| Roof | 18 % | 19 % | 18 % | 16 % | 16 % | 12 % |
+| Foundation / ground slab | 23 % | 30 % | 22 % | 28 % | 28 % | 25 % |
 | Windows | 1 % | 2 % | 1 % | 1 % | 1 % | 1 % |
 
 Key data per m² GFA (structure + envelope + windows; windows' volume is small by construction):
 
 | Alternative | GWP A1–A3 (kgCO₂e) | GWP life cycle 50 y (kgCO₂e) | Cost incl. renewals 50 y (€, [A]) |
 |---|---|---|---|
-| 1. RC + EPS | 204 | 305 | 873 |
-| 2. Steel + mineral wool | 134 | 205 | 793 |
-| 3. Masonry | 187 | 261 | 952 |
-| 4. Timber-concrete | -66 | 178 | 885 |
-| 5. Solid timber | -156 | 192 | 871 |
-| 6. Timber frame + straw | -25 | 149 | 785 |
+| 1. RC + EPS | 198 | 288 | 1087 |
+| 2. Steel + mineral wool | 129 | 197 | 930 |
+| 3. Masonry | 183 | 243 | 1018 |
+| 4. Timber-concrete | -72 | 170 | 987 |
+| 5. Solid timber | -151 | 172 | 1009 |
+| 6. Timber frame + straw | -16 | 140 | 761 |
 
 ## 2. Layer and compatibility tables
 
@@ -66,12 +67,12 @@ One file per alternative, one section per building part: `alt-1.md` … `alt-6.m
 
 | Alt | Outer wall (in→out) | Load-bearing inner wall | Partition | Room-facing layer, 50 % of well-being weight (OW / IL / IP) |
 |---|---|---|---|---|
-| 1. RC + EPS | RC 200 / EPS 170 / Mineral render 10 | RC 200 | Mineral render 10 / AAC 100 / Mineral render 10 | Paint/covering / Paint/covering / Paint/covering |
-| 2. Steel + mineral wool | Gypsum board 25 / VCL / Rock wool 100 / Gypsum board 15 / Rock wool 70 / Mineral render 10 | Gypsum board 25 / Rock wool 100 / Gypsum board 25 | Gypsum board 25 / Rock wool 75 / Gypsum board 25 | Gypsum board / Paint/covering / Paint/covering |
-| 3. Masonry | Lime plaster 15 / Brick 365 / Rock wool 70 / Mineral render 10 | Lime plaster 10 / Sand-lime 175 / Lime plaster 10 | Lime plaster 10 / Sand-lime 115 / Lime plaster 10 | Paint/covering / Paint/covering / Paint/covering |
-| 4. Timber-concrete | CLT 100 / Rock wool 150 / Mineral render 10 | Gypsum board 15 / CLT 100 / Rock wool 60 / Gypsum board 25 | Gypsum board 25 / KVH 75 / Rock wool 75 / Gypsum board 25 | CLT / Gypsum board / Paint/covering |
-| 5. Solid timber | CLT 100 / Wood fibre 170 / Mineral render 10 | CLT 100 / Wood fibre 60 / Gypsum board 25 | CLT 80 | CLT / CLT / CLT |
-| 6. Timber frame + straw | Clay plaster 20 / KVH 280 / Straw bale 280 / Lime plaster 25 | Clay plaster 20 / OSB 15 / KVH 140 / Wood fibre 140 / OSB 15 / Clay plaster 20 | Clay plaster 15 / KVH 60 / Wood fibre 60 / Clay plaster 15 | Clay plaster / Clay plaster / Clay plaster |
+| 1. RC + EPS | RC 200 / EPS 120 / Mineral render 10 | RC 200 | Mineral render 10 / AAC 100 / Mineral render 10 | Paint/covering / Paint/covering / Paint/covering |
+| 2. Steel + mineral wool | Gypsum board 25 / VCL / Rock wool 100 / Gypsum board 15 / Rock wool 20 / Mineral render 10 | Gypsum board 25 / Rock wool 100 / Gypsum board 25 | Gypsum board 25 / Rock wool 75 / Gypsum board 25 | Gypsum board / Paint/covering / Paint/covering |
+| 3. Masonry | Lime plaster 15 / Brick 365 / Rock wool 20 / Mineral render 10 | Lime plaster 10 / Sand-lime 175 / Lime plaster 10 | Lime plaster 10 / Sand-lime 115 / Lime plaster 10 | Paint/covering / Paint/covering / Paint/covering |
+| 4. Timber-concrete | CLT 100 / Rock wool 100 / Mineral render 10 | Gypsum board 15 / CLT 100 / Rock wool 60 / Gypsum board 25 | Gypsum board 25 / KVH 75 / Rock wool 75 / Gypsum board 25 | CLT / Gypsum board / Paint/covering |
+| 5. Solid timber | CLT 100 / Wood fibre 110 / Mineral render 10 | CLT 100 / Wood fibre 60 / Gypsum board 25 | CLT 80 | CLT / CLT / CLT |
+| 6. Timber frame + straw | Clay plaster 20 / KVH 200 / Straw bale 200 / Lime plaster 25 | Clay plaster 20 / OSB 15 / KVH 140 / Wood fibre 140 / OSB 15 / Clay plaster 20 | Clay plaster 15 / KVH 60 / Wood fibre 60 / Clay plaster 15 | Clay plaster / Clay plaster / Clay plaster |
 
 Why they differ: outer walls must carry weather, insulation (U ≤ 0.20 W/m²K [A]) and moisture control, so they have an outside render or plaster, a thick insulation layer and a vapour-diffusion order that dries outward; inner walls have no U target and instead need mass or lining for sound (separating wall Rw ≥ 53 dB [A]), fire (REI/EI 30 [A]) and thermal mass, and their two faces are both room-facing.
 
@@ -79,14 +80,14 @@ Part scores outer vs. inner (0–100):
 
 | Alt | Outer wall | Inner load-bearing | Partition | Well-being points OW /20 | IL /20 | IP /20 |
 |---|---|---|---|---|---|---|
-| 1. RC + EPS | 46.7 | 58.8 | 52.6 | 9.2 | 12.6 | 9.7 |
-| 2. Steel + mineral wool | 66.4 | 65.4 | 64.2 | 12.2 | 10.1 | 10.4 |
-| 3. Masonry | 48.4 | 60.0 | 62.6 | 10.1 | 12.3 | 11.8 |
-| 4. Timber-concrete | 50.6 | 64.4 | 63.7 | 6.8 | 10.9 | 10.5 |
-| 5. Solid timber | 45.3 | 63.4 | 53.4 | 10.5 | 10.5 | 7.0 |
-| 6. Timber frame + straw | 65.3 | 72.5 | 72.2 | 16.5 | 13.8 | 13.3 |
+| 1. RC + EPS | 46.7 | 60.0 | 51.9 | 9.9 | 12.8 | 10.4 |
+| 2. Steel + mineral wool | 71.3 | 68.7 | 68.2 | 13.9 | 11.4 | 11.6 |
+| 3. Masonry | 51.4 | 59.8 | 63.0 | 10.7 | 11.7 | 11.1 |
+| 4. Timber-concrete | 50.4 | 66.0 | 67.3 | 9.8 | 12.2 | 11.5 |
+| 5. Solid timber | 43.8 | 63.4 | 52.6 | 10.0 | 10.6 | 9.5 |
+| 6. Timber frame + straw | 67.2 | 69.3 | 70.7 | 15.1 | 11.6 | 10.7 |
 
-Outer-wall well-being points rank 6 (16.5), 2 (12.2), 5 (10.5), 3 (10.1), 1 (9.2), 4 (6.8); load-bearing inner wall: 6 (13.8), 1 (12.6), 3 (12.3), 4 (10.9), 5 (10.5), 2 (10.1).
+Outer-wall well-being points rank 6 (15.1), 2 (13.9), 3 (10.7), 5 (10.0), 1 (9.9), 4 (9.8); load-bearing inner wall: 1 (12.8), 4 (12.2), 3 (11.7), 6 (11.6), 2 (11.4), 5 (10.6).
 The room-facing layer carries 50 % of the weight, so clay plaster (alternative 6) wins on both walls (VOC 5 and buffering 5 [A]); paint on a plastered or concrete surface scores low on buffering [A]. Differences between alternatives 4 and 5 on the outer wall come from the layers behind the same bare CLT (rock wool vs. wood fibre, buffering 2 vs. 4 [A]).
 
 ## 4. Score contribution
@@ -95,26 +96,26 @@ Share of each criterion in the weighted total, and the part and layer that cost 
 
 | Alt | Durab. | Envir. | Well-b. | Cost | Compat. | Part costing most | Layer costing most |
 |---|---|---|---|---|---|---|---|
-| 1. RC + EPS | 20 % | 11 % | 18 % | 21 % | 30 % | Outer wall (−13.6) | EPS in outer wall (−5.54) |
-| 2. Steel + mineral wool | 17 % | 14 % | 16 % | 21 % | 31 % | Foundation / ground slab (−12.4) | RC in foundation / ground slab (−4.57) |
-| 3. Masonry | 21 % | 12 % | 18 % | 18 % | 31 % | Outer wall (−15.2) | Brick in outer wall (−9.94) |
-| 4. Timber-concrete | 17 % | 17 % | 16 % | 18 % | 32 % | Foundation / ground slab (−11.4) | Wood-concrete slab in floor slab / ceiling (−5.71) |
-| 5. Solid timber | 16 % | 19 % | 18 % | 17 % | 30 % | Outer wall (−11.5) | Wood fibre in outer wall (−5.81) |
-| 6. Timber frame + straw | 16 % | 18 % | 21 % | 21 % | 23 % | Foundation / ground slab (−9.8) | Straw bale in outer wall (−3.56) |
+| 1. RC + EPS | 22 % | 11 % | 20 % | 18 % | 30 % | Outer wall (−12.8) | RC in floor slab / ceiling (−4.77) |
+| 2. Steel + mineral wool | 21 % | 13 % | 18 % | 18 % | 30 % | Foundation / ground slab (−12.2) | RC in foundation / ground slab (−4.90) |
+| 3. Masonry | 21 % | 11 % | 19 % | 18 % | 31 % | Outer wall (−13.8) | Brick in outer wall (−10.29) |
+| 4. Timber-concrete | 18 % | 16 % | 18 % | 17 % | 31 % | Foundation / ground slab (−11.2) | Wood-concrete slab in floor slab / ceiling (−5.20) |
+| 5. Solid timber | 15 % | 19 % | 19 % | 16 % | 30 % | Foundation / ground slab (−11.3) | CLT in floor slab / ceiling (−5.86) |
+| 6. Timber frame + straw | 19 % | 17 % | 20 % | 21 % | 23 % | Foundation / ground slab (−9.9) | RC in foundation / ground slab (−3.16) |
 
 ## 5. Conclusion
 
-**Best overall: alternative 6, Timber frame + straw infill + clay plaster** — 67.0 weighted, 66.8 unweighted. It also leads after volume weighting is removed.
+**Best overall: alternative 6, Timber frame + straw infill + clay plaster** — 68.6 weighted, 68.2 unweighted. It also leads after volume weighting is removed.
 
 Best when one criterion matters most (weighted points /20):
 
 | Priority | Best alternative | Points | Runner-up |
 |---|---|---|---|
-| Durability | 3. Masonry | 11.9 | 6. Timber frame + straw (10.9) |
-| Environment | 6. Timber frame + straw | 12.3 | 5. Solid timber (10.5) |
-| Well-being | 6. Timber frame + straw | 13.8 | 3. Masonry (10.4) |
-| Cost | 6. Timber frame + straw | 14.3 | 2. Steel + mineral wool (13.2) |
-| Compatibility | 2. Steel + mineral wool | 18.9 | 4. Timber-concrete (18.3) |
+| Durability | 2. Steel + mineral wool | 13.4 | 6. Timber frame + straw (13.1) |
+| Environment | 6. Timber frame + straw | 11.9 | 5. Solid timber (10.6) |
+| Well-being | 6. Timber frame + straw | 13.4 | 2. Steel + mineral wool (11.5) |
+| Cost | 6. Timber frame + straw | 14.1 | 2. Steel + mineral wool (11.8) |
+| Compatibility | 2. Steel + mineral wool | 19.0 | 4. Timber-concrete (18.4) |
 
 Interfaces rated **critical** (each needs the named fix; scores above are before the fix):
 
@@ -130,16 +131,16 @@ Interfaces rated **critical** (each needs the named fix; scores above are before
 
 | Part | Taken from | Part score |
 |---|---|---|
-| Outer wall | 2. Steel + mineral wool | 66.4 |
-| Inner wall, load-bearing | 6. Timber frame + straw | 72.5 |
-| Inner wall, partition | 6. Timber frame + straw | 72.2 |
-| Floor slab / ceiling | 6. Timber frame + straw | 71.8 |
-| Roof | 6. Timber frame + straw | 70.6 |
-| Foundation / ground slab | 6. Timber frame + straw | 59.6 |
-| Windows | 1. RC + EPS | 64.3 |
+| Outer wall | 2. Steel + mineral wool | 71.3 |
+| Inner wall, load-bearing | 6. Timber frame + straw | 69.3 |
+| Inner wall, partition | 6. Timber frame + straw | 70.7 |
+| Floor slab / ceiling | 6. Timber frame + straw | 73.9 |
+| Roof | 6. Timber frame + straw | 74.6 |
+| Foundation / ground slab | 6. Timber frame + straw | 60.8 |
+| Windows | 4. Timber-concrete | 61.0 |
 
-Volume-weighted score of this mix: **67.4** vs 67.0 for the best single system (6). The gain of +0.4 points comes only from the outer wall (2) and the window (1); a mix needs junction details (different movement, airtightness, thermal bridges) that this model does not score, so it is an upper bound and not worth the added complexity.
-Foundation: all six alternatives use a reinforced concrete ground slab; alternatives 4, 5 and 6 insulate it with foam glass and score highest (59.6 for alternative 6). Alternative 6 therefore already is the concrete-foundation, timber-superstructure combination; swapping in another system's ground slab changes nothing material (67.0).
+Volume-weighted score of this mix: **69.3** vs 68.6 for the best single system (6). The gain of +0.7 points comes only from the outer wall (2) and the window (4); a mix needs junction details (different movement, airtightness, thermal bridges) that this model does not score, so it is an upper bound and not worth the added complexity.
+Foundation: all six alternatives use a reinforced concrete ground slab; alternatives 4, 5 and 6 insulate it with foam glass and score highest (60.8 for alternative 6). Alternative 6 therefore already is the concrete-foundation, timber-superstructure combination; swapping in another system's ground slab changes nothing material (68.6).
 
 ## 6. Assumptions, data gaps, sensitivity
 
@@ -147,22 +148,18 @@ None of the following is in the OBD data set.
 
 | # | ASSUMPTION | Value used | Reason |
 |---|---|---|---|
-| 1 | Building geometry per m² GFA | outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floor/ceiling 0.60, roof 0.40, ground slab 0.40 m² | 2–3 storeys, ~200 m² footprint, 20 % glazing; no plan given |
-| 2 | U-value targets | outer wall 0.20, roof 0.14, ground slab 0.25 W/m²K; windows not solved | stricter than GEG reference values (0.28/0.20/0.35) so the walls need no early retrofit |
-| 3 | Thermal conductivity λ | rock wool 0.036, EPS/XPS 0.035, wood fibre 0.040, cellulose 0.039, straw 0.052, foam glass 0.045, brick 0.12, RC 2.0, CLT/KVH 0.13 | no λ in OBD; typical declared values |
-| 4 | Vapour resistance μ / sd | e.g. RC 80, brick 8, CLT 50, EPS 40, rock wool 1, wood fibre 5, straw 2; VCL sd 10 m (pitched) or 100 m (flat roof), roof membrane sd 100 m | no μ in OBD; Glaser steady state, Berlin-type design climate per DIN 4108-3 (−5 °C/80 %, 20 °C/50 %, 90 d) |
-| 5 | Layer thicknesses and build-ups | see alt-*.md | typical practice; thickness of insulation solved and rounded up to 10 mm |
-| 6 | Fire requirement | REI/EI 30 (Gebäudeklasse 3) | 2–3 storeys, ≤ 7 m; GK 4 would need REI 60 and change timber ratings |
-| 7 | Sound requirement | Rw ≥ 53 dB separating wall, 54 dB floor, 40 dB outer wall/roof, 35 dB partition, 32 dB window | DIN 4109 style; estimated by mass law R = 32.4 lg m′ − 26 (+4 dB floating screed), or typical framed values for lightweight walls |
-| 8 | Service lives (y) | structure 100 (CLT/KVH 100, composite slabs 100), render/ETICS 40, plasterboard 50, paint 12, membranes 30–50, windows 35 | no service-life field in OBD |
-| 9 | Ratings 1–5 for moisture/fire/pest, VOC, buffering, sound contribution | per material in `materials.py` | qualitative judgement; OBD has no emissions or hygric data |
-| 10 | Cost (€/m³, €/m², € per renewal) | e.g. RC 470 €/m³, CLT 850, rock wool 180, render 4,600 (≈ 55 €/m²), plastic window 520 €/m², timber window 780 €/m² | no cost data in OBD; indicative German installed prices |
-| 11 | Operating-cost effect | none (equal for all alternatives) | same GEG standard, floor plan and U-values; not included as an indicator |
-| 12 | Level-2 criterion weights | five criteria × 20 pts; interface = mean of four checks (good 100, caution 50, critical 0); criterion 5 = mean of interface mean and whole-build-up score | prescribed by the brief |
-| 13 | Gravel and fill | natural-stone EPD scaled to 1,600 kg/m³ bulk density; pumice fill EPD | no gravel EPD in OBD |
-| 14 | Clay block | fired brick EPD 'Brick (unfilled)' 365 mm; sand-lime brick for inner walls | clay-block unit EPD not found by name; swap allowed |
-| 15 | Hempcrete | straw bale used in alternative 6 | no hempcrete wall EPD in OBD (hemp stone: 2 EPDs) |
-| 16 | Wood-concrete slab | one OBD EPD, 274 kg/m² | only one in OBD |
+| 1 | Building geometry per m² GFA | outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floor/ceiling 0.60, roof 0.40, ground slab 0.40 m² | 2–3 storeys, ~200 m² footprint, 20 % glazing; the dataset's 4-storey reference house (wall 0.55, roof 0.27, windows 0.18) does not fit the brief |
+| 2 | U-value targets | FILLED from the dataset (GModG Anlage 1 reference building): outer wall 0.28, flat/pitched roof 0.20, ground slab 0.35 W/m²K (earlier assumption 0.20 / 0.14 / 0.25) | GEG was replaced by the GModG on 29 July 2026; component limits carried over. EH40 guideline values (0.16 / 0.11) not used |
+| 3 | λ and μ | FILLED: single dataset value where given (RC 2.4, mineral render 1.0, screed 1.4); for ranges the earlier value kept when inside the range, else midpoint (lime plaster μ 25) | dataset provenance mostly TYPICAL / UNVERIFIED-STD (DIN 4108-4 and EN ISO 10456 not opened) |
+| 4 | Service life and technical life | FILLED: BNB service life 50 y for structure, masonry, plaster and screed (earlier 100); insulation 50 y inside constructions and 40 y as ETICS; windows 30 y; technical life (80 y for concrete and brick, clay plaster) drives the durability indicator | dataset cites BNB 2017 via a summariser; ≥ 50 y is a lower bound |
+| 5 | Moisture resistance, indoor-air risk, hygric score | FILLED: dataset ratings (R_D2, IAQ L–H mapped to 5–1, R_WB3) where present; earlier ratings kept for steel, paint and other gaps | dataset marks all of these ASSUMED; no chamber or buffering data except clay vs lime plaster |
+| 6 | Cost | FILLED: dataset mid values converted to €/m³ of layer using the thickness the dataset names (e.g. RC 700 €/m³, CLT 1,350, KVH 1,100, rock wool 441, EPS 403, window 675 €/m²); steel 3,750 €/t | only the insulation costs are CITED (reduco.ai); the rest are ASSUMED ±30 % in the dataset |
+| 7 | Not covered by the dataset (earlier assumptions kept) | paint/covering, vapour control layer, sealing foil, gravel, dry fill, roof tile, steel-concrete and wood-concrete composite slabs, sound rating 1–5, fire and sound requirements (REI/EI 30 GK 3; Rw 53/54/40/35/32 dB), operating cost | no dataset row; see `materials.py` |
+| 8 | Level-2 criterion weights | five criteria × 20 pts; interface = mean of four checks (good 100, caution 50, critical 0); criterion 5 = mean of interface mean and whole-build-up score | prescribed by the brief |
+| 9 | Gravel and fill | natural-stone EPD scaled to 1,600 kg/m³ bulk density; pumice fill EPD | no gravel EPD in OBD |
+| 10 | Clay block | fired brick EPD 'Brick (unfilled)' 365 mm; sand-lime brick for inner walls | clay-block unit EPD not found by name; dataset M05 covers hollow clay brick (λ 0.07–0.77, kept 0.12) |
+| 11 | Hempcrete | straw bale used in alternative 6 | no hempcrete wall EPD in OBD |
+| 12 | Wood-concrete slab | one OBD EPD, 274 kg/m² | only one in OBD |
 
 **Data gaps in OBD:** `SM` is empty for most bio-based EPDs (recycled share looks 0); steel sections 3 EPDs, straw 2, cellulose 2, fired brick 3, roof tile 1, timber window 1, composite slab 1; EPDs mix generic, average and specific datasets and are medians; biogenic carbon (negative A1–A3, positive C3) is shown without dynamic accounting; windows are whole-unit EPDs, so frame, glazing and sealant cannot be scored separately; mass-law sound estimates ignore decoupling.
 
@@ -170,11 +167,11 @@ None of the following is in the OBD data set.
 
 | Scenario | 1 | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|---|
-| Base | 6 (54.5) | 2 (61.2) | 4 (56.8) | 3 (57.1) | 5 (55.3) | 1 (67.0) |
-| No compatibility criterion (4 criteria) | 6 (47.4) | 2 (52.9) | 3 (49.1) | 5 (48.5) | 4 (48.7) | 1 (64.2) |
-| Unweighted parts | 5 (56.3) | 2 (62.3) | 3 (59.3) | 4 (58.1) | 6 (55.9) | 1 (66.8) |
-| All assumed ratings neutral (3) | 6 (53.7) | 2 (60.8) | 5 (54.4) | 3 (57.9) | 4 (56.3) | 1 (64.9) |
-| Cost criterion neutral | 6 (53.1) | 2 (58.1) | 4 (56.4) | 3 (56.6) | 5 (55.8) | 1 (62.7) |
-| Service lives of timber/bio-based layers and timber windows -30 % | 4 (56.7) | 2 (62.4) | 3 (59.0) | 5 (56.6) | 6 (54.3) | 1 (66.6) |
+| Base | 5 (55.8) | 2 (64.0) | 4 (58.6) | 3 (59.6) | 6 (55.3) | 1 (68.6) |
+| No compatibility criterion (4 criteria) | 5 (48.9) | 2 (56.3) | 4 (50.8) | 3 (51.5) | 6 (48.4) | 1 (65.7) |
+| Unweighted parts | 6 (55.5) | 2 (63.6) | 4 (58.8) | 3 (60.8) | 5 (56.1) | 1 (68.2) |
+| All assumed ratings neutral (3) | 6 (53.8) | 2 (61.9) | 4 (56.4) | 3 (58.5) | 5 (55.6) | 1 (66.8) |
+| Cost criterion neutral | 6 (55.8) | 2 (62.2) | 4 (58.0) | 3 (59.4) | 5 (56.3) | 1 (64.5) |
+| Service lives of timber/bio-based layers and timber windows -30 % | 5 (56.6) | 2 (64.6) | 4 (59.2) | 3 (59.6) | 6 (54.7) | 1 (66.1) |
 
-Monte Carlo (400 draws: cost ±20 %, service life ±20 % per material, each 1–5 rating ±1): first place — 1: 0 %, 2: 0 %, 3: 0 %, 4: 0 %, 5: 0 %, 6: 100 %; top three — 1: 0 %, 2: 100 %, 3: 8 %, 4: 80 %, 5: 12 %, 6: 100 %.
+Monte Carlo (400 draws: cost ±20 %, service life ±20 % per material, each 1–5 rating ±1): first place — 1: 0 %, 2: 2 %, 3: 0 %, 4: 0 %, 5: 0 %, 6: 98 %; top three — 1: 0 %, 2: 100 %, 3: 12 %, 4: 86 %, 5: 1 %, 6: 100 %.

@@ -1,0 +1,15 @@
+{
+  "cwd": "<repo>",
+  "head": "93471028e7a8fe92f83cbe759887733fdd8dba45",
+  "upstream": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "merge_pending": true,
+  "command": [
+    "python",
+    "analysis/run.py"
+  ],
+  "exit_code": 1,
+  "expected_exit": 1,
+  "exit_matches": true,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<repo>\\analysis\\run.py\", line 83, in <module>\r\n    main()\r\n    ~~~~^^\r\n  File \"<repo>\\analysis\\run.py\", line 44, in main\r\n    EXTR=run(EXT,'ext'); INTR=run(INT,'int')\r\n  File \"<repo>\\analysis\\run.py\", line 17, in run\r\n    R=[assess(n,a,kind) for n,a in K.items()]\r\n       ~~~~~~^^^^^^^^^^\r\n  File \"<repo>\\analysis\\model.py\", line 167, in assess\r\n    st_=layer_stats(n,th,rows)\r\n  File \"<repo>\\analysis\\model.py\", line 79, in layer_stats\r\n    for r in cand(layer,rows):\r\n             ~~~~^^^^^^^^^^^^\r\n  File \"<repo>\\analysis\\model.py\", line 47, in cand\r\n    return sel(**kw,rows=rows)\r\n  File \"<repo>\\analysis\\model.py\", line 14, in sel\r\n    for r in select(cat,name,excl,rows=rows):\r\n             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"<repo>\\analysis\\lib.py\", line 56, in select\r\n    for r in (rows if rows is not None else all_rows()):\r\n                                            ~~~~~~~~^^\r\n  File \"<repo>\\analysis\\lib.py\", line 8, in all_rows\r\n    if ROWS is None: ROWS=load_rows()\r\n                          ~~~~~~~~~^^\r\n  File \"<repo>\\analysis\\lib.py\", line 5, in load_rows\r\n    with open(path,encoding='utf-8') as fh: return list(csv.DictReader(fh))\r\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^\r\nFileNotFoundError: [Errno 2] No such file or directory: 'analysis/products.csv'\r\n"
+}

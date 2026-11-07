@@ -101,7 +101,7 @@ svg text{font-family:var(--f-b);fill:var(--ink)}
 <div class="wrap">
 <header>
   <h1>Structure Scoring Lab</h1>
-  <p class="sub">Six structural systems for a 500 m² residential building in Germany, 50-year study period. Scored at three levels: layer, building part, whole building. Facts come from Ökobaudat 2024-II; durability, cost, sound, fire and moisture inputs are marked as assumptions.</p>
+  <p class="sub">Six structural systems for a 500 m² residential building in Germany, 50-year study period. Scored at three levels: layer, building part, whole building. Carbon and energy come from Ökobaudat 2024-II; material properties (conductivity, service life, cost, ratings, U-values) come from the Building material property dataset, filled over my earlier assumptions. Sound, fire and some materials stay assumed.</p>
 </header>
 <nav id="nav" role="tablist"></nav>
 <div id="ctl" style="margin-top:14px"></div>
@@ -126,7 +126,7 @@ const base={D:1,E:1,W:1,C:1,K:1};
 const ranks=(w,vol)=>{const v=S.vol;S.vol=vol;const r=AL.map(x=>[x.id,alt(x.id,w).tot]).sort((a,b)=>b[1]-a[1]);S.vol=v;return Object.fromEntries(r.map((x,i)=>[x[0],i+1]))};
 const heat=v=>{ // 30 = poor, 80 = good, relative to the observed range
   const t=Math.max(0,Math.min(1,(v-45)/(75-45)));return t<.5?`color-mix(in srgb,var(--heat0) ${100-t*200}%,var(--heat1))`:`color-mix(in srgb,var(--heat1) ${100-(t-.5)*200}%,var(--heat2))`};
-const TABS=[['overview','Ranking'],['parts','Building parts'],['drill','Layers & compatibility'],['walls','Inner vs outer wall'],['carbon','Carbon & cost'],['sens','Sensitivity'],['assume','Assumptions']];
+const TABS=[['overview','Ranking'],['parts','Building parts'],['drill','Layers & compatibility'],['walls','Inner vs outer wall'],['carbon','Carbon & cost'],['sens','Sensitivity'],['fill','Dataset fill'],['assume','Assumptions']];
 function nav(){const n=document.getElementById('nav');n.innerHTML='';
   TABS.forEach(([id,l])=>{const b=$(`<button role="tab" aria-selected="${S.view===id}">${l}</button>`);b.onclick=()=>go(id);n.appendChild(b)});
   const t=$(`<button class="theme" title="Toggle light/dark">◐ Theme</button>`);t.onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=dark?'light':'dark'};n.appendChild(t)}
@@ -216,18 +216,24 @@ function vSens(m){
   m.appendChild(t);
   const N=400,mc=$(`<div class="panel"><h3>Random draws (${N})</h3><p class="note">Cost ±20 %, service life ±20 % per material, every 1–5 rating ±1.</p><div class="mc">${AL.map(a=>{const w=100*(S0.win[a.id]||0)/N,t3=100*(S0.top3[a.id]||0)/N;return `<div class="b"><span>${a.id}. ${a.short}</span><div><i style="width:${t3}%;background:var(--soft);outline:1px solid var(--line)"></i><i style="width:${w}%;background:${ACOL(a.id)};margin-top:-12px"></i></div><span class="mono">${w.toFixed(0)}% / ${t3.toFixed(0)}%</span></div>`}).join('')}</div><p class="note">Solid bar: share of draws ranked first. Pale bar: ranked in the top three.</p></div>`);
   m.appendChild(mc)}
-const ASM=[['Building geometry per m² GFA','outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floors 0.60, roof 0.40, ground slab 0.40 m²','2–3 storeys, 200 m² footprint, 20 % glazing'],
-['U-value targets','outer wall 0.20, roof 0.14, ground slab 0.25 W/m²K','stricter than GEG reference values, so no early retrofit'],
-['λ and μ values','e.g. rock wool 0.036 / μ 1, EPS 0.035 / 40, wood fibre 0.040 / 5, straw 0.052 / 2, RC 2.0 / 80, CLT 0.13 / 50','not in OBD; Glaser steady state, DIN 4108-3 climate'],
-['Fire and sound requirements','REI/EI 30 (Gebäudeklasse 3); Rw 53 dB separating wall, 54 floor, 40 outer wall/roof, 35 partition, 32 window','DIN 4109 style; mass law or typical framed values'],
-['Service lives','structure 100 y, render/ETICS 40, plasterboard 50, paint 12, membranes 30–50, windows 35','no service-life field in OBD'],
-['Ratings 1–5','moisture/fire/pest, VOC, buffering, sound contribution per material','qualitative; OBD has no emission or hygric data'],
-['Costs','e.g. RC 470 €/m³, CLT 850, rock wool 180, plastic window 520 €/m²','no cost data in OBD; indicative German prices'],
-['Operating cost','equal for all alternatives','same GEG standard, plan and U-values'],
-['Clay block, hempcrete','fired brick EPD and sand-lime brick; straw bale instead of hempcrete','no unit EPD / wall EPD in OBD'],
-['Thin data','straw 2 EPDs, cellulose 2, fired brick 3, steel sections 3, roof tile 1, timber window 1, composite slab 1','medians of mixed generic/average/specific datasets']];
+const ASM=[['Building geometry per m² GFA','outer wall 0.68, windows 0.17, inner load-bearing wall 0.35, partitions 0.50, floors 0.60, roof 0.40, ground slab 0.40 m²','2–3 storeys, 200 m² footprint, 20 % glazing; the dataset reference house is 4 storeys'],
+['U-value targets','FILLED: GModG Anlage 1 reference building, wall 0.28, roof 0.20, ground slab 0.35 W/m²K (before: 0.20 / 0.14 / 0.25)','dataset; GEG replaced by GModG on 29 July 2026'],
+['λ and μ','FILLED: dataset single value where given, else earlier value if inside the range, else midpoint','dataset provenance mostly TYPICAL / UNVERIFIED-STD'],
+['Service life, technical life','FILLED: BNB 50 y for structure, masonry, plaster, screed (before 100); insulation 50 y inside, 40 y ETICS; windows 30 y; technical life (80 y) drives durability','BNB 2017 via summariser; 50 y is a lower bound'],
+['Moisture, indoor air, hygric score','FILLED: dataset ratings where present; earlier ratings kept for gaps (steel, paint)','dataset marks all ASSUMED'],
+['Cost','FILLED: dataset mid values converted to €/m³ of layer (RC 700, CLT 1,350, KVH 1,100, rock wool 441, EPS 403; window 675 €/m²)','only insulation CITED; rest ASSUMED ±30 %'],
+['Not in the dataset (kept)','paint, vapour control layer, sealing foil, gravel, dry fill, roof tile, composite slabs, sound rating, fire and sound requirements, operating cost','no dataset row'],
+['Thin OBD data','straw 2 EPDs, cellulose 2, fired brick 3, steel sections 3, roof tile 1, timber window 1, composite slab 1','medians of mixed generic/average/specific datasets']];
+function vFill(m){
+  const rkB=Object.fromEntries(Object.entries(D.base).sort((a,b)=>b[1].w-a[1].w).map((x,i)=>[x[0],i+1]));
+  const cur=AL.map(a=>({a,w:alt(a.id).tot})).sort((x,y)=>y.w-x.w),rkN=Object.fromEntries(cur.map((x,i)=>[x.a.id,i+1]));
+  m.appendChild($(`<div class="panel"><h2>What changed when the dataset filled the assumptions</h2><p class="sub" style="margin:4px 0 10px">Same build-ups, same OBD carbon data. Only material properties and U-value targets changed. “After” follows your sliders; “before” is the earlier run.</p><div class="scroll"><table><thead><tr><th>Alternative</th><th class="num">Score before</th><th class="num">Score after</th><th class="num">Change</th><th class="num">Rank before</th><th class="num">Rank after</th><th class="num">Life GWP before → after</th><th class="num">Cost before → after (€/m²)</th></tr></thead><tbody>${AL.map(a=>{const b=D.base[a.id],n=alt(a.id).tot,d=n-b.w;return `<tr><td>${a.id}. ${a.short}</td><td class="num">${f1(b.w)}</td><td class="num">${f1(n)}</td><td class="num" style="color:${d>=0?'var(--good)':'var(--bad)'}">${d>=0?'+':''}${f1(d)}</td><td class="num">${rkB[a.id]}</td><td class="num"><strong>${rkN[a.id]}</strong></td><td class="num">${b.life.toFixed(0)} → ${a.life.toFixed(0)}</td><td class="num">${b.cost.toFixed(0)} → ${a.cost.toFixed(0)}</td></tr>`}).join('')}</tbody></table></div><p class="note">Costs rose for most systems because the dataset's installed prices are higher than my guesses, timber more than masonry. Structural service life fell from 100 to 50 years but no renewals follow within the 50-year study period.</p></div>`));
+  const fields=[...new Set(D.fill.map(r=>r[1]))];
+  const box=$(`<div class="panel"><h3>Changed values (${D.fill.length})</h3><div class="sel"><label>Field<select id="ff"><option value="">all</option>${fields.map(f=>`<option>${f}</option>`).join('')}</select></label></div><div class="scroll"><table style="margin-top:10px"><thead><tr><th>Material</th><th>Field</th><th class="num">Before</th><th class="num">After</th><th>Dataset row</th><th>Rule</th></tr></thead><tbody id="fb"></tbody></table></div><p class="note">lam = conductivity, mu = vapour resistance, life = service life, tech = technical life, mfp = moisture resistance, voc = indoor-air rating, buf = hygric score, cost = installed cost.</p></div>`);
+  const paint=()=>{const f=box.querySelector('#ff').value;box.querySelector('#fb').innerHTML=D.fill.filter(r=>!f||r[1]===f).map(r=>`<tr><td>${r[0]}</td><td class="mono">${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td><td class="mono">${r[4]}</td><td>${r[5]}</td></tr>`).join('')};
+  box.querySelector('#ff').onchange=paint;paint();m.appendChild(box)}
 function vAssume(m){m.appendChild($(`<div class="panel"><h2>Assumptions and data gaps</h2><p class="sub" style="margin:0 0 10px">Everything below is missing from the data set and was set by the analyst. Facts used from OBD 2024-II: GWPtotal (A2), PERT, PENRT, SM, HWD, NHWD, density, modules A1-A3 and C1–C4.</p><div class="scroll"><table><thead><tr><th>Item</th><th>Value used</th><th>Reason</th></tr></thead><tbody>${ASM.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div></div>`))}
-function renderMain(){const m=document.getElementById('view');m.innerHTML='';({overview:vOverview,parts:vParts,drill:vDrill,walls:vWalls,carbon:vCarbon,sens:vSens,assume:vAssume}[S.view]||vOverview)(m)}
+function renderMain(){const m=document.getElementById('view');m.innerHTML='';({overview:vOverview,parts:vParts,drill:vDrill,walls:vWalls,carbon:vCarbon,sens:vSens,assume:vAssume,fill:vFill}[S.view]||vOverview)(m)}
 function render(){const y=scrollY;nav();const c=document.getElementById('ctl');c.innerHTML='';if(!['sens','assume'].includes(S.view))c.appendChild(sliders());renderMain();scrollTo(0,y)}
 addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(TABS.some(t=>t[0]===h)&&h!==S.view){S.view=h;render()}});
 render();

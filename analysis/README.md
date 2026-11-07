@@ -25,7 +25,6 @@ X4 (sand-lime brick + EPS ETICS) is last on every criterion.
 | [02-method-and-assumptions.md](02-method-and-assumptions.md) | Layers, thermal target, lifecycle, scoring, all assumptions |
 | [03-exterior-walls.md](03-exterior-walls.md) | Exterior ranking and reasoning |
 | [04-interior-walls.md](04-interior-walls.md) | Interior ranking and reasoning |
-| [05-carbon-budget-api.md](05-carbon-budget-api.md) | carbonbudget.eu comparison (DE, residential) |
 | [06-decade-renovation.md](06-decade-renovation.md) | Replacement events per decade |
 | [07-product-selection.md](07-product-selection.md) | Concrete OBD products per layer |
 | [08-limitations-next-steps.md](08-limitations-next-steps.md) | What is weak, what to verify |
@@ -39,20 +38,17 @@ The source file `data/OBD_2024_II_*.csv` uses `;` and is not changed.
 | `results_wall_systems.csv` | Scores and indicators per system |
 | `results_layers.csv` | Layer-level carbon, thickness, service life |
 | `results_decade_timeline.csv` | Embodied carbon per renovation window |
-| `results_budget_de_residential.csv` | API budgets 2026/2036/2046 |
-| `results_budget_share.csv` | Wall share of the embodied budget |
 | `results_products.csv` | Top-3 EPDs per layer for the top-3 systems per class |
 
 Reproduce: `python3 -I analysis/extract.py && python3 -I analysis/run.py` from the repo root.
 
 ## Progress log
 
-1. Read `carbon-budget-api` skill and profiled the CSV. Done.
+1. Profiled the CSV. Done.
 2. Reduced CSV to one record per product and module (`extract.py`). Done.
 3. Defined 8 exterior and 7 interior assemblies, solved insulation thickness (`model.py`). Done.
 4. Scored carbon, sustainability, well-being, with sensitivity (`run.py`). Done.
-5. Queried carbon budget API for 2026, 2036, 2046. Done. 2056 and 2066 fail: API range ends 2050.
-6. Selected products and wrote report. Done.
+5. Selected products and wrote report. Done.
 
 ## Follow-up studies
 

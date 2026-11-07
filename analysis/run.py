@@ -1,4 +1,4 @@
-"""Step 4-6: score, decade timeline, budget comparison, products. Writes CSVs ('.' decimal, ',' delimiter) + results.json."""
+"""Step 4-6: score, decade timeline, products. Writes CSVs ('.' decimal, ',' delimiter) + results.json."""
 import sys, json, csv, statistics as st
 sys.path.insert(0,'analysis')
 from model import *
@@ -59,18 +59,6 @@ def main():
         for y,v in r['events'].items(): b[min(60,_m.ceil(y/10)*10)]+=v   # event falls into the next decade renovation window
         tl.append([r['name'],round(r['a13']+r['c'],3)]+[round(b[w],3) for w in range(10,70,10)])
     csv.writer(open('analysis/results_decade_timeline.csv','w',newline='',encoding='utf-8')).writerows([['system','build_2026','window_2036','window_2046','window_2056','window_2066','window_2076','window_2086']]+tl)
-    # budgets
-    B={}
-    for y in (2026,2036,2046):
-        d=json.load(open(f'analysis/budget_de_res_{y}.json'))['selected_year_budget']; B[y]=d
-    csv.writer(open('analysis/results_budget_de_residential.csv','w',newline='',encoding='utf-8')).writerows([['year','embodied_per_m2','operational_per_m2','total_per_m2']]+[[y,b['embodied_per_m2'],b['operational_per_m2'],b['total_per_m2']] for y,b in B.items()])
-    # share of embodied budget: ext 0.6 m2 wall / m2 GFA, int 0.8 (assumption)
-    share=[]
-    for r in EXTR+INTR:
-        f=0.6 if r['kind']=='ext' else 0.8
-        build=(r['a13']+r['c'])*f
-        share.append([r['name'],round(build,2),round(100*build/B[2026]['embodied_per_m2'],2),round(100*build/B[2036]['embodied_per_m2'],2),round(100*build/B[2046]['embodied_per_m2'],2)])
-    csv.writer(open('analysis/results_budget_share.csv','w',newline='',encoding='utf-8')).writerows([['system','wall_GWP_per_m2_GFA_A1_C','pct_of_embodied_budget_2026','pct_2036','pct_2046']]+share)
     # product shortlist for top-3 of each class
     pr=[]
     for R in (EXTR,INTR):
@@ -90,6 +78,6 @@ def main():
         for r in R: print(f"{r['name'][:50]:50} life={r['life_gwp']:6.1f} sust={r['S_sust']:.2f} well={r['S_well']:.2f} carb={r['S_carbon']:.2f} TOT={r['total']:.2f} cH={r['total_carbon_heavy']:.2f} wH={r['total_well_heavy']:.2f}")
         print()
 
-# importing this module (e.g. for norm) must not run the pipeline or touch analysis/products.csv
+# importing this module must not run the pipeline or require analysis/products.csv
 if __name__=='__main__':
     main()
