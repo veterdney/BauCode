@@ -1,0 +1,275 @@
+{
+  "scope": "Static link/data/packaging inspection only; no browser rehearsal, Python execution or suite reruns.",
+  "layout": "landscape-css-scroll-snap; sparse visual; website-first why panel; appendix untimed",
+  "timing_seconds": [
+    20,
+    45,
+    40,
+    35,
+    25,
+    15
+  ],
+  "timing_total": 180,
+  "panel_order": [
+    "why",
+    "question",
+    "loop",
+    "result",
+    "limits",
+    "next",
+    "appendix"
+  ],
+  "relative_link_count": 54,
+  "links": [
+    {
+      "link": "style.css",
+      "target": "demo/presentation/style.css"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#next",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#appendix",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../../docs/index.html",
+      "target": "docs/index.html"
+    },
+    {
+      "link": "../../docs/lab.html",
+      "target": "docs/lab.html"
+    },
+    {
+      "link": "../../docs/loop.html",
+      "target": "docs/loop.html"
+    },
+    {
+      "link": "../output/gallery/gallery.html",
+      "target": "demo/output/gallery/gallery.html"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#appendix",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../input/synthetic_wall.json",
+      "target": "demo/input/synthetic_wall.json"
+    },
+    {
+      "link": "../input/synthetic_wall_replaced.json",
+      "target": "demo/input/synthetic_wall_replaced.json"
+    },
+    {
+      "link": "../../docs/INPUT_SCHEMA.md",
+      "target": "docs/INPUT_SCHEMA.md"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/03_exact20_original.json",
+      "target": "review-evidence/preservation-v1-20261107/03_exact20_original.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/08_original_gallery_checks.json",
+      "target": "review-evidence/preservation-v1-20261107/08_original_gallery_checks.json"
+    },
+    {
+      "link": "../../tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md",
+      "target": "tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md"
+    },
+    {
+      "link": "../../tests/human_main_preservation_v1.json",
+      "target": "tests/human_main_preservation_v1.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/02_policy_falsification.json",
+      "target": "review-evidence/preservation-v1-20261107/02_policy_falsification.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/10_p2.json",
+      "target": "review-evidence/preservation-v1-20261107/10_p2.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/11_human_node.json",
+      "target": "review-evidence/preservation-v1-20261107/11_human_node.json"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../output/default/result.json",
+      "target": "demo/output/default/result.json"
+    },
+    {
+      "link": "../output/replaced/result.json",
+      "target": "demo/output/replaced/result.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/04_fault_original.json",
+      "target": "review-evidence/preservation-v1-20261107/04_fault_original.json"
+    },
+    {
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#next",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#appendix",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../output/gallery/gallery.html",
+      "target": "demo/output/gallery/gallery.html"
+    },
+    {
+      "link": "README.md",
+      "target": "demo/presentation/README.md"
+    },
+    {
+      "link": "publication_manifest.json",
+      "target": "demo/presentation/publication_manifest.json"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#appendix",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../output/replaced/layers.csv",
+      "target": "demo/output/replaced/layers.csv"
+    },
+    {
+      "link": "../output/replaced/report.md",
+      "target": "demo/output/replaced/report.md"
+    },
+    {
+      "link": "../expected/synthetic_wall.expected.json",
+      "target": "demo/expected/synthetic_wall.expected.json"
+    },
+    {
+      "link": "../expected/synthetic_wall_replaced.expected.json",
+      "target": "demo/expected/synthetic_wall_replaced.expected.json"
+    },
+    {
+      "link": "../../tests/results_preservation_v1_fault_20261107.json",
+      "target": "tests/results_preservation_v1_fault_20261107.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/after.json",
+      "target": "review-evidence/preservation-v1-20261107/after.json"
+    },
+    {
+      "link": "../output/gallery/gallery.html",
+      "target": "demo/output/gallery/gallery.html"
+    },
+    {
+      "link": "#next",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    }
+  ],
+  "javascript": false,
+  "external_dependencies": false,
+  "human_website_packaged_unchanged": {
+    "docs/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/INPUT_SCHEMA.md": "ba62b947cd64864be942d27f5465b9e600ed327fc3a4efa284086d4ea13e5e72",
+    "docs/index.html": "9b36372f5ba0ed45a31c301bd1969561ed535da70d091162674294162a6f7a7e",
+    "docs/lab.html": "4543ed82efc6e0e773f73a6749e74c6868be1ca9e677af2ca48efac4d14d8df9",
+    "docs/loop.html": "e7b19b80841af11b33767307ae04b53ad3afc83af04b747ac19059cf7710bd82",
+    "source_commit": "4ccebbc4e784d9eb6bd4549cc4bbfbf51ca4f889"
+  },
+  "ai_provenance_line": "AI-assisted implementation; agent-derived synthetic expectations, not independent human or scientific validation.",
+  "ai_provenance_panel": "why",
+  "site_caveat": "Human website uses JavaScript and external Google Fonts; exploratory structural-system rankings are not validated recommendations.",
+  "css_fixes_preserved": [
+    "appendix-cols minmax(0,1fr)+children min-width:0",
+    "limit-card>strong:first-child",
+    "narrow overflow-x hidden retain desktop snap-x",
+    "pre/code long-token wrap+scroll contain",
+    "AI provenance visible on why",
+    "narrow photo object-fit contain (250% proxy)"
+  ],
+  "human_report_imported": false,
+  "asset_sha256": {
+    "demo/presentation/index.html": "95a53ace050aab67b85b22cfe0528f24ae780fabcab2dd32f1018085e1dca29c",
+    "demo/presentation/style.css": "14ed5f30c94e9eb50de91a9b981eab360afcbe785c96b7f51d286fa85e7e74d8",
+    "demo/presentation/README.md": "481b62b5f39371038922b04065812dcf188ab3a259ea52691db6ca53d065267a",
+    "demo/presentation/team.jpg": "93eec20535dbafa4fa35a0cf1ec749193cab6207ecfeb85c9c8324c695a1db5c"
+  },
+  "human_website_packaging_md_sha256": "0d5c10f6692ccf7e5210d69f8ba0015253f5e2416a2e3022c1b1bfc328c80864",
+  "browser_visual_review": "WIDE PASS c16fc; this CSS moves photo contain to <=980 for 250% proxy stack. Spotcheck pending; not claimed here.",
+  "merge_authorized": false,
+  "base_final_index_sha256": "e7f88a09f4f10200219adb63e02461c387fe45e187c0b807978d11d6854153a7",
+  "prior_accepted_index_sha256": "aadf0dedbcc641609b3eb05c43844c9d763a5a75a13355d34acc6b96f474751b",
+  "css_delta_note": {
+    "website_handoff_04113b0e_to_fa71d281": "added .site-caveat only",
+    "c16fc_narrow700_photo": "contain/autoheight at <=700 only",
+    "final_photo_at_980": "moved EXACT photo contain/autoheight/max-height:none to @media (max-width:980px) with stacked layout; removed duplicate from <=700"
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "recorded_utc": "2026-11-07T14:14:57Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/run_exact20.py",
+  "--out",
+  "tests/results_reviewed.json",
+  "--label",
+  "reviewed-after-packaging-fixes"
+ ],
+ "exit_code": 0,
+ "stdout": "C01 PASS     import=PASS per_m2=PASS demo=PASS\nC02 PASS     per_m2_area=PASS per_m2_qm_thickness=PASS demo=PASS cap_units=UNKNOWN(nb)\nC03 PASS     per_m3=PASS per_m2_area=PASS ref_quantity=PASS demo_blank=PASS demo_absent_key=PASS\nC04 PASS     per_m3=PASS per_m2_area=PASS ref_quantity=PASS demo=PASS\nC05 PASS     negative.per_m3=PASS nan.per_m3=PASS posinf.per_m3=PASS neginf.per_m3=PASS negative.demo=PASS nan.demo=PASS posinf.demo=PASS neginf.demo=PASS\nC06 PASS     Stk.per_m3=PASS blank_unit.per_m3=PASS piece.demo=PASS mm.demo=PASS\nC07 PASS     per_m3_val=PASS demo=PASS\nC08 PASS     per_m3_val=PASS single_density_multiplier=PASS bulk_density_fallback=PASS conversion_factor_not_applied=PASS demo=PASS\nC09 PASS     per_m2=PASS demo=PASS\nC10 PASS     to_metres=PASS to_metres_bad_unit=PASS layer_mass=PASS demo=PASS\nC11 PASS     per_m2_zero=PASS per_m2_negative=PASS demo_zero_x2=PASS demo_negative_x2=PASS\nC12 PASS     pool_median_empty=PASS assess_empty_pool=PASS demo_single_empty=PASS demo_known_plus_empty=PASS\nC13 PASS     layer_stats_coverage=PASS legacy_d_coerced_zero=PASS(nb) demo=PASS\nC14 PASS     per_m2_aggregate=PASS demo_overlap=PASS demo_submodules_only=PASS demo_partial_submodules=PASS\nC15 PASS     demo_conflict=PASS demo_missing=PASS demo_consistent=PASS legacy_extract_scenario=UNKNOWN(nb)\nC16 PASS     assess_b4_ignored=PASS demo_b4_rejected=PASS reconciliation=NOT RUN(nb)\nC17 PASS     pool_median_odd=PASS pool_median_even=PASS norm_tie=PASS norm_spread=PASS assess_median=PASS demo_pool_odd=PASS demo_pool_even=PASS\nC18 PASS     pert0=PASS pert2=PASS s4_unused=PASS intended_formula=UNKNOWN(nb)\nC19 PASS     default_values=PASS labels=PASS unknown_not_zero=PASS no_preference_or_health_claims=PASS path_separator_determinism=PASS originals_unchanged=PASS legacy_health_finding=UNKNOWN(nb)\nC20 PASS     cli_blank_quantity=PASS cli_missing_file=PASS cli_not_json=PASS no_model_or_network_surface=PASS injection=NOT RUN(nb)\ncases {'PASS': 20, 'FAIL': 0, 'UNKNOWN': 0, 'NOT RUN': 0} | blocking probes {'PASS': 79, 'FAIL': 0, 'UNKNOWN': 0, 'NOT RUN': 0} | non-blocking {'PASS': 1, 'FAIL': 0, 'UNKNOWN': 4, 'NOT RUN': 2} | exit 0\n",
+ "stderr": ""
+}

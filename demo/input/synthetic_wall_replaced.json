@@ -1,0 +1,23 @@
+{
+ "schema": "baucode-demo-input/1",
+ "label": "SYNTHETIC",
+ "note": "Replacement example: identical to synthetic_wall.json except layer L2 thickness 100 mm -> 160 mm.",
+ "wall": {"id": "SYN-WALL-1-REPLACED", "area_m2": 10},
+ "products": [
+  {"id": "SYN-P1", "source": "synthetic: demo default board, pool member 1", "unit": "m3", "ref_quantity": 1, "density_kg_m3": 500, "scenario": "SYN-EOL-A",
+   "modules": {"A1-A3": 100, "C1": 0, "C2": 1, "C3": 2, "C4": 3, "D": -10}},
+  {"id": "SYN-P2", "source": "synthetic: demo default board, pool member 2", "unit": "m3", "ref_quantity": 1, "density_kg_m3": 500, "scenario": "SYN-EOL-A",
+   "modules": {"A1-A3": 300, "C1": 0, "C2": 1, "C3": 2, "C4": 3, "D": -10}},
+  {"id": "SYN-P3", "source": "synthetic: demo default board, pool member 3", "unit": "m3", "ref_quantity": 1, "density_kg_m3": 500, "scenario": "SYN-EOL-A",
+   "modules": {"A1-A3": 900, "C1": 0, "C2": 1, "C3": 2, "C4": 3, "D": -10}},
+  {"id": "SYN-P4", "source": "synthetic: demo default insulation (no D declared)", "unit": "kg", "ref_quantity": 2, "density_kg_m3": 50, "scenario": "SYN-EOL-B",
+   "modules": {"A1-A3": 3, "C1": 0, "C2": 0.2, "C3": 0.4, "C4": 0}},
+  {"id": "SYN-P5", "source": "synthetic: demo default coating (area basis)", "unit": "m2", "ref_quantity": 2, "scenario": "SYN-EOL-C",
+   "modules": {"A1-A3": 10, "C1": 0, "C2": 0, "C3": 0, "C4": 1, "D": 0}}
+ ],
+ "layers": [
+  {"id": "L1", "name": "synthetic board", "product_ids": ["SYN-P1", "SYN-P2", "SYN-P3"], "thickness": {"value": 20, "unit": "mm"}, "multiplier": 1},
+  {"id": "L2", "name": "synthetic insulation", "product_ids": ["SYN-P4"], "thickness": {"value": 160, "unit": "mm"}, "multiplier": 1},
+  {"id": "L3", "name": "synthetic coating", "product_ids": ["SYN-P5"], "multiplier": 1}
+ ]
+}

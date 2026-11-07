@@ -1,0 +1,15 @@
+{
+ "recorded_utc": "2026-11-07T14:10:33Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/confusion_exact20.py",
+  "tests/results_before.json",
+  "--out",
+  "tests/detection_metrics_before.json"
+ ],
+ "exit_code": 0,
+ "stdout": "positives 15: TP 0 FN 0 not-executed 15 | negatives 18: TN 0 FP 0 abstained 0 not-executed 18 | numeric expectations 20 max_abs 5.0 max_rel 1.0\n",
+ "stderr": ""
+}

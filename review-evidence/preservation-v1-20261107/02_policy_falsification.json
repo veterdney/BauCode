@@ -1,0 +1,17 @@
+{
+  "cwd": "<repo>",
+  "head": "305345a394d0019dc4c5cc51aff508c2a54dea77",
+  "baseline": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "command": [
+    "python",
+    "tests/check_human_main_v1.py",
+    "--self-test",
+    "--out",
+    "review-evidence/preservation-v1-20261107/falsification_result.json"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "exit_matches": true,
+  "stdout": "{\r\n \"schema\": \"baucode-human-main-preservation/1\",\r\n \"head\": \"305345a394d0019dc4c5cc51aff508c2a54dea77\",\r\n \"upstream\": \"8336cb6ab602d96b26b36390274dcb47cf05ac1c\",\r\n \"policy_sha256\": \"2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac\",\r\n \"checker_sha256\": \"29a479a0ffb6104b6fb6476667aa7842f3dc81453355b55266b35fdeb02a3950\",\r\n \"mode\": \"temporary_falsification\",\r\n \"result\": {\r\n  \"status\": \"PASS\",\r\n  \"probes\": [\r\n   {\r\n    \"id\": \"upstream_control\",\r\n    \"expected\": \"PASS\",\r\n    \"actual\": \"PASS\"\r\n   },\r\n   {\r\n    \"id\": \"changed_protected_content\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"missing_protected_file\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"resurrected_human_deletion\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"extra_statement_outside_wrapper\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   }\r\n  ],\r\n  \"scope\": \"Independent policy falsification controls, not additional exact20 cases or accuracy evidence.\"\r\n }\r\n}\r\n",
+  "stderr": ""
+}

@@ -1,0 +1,20 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "node",
+    "analysis/levels/viz/test_loop.mjs"
+  ],
+  "started_berlin": "2026-11-07T16:14:51.537091+01:00",
+  "finished_berlin": "2026-11-07T16:14:51.586557+01:00",
+  "exit_code": 0,
+  "expected_exit_for_recording": 0,
+  "exit_matches": true,
+  "stdout": "PASS 1 ST has 8 stages, 8th id record\nPASS 2 R has 5 rounds ids 1..5, round 4 Research-loop, round 5 dataset\nPASS 3 C entries well-formed\nPASS 4 PR practices\nPASS 5a R3 Build-ups = rows in scores_parts.csv\nPASS 5b R3 Interfaces rated = rows in scores_interfaces.csv\nPASS 5c R3 Top score = rank 1 in baseline/scores_alternatives.csv (before the dataset fill)\nPASS 5d R2 Top score = max total in compare6/scores.csv\nPASS 5f R4 Tasks done = count of \"- [x]\" in TASKS.md\nPASS 5g R4 Journal entries = bullet lines in JOURNAL.md\nPASS 5h R5 Top score = rank 1 in report/scores_alternatives.csv\nPASS 5i R5 Materials = rows in the material property dataset\nPASS 5j R5 Values changed = changed rows in dataset_fill_log.csv\nPASS 5k R5 Rank changes = alternatives whose weighted rank differs from baseline\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "5d2f2c3eb8260315dc0fa9b1d918d64e05c92b62a0ae1f6407219ce78335712a",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,20 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "demo/check_gallery.py"
+  ],
+  "started_berlin": "2026-11-07T16:14:50.595864+01:00",
+  "finished_berlin": "2026-11-07T16:14:51.265622+01:00",
+  "exit_code": 1,
+  "expected_exit_for_recording": 1,
+  "exit_matches": true,
+  "stdout": "PASS  run 1 exit 0\r\nPASS  run 2 exit 0\r\nPASS  repeat runs byte-identical\r\nPASS  saved gallery equals fresh run\r\nPASS  gallery results == direct demo evaluate()\r\nPASS  size/seed recorded\r\nPASS  every invalid edge rejected with no numbers\r\nPASS  standalone: no script/link/img/iframe tags, no src/href attributes, no url()/http\r\nPASS  inline style present\r\nPASS  SYNTHETIC badge and GENERATED label\r\nPASS  two charts with title+desc (role=img)\r\nPASS  legend for two-series chart\r\nPASS  D separate section and column\r\nPASS  provenance section with seed and generator\r\nPASS  layer/module breakdown present\r\nPASS  bars anchored at true zero\r\nPASS  negative values drawn left of zero in both charts\r\nPASS  equivalence-unverified wording on both charts and the table caption\r\nPASS  UNKNOWN rendered for unknown totals (not 0)\r\nPASS  no zero-height stand-in bars for unknown\r\nPASS  rejected rows have no numeric cells\r\nPASS  different reference area not charted, listed separately\r\nPASS  markup in labels escaped\r\nPASS  no preference/health/safety/recyclability wording\r\nPASS  no thermal metric rendered\r\nPASS  single-wall replacement recipe: exit 0 and matches hand-derived file\r\nPASS  gallery --inputs replacement: exit 0, hand-derived 185, kept apart (10 m2 reference area)\r\nPASS  gallery --inputs unreadable file -> exit 2\r\nFAIL  original reports/visuals unchanged vs base\r\nsupplementary gallery checks: 28 PASS, 1 FAIL (demonstration checks, not acceptance)\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "10be1a4aaf99687569fa4dbea06a44e87e036705d86bd5c2d7a40117feb38cb0",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

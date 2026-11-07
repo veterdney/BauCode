@@ -1,0 +1,3555 @@
+{
+ "label": "integrated-main-8336cb6",
+ "recorded_utc": "2026-11-07T14:38:04Z",
+ "manifest": "tests/exact20_manifest.json",
+ "manifest_sha256": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+ "fault_hook": null,
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "git_head": "93471028e7a8fe92f83cbe759887733fdd8dba45",
+ "git_changed_paths": [
+  "M  analysis/02-method-and-assumptions.md",
+  "D  analysis/05-carbon-budget-api.md",
+  "M  analysis/06-decade-renovation.md",
+  "M  analysis/08-limitations-next-steps.md",
+  "M  analysis/README.md",
+  "D  analysis/budget_de_res_2026.json",
+  "D  analysis/budget_de_res_2036.json",
+  "D  analysis/budget_de_res_2046.json",
+  "D  analysis/budget_de_res_2056.json",
+  "D  analysis/budget_de_res_2066.json",
+  "A  analysis/levels/baseline/scores_alternatives.csv",
+  "A  analysis/levels/baseline/scores_parts.csv",
+  "A  analysis/levels/dataset_fill.py",
+  "A  analysis/levels/dataset_fill_log.csv",
+  "M  analysis/levels/engine.py",
+  "M  analysis/levels/materials.py",
+  "M  analysis/levels/report.py",
+  "M  analysis/levels/report/README.md",
+  "M  analysis/levels/report/alt-1.md",
+  "M  analysis/levels/report/alt-2.md",
+  "M  analysis/levels/report/alt-3.md",
+  "M  analysis/levels/report/alt-4.md",
+  "M  analysis/levels/report/alt-5.md",
+  "M  analysis/levels/report/alt-6.md",
+  "M  analysis/levels/report/scores_alternatives.csv",
+  "M  analysis/levels/report/scores_interfaces.csv",
+  "M  analysis/levels/report/scores_layers.csv",
+  "M  analysis/levels/report/scores_parts.csv",
+  "M  analysis/levels/report/sensitivity.json",
+  "M  analysis/levels/score.py",
+  "M  analysis/levels/viz/build_data.py",
+  "A  analysis/levels/viz/build_pages.py",
+  "M  analysis/levels/viz/data.json",
+  "M  analysis/levels/viz/index.html",
+  "A  analysis/levels/viz/loop.html",
+  "M  analysis/levels/viz/template.html",
+  "A  analysis/levels/viz/test_loop.mjs",
+  "A  analysis/loop/JOURNAL.md",
+  "A  analysis/loop/PROMPT.md",
+  "A  analysis/loop/TASKS.md",
+  "D  analysis/results_budget_de_residential.csv",
+  "D  analysis/results_budget_share.csv",
+  "M  analysis/run.py",
+  "A  docs/.nojekyll",
+  "A  docs/index.html",
+  "A  docs/lab.html",
+  "A  docs/loop.html",
+  "?? tests/results_faultproof_nora.json",
+  "?? tests/results_nora.json",
+  "?? tests/results_p2_claude.json",
+  "?? tests/results_p2_partial_fault_nora.json",
+  "?? tests/results_p2_partial_nora.json",
+  "?? tests/results_p2final_fault_nora.json",
+  "?? tests/results_p2final_nora.json"
+ ],
+ "production_import": "ok",
+ "tolerance": {
+  "rel": 1e-09,
+  "abs": 1e-09
+ },
+ "summary": {
+  "cases": {
+   "PASS": 19,
+   "FAIL": 1,
+   "UNKNOWN": 0,
+   "NOT RUN": 0
+  },
+  "cases_total": 20,
+  "probes_blocking": {
+   "PASS": 78,
+   "FAIL": 1,
+   "UNKNOWN": 0,
+   "NOT RUN": 0
+  },
+  "probes_nonblocking": {
+   "PASS": 1,
+   "FAIL": 0,
+   "UNKNOWN": 4,
+   "NOT RUN": 2
+  },
+  "probes_total": 86
+ },
+ "exit_code": 1,
+ "cases": [
+  {
+   "id": "C01",
+   "title": "baseline: required 1 / q 1 x factor 10 = 10, and production importable without real data",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C01.import",
+     "kind": "production",
+     "op": "import_production",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "note": "lib/model/run must import from repo root without analysis/products.csv (no real-wall prerequisite)",
+     "status": "PASS",
+     "path": "subprocess exit 0",
+     "actual": true
+    },
+    {
+     "id": "C01.per_m2",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 10
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 10.0
+    },
+    {
+     "id": "C01.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "status": "EVALUATED",
+       "label": "SYNTHETIC",
+       "layers.0.a13": 10,
+       "totals.a13_total": 10,
+       "layers.0.products": [
+        "C01-P"
+       ],
+       "layers.0.sources": [
+        "synthetic spec C01"
+       ]
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C01",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C01-P"
+        ],
+        "sources": [
+         "synthetic spec C01"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 10.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 10.0,
+       "a13_total": 10.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 10.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "title": "area basis: required 5 m2 / q 2 m2 x factor 10 = 25 (5 per m2)",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C02.per_m2_area",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 5
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 5.0
+    },
+    {
+     "id": "C02.per_m2_qm_thickness",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 5
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 5.0
+    },
+    {
+     "id": "C02.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 25,
+       "totals.a13_total": 25
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C02",
+       "area_m2": 5.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C02-P"
+        ],
+        "sources": [
+         "synthetic spec C02"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m2"
+        ],
+        "thickness_m": null,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 25.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m2 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 25.0,
+       "a13_total": 25.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 25.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C02.cap_units",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "UNKNOWN",
+      "reason": "Legacy plausibility cap abs(A1-A3)<200 for area layers (model.py:145, run.py:82): whether 200 is per declared unit or per m2 is not documented. Selection equivalence of (q=2, factor 10) vs (q=1, factor 5) is therefore not asserted and the cap is left unchanged."
+     },
+     "status": "UNKNOWN",
+     "reason": "Legacy plausibility cap abs(A1-A3)<200 for area layers (model.py:145, run.py:82): whether 200 is per declared unit or per m2 is not documented. Selection equivalence of (q=2, factor 10) vs (q=1, factor 5) is therefore not asserted and the cap is left unchanged.",
+     "path": "declared (no execution)"
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "title": "blank declared reference quantity -> explicit invalid, never default 1",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C03.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C03.per_m2_area",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C03.ref_quantity",
+     "kind": "production",
+     "op": "ref_quantity",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "q": null,
+       "code": "REF_QTY_BLANK"
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "q": null,
+      "code": "REF_QTY_BLANK"
+     }
+    },
+    {
+     "id": "C03.demo_blank",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_BLANK"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_BLANK",
+        "detail": "unit='m3' ref_quantity=''"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C03.demo_absent_key",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_BLANK"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_BLANK",
+        "detail": "unit='m3' ref_quantity=None"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "title": "zero reference quantity -> invalid",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C04.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C04.per_m2_area",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C04.ref_quantity",
+     "kind": "production",
+     "op": "ref_quantity",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "q": null,
+       "code": "REF_QTY_NOT_POSITIVE"
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "q": null,
+      "code": "REF_QTY_NOT_POSITIVE"
+     }
+    },
+    {
+     "id": "C04.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_NOT_POSITIVE"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_NOT_POSITIVE",
+        "detail": "unit='m3' ref_quantity=0"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "title": "negative / nan / +inf / -inf reference quantity -> invalid (named members)",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C05.negative.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C05.nan.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C05.posinf.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C05.neginf.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C05.negative.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_NOT_POSITIVE"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_NOT_POSITIVE",
+        "detail": "unit='m3' ref_quantity=-2"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C05.nan.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_NOT_FINITE"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_NOT_FINITE",
+        "detail": "unit='m3' ref_quantity='nan'"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C05.posinf.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_NOT_FINITE"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_NOT_FINITE",
+        "detail": "unit='m3' ref_quantity='inf'"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C05.neginf.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "REF_QTY_NOT_FINITE"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "REF_QTY_NOT_FINITE",
+        "detail": "unit='m3' ref_quantity='-inf'"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "title": "unsupported reference units -> invalid / not numeric",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C06.Stk.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C06.blank_unit.per_m3",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C06.piece.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "UNIT_UNSUPPORTED"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "UNIT_UNSUPPORTED",
+        "detail": "unit='piece' ref_quantity=1"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C06.mm.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "UNIT_UNSUPPORTED"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0]",
+        "code": "UNIT_UNSUPPORTED",
+        "detail": "unit='mm' ref_quantity=1"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "title": "kg source: factor 3 / q 2 kg x density 400 = 600 per m3",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C07.per_m3_val",
+     "kind": "production",
+     "op": "per_m3_val",
+     "blocking": true,
+     "expected": {
+      "value": 600
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 600.0
+    },
+    {
+     "id": "C07.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 600,
+       "layers.0.density_used_kg_m3": 400
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C07",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C07-P"
+        ],
+        "sources": [
+         "synthetic spec C07"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "kg"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 600.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": 400.0,
+        "density_used_kg_m3": 400.0,
+        "density_note": "used: kg reference basis converted with product density (lib.dens)"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 600.0,
+       "a13_total": 600.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 600.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": 400.0,
+       "mass_complete": true
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "title": "density 200 -> 300 per m3; single density factor (no double density)",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C08.per_m3_val",
+     "kind": "production",
+     "op": "per_m3_val",
+     "blocking": true,
+     "expected": {
+      "value": 300
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 300.0
+    },
+    {
+     "id": "C08.single_density_multiplier",
+     "kind": "production",
+     "op": "per_m3",
+     "blocking": true,
+     "expected": {
+      "value": 100
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 100.0
+    },
+    {
+     "id": "C08.bulk_density_fallback",
+     "kind": "characterization",
+     "op": "per_m3_val",
+     "blocking": true,
+     "expected": {
+      "value": 300
+     },
+     "note": "characterizes dens() fallback to bulk density; not a claim that bulk density is the right basis",
+     "status": "PASS",
+     "path": "import",
+     "actual": 300.0
+    },
+    {
+     "id": "C08.conversion_factor_not_applied",
+     "kind": "characterization",
+     "op": "per_m3_val",
+     "blocking": true,
+     "expected": {
+      "value": 300
+     },
+     "note": "the per-kg conversion factor column is not multiplied in a second time",
+     "status": "PASS",
+     "path": "import",
+     "actual": 300.0
+    },
+    {
+     "id": "C08.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 300,
+       "layers.0.mass_kg": 200
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C08",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C08-P"
+        ],
+        "sources": [
+         "synthetic spec C08"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "kg"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 300.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": 200.0,
+        "density_used_kg_m3": 200.0,
+        "density_note": "used: kg reference basis converted with product density (lib.dens)"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 300.0,
+       "a13_total": 300.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 300.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": 200.0,
+       "mass_complete": true
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C09",
+   "title": "m3 source: factor 10 / q 2 x required 0.1 = 0.5; density not used",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C09.per_m2",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 0.5
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 0.5
+    },
+    {
+     "id": "C09.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 0.5,
+       "layers.0.density_used_kg_m3": null,
+       "layers.0.density_note": "not used: m3 reference basis"
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C09",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C09-P"
+        ],
+        "sources": [
+         "synthetic spec C09"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 0.1,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 0.5,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 0.5,
+       "a13_total": 0.5,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 0.5,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C10",
+   "title": "100 mm = 0.1 m at 1 m2 and density 400 -> 40 kg",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C10.to_metres",
+     "kind": "production",
+     "op": "to_metres",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "m": 0.1,
+       "code": null
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "m": 0.1,
+      "code": null
+     }
+    },
+    {
+     "id": "C10.to_metres_bad_unit",
+     "kind": "production",
+     "op": "to_metres",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "m": null,
+       "code": "THICKNESS_UNIT_UNSUPPORTED"
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "m": null,
+      "code": "THICKNESS_UNIT_UNSUPPORTED"
+     }
+    },
+    {
+     "id": "C10.layer_mass",
+     "kind": "production",
+     "op": "layer_mass_kg",
+     "blocking": true,
+     "expected": {
+      "value": 40
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 40.0
+    },
+    {
+     "id": "C10.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.thickness_m": 0.1,
+       "layers.0.mass_kg": 40,
+       "totals.mass_known_kg": 40,
+       "totals.mass_complete": true
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C10",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C10-P"
+        ],
+        "sources": [
+         "synthetic spec C10"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 0.1,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 0.1,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": 40.0,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 0.1,
+       "a13_total": 0.1,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 0.1,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": 40.0,
+       "mass_complete": true
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C11",
+   "title": "true zero and negative indicators with multiplier 2 -> 0 and -6 (legitimate)",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C11.per_m2_zero",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 0
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 0.0
+    },
+    {
+     "id": "C11.per_m2_negative",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": -3
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": -3.0
+    },
+    {
+     "id": "C11.demo_zero_x2",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "status": "EVALUATED",
+       "layers.0.status": "KNOWN",
+       "layers.0.a13": 0,
+       "layers.0.d": 0,
+       "totals.a13_total": 0
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C11a",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C11-P"
+        ],
+        "sources": [
+         "synthetic spec C11"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 2.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 0.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": 0.0,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 0.0,
+       "a13_total": 0.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 0.0,
+       "d_known_subtotal": 0.0,
+       "d_complete": true,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C11.demo_negative_x2",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": -6,
+       "layers.0.d": -6,
+       "totals.a13_total": -6
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C11b",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C11-P"
+        ],
+        "sources": [
+         "synthetic spec C11"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 2.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": -6.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": -6.0,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": -6.0,
+       "a13_total": -6.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": -6.0,
+       "d_known_subtotal": -6.0,
+       "d_complete": true,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C12",
+   "title": "empty product pool -> UNKNOWN, never a zero complete result",
+   "evidence": "DRAFT",
+   "policy_state": "DRAFT policy: an empty pool makes the layer UNKNOWN; totals become known subtotals and no wall total is given",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C12.pool_median_empty",
+     "kind": "production",
+     "op": "pool_median",
+     "blocking": true,
+     "expected": {
+      "value": null
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": null
+    },
+    {
+     "id": "C12.assess_empty_pool",
+     "kind": "production",
+     "op": "assess",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "complete": false,
+       "missing_layers": [
+        "Fired brick"
+       ]
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "name": "synthetic probe",
+      "kind": "ext",
+      "layers": [
+       {
+        "layer": "Fired brick",
+        "missing": true
+       }
+      ],
+      "a13": 0,
+      "c": 0,
+      "rep": 0,
+      "life_gwp": 0,
+      "d": 0,
+      "pert": 0,
+      "penrt": 0,
+      "pocp": 0,
+      "pm": 0,
+      "events": {},
+      "U": 5.882,
+      "complete": false,
+      "missing_layers": [
+       "Fired brick"
+      ]
+     }
+    },
+    {
+     "id": "C12.demo_single_empty",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 3,
+       "status": "INCOMPLETE_LAYERS",
+       "layers.0.status": "UNKNOWN",
+       "layers.0.reason": "EMPTY_POOL",
+       "layers.0.a13": null,
+       "totals.a13_total": null,
+       "totals.a13_known_subtotal": null,
+       "totals.layers_complete": false
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "INCOMPLETE_LAYERS",
+      "exit_code": 3,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C12a",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "UNKNOWN",
+        "reason": "EMPTY_POOL",
+        "products": [],
+        "sources": [],
+        "scenario": null,
+        "reference_units": [],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 0,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": null,
+        "a13_source": null,
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": null
+       }
+      ],
+      "totals": {
+       "layers_known": 0,
+       "layers_total": 1,
+       "layers_complete": false,
+       "a13_known_subtotal": null,
+       "a13_total": null,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": null,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C12.demo_known_plus_empty",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 3,
+       "status": "INCOMPLETE_LAYERS",
+       "layers.1.status": "UNKNOWN",
+       "totals.a13_known_subtotal": 10,
+       "totals.a13_total": null,
+       "totals.layers_known": 1,
+       "totals.layers_total": 2
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "INCOMPLETE_LAYERS",
+      "exit_code": 3,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C12b",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C12-P"
+        ],
+        "sources": [
+         "synthetic spec C12"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 10.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       },
+       {
+        "id": "L2",
+        "name": null,
+        "status": "UNKNOWN",
+        "reason": "EMPTY_POOL",
+        "products": [],
+        "sources": [],
+        "scenario": null,
+        "reference_units": [],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 0,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": null,
+        "a13_source": null,
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": null
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 2,
+       "layers_complete": false,
+       "a13_known_subtotal": 10.0,
+       "a13_total": null,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 10.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C13",
+   "title": "C1=1 C2=2 C3 missing C4=4 -> known subtotal 7, C incomplete, D unknown",
+   "evidence": "DRAFT",
+   "policy_state": "DRAFT policy: C is reported as a known subtotal with the list of declared and missing modules; D undeclared is UNKNOWN; layer completeness (every layer has A1-A3) is reported separately",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C13.layer_stats_coverage",
+     "kind": "production",
+     "op": "layer_stats",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "c": 7,
+       "c_modules": [
+        "C1",
+        "C2",
+        "C4"
+       ],
+       "d_known": false
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "uuid": "syn-c13",
+      "name": "SYN brick C13",
+      "typ": "synthetic",
+      "valid": "2030",
+      "owner": "synthetic spec C13",
+      "a13": 10.0,
+      "c": 7.0,
+      "d": 0.0,
+      "pert": null,
+      "penrt": null,
+      "pocp": null,
+      "pm": null,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C4"
+      ],
+      "d_known": false
+     }
+    },
+    {
+     "id": "C13.legacy_d_coerced_zero",
+     "kind": "characterization",
+     "op": "layer_stats",
+     "blocking": false,
+     "expected": {
+      "fields": {
+       "d": 0
+      }
+     },
+     "note": "legacy ranking path coerces undeclared D to 0.0 (model.py:62). Characterized, NOT endorsed and NOT repaired (legacy rankings out of scope).",
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "uuid": "syn-c13",
+      "name": "SYN brick C13",
+      "typ": "synthetic",
+      "valid": "2030",
+      "owner": "synthetic spec C13",
+      "a13": 10.0,
+      "c": 7.0,
+      "d": 0.0,
+      "pert": null,
+      "penrt": null,
+      "pocp": null,
+      "pm": null,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C4"
+      ],
+      "d_known": false
+     }
+    },
+    {
+     "id": "C13.demo",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "status": "EVALUATED",
+       "layers.0.c_known": 7,
+       "layers.0.c_modules": [
+        "C1",
+        "C2",
+        "C4"
+       ],
+       "layers.0.c_missing": [
+        "C3"
+       ],
+       "layers.0.c_complete": false,
+       "layers.0.d": null,
+       "totals.c_known_subtotal": 7,
+       "totals.c_complete": false,
+       "totals.d_known_subtotal": null,
+       "totals.d_complete": false,
+       "totals.layers_complete": true
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C13",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C13-P"
+        ],
+        "sources": [
+         "synthetic spec C13"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 10.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": 7.0,
+        "c_modules": [
+         "C1",
+         "C2",
+         "C4"
+        ],
+        "c_missing": [
+         "C3"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 10.0,
+       "a13_total": 10.0,
+       "c_known_subtotal": 7.0,
+       "c_complete": false,
+       "a1_c_known_subtotal": 17.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C14",
+   "title": "A1-A3 aggregate 10 vs A1=2 A2=3 A3=5 -> 10 (never 20); D=-2 separate",
+   "evidence": "DRAFT",
+   "policy_state": "DRAFT policy chosen before tuning: a declared A1-A3 aggregate is used and declared A1/A2/A3 are never added to it (overlap flagged); without an aggregate, A1+A2+A3 is used only if all three are declared, otherwise A1-A3 is UNKNOWN; D is reported separately and never subtracted into A-C",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C14.per_m2_aggregate",
+     "kind": "production",
+     "op": "per_m2",
+     "blocking": true,
+     "expected": {
+      "value": 10
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 10.0
+    },
+    {
+     "id": "C14.demo_overlap",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 10,
+       "layers.0.a13_source": "aggregate",
+       "layers.0.a13_overlap": true,
+       "layers.0.d": -2,
+       "totals.a13_total": 10,
+       "totals.a1_c_known_subtotal": 10,
+       "totals.d_known_subtotal": -2
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C14",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C14-P"
+        ],
+        "sources": [
+         "synthetic spec C14"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 10.0,
+        "a13_source": "aggregate",
+        "a13_overlap": true,
+        "c_known": 0.0,
+        "c_modules": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_missing": [],
+        "c_complete": true,
+        "d": -2.0,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 10.0,
+       "a13_total": 10.0,
+       "c_known_subtotal": 0.0,
+       "c_complete": true,
+       "a1_c_known_subtotal": 10.0,
+       "d_known_subtotal": -2.0,
+       "d_complete": true,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C14.demo_submodules_only",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 10,
+       "layers.0.a13_source": "sum_submodules",
+       "layers.0.a13_overlap": false
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C14b",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C14b-P"
+        ],
+        "sources": [
+         "synthetic spec C14"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 10.0,
+        "a13_source": "sum_submodules",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 10.0,
+       "a13_total": 10.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 10.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C14.demo_partial_submodules",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 3,
+       "status": "INCOMPLETE_LAYERS",
+       "layers.0.status": "UNKNOWN",
+       "layers.0.reason": "A13_UNDECLARED",
+       "layers.0.a13": null,
+       "totals.a13_total": null
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "INCOMPLETE_LAYERS",
+      "exit_code": 3,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C14c",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "UNKNOWN",
+        "reason": "A13_UNDECLARED",
+        "products": [
+         "C14c-P"
+        ],
+        "sources": [
+         "synthetic spec C14"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": null,
+        "a13_source": null,
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 0,
+       "layers_total": 1,
+       "layers_complete": false,
+       "a13_known_subtotal": null,
+       "a13_total": null,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": null,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C15",
+   "title": "contradictory scenarios -> explicit reject, never silently mixed; source scenario present",
+   "evidence": "DRAFT",
+   "policy_state": "DRAFT policy: every product must carry a non-empty scenario label; a layer pool whose products carry different scenarios is rejected (exit 2), because a median over different end-of-life scenarios mixes incompatible assumptions",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C15.demo_conflict",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "SCENARIO_CONFLICT"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "layers[0].product_ids",
+        "code": "SCENARIO_CONFLICT",
+        "detail": "pool mixes scenarios SYN-EOL-A, SYN-EOL-B"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C15.demo_missing",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "SCENARIO_MISSING"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0].scenario",
+        "code": "SCENARIO_MISSING",
+        "detail": "a scenario label is required"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C15.demo_consistent",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.scenario": "SYN-EOL-A",
+       "layers.0.a13": 15
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C15c",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C15-A",
+         "C15-A2"
+        ],
+        "sources": [
+         "synthetic spec C15",
+         "synthetic spec C15"
+        ],
+        "scenario": "SYN-EOL-A",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 2,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 15.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 15.0,
+       "a13_total": 15.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 15.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C15.legacy_extract_scenario",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "UNKNOWN",
+      "reason": "Legacy analysis/extract.py:17-20 falls back to scenario-labelled module rows when no plain row exists and drops the label, so products.csv cannot show which scenario a value came from. Not exercisable without the OBD export (data/ is absent); left unchanged and handed off."
+     },
+     "status": "UNKNOWN",
+     "reason": "Legacy analysis/extract.py:17-20 falls back to scenario-labelled module rows when no plain row exists and drops the label, so products.csv cannot show which scenario a value came from. Not exercisable without the OBD export (data/ is absent); left unchanged and handed off.",
+     "path": "declared (no execution)"
+    }
+   ]
+  },
+  {
+   "id": "C16",
+   "title": "B4 declared vs recalculated replacement: no double count",
+   "evidence": "DRAFT",
+   "policy_state": "DRAFT: no reconciliation science is invented",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C16.assess_b4_ignored",
+     "kind": "characterization",
+     "op": "assess",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "life_gwp": 0.24,
+       "rep": 0.12
+      }
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "name": "synthetic probe",
+      "kind": "ext",
+      "layers": [
+       {
+        "layer": "Mineral render/plaster",
+        "thick": 0.01,
+        "mult": 1,
+        "life": 40,
+        "n": 1,
+        "a13": 0.1,
+        "c": 0.02,
+        "d": 0.0,
+        "nrep": 1,
+        "life_gwp": 0.24000000000000002,
+        "dis": 2,
+        "best": "SYN mineral render C16",
+        "best_val": 0.12000000000000001
+       }
+      ],
+      "a13": 0.1,
+      "c": 0.02,
+      "rep": 0.12000000000000001,
+      "life_gwp": 0.24000000000000002,
+      "d": 0.0,
+      "pert": 0.0,
+      "penrt": 0.0,
+      "pocp": 0.0,
+      "pm": 0.0,
+      "events": {
+       "40": 0.12000000000000001
+      },
+      "U": 5.479,
+      "complete": true,
+      "missing_layers": []
+     }
+    },
+    {
+     "id": "C16.demo_b4_rejected",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "status": "REJECTED",
+       "errors.0.code": "MODULE_UNSUPPORTED"
+      },
+      "absent": [
+       "totals",
+       "layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "REJECTED",
+      "exit_code": 2,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "errors": [
+       {
+        "where": "products[0].modules.B4",
+        "code": "MODULE_UNSUPPORTED",
+        "detail": "allowed: A1-A3, A1, A2, A3, C1, C2, C3, C4, D"
+       }
+      ],
+      "notes": [
+       "Input rejected; no numeric result is produced for invalid input."
+      ]
+     }
+    },
+    {
+     "id": "C16.reconciliation",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "NOT RUN",
+      "reason": "No code surface reconciles a declared B4 value with a recalculated replacement: legacy assess ignores B4 and the demo has no B modules (rejects them). Choosing between declared and recalculated B4 is lifecycle science and is not invented here."
+     },
+     "status": "NOT RUN",
+     "reason": "No code surface reconciles a declared B4 value with a recalculated replacement: legacy assess ignores B4 and the demo has no B modules (rejects them). Choosing between declared and recalculated B4 is lifecycle science and is not invented here.",
+     "path": "declared (no execution)"
+    }
+   ]
+  },
+  {
+   "id": "C17",
+   "title": "median [1,3,9]=3, [1,3]=2; tie normalization finite; product-pool descriptive median",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C17.pool_median_odd",
+     "kind": "production",
+     "op": "pool_median",
+     "blocking": true,
+     "expected": {
+      "value": 3
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 3
+    },
+    {
+     "id": "C17.pool_median_even",
+     "kind": "production",
+     "op": "pool_median",
+     "blocking": true,
+     "expected": {
+      "value": 2
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": 2.0
+    },
+    {
+     "id": "C17.norm_tie",
+     "kind": "production",
+     "op": "norm",
+     "blocking": true,
+     "expected": {
+      "list": [
+       0.5,
+       0.5,
+       0.5
+      ]
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": [
+      0.5,
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "id": "C17.norm_spread",
+     "kind": "production",
+     "op": "norm",
+     "blocking": true,
+     "expected": {
+      "list": [
+       1.0,
+       0.75,
+       0.0
+      ]
+     },
+     "status": "PASS",
+     "path": "import",
+     "actual": [
+      1.0,
+      0.75,
+      0.0
+     ]
+    },
+    {
+     "id": "C17.assess_median",
+     "kind": "production",
+     "op": "assess",
+     "blocking": true,
+     "expected": {
+      "fields": {
+       "a13": 3
+      }
+     },
+     "note": "10/30/90 per m3 x 0.1 m = 1/3/9 per m2; assess median = 3",
+     "status": "PASS",
+     "path": "import",
+     "actual": {
+      "name": "synthetic probe",
+      "kind": "ext",
+      "layers": [
+       {
+        "layer": "Fired brick",
+        "thick": 0.1,
+        "mult": 1,
+        "life": 100,
+        "n": 3,
+        "a13": 3.0,
+        "c": 0.0,
+        "d": 0.0,
+        "nrep": 0,
+        "life_gwp": 3.0,
+        "dis": 2,
+        "best": "SYN brick 1",
+        "best_val": 1.0
+       }
+      ],
+      "a13": 3.0,
+      "c": 0.0,
+      "rep": 0.0,
+      "life_gwp": 3.0,
+      "d": 0.0,
+      "pert": 0.0,
+      "penrt": 0.0,
+      "pocp": 0.0,
+      "pm": 0.0,
+      "events": {},
+      "U": 0.997,
+      "complete": true,
+      "missing_layers": []
+     }
+    },
+    {
+     "id": "C17.demo_pool_odd",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 3,
+       "layers.0.pool_size": 3,
+       "layers.0.pool_statistic": "median of product pool (descriptive; not a wall comparison)"
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C17",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C17-1",
+         "C17-3",
+         "C17-9"
+        ],
+        "sources": [
+         "synthetic spec C17",
+         "synthetic spec C17",
+         "synthetic spec C17"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 3,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 3.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 3.0,
+       "a13_total": 3.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 3.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C17.demo_pool_even",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "layers.0.a13": 2,
+       "layers.0.pool_size": 2
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "<manifest-inline>",
+       "sha256": null
+      },
+      "wall": {
+       "id": "C17b",
+       "area_m2": 1.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": null,
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "C17-1",
+         "C17-3"
+        ],
+        "sources": [
+         "synthetic spec C17",
+         "synthetic spec C17"
+        ],
+        "scenario": "SYN-S",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 1.0,
+        "multiplier": 1.0,
+        "pool_size": 2,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 2.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": null,
+        "c_modules": [],
+        "c_missing": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_complete": false,
+        "d": null,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 1,
+       "layers_total": 1,
+       "layers_complete": true,
+       "a13_known_subtotal": 2.0,
+       "a13_total": 2.0,
+       "c_known_subtotal": null,
+       "c_complete": false,
+       "a1_c_known_subtotal": 2.0,
+       "d_known_subtotal": null,
+       "d_complete": false,
+       "mass_known_kg": null,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C18",
+   "title": "legacy renewable-energy expression `pert and penrt`: characterization only",
+   "evidence": "SYNTHETIC",
+   "policy_state": "intended formula UNKNOWN",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C18.pert0",
+     "kind": "characterization",
+     "op": "source_expr_s4",
+     "blocking": true,
+     "expected": {
+      "value": 0
+     },
+     "status": "PASS",
+     "path": "ast: original source expression in analysis/run.py run() line 30: r['pert'] and r['penrt']",
+     "actual": 0
+    },
+    {
+     "id": "C18.pert2",
+     "kind": "characterization",
+     "op": "source_expr_s4",
+     "blocking": true,
+     "expected": {
+      "value": 5
+     },
+     "status": "PASS",
+     "path": "ast: original source expression in analysis/run.py run() line 30: r['pert'] and r['penrt']",
+     "actual": 5
+    },
+    {
+     "id": "C18.s4_unused",
+     "kind": "characterization",
+     "op": "source_s4_unused",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "note": "s4 is assigned but never read inside run(), so the expression currently has no effect on any score",
+     "status": "PASS",
+     "path": "ast: original source expression in analysis/run.py run()",
+     "actual": true
+    },
+    {
+     "id": "C18.intended_formula",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "UNKNOWN",
+      "reason": "Intended formula behind `r['pert'] and r['penrt']` is undocumented (a ratio, a product, or a typo are all possible). Not inferred and not changed."
+     },
+     "status": "UNKNOWN",
+     "reason": "Intended formula behind `r['pert'] and r['penrt']` is undocumented (a ratio, a product, or a typo are all possible). Not inferred and not changed.",
+     "path": "declared (no execution)"
+    }
+   ]
+  },
+  {
+   "id": "C19",
+   "title": "actual rendered synthetic report/JSON/CSV claims",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "FAIL",
+   "members": [
+    {
+     "id": "C19.default_values",
+     "kind": "demo",
+     "op": "demo_eval",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 0,
+       "label": "SYNTHETIC",
+       "totals.a13_total": 185,
+       "totals.c_known_subtotal": 21.2,
+       "totals.d_known_subtotal": -2,
+       "totals.d_complete": false,
+       "totals.mass_known_kg": 150,
+       "totals.mass_complete": false,
+       "layers.1.d": null
+      }
+     },
+     "status": "PASS",
+     "path": "in-process demo.evaluate",
+     "actual": {
+      "schema": "baucode-demo-result/1",
+      "label": "SYNTHETIC",
+      "status": "EVALUATED",
+      "exit_code": 0,
+      "input": {
+       "name": "synthetic_wall.json",
+       "sha256": "216b1f966d45d446f0957cef64afbcefde1b781caf43bef244c2d1416b41154d"
+      },
+      "wall": {
+       "id": "SYN-WALL-1",
+       "area_m2": 10.0
+      },
+      "units": {
+       "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+       "mass": "kg",
+       "thickness": "m"
+      },
+      "layers": [
+       {
+        "id": "L1",
+        "name": "synthetic board",
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "SYN-P1",
+         "SYN-P2",
+         "SYN-P3"
+        ],
+        "sources": [
+         "synthetic: demo default board, pool member 1",
+         "synthetic: demo default board, pool member 2",
+         "synthetic: demo default board, pool member 3"
+        ],
+        "scenario": "SYN-EOL-A",
+        "reference_units": [
+         "m3"
+        ],
+        "thickness_m": 0.02,
+        "multiplier": 1.0,
+        "pool_size": 3,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 60.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": 1.2,
+        "c_modules": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_missing": [],
+        "c_complete": true,
+        "d": -2.0,
+        "mass_kg": 100.0,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m3 reference basis"
+       },
+       {
+        "id": "L2",
+        "name": "synthetic insulation",
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "SYN-P4"
+        ],
+        "sources": [
+         "synthetic: demo default insulation (no D declared)"
+        ],
+        "scenario": "SYN-EOL-B",
+        "reference_units": [
+         "kg"
+        ],
+        "thickness_m": 0.1,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 75.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": 15.0,
+        "c_modules": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_missing": [],
+        "c_complete": true,
+        "d": null,
+        "mass_kg": 50.0,
+        "density_used_kg_m3": 50.0,
+        "density_note": "used: kg reference basis converted with product density (lib.dens)"
+       },
+       {
+        "id": "L3",
+        "name": "synthetic coating",
+        "status": "KNOWN",
+        "reason": null,
+        "products": [
+         "SYN-P5"
+        ],
+        "sources": [
+         "synthetic: demo default coating (area basis)"
+        ],
+        "scenario": "SYN-EOL-C",
+        "reference_units": [
+         "m2"
+        ],
+        "thickness_m": null,
+        "multiplier": 1.0,
+        "pool_size": 1,
+        "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+        "a13": 50.0,
+        "a13_source": "aggregate",
+        "a13_overlap": false,
+        "c_known": 5.0,
+        "c_modules": [
+         "C1",
+         "C2",
+         "C3",
+         "C4"
+        ],
+        "c_missing": [],
+        "c_complete": true,
+        "d": 0.0,
+        "mass_kg": null,
+        "density_used_kg_m3": null,
+        "density_note": "not used: m2 reference basis"
+       }
+      ],
+      "totals": {
+       "layers_known": 3,
+       "layers_total": 3,
+       "layers_complete": true,
+       "a13_known_subtotal": 185.0,
+       "a13_total": 185.0,
+       "c_known_subtotal": 21.2,
+       "c_complete": true,
+       "a1_c_known_subtotal": 206.2,
+       "d_known_subtotal": -2.0,
+       "d_complete": false,
+       "mass_known_kg": 150.0,
+       "mass_complete": false
+      },
+      "notes": [
+       "SYNTHETIC demo data; these numbers describe no real wall or product.",
+       "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+       "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+       "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+       "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+      ]
+     }
+    },
+    {
+     "id": "C19.labels",
+     "kind": "demo",
+     "op": "demo_render",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "note": "result.json label SYNTHETIC, every layers.csv row label SYNTHETIC, report.md contains SYNTHETIC",
+     "status": "PASS",
+     "path": "rendered files",
+     "actual": true
+    },
+    {
+     "id": "C19.unknown_not_zero",
+     "kind": "demo",
+     "op": "demo_render",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "note": "undeclared D renders as null in JSON and UNKNOWN in CSV and report.md, never 0",
+     "status": "PASS",
+     "path": "json=None csv='UNKNOWN'",
+     "actual": true
+    },
+    {
+     "id": "C19.no_preference_or_health_claims",
+     "kind": "demo",
+     "op": "demo_render",
+     "blocking": true,
+     "expected": {
+      "equals": []
+     },
+     "status": "PASS",
+     "path": "regex over result.json, layers.csv, report.md",
+     "actual": []
+    },
+    {
+     "id": "C19.path_separator_determinism",
+     "kind": "demo",
+     "op": "demo_render",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "note": "CLI run with forward-slash and backslash input paths writes byte-identical result.json, layers.csv, report.md",
+     "status": "PASS",
+     "path": "3 path spellings (forward, absolute, backslash)",
+     "actual": true
+    },
+    {
+     "id": "C19.originals_unchanged",
+     "kind": "production",
+     "op": "git_unchanged",
+     "blocking": true,
+     "expected": {
+      "equals": true
+     },
+     "status": "FAIL",
+     "path": "git diff --quiet vs base",
+     "actual": false,
+     "mismatches": [
+      {
+       "expected": true,
+       "actual": false
+      }
+     ]
+    },
+    {
+     "id": "C19.legacy_health_finding",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "UNKNOWN",
+      "reason": "Legacy analysis/README.md 'Preferred system' and the 'well-being & health' score (run.py:26 health_proxy = POCP; run.py:7-9 expert well-being scores) are unvalidated. The historical report finding is inaccessible here; it stays UNKNOWN as a handoff item and is not relabelled as improved. Original reports are untouched."
+     },
+     "status": "UNKNOWN",
+     "reason": "Legacy analysis/README.md 'Preferred system' and the 'well-being & health' score (run.py:26 health_proxy = POCP; run.py:7-9 expert well-being scores) are unvalidated. The historical report finding is inaccessible here; it stays UNKNOWN as a handoff item and is not relabelled as improved. Original reports are untouched.",
+     "path": "declared (no execution)"
+    }
+   ]
+  },
+  {
+   "id": "C20",
+   "title": "actual demo CLI invalid input: error payload without numbers, nonzero exit",
+   "evidence": "SYNTHETIC",
+   "policy_state": "SYNTHETIC",
+   "status": "PASS",
+   "members": [
+    {
+     "id": "C20.cli_blank_quantity",
+     "kind": "demo",
+     "op": "demo_cli",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "payload.status": "REJECTED",
+       "payload.errors.0.code": "REF_QTY_BLANK"
+      },
+      "absent": [
+       "payload.totals",
+       "payload.layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "subprocess demo CLI",
+     "actual": {
+      "exit_code": 2,
+      "payload": {
+       "schema": "baucode-demo-result/1",
+       "label": "SYNTHETIC",
+       "status": "REJECTED",
+       "exit_code": 2,
+       "input": {
+        "name": "input.json",
+        "sha256": "349c241a7e71b0a8c401065067ced9435e8d290efe4bb65f2ce0b8a4cb676e38"
+       },
+       "errors": [
+        {
+         "where": "products[0]",
+         "code": "REF_QTY_BLANK",
+         "detail": "unit='m3' ref_quantity=''"
+        }
+       ],
+       "notes": [
+        "Input rejected; no numeric result is produced for invalid input."
+       ]
+      }
+     }
+    },
+    {
+     "id": "C20.cli_missing_file",
+     "kind": "demo",
+     "op": "demo_cli",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "payload.status": "REJECTED",
+       "payload.errors.0.code": "INPUT_NOT_FOUND"
+      },
+      "absent": [
+       "payload.totals",
+       "payload.layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "subprocess demo CLI",
+     "actual": {
+      "exit_code": 2,
+      "payload": {
+       "schema": "baucode-demo-result/1",
+       "label": "SYNTHETIC",
+       "status": "REJECTED",
+       "exit_code": 2,
+       "input": {
+        "name": "__no_such_input__.json",
+        "sha256": null
+       },
+       "errors": [
+        {
+         "where": "input",
+         "code": "INPUT_NOT_FOUND",
+         "detail": "FileNotFoundError"
+        }
+       ],
+       "notes": [
+        "Input rejected; no numeric result is produced for invalid input."
+       ]
+      }
+     }
+    },
+    {
+     "id": "C20.cli_not_json",
+     "kind": "demo",
+     "op": "demo_cli",
+     "blocking": true,
+     "expected": {
+      "paths": {
+       "exit_code": 2,
+       "payload.status": "REJECTED",
+       "payload.errors.0.code": "INPUT_NOT_JSON"
+      },
+      "absent": [
+       "payload.totals",
+       "payload.layers"
+      ]
+     },
+     "status": "PASS",
+     "path": "subprocess demo CLI",
+     "actual": {
+      "exit_code": 2,
+      "payload": {
+       "schema": "baucode-demo-result/1",
+       "label": "SYNTHETIC",
+       "status": "REJECTED",
+       "exit_code": 2,
+       "input": {
+        "name": "input.json",
+        "sha256": "0fb1db0e71e178183d7581080c63c2b80630b1e60c182cae9fd866701a751329"
+       },
+       "errors": [
+        {
+         "where": "input",
+         "code": "INPUT_NOT_JSON",
+         "detail": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2)"
+        }
+       ],
+       "notes": [
+        "Input rejected; no numeric result is produced for invalid input."
+       ]
+      }
+     }
+    },
+    {
+     "id": "C20.no_model_or_network_surface",
+     "kind": "production",
+     "op": "static_imports",
+     "blocking": true,
+     "expected": {
+      "equals": []
+     },
+     "status": "PASS",
+     "path": "ast import scan",
+     "actual": []
+    },
+    {
+     "id": "C20.injection",
+     "kind": "policy",
+     "op": "declared",
+     "blocking": false,
+     "expected": {
+      "status": "NOT RUN",
+      "reason": "Not applicable: the demo is a deterministic CLI over a JSON file with no model/LLM input surface, so there is nothing to inject into. No such surface was manufactured."
+     },
+     "status": "NOT RUN",
+     "reason": "Not applicable: the demo is a deterministic CLI over a JSON file with no model/LLM input surface, so there is nothing to inject into. No such surface was manufactured.",
+     "path": "declared (no execution)"
+    }
+   ]
+  }
+ ]
+}

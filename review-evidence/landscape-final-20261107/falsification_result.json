@@ -1,0 +1,39 @@
+{
+ "schema": "baucode-human-main-preservation/1",
+ "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+ "upstream": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+ "policy_sha256": "2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac",
+ "checker_sha256": "29a479a0ffb6104b6fb6476667aa7842f3dc81453355b55266b35fdeb02a3950",
+ "mode": "temporary_falsification",
+ "result": {
+  "status": "PASS",
+  "probes": [
+   {
+    "id": "upstream_control",
+    "expected": "PASS",
+    "actual": "PASS"
+   },
+   {
+    "id": "changed_protected_content",
+    "expected": "FAIL",
+    "actual": "FAIL"
+   },
+   {
+    "id": "missing_protected_file",
+    "expected": "FAIL",
+    "actual": "FAIL"
+   },
+   {
+    "id": "resurrected_human_deletion",
+    "expected": "FAIL",
+    "actual": "FAIL"
+   },
+   {
+    "id": "extra_statement_outside_wrapper",
+    "expected": "FAIL",
+    "actual": "FAIL"
+   }
+  ],
+  "scope": "Independent policy falsification controls, not additional exact20 cases or accuracy evidence."
+ }
+}

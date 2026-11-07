@@ -1,0 +1,24 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "demo/run_demo.py",
+    "--input",
+    "demo/input/synthetic_wall_replaced.json",
+    "--out",
+    "../baucode-p2-logs/landscape-final-20261107/outputs/replacement"
+  ],
+  "started_berlin": "2026-11-07T16:14:50.405078+01:00",
+  "finished_berlin": "2026-11-07T16:14:50.494789+01:00",
+  "exit_code": 0,
+  "expected_exit_for_recording": 0,
+  "exit_matches": true,
+  "stdout": "SYNTHETIC demo: EVALUATED -> ../baucode-p2-logs/landscape-final-20261107/outputs/replacement/result.json, layers.csv, report.md\r\n  A1-A3 total=230 known subtotal=230 | C known=30.2 complete=yes | D separate=-2 complete=no (kgCO2e)\r\n  matches synthetic_wall_replaced.expected.json (17 agent hand-derived values)\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "7f10999015fa1926b6ed05b72471dec3d395b139f6941d0f63a097dce0e52c52",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

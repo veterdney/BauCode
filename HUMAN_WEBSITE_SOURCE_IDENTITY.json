@@ -1,0 +1,80 @@
+{
+  "source_commit": "4ccebbc4e784d9eb6bd4549cc4bbfbf51ca4f889",
+  "source": "Existing authorized checkout; Git object bytes, not worktree snapshots or rebuilt website.",
+  "files": {
+    "docs/.nojekyll": {
+      "git_blob_oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "docs/INPUT_SCHEMA.md": {
+      "git_blob_oid": "539ba3de1bc1259f303cfe118c51c350ddafac0b",
+      "sha256": "ba62b947cd64864be942d27f5465b9e600ed327fc3a4efa284086d4ea13e5e72",
+      "bytes": 8413
+    },
+    "docs/index.html": {
+      "git_blob_oid": "71a3fd47fa1db2e03ba73d6fbbe820d942dfe454",
+      "sha256": "9b36372f5ba0ed45a31c301bd1969561ed535da70d091162674294162a6f7a7e",
+      "bytes": 1711
+    },
+    "docs/lab.html": {
+      "git_blob_oid": "0ce5e7d9a9a36cd3fcfb77cc113cc9361077a094",
+      "sha256": "4543ed82efc6e0e773f73a6749e74c6868be1ca9e677af2ca48efac4d14d8df9",
+      "bytes": 112987
+    },
+    "docs/loop.html": {
+      "git_blob_oid": "b7ba22e3ed4fdc0a46a6ae8e264ec5624088f3e1",
+      "sha256": "e7b19b80841af11b33767307ae04b53ad3afc83af04b747ac19059cf7710bd82",
+      "bytes": 21102
+    }
+  },
+  "relative_file_references": [
+    {
+      "page": "docs/index.html",
+      "reference": "lab.html",
+      "resolved": "docs/lab.html"
+    },
+    {
+      "page": "docs/index.html",
+      "reference": "loop.html",
+      "resolved": "docs/loop.html"
+    }
+  ],
+  "relative_file_references_complete": true,
+  "external_resources": [
+    {
+      "page": "docs/lab.html",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    },
+    {
+      "page": "docs/loop.html",
+      "url": "https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    }
+  ],
+  "inline_resource_scan": {
+    "docs/index.html": {
+      "scripts": [],
+      "fetch_calls": 0,
+      "css_imports": 0,
+      "dynamic_imports": 0
+    },
+    "docs/lab.html": {
+      "scripts": [
+        "inline",
+        "inline"
+      ],
+      "fetch_calls": 0,
+      "css_imports": 0,
+      "dynamic_imports": 0
+    },
+    "docs/loop.html": {
+      "scripts": [
+        "inline"
+      ],
+      "fetch_calls": 0,
+      "css_imports": 0,
+      "dynamic_imports": 0
+    }
+  },
+  "limits": "Static resource-reference inspection; no website execution/build/tests. External Google Fonts remain external as authored; offline system-font fallback depends on authored CSS. No current deployed Pages URL verified."
+}

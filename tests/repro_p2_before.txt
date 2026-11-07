@@ -1,0 +1,18 @@
+$ python tests/repro_p2.py   (before fix, base f3575fb2 + prior uncommitted review work)
+MISS a.unit_dict                {"exception": "TypeError: cannot use 'dict' as a dict key (unhashable type: 'dict')"}
+MISS a.unit_list                {"exception": "TypeError: cannot use 'list' as a dict key (unhashable type: 'list')"}
+MISS b.thickness_unit_dict      {"exception": "TypeError: cannot use 'dict' as a dict key (unhashable type: 'dict')"}
+MISS b.thickness_unit_list      {"exception": "TypeError: cannot use 'list' as a dict key (unhashable type: 'list')"}
+OK   c.huge_ref_quantity        {"status": "REJECTED", "exit_code": 2, "error_codes": ["REF_QTY_NOT_FINITE"], "has_numbers": false}
+MISS c.huge_module_value        {"exception": "OverflowError: int too large to convert to float"}
+MISS c.huge_density             {"exception": "OverflowError: int too large to convert to float"}
+MISS c.huge_area                {"exception": "OverflowError: int too large to convert to float"}
+MISS c.huge_multiplier          {"exception": "OverflowError: int too large to convert to float"}
+OK   c.huge_thickness_value     {"status": "REJECTED", "exit_code": 2, "error_codes": ["THICKNESS_INVALID"], "has_numbers": false}
+MISS a.cli_unit_dict            {"exit": 1, "status": null, "error_codes": [], "has_numbers": false, "traceback": true}
+MISS b.lib_to_metres_dict       {"exception": "TypeError: cannot use 'dict' as a dict key (unhashable type: 'dict')"}
+MISS b.lib_to_metres_list       {"exception": "TypeError: cannot use 'list' as a dict key (unhashable type: 'list')"}
+MISS d.markdown_evaluated       {"tables_rows": [6, 1, -1, -1], "consistent_cells": false, "raw_script": true, "text_present": false}
+MISS d.markdown_rejected        {"tables_rows": [2], "consistent_cells": false, "raw_script": true, "text_present": false}
+P2 reproduction: 2/15 expectations hold (supplementary, not an eval statistic)
+exit 1

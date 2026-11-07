@@ -1,0 +1,10 @@
+{
+  "phase": "Frozen before candidate policy check and reruns",
+  "baseline": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "head": "305345a394d0019dc4c5cc51aff508c2a54dea77",
+  "policy_sha256": "2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac",
+  "checker_sha256": "29a479a0ffb6104b6fb6476667aa7842f3dc81453355b55266b35fdeb02a3950",
+  "frozen_exact20_sha256": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "original_harness_sha256": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+  "original_gallery_checker_sha256": "db7b5e2ebb0e9f239d507ae05a32c24b45aa53ad28ab57b74b323ae54681f4cd"
+}

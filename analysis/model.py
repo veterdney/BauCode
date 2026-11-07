@@ -9,9 +9,9 @@ U_TARGET=0.20     # W/m2K exterior walls (stricter than GEG 0.24, future-proof f
 RSI_RSE=0.17
 
 # selector: (category regex, name regex, exclude regex, max density, min density)
-def sel(cat,name=None,excl=None,dmax=None,dmin=None):
+def sel(cat,name=None,excl=None,dmax=None,dmin=None,rows=None):
     out=[]
-    for r in select(cat,name,excl):
+    for r in select(cat,name,excl,rows=rows):
         d=dens(r)
         if dmax and (d is None or d>dmax): continue
         if dmin and (d is None or d<dmin): continue
@@ -42,27 +42,50 @@ L={ # name: (selector kwargs, lambda W/mK, life y, disassembly 1-5 (5 = easy, mo
 }
 KIND_AREA={'Interior paint/wall covering'}
 
-def cand(layer):
+def cand(layer,rows=None):
     kw,lam,life,dis=L[layer]
-    return sel(**kw)
+    return sel(**kw,rows=rows)
 
 def per_m2(r,mod,thick,key='GWPtotal (A2)',area=False):
     v=val(r,mod,key)
     if v is None: return None
     if area:
-        return v if r['Bezugseinheit']=='qm' else None
+        if r['Bezugseinheit']!='qm': return None
+        q,err=ref_quantity(r)   # value is declared per q m2, not per m2
+        return None if err else v/q
     m=per_m3(r,mod); return None if m is None else v*m*thick
 
-def layer_stats(layer,thick):
+A_SUB=('A1','A2','A3'); C_MODS=('C1','C2','C3','C4')
+def module_breakdown(r,thick,area=False,key='GWPtotal (A2)'):
+    """per-m2 values by module with coverage. Undeclared stays None (never 0).
+    A1-A3 policy: a declared aggregate is used and A1/A2/A3 are never added to it;
+    without an aggregate all three submodules are needed. D is kept separate."""
+    pm=lambda m: per_m2(r,m,thick,key,area)
+    agg=pm('A1-A3'); subs={m:pm(m) for m in A_SUB}; got=[m for m in A_SUB if subs[m] is not None]
+    if agg is not None: a13,src=agg,'aggregate'
+    elif len(got)==len(A_SUB): a13,src=sum(subs.values()),'sum_submodules'
+    else: a13,src=None,None
+    cs={m:pm(m) for m in C_MODS}; cm=[m for m in C_MODS if cs[m] is not None]
+    return dict(a13=a13,a13_source=src,a13_overlap=agg is not None and bool(got),
+                c_known=sum(cs[m] for m in cm) if cm else None,c_modules=cm,c_missing=[m for m in C_MODS if cs[m] is None],
+                c_by_module={m:cs[m] for m in cm},d=pm('D'))
+
+def pool_median(values):
+    """descriptive median of a product pool; None for an empty pool (never 0)"""
+    return st.median(values) if values else None
+
+def layer_stats(layer,thick,rows=None):
     area=layer in KIND_AREA; res=[]
-    for r in cand(layer):
+    for r in cand(layer,rows):
         a=per_m2(r,'A1-A3',thick,area=area)
         if a is None: continue
-        c=sum(x for x in (per_m2(r,m,thick,area=area) for m in ('C1','C2','C3','C4')) if x is not None)
-        d=per_m2(r,'D',thick,area=area) or 0.0
+        cm=[m for m in C_MODS if per_m2(r,m,thick,area=area) is not None]
+        c=sum(per_m2(r,m,thick,area=area) for m in cm)
+        d_raw=per_m2(r,'D',thick,area=area); d=d_raw or 0.0   # legacy ranking keeps 0.0 for undeclared D; d_known tells them apart
         pe=per_m2(r,'A1-A3',thick,'PERT',area); pn=per_m2(r,'A1-A3',thick,'PENRT',area)
         poc=per_m2(r,'A1-A3',thick,'POCP (A2)',area); pm=per_m2(r,'A1-A3',thick,'PM (A2)',area)
-        res.append(dict(uuid=r['UUID'],name=r['Name (en)'],typ=r['Typ'],valid=r['Gueltig bis'],owner=r['Declaration owner'],a13=a,c=c,d=d,pert=pe,penrt=pn,pocp=poc,pm=pm))
+        res.append(dict(uuid=r['UUID'],name=r['Name (en)'],typ=r['Typ'],valid=r['Gueltig bis'],owner=r['Declaration owner'],a13=a,c=c,d=d,pert=pe,penrt=pn,pocp=poc,pm=pm,
+                        c_modules=cm,d_known=d_raw is not None))
     return res
 
 def insulation_thickness(R_other,lam,frame_frac=0.0,lam_frame=0.13):
@@ -135,16 +158,19 @@ def U_of(layers):
             R+=l['thick']*(l['mult'] if l['mult']<1 and l['layer'] in('Wood fibre insulation','Straw bale') else 1)/ lam if False else l['thick']/lam
     return R
 
-def assess(name,asm,kind):
+def assess(name,asm,kind,rows=None):
     layers=build(asm,kind); out=[]; tot=dict(a13=0,c=0,d=0,rep=0,pert=0,penrt=0,pocp=0,pm=0,mass_ok=0); events={}
-    Rfix=RSI_RSE; 
+    Rfix=RSI_RSE;
     for l in layers:
         n=l['layer']; area=n in KIND_AREA
         th=l['thick'] if not area else 1.0
-        st_=layer_stats(n,th)
+        st_=layer_stats(n,th,rows)
         st_=[s for s in st_ if abs(s['a13']/ (th if not area else 1))<(1500 if not area else 200)] if st_ else st_
         if not st_: out.append(dict(layer=n,missing=True)); continue
-        med=lambda k: st.median([s[k] for s in st_ if s[k] is not None]) if any(s[k] is not None for s in st_) else 0.0
+        def med(k):
+            m=pool_median([s[k] for s in st_ if s[k] is not None])
+            return 0.0 if m is None else m   # legacy ranking: no data -> 0.0
+
         a,c,d=med('a13')*l['mult'],med('c')*l['mult'],med('d')*l['mult']
         pert,penrt,pocp,pm=[med(k)*l['mult'] for k in ('pert','penrt','pocp','pm')]
         nrep=max(0,math.ceil(STUDY/l['life'])-1)
@@ -164,5 +190,7 @@ def assess(name,asm,kind):
             R+=o['thick']/lam
     # frame bridging (timber frame/straw): approximate with parallel path on insulation depth
     lifecycle=tot['a13']+tot['c']+tot['rep']
+    # totals above silently skip layers with no data; say so instead of implying a complete wall
+    missing=[o['layer'] for o in out if o.get('missing')]
     return dict(name=name,kind=kind,layers=out,a13=tot['a13'],c=tot['c'],rep=tot['rep'],life_gwp=lifecycle,d=tot['d'],pert=tot['pert'],penrt=tot['penrt'],
-                pocp=tot['pocp'],pm=tot['pm'],events=events,U=round(1/R,3))
+                pocp=tot['pocp'],pm=tot['pm'],events=events,U=round(1/R,3),complete=not missing,missing_layers=missing)

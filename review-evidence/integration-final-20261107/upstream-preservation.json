@@ -1,0 +1,209 @@
+{
+ "upstream": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+ "head_before_merge_commit": "93471028e7a8fe92f83cbe759887733fdd8dba45",
+ "upstream_changed_paths": 50,
+ "nonconflicting_paths_checked": 49,
+ "all_nonconflicting_paths_match": true,
+ "paths": [
+  {
+   "path": ".claude/skills/carbon-budget-api/SKILL.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/02-method-and-assumptions.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/05-carbon-budget-api.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/06-decade-renovation.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/08-limitations-next-steps.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/README.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/budget_de_res_2026.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/budget_de_res_2036.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/budget_de_res_2046.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/budget_de_res_2056.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/budget_de_res_2066.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/baseline/scores_alternatives.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/baseline/scores_parts.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/dataset_fill.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/dataset_fill_log.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/engine.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/materials.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/README.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-1.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-2.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-3.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-4.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-5.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/alt-6.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/scores_alternatives.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/scores_interfaces.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/scores_layers.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/scores_parts.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/report/sensitivity.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/score.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/build_data.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/build_pages.py",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/data.json",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/index.html",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/loop.html",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/template.html",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/levels/viz/test_loop.mjs",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/loop/JOURNAL.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/loop/PROMPT.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/loop/TASKS.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/results_budget_de_residential.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "analysis/results_budget_share.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "data/Building material property dataset.csv",
+   "matches_upstream": true
+  },
+  {
+   "path": "data/Building material property dataset.md",
+   "matches_upstream": true
+  },
+  {
+   "path": "docs/.nojekyll",
+   "matches_upstream": true
+  },
+  {
+   "path": "docs/index.html",
+   "matches_upstream": true
+  },
+  {
+   "path": "docs/lab.html",
+   "matches_upstream": true
+  },
+  {
+   "path": "docs/loop.html",
+   "matches_upstream": true
+  }
+ ],
+ "run_py_unwrapped_ast_matches_upstream": true,
+ "frozen_manifest_sha256": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+ "manifest_unchanged": true,
+ "scope": "Preserves upstream bytes/deletions via git diff and run.py AST except import-safe main wrapper; not scientific validation."
+}

@@ -1,0 +1,20 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "tests/repro_p2.py"
+  ],
+  "started_berlin": "2026-11-07T16:14:51.350259+01:00",
+  "finished_berlin": "2026-11-07T16:14:51.536723+01:00",
+  "exit_code": 0,
+  "expected_exit_for_recording": 0,
+  "exit_matches": true,
+  "stdout": "OK   a.unit_dict                {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"UNIT_UNSUPPORTED\"], \"has_numbers\": false}\r\nOK   a.unit_list                {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"UNIT_UNSUPPORTED\"], \"has_numbers\": false}\r\nOK   b.thickness_unit_dict      {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"THICKNESS_UNIT_UNSUPPORTED\"], \"has_numbers\": false}\r\nOK   b.thickness_unit_list      {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"THICKNESS_UNIT_UNSUPPORTED\"], \"has_numbers\": false}\r\nOK   c.huge_ref_quantity        {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"REF_QTY_NOT_FINITE\"], \"has_numbers\": false}\r\nOK   c.huge_module_value        {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"MODULE_VALUE_INVALID\"], \"has_numbers\": false}\r\nOK   c.huge_density             {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"DENSITY_INVALID\"], \"has_numbers\": false}\r\nOK   c.huge_area                {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"WALL_AREA_INVALID\"], \"has_numbers\": false}\r\nOK   c.huge_multiplier          {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"MULTIPLIER_INVALID\"], \"has_numbers\": false}\r\nOK   c.huge_thickness_value     {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"THICKNESS_INVALID\"], \"has_numbers\": false}\r\nOK   a.cli_unit_dict            {\"exit\": 2, \"status\": \"REJECTED\", \"error_codes\": [\"UNIT_UNSUPPORTED\"], \"has_numbers\": false, \"traceback\": false}\r\nOK   b.lib_to_metres_dict       {\"value\": null, \"code\": \"THICKNESS_UNIT_UNSUPPORTED\"}\r\nOK   b.lib_to_metres_list       {\"value\": null, \"code\": \"THICKNESS_UNIT_UNSUPPORTED\"}\r\nOK   d.markdown_evaluated       {\"tables_rows\": [6, 3], \"consistent_cells\": true, \"raw_script\": false, \"text_present\": true}\r\nOK   d.markdown_rejected        {\"tables_rows\": [2], \"consistent_cells\": true, \"raw_script\": false, \"text_present\": true}\r\nP2 reproduction: 15/15 expectations hold (supplementary, not an eval statistic)\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "88e7f73609793e08904aceac6257b2998f1003f01692c1d4a31b22c4b6230626",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

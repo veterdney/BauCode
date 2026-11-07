@@ -1,0 +1,28 @@
+{
+ "recorded_utc": "2026-11-07T14:11:29Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "sha256": {
+  "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "tests/results_before.json": "f696964146ea8f1dc416e5a0d8c2c5a247df3d1dd742ef74fc274fb2fd04f669",
+  "tests/results_after.json": "0de58287a860d7bc5032a60c35c265b209d96d55dc3c820eb6c593efa1080fee",
+  "tests/results_final.json": "2d8a98b6e592edc2b5c0156fe0aafe657859062ae8c2c3dae7528654c754d99d",
+  "tests/results_faultproof.json": "a5c004d973786ad2796ff4d5b8f8bdb0358b491d38a1c634d90a9d0f1851757d",
+  "tests/run_exact20.py": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+  "tests/confusion_exact20.py": "a0d04428bee00f6d6dd62a6f21d7d7631b7ef21e0f8d4c9250e5e03c5a6aabb3",
+  "tests/detection_metrics_before.json": "fd3cc4c1106e9adf3b4030a7ce31f6ca1cadd31e149f1950200bc97d4a20ea50",
+  "tests/detection_metrics_final.json": "46b29a4cc8f8b13006b188485f3db72c6d9c7ae3d63277496cd1a9015a9c90d1",
+  "demo/run_demo.py": "718236d8bd3abf58ab64ceed04ff881255c7c9eeb28f66974f483b947c87ceba",
+  "demo/run_gallery.py": "27076a704a007142d2f0c32065179d62ea631d3b834a446d4a8e99696cd3c299",
+  "demo/check_gallery.py": "6cb2f6ec20cbacd543dba7b3d1d86ea86e7f5f01a9d833adf8f97f30dd6fed2b",
+  "demo/output/gallery/gallery.html": "ffc50b0060abffdc2cb94f241af2762cc1bad9c5476522f8380e6e5f7c015cc8",
+  "demo/output/gallery/gallery.json": "8cab0a67905e8047466ace186ebe8f68be878ab3f37a179821342d4478342e8b",
+  "demo/output/gallery/gallery.csv": "92139039dc05e2268c654e6616747f96e81f766061c5acf88f8513cfc24a20d7",
+  "demo/output/gallery/generated_inputs.json": "6be82873e1da7d4428ef807a76612701b1b613105ea2dd696890c03cbc24089e",
+  "demo/output/gallery/provenance.json": "4dfbdc3cc4a79f430e5bf9186ec763acbe75e32d5c5ad759f2ee4e50678977c4",
+  "demo/output/default/result.json": "4f63c657904aa7673ab5cc7d34c8be7fc2d02f1eccf6e036f1546a4fea054f96",
+  "analysis/lib.py": "fa5da4f267cda86937a2d22e83c8cccff860d4d1230bf79039139157ddd2b7b8",
+  "analysis/model.py": "802ba9474c742e632fb47fde15162ea7c5c4fb212b259209d79c6bcd458459ef",
+  "analysis/run.py": "7e2c30fd757773e7bd58a36b27509c6d84b477ff1e3b58d63bd18220dad28b17"
+ }
+}

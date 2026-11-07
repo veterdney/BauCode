@@ -1,0 +1,24 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "tests/run_exact20.py",
+    "--out",
+    "tests/results_landscape_final_20261107.json",
+    "--label",
+    "landscape-final-original20-unchanged"
+  ],
+  "started_berlin": "2026-11-07T16:14:47.670257+01:00",
+  "finished_berlin": "2026-11-07T16:14:48.984535+01:00",
+  "exit_code": 1,
+  "expected_exit_for_recording": 1,
+  "exit_matches": true,
+  "stdout": "C01 PASS     import=PASS per_m2=PASS demo=PASS\r\nC02 PASS     per_m2_area=PASS per_m2_qm_thickness=PASS demo=PASS cap_units=UNKNOWN(nb)\r\nC03 PASS     per_m3=PASS per_m2_area=PASS ref_quantity=PASS demo_blank=PASS demo_absent_key=PASS\r\nC04 PASS     per_m3=PASS per_m2_area=PASS ref_quantity=PASS demo=PASS\r\nC05 PASS     negative.per_m3=PASS nan.per_m3=PASS posinf.per_m3=PASS neginf.per_m3=PASS negative.demo=PASS nan.demo=PASS posinf.demo=PASS neginf.demo=PASS\r\nC06 PASS     Stk.per_m3=PASS blank_unit.per_m3=PASS piece.demo=PASS mm.demo=PASS\r\nC07 PASS     per_m3_val=PASS demo=PASS\r\nC08 PASS     per_m3_val=PASS single_density_multiplier=PASS bulk_density_fallback=PASS conversion_factor_not_applied=PASS demo=PASS\r\nC09 PASS     per_m2=PASS demo=PASS\r\nC10 PASS     to_metres=PASS to_metres_bad_unit=PASS layer_mass=PASS demo=PASS\r\nC11 PASS     per_m2_zero=PASS per_m2_negative=PASS demo_zero_x2=PASS demo_negative_x2=PASS\r\nC12 PASS     pool_median_empty=PASS assess_empty_pool=PASS demo_single_empty=PASS demo_known_plus_empty=PASS\r\nC13 PASS     layer_stats_coverage=PASS legacy_d_coerced_zero=PASS(nb) demo=PASS\r\nC14 PASS     per_m2_aggregate=PASS demo_overlap=PASS demo_submodules_only=PASS demo_partial_submodules=PASS\r\nC15 PASS     demo_conflict=PASS demo_missing=PASS demo_consistent=PASS legacy_extract_scenario=UNKNOWN(nb)\r\nC16 PASS     assess_b4_ignored=PASS demo_b4_rejected=PASS reconciliation=NOT RUN(nb)\r\nC17 PASS     pool_median_odd=PASS pool_median_even=PASS norm_tie=PASS norm_spread=PASS assess_median=PASS demo_pool_odd=PASS demo_pool_even=PASS\r\nC18 PASS     pert0=PASS pert2=PASS s4_unused=PASS intended_formula=UNKNOWN(nb)\r\nC19 FAIL     default_values=PASS labels=PASS unknown_not_zero=PASS no_preference_or_health_claims=PASS path_separator_determinism=PASS originals_unchanged=FAIL legacy_health_finding=UNKNOWN(nb)\r\nC20 PASS     cli_blank_quantity=PASS cli_missing_file=PASS cli_not_json=PASS no_model_or_network_surface=PASS injection=NOT RUN(nb)\r\ncases {'PASS': 19, 'FAIL': 1, 'UNKNOWN': 0, 'NOT RUN': 0} | blocking probes {'PASS': 78, 'FAIL': 1, 'UNKNOWN': 0, 'NOT RUN': 0} | non-blocking {'PASS': 1, 'FAIL': 0, 'UNKNOWN': 4, 'NOT RUN': 2} | exit 1\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "badf9fd3bb22f86ff19715e3cebbcc1219be0850ff52372e63126845a983bda3",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

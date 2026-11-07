@@ -1,0 +1,21 @@
+{
+ "recorded_utc": "2026-11-07T14:02:32Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "sha256": {
+  "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "tests/results_before.json": "f696964146ea8f1dc416e5a0d8c2c5a247df3d1dd742ef74fc274fb2fd04f669",
+  "tests/results_after.json": "0de58287a860d7bc5032a60c35c265b209d96d55dc3c820eb6c593efa1080fee",
+  "tests/results_faultproof.json": "a5c004d973786ad2796ff4d5b8f8bdb0358b491d38a1c634d90a9d0f1851757d",
+  "tests/run_exact20.py": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+  "tests/evidence_capture.py": "8967f4da29bcce78aa3040b111047f1433b165eae7949f767c44c56f08c1a0f9",
+  "demo/run_demo.py": "718236d8bd3abf58ab64ceed04ff881255c7c9eeb28f66974f483b947c87ceba",
+  "demo/input/synthetic_wall.json": "216b1f966d45d446f0957cef64afbcefde1b781caf43bef244c2d1416b41154d",
+  "demo/input/synthetic_wall_replaced.json": "664bf35c1e4c49f43d9de1ee98975f96c377641d9dff7a21030da65d157905af",
+  "demo/expected/synthetic_wall.expected.json": "30dd644f4981dc9055994503a39528d513f8336a4ef9188849b023abf635ddd9",
+  "demo/expected/synthetic_wall_replaced.expected.json": "509b3d8e6c632ef4a37467667c521b5d809344058df6be7155d12e764a2880dc",
+  "analysis/lib.py": "fa5da4f267cda86937a2d22e83c8cccff860d4d1230bf79039139157ddd2b7b8",
+  "analysis/model.py": "802ba9474c742e632fb47fde15162ea7c5c4fb212b259209d79c6bcd458459ef",
+  "analysis/run.py": "7e2c30fd757773e7bd58a36b27509c6d84b477ff1e3b58d63bd18220dad28b17"
+ }
+}

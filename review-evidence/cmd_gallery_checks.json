@@ -1,0 +1,12 @@
+{
+ "recorded_utc": "2026-11-07T14:10:02Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "demo/check_gallery.py"
+ ],
+ "exit_code": 0,
+ "stdout": "PASS  run 1 exit 0\nPASS  run 2 exit 0\nPASS  repeat runs byte-identical\nPASS  saved gallery equals fresh run\nPASS  gallery results == direct demo evaluate()\nPASS  size/seed recorded\nPASS  every invalid edge rejected with no numbers\nPASS  standalone: no script/link/img/iframe tags, no src/href attributes, no url()/http\nPASS  inline style present\nPASS  SYNTHETIC badge and GENERATED label\nPASS  two charts with title+desc (role=img)\nPASS  legend for two-series chart\nPASS  D separate section and column\nPASS  provenance section with seed and generator\nPASS  layer/module breakdown present\nPASS  bars anchored at true zero\nPASS  negative values drawn left of zero in both charts\nPASS  UNKNOWN rendered for unknown totals (not 0)\nPASS  no zero-height stand-in bars for unknown\nPASS  rejected rows have no numeric cells\nPASS  different functional unit not charted, listed separately\nPASS  markup in labels escaped\nPASS  no preference/health/safety/recyclability wording\nPASS  no thermal metric rendered\nPASS  single-wall replacement recipe: exit 0 and matches hand-derived file\nPASS  gallery --inputs replacement: exit 0, hand-derived 185, not compared (10 m2 FU)\nPASS  gallery --inputs unreadable file -> exit 2\nPASS  original reports/visuals unchanged vs base\nsupplementary gallery checks: 28 PASS, 0 FAIL (demonstration checks, not acceptance)\n",
+ "stderr": ""
+}

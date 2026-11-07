@@ -1,0 +1,196 @@
+{
+ "source_results": "tests/results_before.json",
+ "source_label": "before-original-code-f3575fb",
+ "manifest_sha256": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+ "definition": "positive = input the frozen manifest expects REJECTED; counted over end-to-end demo probes only",
+ "counts": {
+  "TP": 0,
+  "FN": 0,
+  "FP": 0,
+  "TN": 0,
+  "abstained_on_valid": 0,
+  "not_executed": 33,
+  "not_executed_positive": 15,
+  "not_executed_negative": 18
+ },
+ "denominators": {
+  "expected_positive": 15,
+  "expected_negative": 18,
+  "decision_probes": 33
+ },
+ "abstention_note": "ABSTAINED = expected-valid input evaluated as INCOMPLETE_LAYERS (known subtotals only); intended by C12/C14 policy, not a TN",
+ "caveat": "exposed synthetic regression probes; counts describe these probes only and support no general accuracy rate",
+ "arithmetic": {
+  "numeric_expectations": 20,
+  "non_numeric_actual": 0,
+  "max_abs_error": 5.0,
+  "max_rel_error": 1.0
+ },
+ "probes": [
+  {
+   "probe": "C01.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C02.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C03.demo_blank",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C03.demo_absent_key",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C04.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C05.negative.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C05.nan.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C05.posinf.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C05.neginf.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C06.piece.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C06.mm.demo",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C07.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C08.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C09.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C10.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C11.demo_zero_x2",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C11.demo_negative_x2",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C12.demo_single_empty",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C12.demo_known_plus_empty",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C13.demo",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C14.demo_overlap",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C14.demo_submodules_only",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C14.demo_partial_submodules",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C15.demo_conflict",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C15.demo_missing",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C15.demo_consistent",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C16.demo_b4_rejected",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C17.demo_pool_odd",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C17.demo_pool_even",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C19.default_values",
+   "expected_positive": false,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C20.cli_blank_quantity",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C20.cli_missing_file",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  },
+  {
+   "probe": "C20.cli_not_json",
+   "expected_positive": true,
+   "cell": "NOT_EXECUTED"
+  }
+ ]
+}

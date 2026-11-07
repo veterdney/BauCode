@@ -1,0 +1,4 @@
+label,wall_id,layer_id,status,reason,products,sources,scenario,thickness_m,multiplier,pool_size,a13_kgco2e,a13_source,a13_overlap,c_known_kgco2e,c_modules,c_missing,c_complete,d_kgco2e,mass_kg,density_used_kg_m3,density_note
+SYNTHETIC,SYN-WALL-1-REPLACED,L1,KNOWN,-,SYN-P1;SYN-P2;SYN-P3,"synthetic: demo default board, pool member 1;synthetic: demo default board, pool member 2;synthetic: demo default board, pool member 3",SYN-EOL-A,0.02,1,3,60,aggregate,no,1.2,C1;C2;C3;C4,-,yes,-2,100,-,not used: m3 reference basis
+SYNTHETIC,SYN-WALL-1-REPLACED,L2,KNOWN,-,SYN-P4,synthetic: demo default insulation (no D declared),SYN-EOL-B,0.16,1,1,120,aggregate,no,24,C1;C2;C3;C4,-,yes,UNKNOWN,80,50,used: kg reference basis converted with product density (lib.dens)
+SYNTHETIC,SYN-WALL-1-REPLACED,L3,KNOWN,-,SYN-P5,synthetic: demo default coating (area basis),SYN-EOL-C,-,1,1,50,aggregate,no,5,C1;C2;C3;C4,-,yes,0,UNKNOWN,-,not used: m2 reference basis

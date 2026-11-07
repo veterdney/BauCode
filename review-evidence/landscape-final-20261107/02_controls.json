@@ -1,0 +1,23 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "tests/check_human_main_v1.py",
+    "--self-test",
+    "--out",
+    "review-evidence/landscape-final-20261107/falsification_result.json"
+  ],
+  "started_berlin": "2026-11-07T16:14:43.784114+01:00",
+  "finished_berlin": "2026-11-07T16:14:47.669856+01:00",
+  "exit_code": 0,
+  "expected_exit_for_recording": 0,
+  "exit_matches": true,
+  "stdout": "{\r\n \"schema\": \"baucode-human-main-preservation/1\",\r\n \"head\": \"c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8\",\r\n \"upstream\": \"8336cb6ab602d96b26b36390274dcb47cf05ac1c\",\r\n \"policy_sha256\": \"2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac\",\r\n \"checker_sha256\": \"29a479a0ffb6104b6fb6476667aa7842f3dc81453355b55266b35fdeb02a3950\",\r\n \"mode\": \"temporary_falsification\",\r\n \"result\": {\r\n  \"status\": \"PASS\",\r\n  \"probes\": [\r\n   {\r\n    \"id\": \"upstream_control\",\r\n    \"expected\": \"PASS\",\r\n    \"actual\": \"PASS\"\r\n   },\r\n   {\r\n    \"id\": \"changed_protected_content\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"missing_protected_file\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"resurrected_human_deletion\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   },\r\n   {\r\n    \"id\": \"extra_statement_outside_wrapper\",\r\n    \"expected\": \"FAIL\",\r\n    \"actual\": \"FAIL\"\r\n   }\r\n  ],\r\n  \"scope\": \"Independent policy falsification controls, not additional exact20 cases or accuracy evidence.\"\r\n }\r\n}\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "ef96d9e535ba7902fe93487317305571e3414fefdd0161f3e59f999340ee487a",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

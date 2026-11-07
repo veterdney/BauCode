@@ -1,0 +1,15 @@
+{
+ "recorded_utc": "2026-11-07T13:54:04Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "sha256": {
+  "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "demo/expected/synthetic_wall.expected.json": "30dd644f4981dc9055994503a39528d513f8336a4ef9188849b023abf635ddd9",
+  "demo/expected/synthetic_wall_replaced.expected.json": "509b3d8e6c632ef4a37467667c521b5d809344058df6be7155d12e764a2880dc",
+  "demo/input/synthetic_wall.json": "216b1f966d45d446f0957cef64afbcefde1b781caf43bef244c2d1416b41154d",
+  "demo/input/synthetic_wall_replaced.json": "664bf35c1e4c49f43d9de1ee98975f96c377641d9dff7a21030da65d157905af",
+  "analysis/lib.py": "556408aa9bc3220d15aa10aa48900ea39baa2eac6be3ca4b6dc347b56b0efa45",
+  "analysis/model.py": "3c4de529eb70efaab8a248c13fd7968874c2b5501370dd113483d180bb630a7a",
+  "analysis/run.py": "7853bb405bd79672a8ac5f9492b8973b8a0f1b5c4d03eae59708ec31c2924ea4"
+ }
+}

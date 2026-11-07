@@ -1,0 +1,6 @@
+{
+ "expected_file": "synthetic_wall_replaced.expected.json",
+ "derivation": "agent hand-derived (claude-opus-5-5) from the input numbers, written before the demo code existed; NOT human-reviewed; NOT computed by the implementation under test",
+ "checked": 17,
+ "mismatches": []
+}

@@ -1,0 +1,43 @@
+{
+ "label": "SYNTHETIC",
+ "for_input": "demo/input/synthetic_wall.json",
+ "derivation": "agent hand-derived (claude-opus-5-5) from the input numbers, written before the demo code existed; NOT human-reviewed; NOT computed by the implementation under test",
+ "tolerance": {"abs": 1e-9, "rel": 1e-9, "why": "inputs are short decimals combined by a few multiplications/divisions; float64 error is ~1e-15 relative, so 1e-9 only absorbs binary rounding while any modelling error (a missing/double factor) is >= 1e-2 relative"},
+ "hand_arithmetic": [
+  "wall area 10 m2; all layer values are kgCO2e for the whole wall = per-m2 value x 10 x multiplier 1",
+  "L1 m3 basis q=1: per m2 = A1-A3 x 0.020 m -> 2, 6, 18 for 100/300/900; pool median 6; x10 = 60",
+  "L1 C = (0+1+2+3)=6 per m3 x 0.020 = 0.12 per m2; x10 = 1.2; D = -10 x 0.020 x 10 = -2",
+  "L1 mass = 10 m2 x 0.020 m x 500 kg/m3 = 100 kg",
+  "L2 kg basis q=2 density 50: per m3 multiplier = 50/2 = 25; A = 3 x 25 = 75 per m3; x0.100 m = 7.5 per m2; x10 = 75",
+  "L2 C = (0+0.2+0.4+0)=0.6 x 25 = 15 per m3 x 0.1 = 1.5 per m2; x10 = 15; D not declared -> UNKNOWN (not 0)",
+  "L2 mass = 10 x 0.100 x 50 = 50 kg",
+  "L3 m2 basis q=2: A = 10/2 = 5 per m2; x10 = 50; C = 1/2 = 0.5 per m2 x10 = 5; D declared 0 -> 0 (true zero); no density/thickness -> mass UNKNOWN",
+  "totals: A1-A3 = 60+75+50 = 185; C known = 1.2+15+5 = 21.2 (all C1-C4 declared -> complete); A1-C known = 206.2",
+  "D known subtotal = -2 + 0 = -2, incomplete because L2 D unknown; mass known = 100+50 = 150, incomplete because L3 mass unknown"
+ ],
+ "expect": {
+  "label": "SYNTHETIC",
+  "status": "EVALUATED",
+  "exit_code": 0,
+  "layers.0.a13": 60,
+  "layers.0.c_known": 1.2,
+  "layers.0.d": -2,
+  "layers.0.mass_kg": 100,
+  "layers.1.a13": 75,
+  "layers.1.c_known": 15,
+  "layers.1.d": null,
+  "layers.1.mass_kg": 50,
+  "layers.2.a13": 50,
+  "layers.2.c_known": 5,
+  "layers.2.d": 0,
+  "layers.2.mass_kg": null,
+  "totals.a13_total": 185,
+  "totals.c_known_subtotal": 21.2,
+  "totals.c_complete": true,
+  "totals.a1_c_known_subtotal": 206.2,
+  "totals.d_known_subtotal": -2,
+  "totals.d_complete": false,
+  "totals.mass_known_kg": 150,
+  "totals.mass_complete": false
+ }
+}

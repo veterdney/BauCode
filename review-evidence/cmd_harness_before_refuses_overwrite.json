@@ -1,0 +1,16 @@
+{
+ "recorded_utc": "2026-11-07T14:02:30Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/run_exact20.py",
+  "--out",
+  "tests/results_before.json",
+  "--label",
+  "must-refuse"
+ ],
+ "exit_code": 3,
+ "stdout": "",
+ "stderr": "refusing to overwrite tests/results_before.json (pass --overwrite)\n"
+}

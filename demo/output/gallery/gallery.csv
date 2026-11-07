@@ -1,0 +1,26 @@
+label,kind,assembly,edge,reference_area_m2,same_reference_area_equivalence_unverified,category,a13_total,c_known_subtotal,c_complete,a1a3_c1c4_known_subtotal,d_known_subtotal,d_complete,mass_known_kg,mass_complete,error_codes,input_locator
+SYNTHETIC,GENERATED,G01,complete,1,yes,EVALUATED_FULL_COVERAGE,21.602344000000002,5.772850000000001,yes,27.375194000000004,-1.591425,yes,353.237,no,-,generated_inputs.json#/assemblies/0
+SYNTHETIC,GENERATED,G02,complete,1,yes,EVALUATED_FULL_COVERAGE,99.72817800000001,48.2057828,yes,147.93396080000002,-12.066837600000001,yes,209.496,no,-,generated_inputs.json#/assemblies/1
+SYNTHETIC,GENERATED,G03,complete,1,yes,EVALUATED_FULL_COVERAGE,17.621275999999998,7.0504566,yes,24.6717326,-0.9934076,yes,44.077999999999996,no,-,generated_inputs.json#/assemblies/2
+SYNTHETIC,GENERATED,G04,complete,1,yes,EVALUATED_FULL_COVERAGE,118.29198,17.3895682,yes,135.6815482,-5.7878156,yes,144.88600000000002,no,-,generated_inputs.json#/assemblies/3
+SYNTHETIC,GENERATED,G05,complete,1,yes,EVALUATED_FULL_COVERAGE,23.283597,5.037859999999999,yes,28.321457,-0.456679,yes,125.363,no,-,generated_inputs.json#/assemblies/4
+SYNTHETIC,GENERATED,G06,complete,1,yes,EVALUATED_FULL_COVERAGE,21.735398,3.9168680000000005,yes,25.652266,-0.715794,yes,128.514,no,-,generated_inputs.json#/assemblies/5
+SYNTHETIC,GENERATED,G07,complete,1,yes,EVALUATED_FULL_COVERAGE,425.28695200000004,82.2960088,yes,507.5829608,-13.0127504,yes,517.48,no,-,generated_inputs.json#/assemblies/6
+SYNTHETIC,GENERATED,G08,partial_c,1,yes,EVALUATED_PARTIAL_COVERAGE,85.330532,10.7080496,no,96.0385816,-1.5558316399999998,yes,70.94800000000001,no,-,generated_inputs.json#/assemblies/7
+SYNTHETIC,GENERATED,G09,missing_d,1,yes,EVALUATED_PARTIAL_COVERAGE,79.20477499999998,28.3090456,yes,107.51382059999999,-0.142245,no,190.21900000000002,no,-,generated_inputs.json#/assemblies/8
+SYNTHETIC,GENERATED,G10,negative_values,1,yes,EVALUATED_FULL_COVERAGE,-148.863545,49.316117500000004,yes,-99.54742749999998,-2.6338525,yes,392.927,no,-,generated_inputs.json#/assemblies/9
+SYNTHETIC,GENERATED,G11,true_zero,1,yes,EVALUATED_FULL_COVERAGE,129.615752,50.58602779999999,yes,180.20177979999997,-1.1288909599999999,yes,253.11499999999998,no,-,generated_inputs.json#/assemblies/10
+SYNTHETIC,GENERATED,G12,aggregate_overlap,1,yes,EVALUATED_FULL_COVERAGE,15.292038000000002,3.122058,yes,18.414096,-0.41291000000000005,yes,251.69400000000002,no,-,generated_inputs.json#/assemblies/11
+SYNTHETIC,GENERATED,G13,submodules_only,1,yes,EVALUATED_FULL_COVERAGE,26.527250000000002,7.102998,yes,33.630248,-1.130058,yes,241.776,no,-,generated_inputs.json#/assemblies/12
+SYNTHETIC,GENERATED,G14,partial_submodules,1,yes,INCOMPLETE_LAYERS,UNKNOWN,7.3069,no,44.7887,-0.37515,no,438.063,no,-,generated_inputs.json#/assemblies/13
+SYNTHETIC,GENERATED,G15,empty_pool,1,yes,INCOMPLETE_LAYERS,UNKNOWN,39.6924964,no,356.66954639999994,-9.594517500000002,no,149.974,no,-,generated_inputs.json#/assemblies/14
+SYNTHETIC,GENERATED,G16,fu_2m2,2,no,EVALUATED_FULL_COVERAGE,44.89436800000001,8.854802560000001,yes,53.74917056000001,-2.0045668,yes,133.872,no,-,generated_inputs.json#/assemblies/15
+SYNTHETIC,GENERATED,"G17 <script>alert(""x"")</script> & 'q'",markup_label,1,yes,EVALUATED_FULL_COVERAGE,30.85584,5.96005,yes,36.81589,-1.0772650000000001,yes,205.956,no,-,generated_inputs.json#/assemblies/16
+SYNTHETIC,GENERATED,G18,blank_q,1,no,REJECTED,-,-,-,-,-,-,-,-,REF_QTY_BLANK,generated_inputs.json#/assemblies/17
+SYNTHETIC,GENERATED,G19,zero_q,1,no,REJECTED,-,-,-,-,-,-,-,-,REF_QTY_NOT_POSITIVE,generated_inputs.json#/assemblies/18
+SYNTHETIC,GENERATED,G20,nan_q,1,no,REJECTED,-,-,-,-,-,-,-,-,REF_QTY_NOT_FINITE,generated_inputs.json#/assemblies/19
+SYNTHETIC,GENERATED,G21,unsupported_unit,1,no,REJECTED,-,-,-,-,-,-,-,-,UNIT_UNSUPPORTED,generated_inputs.json#/assemblies/20
+SYNTHETIC,GENERATED,G22,scenario_conflict,1,no,REJECTED,-,-,-,-,-,-,-,-,SCENARIO_CONFLICT,generated_inputs.json#/assemblies/21
+SYNTHETIC,GENERATED,G23,b4_module,1,no,REJECTED,-,-,-,-,-,-,-,-,MODULE_UNSUPPORTED,generated_inputs.json#/assemblies/22
+SYNTHETIC,GENERATED,G24,kg_no_density,1,no,REJECTED,-,-,-,-,-,-,-,-,DENSITY_REQUIRED,generated_inputs.json#/assemblies/23
+SYNTHETIC,GENERATED,G25,bad_thickness_unit,1,no,REJECTED,-,-,-,-,-,-,-,-,THICKNESS_UNIT_UNSUPPORTED,generated_inputs.json#/assemblies/24

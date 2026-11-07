@@ -1,0 +1,11 @@
+{
+ "recorded_utc": "2026-11-07T13:56:04Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "sha256": {
+  "tests/results_before.json": "f696964146ea8f1dc416e5a0d8c2c5a247df3d1dd742ef74fc274fb2fd04f669",
+  "tests/run_exact20.py": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+  "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "tests/evidence_capture.py": "8967f4da29bcce78aa3040b111047f1433b165eae7949f767c44c56f08c1a0f9"
+ }
+}

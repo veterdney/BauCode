@@ -1,0 +1,12 @@
+{
+ "recorded_utc": "2026-11-07T14:12:40Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/repro_input_boundary.py"
+ ],
+ "exit_code": 1,
+ "stdout": "MISS dict_element           {\"exception\": \"TypeError: cannot use 'dict' as a set element (unhashable type: 'dict')\"}\nMISS list_element           {\"exception\": \"TypeError: cannot use 'list' as a set element (unhashable type: 'list')\"}\nOK   number_element         {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"UNKNOWN_PRODUCT_ID\"], \"has_numbers\": false, \"a13_total\": null}\nMISS duplicate_reference    {\"status\": \"EVALUATED\", \"exit_code\": 0, \"error_codes\": [], \"has_numbers\": true, \"a13_total\": 165.0}\nOK   whitespace_reference   {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"UNKNOWN_PRODUCT_ID\"], \"has_numbers\": false, \"a13_total\": null}\nMISS whitespace_product_id  {\"status\": \"EVALUATED\", \"exit_code\": 0, \"error_codes\": [], \"has_numbers\": true, \"a13_total\": 185.0}\nOK   control_unmodified     {\"status\": \"EVALUATED\", \"exit_code\": 0, \"error_codes\": [], \"has_numbers\": true, \"a13_total\": 185.0}\ninput-boundary reproduction: 3/7 variants meet the boundary expectation (supplemental, not an eval statistic)\n",
+ "stderr": ""
+}
