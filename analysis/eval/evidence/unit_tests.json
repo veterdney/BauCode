@@ -90,8 +90,26 @@
   "detail": ""
  },
  {
+  "test": "Matrix.test_in_data_strict_bool",
+  "purpose": "0/1 (and other values equal to False/True) are not accepted as in_data booleans.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_manifest_candidate_config_exact",
+  "purpose": "effort and max_turns must equal the manifest's candidate config exactly (type-strict), errors included.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
   "test": "Matrix.test_manifest_model_binding",
   "purpose": "Under a manifest every record must carry the manifest's requested model and its served models.",
+  "outcome": "ok",
+  "detail": ""
+ },
+ {
+  "test": "Matrix.test_manifest_source_required_and_bound",
+  "purpose": "The manifest must carry a valid source identity; a source-only change (same answers, same reference\nfiles) makes earlier judge results stale.",
   "outcome": "ok",
   "detail": ""
  },

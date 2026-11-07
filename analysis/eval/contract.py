@@ -207,6 +207,22 @@ def manifest_path_for(candidate_path):
     return Path(str(candidate_path) + MANIFEST_SUFFIX)
 
 
+def validate_source(src):
+    """Run-manifest source identity: the sha256/size/rows of the export bytes actually used.
+    Structural integrity only; no canonical export hash exists, so authenticity is not asserted."""
+    if not isinstance(src, dict):
+        raise ContractError("manifest source must be an object")
+    sha = src.get("sha256")
+    if not isinstance(sha, str) or len(sha) != 64 or any(ch not in "0123456789abcdef" for ch in sha):
+        raise ContractError("manifest source.sha256 must be 64 lowercase hex characters")
+    if not isinstance(src.get("filename"), str) or not src["filename"]:
+        raise ContractError("manifest source.filename missing")
+    if not is_int(src.get("size_bytes")) or src["size_bytes"] < 1:
+        raise ContractError("manifest source.size_bytes must be a positive integer")
+    positive_int(src.get("rows"), "manifest source.rows")
+    return src
+
+
 def runtime_info():
     import platform, sys
     try:

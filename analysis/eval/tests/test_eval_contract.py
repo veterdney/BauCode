@@ -36,6 +36,17 @@ def rows(*recs):
     return [(i + 1, r) for i, r in enumerate(recs)]
 
 
+SRC = {"filename": "fixture.csv", "size_bytes": 10, "rows": 1, "sha256": "a" * 64}
+CFG = {"requested_model": "m", "effort": "high", "max_turns": 20}
+
+
+def fixture_source(d):
+    """A small offline fixture pinned by its real sha256 (stands in for the absent export; not the export)."""
+    p = Path(d) / "fixture_export.csv"
+    p.write_bytes(b"UUID;Modul\nx;A1-A3\n")
+    return obd_data.file_provenance(p, rows=1)
+
+
 def states(rep):
     return [c["state"] for c in rep["cells"]]
 
@@ -183,12 +194,67 @@ class Matrix(unittest.TestCase):
 
     def test_manifest_model_binding(self):
         """Under a manifest every record must carry the manifest's requested model and its served models."""
-        m = {"candidate": {"requested_model": "m"}}
+        m = {"candidate": dict(CFG), "source": SRC}
         s = sel(["L01"], 3)
-        rep = G.grade_records(rows(rec("L01", 1, requested_model="x", served_models=["x"]),
-                                   rec("L01", 2, requested_model="m"),
-                                   rec("L01", 3, requested_model="m", served_models=["m"])), s, manifest=m, ref=REF)
+        ok = {"effort": "high", "max_turns": 20}
+        rep = G.grade_records(rows(rec("L01", 1, requested_model="x", served_models=["x"], **ok),
+                                   rec("L01", 2, requested_model="m", **ok),
+                                   rec("L01", 3, requested_model="m", served_models=["m"], **ok)), s, manifest=m, ref=REF)
         self.assertEqual(states(rep), ["INVALID", "INVALID", "PASS"])
+
+    def test_manifest_candidate_config_exact(self):
+        """effort and max_turns must equal the manifest's candidate config exactly (type-strict), errors included."""
+        m = {"candidate": dict(CFG), "source": SRC}
+        base = dict(requested_model="m", served_models=["m"])
+        bad = [dict(effort="low", max_turns=20), dict(effort="high", max_turns=21), dict(effort="high", max_turns=True),
+               dict(effort="high", max_turns=20.0), dict(max_turns=20), dict(effort="high")]
+        for kw in bad:
+            rep = G.grade_records(rows(rec("L01", 1, **base, **kw)), sel(["L01"], 1), manifest=m, ref=REF)
+            self.assertEqual(states(rep), ["INVALID"], kw)
+        err = {"id": "L01", "run": 1, "error": "API 500", "error_kind": "api", "requested_model": "m", "effort": "max", "max_turns": 20}
+        self.assertEqual(states(G.grade_records(rows(err), sel(["L01"], 1), manifest=m, ref=REF)), ["INVALID"])
+        good = rec("L01", 1, **base, effort="high", max_turns=20)
+        self.assertEqual(states(G.grade_records(rows(good), sel(["L01"], 1), manifest=m, ref=REF)), ["PASS"])
+
+    def test_in_data_strict_bool(self):
+        """0/1 (and other values equal to False/True) are not accepted as in_data booleans."""
+        for v in (0, 1, 0.0, "false", [], {}):
+            rep = G.grade_records(rows(rec("L01", 1, structured={"value": 1.43, "in_data": v})), sel(["L01"], 1), ref=REF)
+            self.assertEqual(states(rep), ["INVALID"], repr(v))
+        for v in (True, None):
+            rep = G.grade_records(rows(rec("L01", 1, structured={"value": 1.43, "in_data": v})), sel(["L01"], 1), ref=REF)
+            self.assertEqual(states(rep), ["PASS"], repr(v))
+
+    def test_manifest_source_required_and_bound(self):
+        """The manifest must carry a valid source identity; a source-only change (same answers, same reference
+        files) makes earlier judge results stale."""
+        good = dict(SRC)
+        for bad in [None, {}, dict(good, sha256="A" * 64), dict(good, sha256="a" * 63), dict(good, rows=True),
+                    dict(good, rows=0), dict(good, size_bytes=0), dict(good, filename="")]:
+            with self.assertRaises(C.ContractError, msg=repr(bad)):
+                C.validate_source(bad)
+        C.validate_source(good)
+        with tempfile.TemporaryDirectory() as d:
+            mp = Path(d) / "m.json"
+            man = {"contract": C.CONTRACT_VERSION, "selection": sel(["D01"], 1), "candidate": dict(CFG),
+                   "gold_sha256": C.sha256_file(C.GOLD_PATH), "reference_fingerprint": REF[0]}
+            mp.write_text(json.dumps(man), encoding="utf-8")
+            with self.assertRaises(C.ContractError):
+                G.load_manifest(mp, man["gold_sha256"], REF[0])
+            mp.write_text(json.dumps(dict(man, source=good)), encoding="utf-8")
+            G.load_manifest(mp, man["gold_sha256"], REF[0])
+        s = sel(["D01"], 1)
+        r = rec("D01", 1, requested_model="m", served_models=["m"], effort="high", max_turns=20)
+        mA = {"candidate": dict(CFG), "source": good}
+        mB = {"candidate": dict(CFG), "source": dict(good, sha256="b" * 64)}
+        with tempfile.TemporaryDirectory() as d:
+            q = Path(d) / "q.jsonl"
+            G.grade_records(rows(r), s, manifest=mA, ref=REF, write_queue_to=q)
+            it = [o for _, o in C.read_jsonl(q, "queue")][0]
+        self.assertEqual(it["binding"]["source_sha256"], "a" * 64)
+        j = judged_for(it, verdict_for(it))
+        self.assertEqual(states(G.grade_records(rows(r), s, rows(j), manifest=mA, ref=REF)), ["PASS"])
+        self.assertEqual(states(G.grade_records(rows(r), s, rows(j), manifest=mB, ref=REF)), ["PENDING_JUDGE"])
 
     def test_reference_checks_fail_visibly(self):
         """A stale or unavailable reference fingerprint is an integrity problem, not a warning to ignore."""
@@ -425,7 +491,7 @@ class Runner(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             out = Path(d) / "cand.jsonl"
             a = self.R.parse_args(["--ids", "L01,D01", "--k", "1", "--out", str(out), "--model", "m", "--workers", "1"])
-            self.R.execute(a, G.GOLD, FakeClient([fake_resp("m", submit=sub)]), None, [], {"sha256": "f" * 64})
+            self.R.execute(a, G.GOLD, FakeClient([fake_resp("m", submit=sub)]), None, [], fixture_source(d))
             m = C.loads_strict(C.manifest_path_for(out).read_text(encoding="utf-8"))
             self.assertEqual(m["selection"], {"ids": ["L01", "D01"], "k": {"L01": 1, "D01": 1}})
             q, jr = Path(d) / "q.jsonl", Path(d) / "j.jsonl"
@@ -463,7 +529,7 @@ class Runner(unittest.TestCase):
                 out = Path(d) / f"run_{answer}.jsonl"
                 a = self.R.parse_args(["--ids", "L01", "--k", "1", "--out", str(out), "--model", "m", "--workers", "1"])
                 sub = {"answer": answer, "value_json": answer, "in_data": True}
-                self.R.execute(a, G.GOLD, FakeClient([fake_resp("m", submit=sub)]), None, [], {"sha256": "f" * 64})
+                self.R.execute(a, G.GOLD, FakeClient([fake_resp("m", submit=sub)]), None, [], fixture_source(d))
                 self.assertEqual(G.main([str(out)] + base), plain)
                 self.assertEqual(G.main([str(out), "--fail-on-fail"] + base), strict)
 
@@ -521,7 +587,7 @@ def run_json(path):
         res = suite.run(Rec())
     rows = [{"test": f"{type(t).__name__}.{t._testMethodName}", "purpose": (t._testMethodDoc or "").strip(),
              "outcome": o, "detail": d} for t, o, d in out]
-    Path(path).write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    Path(path).write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     return 0 if res.wasSuccessful() and all(r["outcome"] == "ok" for r in rows) else 1
 
 

@@ -197,9 +197,9 @@ def queue_item(case, r):
     return item
 
 
-def binding(case, r, item, ref_fp):
+def binding(case, r, item, ref_fp, source_sha=None):
     return {"contract": C.CONTRACT_VERSION, "id": r["id"], "run": r["run"], "case_sha256": C.fingerprint(case),
-            "reference_fingerprint": ref_fp, "answer_sha256": C.sha256_text(r.get("answer", "")),
+            "reference_fingerprint": ref_fp, "source_sha256": source_sha, "answer_sha256": C.sha256_text(r.get("answer", "")),
             "structured_sha256": C.fingerprint(r.get("structured")),
             "candidate_requested_model": r.get("requested_model", r.get("model")),
             "candidate_served_models": r.get("served_models"),
@@ -219,12 +219,18 @@ def record_problem(r, manifest):
             return "structured must be an object"
         if not isinstance(r.get("answer", ""), str):
             return "answer must be a string"
-        if r["structured"].get("in_data") not in (True, False, None):
+        in_data = r["structured"].get("in_data")
+        if in_data is not True and in_data is not False and in_data is not None:  # identity: 0/1 are not booleans
             return "structured.in_data must be true, false or null"
     if manifest is not None:
         want = manifest["candidate"]["requested_model"]
         if r.get("requested_model", r.get("model")) != want:
             return f"requested model differs from manifest ({want})"
+        cfg = manifest["candidate"]
+        if not isinstance(r.get("effort"), str) or r["effort"] != cfg["effort"]:
+            return f"effort {r.get('effort')!r} differs from manifest ({cfg['effort']!r})"
+        if not C.is_int(r.get("max_turns")) or r["max_turns"] != cfg["max_turns"]:
+            return f"max_turns {r.get('max_turns')!r} differs from manifest ({cfg['max_turns']!r})"
         if "error" not in r:
             served = r.get("served_models")
             if not isinstance(served, list) or not served or not all(isinstance(s, str) for s in served):
@@ -240,6 +246,10 @@ def load_manifest(path, gold_sha, ref_fp):
     cand = m.get("candidate")
     if not isinstance(cand, dict) or not isinstance(cand.get("requested_model"), str) or not cand["requested_model"]:
         raise C.ContractError(f"manifest {path}: candidate.requested_model missing")
+    if not isinstance(cand.get("effort"), str) or not cand["effort"]:
+        raise C.ContractError(f"manifest {path}: candidate.effort missing")
+    C.positive_int(cand.get("max_turns"), f"manifest {path}: candidate.max_turns")
+    C.validate_source(m.get("source"))
     problems = []
     if m.get("gold_sha256") != gold_sha:
         problems.append("gold file changed since the run (manifest gold_sha256 differs)")
@@ -303,7 +313,7 @@ def grade_records(records, sel, judged_rows=None, manifest=None, ref=None, write
             continue
         item = queue_item(case, r)
         item["code_result"], item["code_gate_failures"] = ok, gates
-        item["binding"] = binding(case, r, item, ref_fp)
+        item["binding"] = binding(case, r, item, ref_fp, manifest["source"]["sha256"] if manifest else None)
         queue.append(item)
         items[key] = item
         cells[key] = {"state": "PENDING_JUDGE", "gates": gates, "note": ("code part passed; " if ok else "") + "judge pending"}
@@ -405,8 +415,7 @@ def grade(path, sel=None, manifest_path=None, judged=JUDGED, queue=QUEUE, csv=No
             raise C.ContractError("--ids/--k disagree with the run manifest selection")
         sel = manifest["selection"]
         if csv is not None:
-            src = (manifest.get("source") or {}).get("sha256")
-            if src != C.sha256_file(csv):
+            if manifest["source"]["sha256"] != C.sha256_file(csv):
                 extra_problems.append("--csv bytes differ from the export recorded in the manifest")
     elif manifest_path:
         raise C.ContractError(f"manifest not found: {mpath}")
@@ -422,6 +431,8 @@ def grade(path, sel=None, manifest_path=None, judged=JUDGED, queue=QUEUE, csv=No
         rep["integrity_problems"] = extra_problems + rep["integrity_problems"]
         rep["integrity_ok"] = False
     rep["candidate_sha256"] = C.sha256_file(path)
+    rep["source"] = manifest["source"] if manifest else None
+    rep["source_bytes_reverified_at_grade"] = bool(manifest and csv is not None and not any("--csv" in p for p in extra_problems))
     rep["gold_sha256"] = gold_sha
     if not quiet:
         print_report(rep)

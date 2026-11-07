@@ -1,6 +1,6 @@
 # Offline test evidence
 
-Run 2026-11-07T17:25:47+01:00 on Windows-11-10.0.26300-SP0, Python 3.14.7, git HEAD at run `01d29520a94680a4f1ff060836341ef01a0d6b1d` (branch `docs/baucode-website-first-20261107`; uncommitted changes to tested sources at run: True).
+Run 2026-11-07T17:31:55+01:00 on Windows-11-10.0.26300-SP0, Python 3.14.7, git HEAD at run `cbd1a19fed033898c3d9917b240eb85b0c4a34ee` (branch `docs/baucode-website-first-20261107`; uncommitted changes to tested sources at run: True).
 
 Machine-readable: [offline_tests.json](offline_tests.json). Regenerate: `python -I analysis/eval/tests/run_offline_evidence.py`.
 
@@ -11,7 +11,7 @@ Machine-readable: [offline_tests.json](offline_tests.json). Regenerate: `python 
 | unit_tests_per_test_json | `python -I analysis/eval/tests/test_eval_contract.py --json analysis/eval/evidence/unit_tests.json` | 0 |
 | baseline_probes_original_aee18b | `python -I analysis/eval/tests/baseline_probe_aee18b.py` | 0 |
 
-Unit tests: 32 ok of 32 recorded (32 run by discover).
+Unit tests: 35 ok of 35 recorded (35 run by discover).
 
 | Test | Outcome | Failure it guards against |
 |---|---|---|
@@ -30,7 +30,10 @@ Unit tests: 32 ok of 32 recorded (32 run by discover).
 | Matrix.test_duplicate_run_rejected | ok | Duplicate (id, run) records could inflate pass@1; the cell becomes DUPLICATE. |
 | Matrix.test_empty_candidate | ok | An empty candidate file is all MISSING, never an empty 'all pass'. |
 | Matrix.test_error_refusal_invalid_states | ok | API errors are integrity gaps; refusals are scored failures; malformed records are INVALID. |
+| Matrix.test_in_data_strict_bool | ok | 0/1 (and other values equal to False/True) are not accepted as in_data booleans. |
+| Matrix.test_manifest_candidate_config_exact | ok | effort and max_turns must equal the manifest's candidate config exactly (type-strict), errors included. |
 | Matrix.test_manifest_model_binding | ok | Under a manifest every record must carry the manifest's requested model and its served models. |
+| Matrix.test_manifest_source_required_and_bound | ok | The manifest must carry a valid source identity; a source-only change (same answers, same reference files) makes earlier judge results stale. |
 | Matrix.test_missing_run_stays_in_denominator | ok | Old grader counted only supplied rows (1 of 3 runs -> 100%). Missing runs must be visible and non-passing. |
 | Matrix.test_reference_checks_fail_visibly | ok | A stale or unavailable reference fingerprint is an integrity problem, not a warning to ignore. |
 | Matrix.test_served_model_differs_not_credited | ok | With server-side fallback the served model can differ; such runs must not earn credit. |
@@ -73,14 +76,14 @@ Original PR9 behaviour reproduced on frozen `aee18b14` sources: 18/18 probes (th
 
 ## Tested source sha256
 
-- `analysis/eval/contract.py` `c271fc5eb4c7efe79b37a1391dc08aa3d622f89ea063b9c2baf02a02e308ecae`
-- `analysis/eval/grade.py` `f5381f10ea0caa3ba007050cb0f77ed975fff6de8f43e782d8462fb74f094ec3`
+- `analysis/eval/contract.py` `821eef83886f66b2e13c4cb652f3637cea92d00696910d4120ac6f4c1d3544c7`
+- `analysis/eval/grade.py` `8e27bb3bf74d514f18cad3c73bdb711d5f7114ec4b17f68b7891414d0bee4013`
 - `analysis/eval/judge.py` `0f41524e05e940079dd28dce963a6a794bbe512275c4072820720870da9c9ca7`
 - `analysis/eval/run_eval.py` `778167d05fd52678398711b1db7d03317c27074f98cc4fad42a3ac112607e0a0`
 - `analysis/eval/obd_data.py` `708b84dd824ca997b0e86d7538fb563e4a244c4691cdc1e09ac8a14e304f0a04`
 - `analysis/eval/obd_tools.py` `c5e037b63d7f1989e5e204191de7029e1e269efcb060cd57abd76a947b0da44b`
 - `analysis/eval/golden_v1.jsonl` `e583be41b73eb03620fbfae2a3ded11cd28dd02d404e75be7f101e663a261e93`
-- `analysis/eval/tests/test_eval_contract.py` `4691eff35cd5ea39edf18ea55d1fc5bcd6cad04b8b379d1d5826e9a939e6b2c8`
+- `analysis/eval/tests/test_eval_contract.py` `10cfaadbec96c752a58d496bc91e6ed714e6cc8f4fb55a132b384c68e12d6589`
 - `analysis/eval/tests/baseline_probe_aee18b.py` `f2fa21a7da21485c4309517a728c9e5b07c33164ef57185e539a12ae4fe97d13`
 - `analysis/eval/tests/run_offline_evidence.py` `eee851529b5041dca1c3a3f568d3f40807cffa9ddbecc14c7a191b627c2cdde8`
 - `analysis/results_wall_systems.csv` `0923f08e13b0fba10a25bbbeb5c439a7618c7a139cad4237ea91571b9fb478cc`
@@ -110,10 +113,10 @@ selftest ok (offline grader self-check only; no model, judge or accuracy claim)
 ### unit_tests (exit 0)
 
 ```text
-est_error_refusal_invalid_states)
-API errors are integrity gaps; refusals are scored failures; malformed records are INVALID. ... ok
-test_manifest_model_binding (test_eval_contract.Matrix.test_manifest_model_binding)
+)
 Under a manifest every record must carry the manifest's requested model and its served models. ... ok
+test_manifest_source_required_and_bound (test_eval_contract.Matrix.test_manifest_source_required_and_bound)
+The manifest must carry a valid source identity; a source-only change (same answers, same reference ... ok
 test_missing_run_stays_in_denominator (test_eval_contract.Matrix.test_missing_run_stays_in_denominator)
 Old grader counted only supplied rows (1 of 3 runs -> 100%). Missing runs must be visible and non-passing. ... ok
 test_reference_checks_fail_visibly (test_eval_contract.Matrix.test_reference_checks_fail_visibly)
@@ -184,7 +187,7 @@ test_nonfinite_and_duplicate_keys_rejected (test_eval_contract.StrictJson.test_n
 NaN/Infinity/1e999 and duplicate keys must not parse (they could smuggle non-finite scores or shadow fields). ... ok
 
 ----------------------------------------------------------------------
-Ran 32 tests in 0.295s
+Ran 35 tests in 0.313s
 
 OK
 ```
