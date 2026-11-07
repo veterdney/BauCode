@@ -1,0 +1,34 @@
+{
+ "win": {
+  "1 RC frame + EPS ETICS": 0.0,
+  "2 Steel frame + composite slab + mineral wool": 0.0005,
+  "3 Monolithic masonry + mineral insulation": 0.0135,
+  "4 Timber-concrete hybrid (CLT walls + composite slab)": 0.0245,
+  "5 Solid timber (CLT) + wood-fibre": 0.007,
+  "6 Timber frame + straw + clay plaster": 0.9545
+ },
+ "top3": {
+  "1 RC frame + EPS ETICS": 0.2515,
+  "2 Steel frame + composite slab + mineral wool": 0.096,
+  "3 Monolithic masonry + mineral insulation": 0.7495,
+  "4 Timber-concrete hybrid (CLT walls + composite slab)": 0.538,
+  "5 Solid timber (CLT) + wood-fibre": 0.3665,
+  "6 Timber frame + straw + clay plaster": 0.9985
+ },
+ "neutral": {
+  "1 RC frame + EPS ETICS": 39.393423179841946,
+  "2 Steel frame + composite slab + mineral wool": 36.16727342682721,
+  "3 Monolithic masonry + mineral insulation": 38.70271935709053,
+  "4 Timber-concrete hybrid (CLT walls + composite slab)": 46.55669298943552,
+  "5 Solid timber (CLT) + wood-fibre": 45.26199999783562,
+  "6 Timber frame + straw + clay plaster": 58.19018559446843
+ },
+ "nocost": {
+  "1 RC frame + EPS ETICS": 39.393423179841946,
+  "2 Steel frame + composite slab + mineral wool": 38.77144009349387,
+  "3 Monolithic masonry + mineral insulation": 44.95271935709054,
+  "4 Timber-concrete hybrid (CLT walls + composite slab)": 44.99419298943552,
+  "5 Solid timber (CLT) + wood-fibre": 45.26199999783562,
+  "6 Timber frame + straw + clay plaster": 58.19018559446843
+ }
+}

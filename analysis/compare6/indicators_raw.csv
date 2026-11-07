@@ -1,0 +1,7 @@
+alternative,dur_life,dur_events,dur_mfp,dur_adapt,env_a13,env_life,env_pen,env_ren,env_rec,env_waste,wb_voc,wb_mass,wb_buffer,wb_ac,cost_con,cost_maint,cost_op,D_kgCO2e_m2GFA,U_ext
+1 RC frame + EPS ETICS,100,6,5,2,119.8208,141.0084,1185.3397,0.157,0.036,21.6247,4,1034.055,1,528.0,820,109.8,0.0,1.31,0.2
+2 Steel frame + composite slab + mineral wool,80,6,4,5,79.69,85.6388,983.313,0.1626,0.1397,32.507,4,325.132,2,228.0,880,109.8,0.0,-4.05,0.2
+3 Monolithic masonry + mineral insulation,100,6,5,2,104.2325,109.7278,991.4517,0.1709,0.0712,38.8736,5,785.4378,3,480.0,790,109.8,0.0,4.28,0.2
+4 Timber-concrete hybrid (CLT walls + composite slab),80,2,4,3,-116.3602,78.3473,1016.7786,0.7411,0.0275,28.1979,3,332.8776,4,274.0,940,81.0,0.0,-79.84,0.2
+5 Solid timber (CLT) + wood-fibre,80,2,3,4,-195.6391,68.7106,916.2406,0.803,0.0,19.6895,3,152.378,5,84.6,980,81.0,0.0,-126.45,0.2
+6 Timber frame + straw + clay plaster,60,0,2,5,-105.9363,25.189,406.4804,0.8279,0.0,0.2799,4,124.4348,5,48.64,900,0.0,0.0,-53.16,0.2

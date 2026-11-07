@@ -1,0 +1,7 @@
+alt,name,score_weighted,score_unweighted,rank_weighted,rank_unweighted,pts_Durability_weighted,pts_Environment_weighted,pts_Well-being_weighted,pts_Cost_weighted,pts_Compatibility_weighted,life_GWP_kgCO2e_per_m2GFA,A1A3_GWP_kgCO2e_per_m2GFA,cost_50y_EUR_per_m2GFA
+1,Reinforced concrete frame + EPS ETICS,54.51,56.33,6,5,10.71,6.03,9.83,11.36,16.58,304.5,204.3,872.6
+2,Steel frame + composite slabs + mineral wool,61.21,62.31,2,2,10.46,8.67,10.02,13.16,18.89,205.3,133.5,793.0
+3,Monolithic masonry (clay block / sand-lime) + mineral insulation,56.76,59.32,4,3,11.89,6.57,10.41,10.37,17.51,261.2,187.2,952.1
+4,Timber-concrete hybrid (CLT walls + composite slabs),57.08,58.08,3,4,9.79,9.69,8.86,10.48,18.26,177.5,-66.2,885.4
+5,Solid timber (CLT) + wood-fibre insulation,55.25,55.9,5,6,8.81,10.53,10.15,9.44,16.31,191.7,-156.0,870.9
+6,Timber frame + straw infill + clay plaster,67.01,66.85,1,1,10.94,12.29,13.78,14.31,15.69,149.3,-24.7,784.7
