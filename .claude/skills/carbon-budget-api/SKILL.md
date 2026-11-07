@@ -6,7 +6,7 @@ description: Compute project-specific building carbon budgets (kgCO2eq/m², embo
 # Carbon Budget API
 
 Public HTTP API, no auth.
-Base URL: `https://carbonbudget.eu`
+Base URL: `https://carbonbudget.eu` (this is the production host; strip any trailing `/` before appending a path — `https://carbonbudget.eu//api/health` returns 404)
 
 All values below were verified against the live API on 2026-11-07.
 The upstream docs are partly stale (they list 3 countries, 2025–2050, lower-case typologies);
