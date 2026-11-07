@@ -2,13 +2,13 @@
   "schema": "baucode-presentation-publication-content/1",
   "recorded_head": "305345a394d0019dc4c5cc51aff508c2a54dea77",
   "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
-  "note": "Content identities; no new scientific or implementation tests executed for wrapper. Self hash excluded. Recorded candidate evidence remains historical.",
+  "note": "Content identities; no new scientific or implementation tests executed for wrapper. Self hash excluded. Landscape HTML edit proposal 2026-11-07; not a merge claim. Recorded candidate evidence remains historical. Bounded loop readability correction; browser recheck pending. Fresh candidate execution evidence, if any, is separate from historical records.",
   "sha256": {
-    "demo/presentation/README.md": "1da32ccb25edf37300b9e921e47674726af34ff1733e66613f441a8399190172",
-    "demo/presentation/index.html": "acd5731c15896c15479d37b18440024fc8c283395c9176ed2f3601eed98f358d",
-    "demo/presentation/style.css": "93f0f12e5ea46489cf3df862d53f70207fd798f424eee48a40efc4d0c18da734",
+    "demo/presentation/README.md": "7db99b04e7e232846cc1760950590e9544a4d5d27270903ad5ab9c40389b0928",
+    "demo/presentation/index.html": "e7f88a09f4f10200219adb63e02461c387fe45e187c0b807978d11d6854153a7",
+    "demo/presentation/style.css": "e56bde38a24013f0461d25c20cc35d15c7934f2436defa5192006f37c86d76d7",
     "demo/presentation/team.jpg": "93eec20535dbafa4fa35a0cf1ec749193cab6207ecfeb85c9c8324c695a1db5c",
-    "demo/presentation/wrapper_checks.json": "7ced32a5a11c07dee54646ba38808f60dfb9749e356e8b766e679987cb79f212",
+    "demo/presentation/wrapper_checks.json": "a74ffb9d99d76eafd98d4f7d75c92e4b362aa7872539431598b11ffbb724b9c1",
     "review-evidence/preservation-v1-20261107/01_policy.json": "adede1661672722eb663bde840ecd197bc5e059f6482f29b9e221c0f7707e3db",
     "review-evidence/preservation-v1-20261107/02_policy_falsification.json": "847f4fa4842524ef513a299750f2788b57ea7ac2d68f228b544bfd5493309826",
     "review-evidence/preservation-v1-20261107/03_exact20_original.json": "2dcaec8842daf4c19420588330a8e799f8401535eb7449e093129bb59f40ac75",
@@ -35,5 +35,6 @@
     "tests/human_main_preservation_v1.json": "2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac",
     "tests/results_preservation_v1_20261107.json": "b6bdd28f0548e6e17aad3861e6c345a0991eb3d9d33513e4a8bfb8be07f587f2",
     "tests/results_preservation_v1_fault_20261107.json": "674a77d50c5c8cbff08aaad13dab18155eb448c1b1e5fd126ca5e995b79f38d9"
-  }
+  },
+  "integration_head_before_wrapper": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8"
 }

@@ -1,0 +1,23 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "command": [
+    "python",
+    "tests/confusion_exact20.py",
+    "tests/results_landscape_final_20261107.json",
+    "--out",
+    "tests/detection_metrics_landscape_final_20261107.json"
+  ],
+  "started_berlin": "2026-11-07T16:14:51.586900+01:00",
+  "finished_berlin": "2026-11-07T16:14:51.656438+01:00",
+  "exit_code": 0,
+  "expected_exit_for_recording": 0,
+  "exit_matches": true,
+  "stdout": "positives 15: TP 15 FN 0 unrecognized 0 not-executed 0 | negatives 18: TN 15 FP 0 abstained 3 unrecognized 0 not-executed 0 | numeric assertion residuals n=67 max_abs 2.7755575615628914e-17 max_rel 1.1564823173178715e-16\r\n",
+  "stderr": "",
+  "stderr_traceback_omitted": false,
+  "raw_stdout_sha256": "a3cd777493b2431573f369904210f511576fbb69a39a5cdee6029c23042beb60",
+  "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

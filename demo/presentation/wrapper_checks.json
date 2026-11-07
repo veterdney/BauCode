@@ -1,5 +1,6 @@
 {
   "scope": "Static link/data/packaging inspection only; no browser rehearsal, Python model execution or suite reruns.",
+  "layout": "landscape-css-scroll-snap-horizontal; narrow/print stack vertically",
   "timing_seconds": [
     20,
     45,
@@ -9,14 +10,46 @@
     15
   ],
   "timing_total": 180,
-  "relative_link_count": 33,
+  "panel_order": [
+    "why",
+    "question",
+    "loop",
+    "result",
+    "limits",
+    "next"
+  ],
+  "relative_link_count": 44,
   "links": [
     {
       "link": "style.css",
       "target": "demo/presentation/style.css"
     },
     {
-      "link": "#problem",
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#next",
       "target": "demo/presentation/index.html"
     },
     {
@@ -28,31 +61,7 @@
       "target": "demo/presentation/README.md"
     },
     {
-      "link": "README.md",
-      "target": "demo/presentation/README.md"
-    },
-    {
-      "link": "#problem",
-      "target": "demo/presentation/index.html"
-    },
-    {
-      "link": "#input",
-      "target": "demo/presentation/index.html"
-    },
-    {
-      "link": "#evidence",
-      "target": "demo/presentation/index.html"
-    },
-    {
-      "link": "#process",
-      "target": "demo/presentation/index.html"
-    },
-    {
-      "link": "#limits",
-      "target": "demo/presentation/index.html"
-    },
-    {
-      "link": "#reproduce",
+      "link": "#question",
       "target": "demo/presentation/index.html"
     },
     {
@@ -68,40 +77,16 @@
       "target": "docs/INPUT_SCHEMA.md"
     },
     {
-      "link": "../output/default/result.json",
-      "target": "demo/output/default/result.json"
+      "link": "#why",
+      "target": "demo/presentation/index.html"
     },
     {
-      "link": "../output/replaced/result.json",
-      "target": "demo/output/replaced/result.json"
-    },
-    {
-      "link": "../output/replaced/layers.csv",
-      "target": "demo/output/replaced/layers.csv"
-    },
-    {
-      "link": "../output/replaced/report.md",
-      "target": "demo/output/replaced/report.md"
-    },
-    {
-      "link": "../output/gallery/gallery.html",
-      "target": "demo/output/gallery/gallery.html"
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
     },
     {
       "link": "../../review-evidence/preservation-v1-20261107/03_exact20_original.json",
       "target": "review-evidence/preservation-v1-20261107/03_exact20_original.json"
-    },
-    {
-      "link": "../../review-evidence/preservation-v1-20261107/04_fault_original.json",
-      "target": "review-evidence/preservation-v1-20261107/04_fault_original.json"
-    },
-    {
-      "link": "../../tests/results_preservation_v1_fault_20261107.json",
-      "target": "tests/results_preservation_v1_fault_20261107.json"
-    },
-    {
-      "link": "../../review-evidence/preservation-v1-20261107/08_original_gallery_checks.json",
-      "target": "review-evidence/preservation-v1-20261107/08_original_gallery_checks.json"
     },
     {
       "link": "../../tests/HUMAN_MAIN_PRESERVATION_V1_REPORT.md",
@@ -120,8 +105,64 @@
       "target": "review-evidence/preservation-v1-20261107/10_p2.json"
     },
     {
-      "link": "team.jpg",
-      "target": "demo/presentation/team.jpg"
+      "link": "../../review-evidence/preservation-v1-20261107/11_human_node.json",
+      "target": "review-evidence/preservation-v1-20261107/11_human_node.json"
+    },
+    {
+      "link": "#question",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "../output/default/result.json",
+      "target": "demo/output/default/result.json"
+    },
+    {
+      "link": "../output/replaced/result.json",
+      "target": "demo/output/replaced/result.json"
+    },
+    {
+      "link": "../output/replaced/layers.csv",
+      "target": "demo/output/replaced/layers.csv"
+    },
+    {
+      "link": "../output/replaced/report.md",
+      "target": "demo/output/replaced/report.md"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/04_fault_original.json",
+      "target": "review-evidence/preservation-v1-20261107/04_fault_original.json"
+    },
+    {
+      "link": "../../tests/results_preservation_v1_fault_20261107.json",
+      "target": "tests/results_preservation_v1_fault_20261107.json"
+    },
+    {
+      "link": "../../review-evidence/preservation-v1-20261107/08_original_gallery_checks.json",
+      "target": "review-evidence/preservation-v1-20261107/08_original_gallery_checks.json"
+    },
+    {
+      "link": "../output/gallery/gallery.html",
+      "target": "demo/output/gallery/gallery.html"
+    },
+    {
+      "link": "#loop",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#result",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#next",
+      "target": "demo/presentation/index.html"
     },
     {
       "link": "../expected/synthetic_wall.expected.json",
@@ -136,12 +177,20 @@
       "target": "review-evidence/preservation-v1-20261107/after.json"
     },
     {
-      "link": "#problem",
+      "link": "#why",
       "target": "demo/presentation/index.html"
     },
     {
       "link": "publication_manifest.json",
       "target": "demo/presentation/publication_manifest.json"
+    },
+    {
+      "link": "#limits",
+      "target": "demo/presentation/index.html"
+    },
+    {
+      "link": "#why",
+      "target": "demo/presentation/index.html"
     }
   ],
   "javascript": false,
@@ -151,14 +200,27 @@
     "L2 100mm to 160mm",
     "D minus2 incomplete separate",
     "L2 D null and L3 mass null",
-    "saved C07 fault exit1"
+    "saved C07 fault exit1",
+    "original suite 19/20 exit1",
+    "gallery 28/29 exit1",
+    "preservation v1 50 paths",
+    "P2 15/15 HumanNode 14 PASS recorded",
+    "history guards 2/15 to 15/15 prior before/after"
   ],
   "original_51_member_hashes_unchanged": true,
   "asset_sha256": {
-    "demo/presentation/index.html": "acd5731c15896c15479d37b18440024fc8c283395c9176ed2f3601eed98f358d",
-    "demo/presentation/style.css": "93f0f12e5ea46489cf3df862d53f70207fd798f424eee48a40efc4d0c18da734",
-    "demo/presentation/README.md": "1da32ccb25edf37300b9e921e47674726af34ff1733e66613f441a8399190172",
+    "demo/presentation/index.html": "e7f88a09f4f10200219adb63e02461c387fe45e187c0b807978d11d6854153a7",
+    "demo/presentation/style.css": "e56bde38a24013f0461d25c20cc35d15c7934f2436defa5192006f37c86d76d7",
+    "demo/presentation/README.md": "7db99b04e7e232846cc1760950590e9544a4d5d27270903ad5ab9c40389b0928",
     "demo/presentation/team.jpg": "93eec20535dbafa4fa35a0cf1ec749193cab6207ecfeb85c9c8324c695a1db5c"
   },
-  "browser_visual_review": "NOT RUN; assigned separately"
+  "browser_visual_review": "NOT RUN; filesystem link + CSS constraint check only",
+  "merge_authorized": false,
+  "bounded_readability_fix": {
+    "selector": ".loop article > strong:first-child",
+    "paragraph_numeric_emphasis": "inline inherited styling",
+    "card_wrapping": "min-width:0;overflow-wrap:anywhere",
+    "test_sentence": "saved default, replacement and gallery generation.",
+    "browser_recheck": "PENDING; no visual PASS claimed"
+  }
 }

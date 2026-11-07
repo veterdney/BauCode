@@ -1,0 +1,11 @@
+{
+  "source": "Parent relayed grokker browser rehearsal; not independently performed by this runner.",
+  "reported_time": "2026-11-07 16:13 CET (Europe/Berlin)",
+  "viewport": "1280x800",
+  "html_sha256": "e7f88a09f4f10200219adb63e02461c387fe45e187c0b807978d11d6854153a7",
+  "wide_loop_readability": "PASS reported: five cards, links, prev/next fit; inline numeric emphasis and Test text not clipped.",
+  "narrow_visual": "NOT RUN",
+  "cosmetic_photo": "Non-blocking; unchanged.",
+  "snapshot_note": "Frozen wrapper metadata records its earlier pending-review state. This later parent-reported record supersedes that pending state for the exact HTML bytes only. No builder browser inspection claimed.",
+  "merge_authorization": false
+}

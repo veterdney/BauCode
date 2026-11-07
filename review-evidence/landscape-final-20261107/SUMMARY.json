@@ -1,0 +1,168 @@
+{
+  "cwd": "<repo>",
+  "head": "c2cc9d4f1c4ba6c72ab02ed0ca15353df15b54a8",
+  "pinned_main": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "source_scope": "Every Git-tracked regular file, including five dirty presentation paths; excludes newly generated records and pre-existing untracked artifacts.",
+  "source_file_count": 199,
+  "candidate_source_sha256": "c2261c188a2456e0168488e7993717eaf145388629a779c1ed2453d5cc99641f",
+  "tracked_dirty_paths": [
+    "demo/presentation/README.md",
+    "demo/presentation/index.html",
+    "demo/presentation/publication_manifest.json",
+    "demo/presentation/style.css",
+    "demo/presentation/wrapper_checks.json"
+  ],
+  "python": "3.14.7",
+  "started_berlin": "2026-11-07T16:14:41.290362+01:00",
+  "immutable_sha256": {
+    "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+    "tests/run_exact20.py": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+    "demo/check_gallery.py": "db7b5e2ebb0e9f239d507ae05a32c24b45aa53ad28ab57b74b323ae54681f4cd",
+    "tests/human_main_preservation_v1.json": "2c98c252eecd19671cf70863fbf73a4595c09558152db078a4afe428819133ac",
+    "tests/check_human_main_v1.py": "29a479a0ffb6104b6fb6476667aa7842f3dc81453355b55266b35fdeb02a3950"
+  },
+  "finished_berlin": "2026-11-07T16:14:51.817373+01:00",
+  "commands": [
+    {
+      "name": "01_preservation",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "02_controls",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "03_exact20",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches": true
+    },
+    {
+      "name": "04_fault",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches": true
+    },
+    {
+      "name": "05_default",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "06_replacement",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "07_gallery",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "08_gallery_checks",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches": true
+    },
+    {
+      "name": "09_references",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "10_p2",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "11_human_node",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "12_detection",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "13_legacy_missing_input",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "exit_matches": true
+    }
+  ],
+  "tracked_before_after_identical": true,
+  "exact20_summary": {
+    "cases": {
+      "PASS": 19,
+      "FAIL": 1,
+      "UNKNOWN": 0,
+      "NOT RUN": 0
+    },
+    "cases_total": 20,
+    "probes_blocking": {
+      "PASS": 78,
+      "FAIL": 1,
+      "UNKNOWN": 0,
+      "NOT RUN": 0
+    },
+    "probes_nonblocking": {
+      "PASS": 1,
+      "FAIL": 0,
+      "UNKNOWN": 4,
+      "NOT RUN": 2
+    },
+    "probes_total": 86
+  },
+  "exact20_failed_members": [
+    "C19.originals_unchanged"
+  ],
+  "fault_failed_members": [
+    "C07.per_m3_val",
+    "C07.demo",
+    "C19.originals_unchanged"
+  ],
+  "gallery_failed_checks": [
+    "FAIL  original reports/visuals unchanged vs base"
+  ],
+  "default_a13": 185,
+  "replacement_a13": 230,
+  "gallery_generated_records": 200,
+  "gallery_assemblies": 25,
+  "relative_links": 44,
+  "external_dependencies": false,
+  "browser_review": "Not performed by runner; separate parent gate.",
+  "privacy_scan_findings": [],
+  "material_blockers": [],
+  "new_result_paths": [
+    "tests/results_landscape_final_20261107.json",
+    "tests/results_landscape_final_fault_20261107.json",
+    "tests/detection_metrics_landscape_final_20261107.json"
+  ],
+  "fresh_outputs_sha256": {
+    "outputs/default/expected_check.json": "8e7431a0423d95433f6922b308cae1643d158edc58cb4e4a7b3baa4142924d4b",
+    "outputs/default/layers.csv": "8be6e71c96150e44de35dc158dd59c38b87caa8e770927d01567174642d92ae6",
+    "outputs/default/report.md": "3fd94db556ed9600bbda02a6ef306f791a6b1db0f807584cf80ab950060e9faa",
+    "outputs/default/result.json": "0f26ee82a09ed8eeae6968311ba50329b374af590ab16f2c9d53ad1a5bb47fda",
+    "outputs/gallery/gallery.csv": "4d934c34b4b7787e1cb49b1e9ce1f649973e010fe86e42d16fb755775f3156a4",
+    "outputs/gallery/gallery.html": "4d4ea968427c1edc2c587f03a4caae622023314b256455a6844175858e5812bc",
+    "outputs/gallery/gallery.json": "7770346249d64fb18bc295a9d98d0b1e381f3227849b8074941286c77ce0ce8b",
+    "outputs/gallery/generated_inputs.json": "285df0ad9075af1867e754452bd224aac856b6a2226eca3bad5a89f27642128d",
+    "outputs/gallery/provenance.json": "d46f04b93ae6d3bff157dc56079dfb9510a6da681c5b97375f6f8aff989bb81b",
+    "outputs/replacement/expected_check.json": "14300da8e85a3752200df4a7636db1b3241f0515e487451336bdcf3fcfd43b3d",
+    "outputs/replacement/layers.csv": "2b29b955ea670fd22e03bf2ec0240e2712d91daef5f98fa5d751cdda109926f6",
+    "outputs/replacement/report.md": "2d75381d01be790d9d0d0f7ea381e853cb30d2ca97b99ee04b5eaa283f9de8c2",
+    "outputs/replacement/result.json": "da775dae7c22dd9c216512ea324bbdea2a72427745a0b854e88accad80650343"
+  }
+}
