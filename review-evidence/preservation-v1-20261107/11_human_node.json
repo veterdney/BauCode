@@ -1,0 +1,14 @@
+{
+  "cwd": "<repo>",
+  "head": "305345a394d0019dc4c5cc51aff508c2a54dea77",
+  "baseline": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "command": [
+    "node",
+    "analysis/levels/viz/test_loop.mjs"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "exit_matches": true,
+  "stdout": "PASS 1 ST has 8 stages, 8th id record\nPASS 2 R has 5 rounds ids 1..5, round 4 Research-loop, round 5 dataset\nPASS 3 C entries well-formed\nPASS 4 PR practices\nPASS 5a R3 Build-ups = rows in scores_parts.csv\nPASS 5b R3 Interfaces rated = rows in scores_interfaces.csv\nPASS 5c R3 Top score = rank 1 in baseline/scores_alternatives.csv (before the dataset fill)\nPASS 5d R2 Top score = max total in compare6/scores.csv\nPASS 5f R4 Tasks done = count of \"- [x]\" in TASKS.md\nPASS 5g R4 Journal entries = bullet lines in JOURNAL.md\nPASS 5h R5 Top score = rank 1 in report/scores_alternatives.csv\nPASS 5i R5 Materials = rows in the material property dataset\nPASS 5j R5 Values changed = changed rows in dataset_fill_log.csv\nPASS 5k R5 Rank changes = alternatives whose weighted rank differs from baseline\n",
+  "stderr": ""
+}

@@ -1,0 +1,17 @@
+{
+  "cwd": "<repo>",
+  "head": "305345a394d0019dc4c5cc51aff508c2a54dea77",
+  "baseline": "8336cb6ab602d96b26b36390274dcb47cf05ac1c",
+  "command": [
+    "python",
+    "tests/confusion_exact20.py",
+    "tests/results_preservation_v1_20261107.json",
+    "--out",
+    "tests/detection_metrics_preservation_v1_20261107.json"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "exit_matches": true,
+  "stdout": "positives 15: TP 15 FN 0 unrecognized 0 not-executed 0 | negatives 18: TN 15 FP 0 abstained 3 unrecognized 0 not-executed 0 | numeric assertion residuals n=67 max_abs 2.7755575615628914e-17 max_rel 1.1564823173178715e-16\r\n",
+  "stderr": ""
+}
