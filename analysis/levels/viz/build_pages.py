@@ -1,0 +1,23 @@
+"""Wrap the artifact fragments into standalone HTML files for GitHub Pages.
+Usage (repo root): python3 -I analysis/levels/viz/build_pages.py <output_dir>"""
+import re, sys, os
+out=sys.argv[1]; src='analysis/levels/viz'
+HEAD='<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">{head}<style>:root{{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}}body{{margin:0;font:14px system-ui,sans-serif}}img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>\n'
+def wrap(frag):
+    head=''
+    for pat in (r'<title>.*?</title>',r'<meta name="claude:viewport-fit-sides"[^>]*>'):
+        m=re.search(pat,frag,re.S)
+        if m: head+=m.group(0); frag=frag.replace(m.group(0),'',1)
+    return HEAD.format(head=head)+frag+'\n</body></html>\n'
+os.makedirs(out,exist_ok=True)
+for name,dst in (('index.html','lab.html'),('loop.html','loop.html')):
+    open(f'{out}/{dst}','w').write(wrap(open(f'{src}/{name}').read()))
+open(f'{out}/index.html','w').write(HEAD.format(head='<title>Wall and structure research</title>')+'''<style>:root{--bg:#f5f4f0;--ink:#1c2230;--mute:#5f6676;--line:#d9d9d2;--accent:#d9480f}@media(prefers-color-scheme:dark){:root{--bg:#12151c;--ink:#e8eaf0;--mute:#9aa1b2;--line:#2d3442;--accent:#ff8a4c;color-scheme:dark}}
+body{background:var(--bg);color:var(--ink);padding:24px max(16px,env(safe-area-inset-left,0px))}main{max-width:640px;margin:8vh auto}h1{font-size:30px;margin:0 0 8px}p{color:var(--mute);line-height:1.5}
+a.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;color:var(--ink);text-decoration:none}a.card:hover{border-color:var(--accent)}a.card b{display:block;font-size:17px}a.card span{color:var(--mute)}</style>
+<main><h1>Wall and structure research</h1><p>Interactive results from the Claude Impact Lab Berlin 2026 analysis of building materials, using Ökobaudat 2024-II and the building material property dataset.</p>
+<a class="card" href="lab.html"><b>Structure Scoring Lab</b><span>Six structural systems scored at layer, building-part and building level. Adjust the weights, inspect layers and compatibility, see what the dataset changed.</span></a>
+<a class="card" href="loop.html"><b>Research Loop Map</b><span>The research loop across five rounds, the practices each round used and the errors each stage caught.</span></a></main>
+</body></html>
+''')
+print('written',os.listdir(out))
