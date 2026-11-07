@@ -1,0 +1,60 @@
+system,layer,flag,thickness_m,area_or_frame_factor,service_life_y,replacements_in_60y,n_epds,A1_A3_kgCO2e_m2,C1_C4_kgCO2e_m2,D_kgCO2e_m2,life_A1_C_kgCO2e_m2,disassembly_1to5
+X7 Timber post + straw bale + clay/lime plaster,Clay/lime plaster,,0.02,1,60,0,17,2.002,0.5,-1.004,2.502,4
+X7 Timber post + straw bale + clay/lime plaster,KVH studs,,0.278,0.08,100,0,21,-16.301,18.141,-8.078,1.84,5
+X7 Timber post + straw bale + clay/lime plaster,Straw bale,,0.278,0.92,60,0,2,-29.081,38.534,-13.917,9.453,5
+X7 Timber post + straw bale + clay/lime plaster,Clay/lime plaster,,0.02,1,60,0,17,2.002,0.5,-1.004,2.502,4
+X2 Solid timber (CLT) + wood-fibre ETICS,Structural timber/CLT,,0.1,1,100,0,20,-70.191,81.383,-38.419,11.192,5
+X2 Solid timber (CLT) + wood-fibre ETICS,Wood fibre insulation,,0.162,1,40,1,10,-18.042,41.614,-14.555,47.144,5
+X2 Solid timber (CLT) + wood-fibre ETICS,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X8 Monolithic brick + wood-fibre top-up,Clay/lime plaster,,0.015,1,60,0,17,1.501,0.375,-0.753,1.877,4
+X8 Monolithic brick + wood-fibre top-up,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X8 Monolithic brick + wood-fibre top-up,Fired brick,,0.365,1,100,0,3,53.29,-3.032,-0.533,50.258,2
+X8 Monolithic brick + wood-fibre top-up,Wood fibre insulation,,0.07,1,40,1,10,-7.796,17.981,-6.289,20.371,5
+X8 Monolithic brick + wood-fibre top-up,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X1 Timber frame + wood-fibre insulation,Gypsum plasterboard,,0.013,1,50,1,16,1.381,1.254,-0.04,5.27,3
+X1 Timber frame + wood-fibre insulation,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X1 Timber frame + wood-fibre insulation,KVH studs,,0.174,0.12,100,0,21,-15.304,17.032,-7.584,1.728,5
+X1 Timber frame + wood-fibre insulation,Wood fibre insulation,,0.174,0.88,60,0,10,-17.053,39.333,-13.757,22.28,5
+X1 Timber frame + wood-fibre insulation,Wood fibre board (sheathing),,0.06,1,40,1,5,-10.422,15.775,-5.786,10.705,5
+X1 Timber frame + wood-fibre insulation,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X3 Monolithic brick + rock-wool top-up,Clay/lime plaster,,0.015,1,60,0,17,1.501,0.375,-0.753,1.877,4
+X3 Monolithic brick + rock-wool top-up,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X3 Monolithic brick + rock-wool top-up,Fired brick,,0.365,1,100,0,3,53.29,-3.032,-0.533,50.258,2
+X3 Monolithic brick + rock-wool top-up,Rock wool insulation,,0.063,1,40,1,7,2.779,0.066,-0.092,5.691,3
+X3 Monolithic brick + rock-wool top-up,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X6 Aerated concrete + rock-wool top-up,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X6 Aerated concrete + rock-wool top-up,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X6 Aerated concrete + rock-wool top-up,Aerated concrete,,0.3,1,100,0,12,58.844,2.23,-0.786,61.074,2
+X6 Aerated concrete + rock-wool top-up,Rock wool insulation,,0.065,1,40,1,7,2.867,0.068,-0.095,5.872,3
+X6 Aerated concrete + rock-wool top-up,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X5 Reinforced concrete + rock-wool ETICS,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X5 Reinforced concrete + rock-wool ETICS,Concrete (ready-mixed),,0.2,1,100,0,81,37.282,4.495,-0.837,41.777,1
+X5 Reinforced concrete + rock-wool ETICS,Rock wool insulation,,0.17,1,40,1,7,7.5,0.179,-0.249,15.357,3
+X5 Reinforced concrete + rock-wool ETICS,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X4 Sand-lime brick + EPS ETICS,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+X4 Sand-lime brick + EPS ETICS,Interior paint/wall covering,,,1,12,4,14,0.994,0.351,-0.134,6.725,3
+X4 Sand-lime brick + EPS ETICS,Sand-lime brick,,0.175,1,100,0,5,26.073,2.699,-0.55,28.772,3
+X4 Sand-lime brick + EPS ETICS,EPS insulation,,0.162,1,40,1,17,12.547,8.443,-5.601,41.978,2
+X4 Sand-lime brick + EPS ETICS,Mineral render/plaster,,0.01,1,40,1,9,5.192,0.333,-0.294,11.051,2
+P5 Clay panels + timber stud + hemp/wood-fibre + clay plaster,Clay panels,,0.044,1,60,0,4,1.343,2.471,-4.196,3.814,5
+P5 Clay panels + timber stud + hemp/wood-fibre + clay plaster,KVH studs,,0.075,0.1,100,0,21,-5.497,6.118,-2.724,0.621,5
+P5 Clay panels + timber stud + hemp/wood-fibre + clay plaster,Wood fibre insulation,,0.06,0.9,60,0,10,-6.014,13.871,-4.852,7.857,5
+P5 Clay panels + timber stud + hemp/wood-fibre + clay plaster,Clay/lime plaster,,0.01,2,60,0,17,2.002,0.5,-1.004,2.502,4
+P6 Solid timber panel 80,Structural timber/CLT,,0.08,1,100,0,20,-56.153,65.107,-30.735,8.954,5
+P7 Fired brick 115 + lime plaster,Fired brick,,0.115,1,100,0,3,16.79,-0.955,-0.168,15.835,2
+P7 Fired brick 115 + lime plaster,Clay/lime plaster,,0.015,2,60,0,17,3.003,0.751,-1.506,3.753,4
+P7 Fired brick 115 + lime plaster,Interior paint/wall covering,,,2,12,4,14,1.987,0.703,-0.267,13.45,3
+P3 Sand-lime brick 115 + plaster,Sand-lime brick,,0.115,1,100,0,5,17.134,1.773,-0.362,18.907,3
+P3 Sand-lime brick 115 + plaster,Mineral render/plaster,,0.01,2,40,1,9,10.385,0.666,-0.589,22.101,2
+P3 Sand-lime brick 115 + plaster,Interior paint/wall covering,,,2,12,4,14,1.987,0.703,-0.267,13.45,3
+P2 Timber stud + cellulose + 2x2 plasterboard,Gypsum plasterboard,,0.05,1,50,1,16,5.523,5.017,-0.162,21.079,3
+P2 Timber stud + cellulose + 2x2 plasterboard,Interior paint/wall covering,,,2,12,4,14,1.987,0.703,-0.267,13.45,3
+P2 Timber stud + cellulose + 2x2 plasterboard,KVH studs,,0.075,0.1,100,0,21,-5.497,6.118,-2.724,0.621,5
+P2 Timber stud + cellulose + 2x2 plasterboard,Cellulose insulation,,0.075,0.9,60,0,2,-2.171,7.875,-1.941,5.703,5
+P1 Timber stud + rock wool + 2x2 plasterboard,Gypsum plasterboard,,0.05,1,50,1,16,5.523,5.017,-0.162,21.079,3
+P1 Timber stud + rock wool + 2x2 plasterboard,Interior paint/wall covering,,,2,12,4,14,1.987,0.703,-0.267,13.45,3
+P1 Timber stud + rock wool + 2x2 plasterboard,KVH studs,,0.075,0.1,100,0,21,-5.497,6.118,-2.724,0.621,5
+P1 Timber stud + rock wool + 2x2 plasterboard,Rock wool insulation,,0.075,0.9,60,0,7,2.978,0.071,-0.099,3.049,3
+P4 Aerated concrete 100 + plaster,Aerated concrete,,0.1,1,100,0,12,19.615,0.743,-0.262,20.358,2
+P4 Aerated concrete 100 + plaster,Mineral render/plaster,,0.01,2,40,1,9,10.385,0.666,-0.589,22.101,2
+P4 Aerated concrete 100 + plaster,Interior paint/wall covering,,,2,12,4,14,1.987,0.703,-0.267,13.45,3

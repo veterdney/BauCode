@@ -1,0 +1,143 @@
+alt,part,layer_A,layer_B,moisture,structural,fire_acoustics,disassembly,rating,score,note
+1,OW,Paint/covering,RC,good,good,caution,caution,caution,75.0,pv/ps=0.52; bonded/plastered joint: only demolition or cutting
+1,OW,RC,EPS,good,good,caution,caution,caution,75.0,pv/ps=0.27; bonded/plastered joint: only demolition or cutting
+1,OW,EPS,Mineral render,good,caution,caution,critical,critical,50.0,"pv/ps=0.80; render on a soft/polymer/timber base: different movement, reinforcement mesh needed; plaster/render bonded to polymer insulation: not separable into clean fractions"
+1,IL,Paint/covering,RC,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+1,IL,RC,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+1,IP,Paint/covering,Mineral render,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+1,IP,Mineral render,AAC,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+1,IP,AAC,Mineral render,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+1,IP,Mineral render,Paint/covering,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+1,FL,Screed,Rock wool,good,good,good,good,good,100.0,
+1,FL,Rock wool,RC,good,good,good,good,good,100.0,
+1,FL,RC,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+1,RF,Paint/covering,RC,good,good,good,caution,caution,87.5,pv/ps=0.51; bonded/plastered joint: only demolition or cutting
+1,RF,RC,VCL,good,good,good,good,good,100.0,pv/ps=0.49
+1,RF,VCL,EPS,good,good,good,caution,caution,87.5,pv/ps=0.33; bonded/plastered joint: only demolition or cutting
+1,RF,EPS,Roof membrane,caution,caution,good,caution,caution,62.5,pv/ps=1.70; membrane on EPS needs a separation layer (solvent/plasticiser); bonded/plastered joint: only demolition or cutting
+1,RF,Roof membrane,Gravel,good,good,good,good,good,100.0,pv/ps=0.79
+1,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.53
+1,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.39
+1,GS,RC,XPS,good,good,good,good,good,100.0,pv/ps=0.26
+1,GS,XPS,Gravel,good,good,good,good,good,100.0,pv/ps=0.78
+1,WI,Window PVC,Sealing foil,good,good,good,good,good,100.0,
+2,OW,Gypsum board,Paint/covering,good,good,good,caution,caution,87.5,pv/ps=0.53; bonded/plastered joint: only demolition or cutting
+2,OW,Paint/covering,VCL,good,good,good,caution,caution,87.5,pv/ps=0.53; bonded/plastered joint: only demolition or cutting
+2,OW,VCL,Rock wool,good,good,good,good,good,100.0,pv/ps=0.17
+2,OW,Rock wool,Steel frame,good,good,good,good,good,100.0,pv/ps=0.40
+2,OW,Steel frame,Gypsum board,good,good,good,good,good,100.0,pv/ps=0.40
+2,OW,Gypsum board,Rock wool,good,good,good,good,good,100.0,pv/ps=0.40
+2,OW,Rock wool,Mineral render,good,caution,good,caution,caution,75.0,"pv/ps=0.82; render on a soft/polymer/timber base: different movement, reinforcement mesh needed; bonded/plastered joint: only demolition or cutting"
+2,IL,Paint/covering,Gypsum board,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+2,IL,Gypsum board,Rock wool,good,good,good,good,good,100.0,
+2,IL,Rock wool,Steel frame,good,good,good,good,good,100.0,
+2,IL,Steel frame,Gypsum board,good,good,good,good,good,100.0,
+2,IL,Gypsum board,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+2,IP,Paint/covering,Gypsum board,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+2,IP,Gypsum board,Rock wool,good,good,good,good,good,100.0,
+2,IP,Rock wool,Steel frame,good,good,good,good,good,100.0,
+2,IP,Steel frame,Gypsum board,good,good,good,good,good,100.0,
+2,IP,Gypsum board,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+2,FL,Screed,Rock wool,good,good,good,good,good,100.0,
+2,FL,Rock wool,Composite slab steel-concrete,good,good,good,good,good,100.0,
+2,FL,Composite slab steel-concrete,Gypsum board,good,good,good,good,good,100.0,
+2,FL,Gypsum board,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+2,RF,Paint/covering,Gypsum board,good,good,good,caution,caution,87.5,pv/ps=0.51; bonded/plastered joint: only demolition or cutting
+2,RF,Gypsum board,Composite slab steel-concrete,good,good,good,good,good,100.0,pv/ps=0.52
+2,RF,Composite slab steel-concrete,VCL,good,good,good,good,good,100.0,pv/ps=0.51
+2,RF,VCL,Rock wool,good,good,good,good,good,100.0,pv/ps=0.33
+2,RF,Rock wool,Roof membrane,caution,good,good,good,caution,87.5,pv/ps=1.78
+2,RF,Roof membrane,Gravel,good,good,good,good,good,100.0,pv/ps=0.79
+2,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.53
+2,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.39
+2,GS,RC,XPS,good,good,good,good,good,100.0,pv/ps=0.26
+2,GS,XPS,Gravel,good,good,good,good,good,100.0,pv/ps=0.78
+2,WI,Window PVC,Sealing foil,good,good,good,good,good,100.0,
+3,OW,Paint/covering,Lime plaster,good,good,good,caution,caution,87.5,pv/ps=0.51; bonded/plastered joint: only demolition or cutting
+3,OW,Lime plaster,Brick,good,good,good,caution,caution,87.5,pv/ps=0.50; bonded/plastered joint: only demolition or cutting
+3,OW,Brick,Rock wool,good,good,good,caution,caution,87.5,pv/ps=0.46; bonded/plastered joint: only demolition or cutting
+3,OW,Rock wool,Mineral render,caution,caution,good,caution,caution,62.5,"pv/ps=0.90; render on a soft/polymer/timber base: different movement, reinforcement mesh needed; bonded/plastered joint: only demolition or cutting"
+3,IL,Paint/covering,Lime plaster,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IL,Lime plaster,Sand-lime,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IL,Sand-lime,Lime plaster,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IL,Lime plaster,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IP,Paint/covering,Lime plaster,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IP,Lime plaster,Sand-lime,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IP,Sand-lime,Lime plaster,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,IP,Lime plaster,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,FL,Screed,Rock wool,good,good,good,good,good,100.0,
+3,FL,Rock wool,RC,good,good,good,good,good,100.0,
+3,FL,RC,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+3,RF,Paint/covering,RC,good,good,good,caution,caution,87.5,pv/ps=0.51; bonded/plastered joint: only demolition or cutting
+3,RF,RC,VCL,good,good,good,good,good,100.0,pv/ps=0.49
+3,RF,VCL,Rock wool,good,good,good,good,good,100.0,pv/ps=0.32
+3,RF,Rock wool,Roof membrane,caution,good,good,good,caution,87.5,pv/ps=1.74
+3,RF,Roof membrane,Gravel,good,good,good,good,good,100.0,pv/ps=0.79
+3,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.53
+3,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.39
+3,GS,RC,XPS,good,good,good,good,good,100.0,pv/ps=0.26
+3,GS,XPS,Gravel,good,good,good,good,good,100.0,pv/ps=0.78
+3,WI,Window PVC,Sealing foil,good,good,good,good,good,100.0,
+4,OW,CLT,Rock wool,caution,good,good,good,caution,87.5,pv/ps=0.21 bio-based layers close to saturation: dynamic simulation advised
+4,OW,Rock wool,Mineral render,good,caution,good,caution,caution,75.0,"pv/ps=0.86; render on a soft/polymer/timber base: different movement, reinforcement mesh needed; bonded/plastered joint: only demolition or cutting"
+4,IL,Gypsum board,CLT,good,good,good,good,good,100.0,
+4,IL,CLT,Rock wool,good,good,good,good,good,100.0,
+4,IL,Rock wool,Gypsum board,good,good,good,good,good,100.0,
+4,IP,Paint/covering,Gypsum board,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+4,IP,Gypsum board,KVH,good,good,good,good,good,100.0,
+4,IP,KVH,Rock wool,good,good,good,good,good,100.0,
+4,IP,Rock wool,Gypsum board,good,good,good,good,good,100.0,
+4,IP,Gypsum board,Paint/covering,good,good,good,caution,caution,87.5,bonded/plastered joint: only demolition or cutting
+4,FL,Screed,Rock wool,good,good,good,good,good,100.0,
+4,FL,Rock wool,Wood-concrete slab,good,caution,good,good,caution,87.5,composite action depends on shear connectors; shrinkage differences
+4,RF,CLT,VCL,caution,good,good,good,caution,87.5,pv/ps=0.63 bio-based layers close to saturation: dynamic simulation advised
+4,RF,VCL,Rock wool,good,good,good,good,good,100.0,pv/ps=0.40
+4,RF,Rock wool,Roof membrane,caution,good,good,good,caution,87.5,pv/ps=1.79
+4,RF,Roof membrane,Gravel,good,good,good,good,good,100.0,pv/ps=0.79
+4,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.54
+4,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.54
+4,GS,RC,Foam glass,good,good,good,good,good,100.0,pv/ps=0.57
+4,GS,Foam glass,Gravel,good,good,good,good,good,100.0,pv/ps=0.77
+4,WI,Window timber,Sealing foil,good,good,good,good,good,100.0,
+5,OW,CLT,Wood fibre,caution,good,caution,good,caution,75.0,pv/ps=0.26 bio-based layers close to saturation: dynamic simulation advised
+5,OW,Wood fibre,Mineral render,caution,caution,caution,caution,caution,50.0,"pv/ps=0.85 bio-based layers close to saturation: dynamic simulation advised; render on a soft/polymer/timber base: different movement, reinforcement mesh needed; bonded/plastered joint: only demolition or cutting"
+5,IL,CLT,Wood fibre,good,good,good,good,good,100.0,
+5,IL,Wood fibre,Gypsum board,good,good,good,good,good,100.0,
+5,FL,Screed,Wood fibre,good,good,caution,good,caution,87.5,
+5,FL,Wood fibre,Dry fill,good,good,caution,good,caution,87.5,
+5,FL,Dry fill,CLT,good,caution,caution,good,caution,75.0,mineral/timber contact: shrinkage and creep differ
+5,RF,CLT,VCL,caution,good,caution,good,caution,75.0,pv/ps=0.47 bio-based layers close to saturation: dynamic simulation advised
+5,RF,VCL,Wood fibre,caution,good,caution,good,caution,75.0,pv/ps=0.22 bio-based layers close to saturation: dynamic simulation advised
+5,RF,Wood fibre,Roof tile,caution,good,caution,good,caution,75.0,pv/ps=0.85 bio-based layers close to saturation: dynamic simulation advised
+5,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.54
+5,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.54
+5,GS,RC,Foam glass,good,good,good,good,good,100.0,pv/ps=0.57
+5,GS,Foam glass,Gravel,good,good,good,good,good,100.0,pv/ps=0.77
+5,WI,Window timber,Sealing foil,good,good,good,good,good,100.0,
+6,OW,Clay plaster,KVH,caution,caution,caution,caution,caution,50.0,pv/ps=0.46 bio-based layers close to saturation: dynamic simulation advised; mineral/timber contact: shrinkage and creep differ; bonded/plastered joint: only demolition or cutting
+6,OW,KVH,Straw bale,caution,good,caution,good,caution,75.0,inside one thermal layer bio-based layers close to saturation: dynamic simulation advised
+6,OW,Straw bale,Lime plaster,critical,caution,caution,caution,critical,37.5,"pv/ps=1.30; lime plaster directly on straw: crack risk, needs weather protection and mesh at junctions; bonded/plastered joint: only demolition or cutting"
+6,IL,Clay plaster,OSB,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+6,IL,OSB,KVH,good,good,caution,good,caution,87.5,
+6,IL,KVH,Wood fibre,good,good,caution,good,caution,87.5,
+6,IL,Wood fibre,OSB,good,good,caution,good,caution,87.5,
+6,IL,OSB,Clay plaster,good,good,caution,caution,caution,75.0,bonded/plastered joint: only demolition or cutting
+6,IP,Clay plaster,KVH,good,caution,caution,caution,caution,62.5,mineral/timber contact: shrinkage and creep differ; bonded/plastered joint: only demolition or cutting
+6,IP,KVH,Wood fibre,good,good,caution,good,caution,87.5,
+6,IP,Wood fibre,Clay plaster,good,caution,caution,caution,caution,62.5,"render on a soft/polymer/timber base: different movement, reinforcement mesh needed; bonded/plastered joint: only demolition or cutting"
+6,FL,Gypsum board,Wood fibre,good,good,caution,good,caution,87.5,
+6,FL,Wood fibre,Dry fill,good,good,caution,good,caution,87.5,
+6,FL,Dry fill,OSB,good,good,caution,good,caution,87.5,
+6,FL,OSB,KVH,good,good,caution,good,caution,87.5,
+6,FL,KVH,Cellulose,good,good,caution,good,caution,87.5,
+6,FL,Cellulose,Gypsum board,good,good,caution,good,caution,87.5,
+6,RF,Gypsum board,VCL,good,good,caution,good,caution,87.5,pv/ps=0.51
+6,RF,VCL,KVH,caution,good,caution,good,caution,75.0,pv/ps=0.18 bio-based layers close to saturation: dynamic simulation advised
+6,RF,KVH,Cellulose,caution,good,caution,good,caution,75.0,inside one thermal layer bio-based layers close to saturation: dynamic simulation advised
+6,RF,Cellulose,Wood fibre,caution,good,caution,good,caution,75.0,pv/ps=0.69 bio-based layers close to saturation: dynamic simulation advised
+6,RF,Wood fibre,Roof tile,caution,good,caution,good,caution,75.0,pv/ps=0.88 bio-based layers close to saturation: dynamic simulation advised
+6,GS,Screed,Sealing foil,good,good,good,good,good,100.0,pv/ps=0.54
+6,GS,Sealing foil,RC,good,good,good,good,good,100.0,pv/ps=0.54
+6,GS,RC,Foam glass,good,good,good,good,good,100.0,pv/ps=0.56
+6,GS,Foam glass,Gravel,good,good,good,good,good,100.0,pv/ps=0.77
+6,WI,Window timber,Sealing foil,good,good,good,good,good,100.0,
