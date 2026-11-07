@@ -1,0 +1,18 @@
+{
+ "recorded_utc": "2026-11-07T14:01:34Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "demo/run_demo.py",
+  "--input",
+  "demo/input/synthetic_wall.json",
+  "--expected",
+  "demo/expected/synthetic_wall_replaced.expected.json",
+  "--out",
+  "review-evidence/mismatch_out"
+ ],
+ "exit_code": 4,
+ "stdout": "SYNTHETIC demo: EVALUATED -> review-evidence/mismatch_out/result.json, layers.csv, report.md\n  A1-A3 total=185 known subtotal=185 | C known=21.2 complete=yes | D separate=-2 complete=no (kgCO2e)\n",
+ "stderr": "  EXPECTED MISMATCH vs synthetic_wall_replaced.expected.json: [{'path': 'layers.1.a13', 'expected': 120, 'actual': 75.0}, {'path': 'layers.1.c_known', 'expected': 24, 'actual': 15.0}, {'path': 'layers.1.mass_kg', 'expected': 80, 'actual': 50.0}, {'path': 'totals.a13_total', 'expected': 230, 'actual': 185.0}, {'path': 'totals.c_known_subtotal', 'expected': 30.2, 'actual': 21.2}, {'path': 'totals.a1_c_known_subtotal', 'expected': 260.2, 'actual': 206.2}, {'path': 'totals.mass_known_kg', 'expected': 180, 'actual': 150.0}]\n"
+}

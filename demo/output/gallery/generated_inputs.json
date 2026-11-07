@@ -1,0 +1,4444 @@
+{
+ "label": "SYNTHETIC",
+ "kind": "GENERATED demonstration records: not evaluation cases, not GOLD, not a holdout, not accuracy evidence, not real assemblies",
+ "generator": "baucode-gallery-generator/1",
+ "seed": 20261107,
+ "assemblies": [
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G01; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G01",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G01-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 1 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 64.2,
+      "C1": 4.88,
+      "C2": 4.35,
+      "C3": 1.43,
+      "C4": 11.14,
+      "D": -0.97
+     },
+     "density_kg_m3": 1106.0
+    },
+    {
+     "id": "G01-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 2 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 34.63,
+      "C1": 3.74,
+      "C2": 3.35,
+      "C3": 4.72,
+      "C4": 5.77,
+      "D": -11.73
+     },
+     "density_kg_m3": 1774.0
+    },
+    {
+     "id": "G01-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 3 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 253.58,
+      "C1": 16.23,
+      "C2": 15.36,
+      "C3": 1.51,
+      "C4": 13.06,
+      "D": -9.4
+     },
+     "density_kg_m3": 1711.0
+    },
+    {
+     "id": "G01-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 181.56,
+      "C1": 19.99,
+      "C2": 2.72,
+      "C3": 10.32,
+      "C4": 19.47,
+      "D": -9.79
+     },
+     "density_kg_m3": 300.0
+    },
+    {
+     "id": "G01-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 382.83,
+      "C1": 19.89,
+      "C2": 16.36,
+      "C3": 12.25,
+      "C4": 4.12,
+      "D": -0.98
+     },
+     "density_kg_m3": 965.0
+    },
+    {
+     "id": "G01-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 47.03,
+      "C1": 6.34,
+      "C2": 7.19,
+      "C3": 11.44,
+      "C4": 18.73,
+      "D": -0.34
+     },
+     "density_kg_m3": 492.0
+    },
+    {
+     "id": "G01-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 7 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 13.2,
+      "C1": 0.161,
+      "C2": 0.8085,
+      "C3": 0.6975,
+      "C4": 0.1295,
+      "D": -0.7395
+     }
+    },
+    {
+     "id": "G01-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 8 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 15.34,
+      "C1": 0.0025,
+      "C2": 0.649,
+      "C3": 0.5905,
+      "C4": 0.628,
+      "D": -0.252
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G01-P1",
+      "G01-P2",
+      "G01-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 203.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G01-P4",
+      "G01-P5",
+      "G01-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 1.2,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G01-P7",
+      "G01-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G02; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G02",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G02-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 1 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 1.81,
+      "C1": 0.1893,
+      "C2": 0.1491,
+      "C3": 0.1438,
+      "C4": 0.1516,
+      "D": -0.1323
+     },
+     "density_kg_m3": 391.0
+    },
+    {
+     "id": "G02-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 2 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 1.33,
+      "C1": 0.1349,
+      "C2": 0.1526,
+      "C3": 0.1411,
+      "C4": 0.1414,
+      "D": -0.0461
+     },
+     "density_kg_m3": 1214.0
+    },
+    {
+     "id": "G02-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 3 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.34,
+      "C1": 0.1674,
+      "C2": 0.1353,
+      "C3": 0.1228,
+      "C4": 0.007,
+      "D": -0.1017
+     },
+     "density_kg_m3": 575.0
+    },
+    {
+     "id": "G02-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 4 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 0.18,
+      "C1": 0.1223,
+      "C2": 0.1561,
+      "C3": 0.1873,
+      "C4": 0.0758,
+      "D": -0.1327
+     },
+     "density_kg_m3": 947.0
+    },
+    {
+     "id": "G02-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 5 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.62,
+      "C1": 0.0125,
+      "C2": 0.0836,
+      "C3": 0.0168,
+      "C4": 0.1294,
+      "D": -0.1161
+     },
+     "density_kg_m3": 1654.0
+    },
+    {
+     "id": "G02-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 6 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.78,
+      "C1": 0.0706,
+      "C2": 0.068,
+      "C3": 0.1985,
+      "C4": 0.0523,
+      "D": -0.0316
+     },
+     "density_kg_m3": 391.0
+    },
+    {
+     "id": "G02-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 7 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 6.29,
+      "C1": 0.243,
+      "C2": 0.429,
+      "C3": 0.11,
+      "C4": 0.39,
+      "D": -0.3845
+     }
+    },
+    {
+     "id": "G02-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 8 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 6.19,
+      "C1": 0.693,
+      "C2": 0.1685,
+      "C3": 0.8615,
+      "C4": 0.0665,
+      "D": -0.253
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G02-P1",
+      "G02-P2",
+      "G02-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 170.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G02-P4",
+      "G02-P5",
+      "G02-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 11.8,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G02-P7",
+      "G02-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G03; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G03",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G03-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 1 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.04,
+      "C1": 0.0795,
+      "C2": 0.0068,
+      "C3": 0.1271,
+      "C4": 0.0088,
+      "D": -0.0473
+     },
+     "density_kg_m3": 509.0
+    },
+    {
+     "id": "G03-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 2 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0.82,
+      "C1": 0.095,
+      "C2": 0.0505,
+      "C3": 0.1452,
+      "C4": 0.0815,
+      "D": -0.0492
+     },
+     "density_kg_m3": 398.0
+    },
+    {
+     "id": "G03-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 3 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.69,
+      "C1": 0.0927,
+      "C2": 0.1136,
+      "C3": 0.1385,
+      "C4": 0.0298,
+      "D": -0.0361
+     },
+     "density_kg_m3": 164.0
+    },
+    {
+     "id": "G03-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 4 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 48.64,
+      "C1": 13.32,
+      "C2": 10.9,
+      "C3": 5.81,
+      "C4": 1.74,
+      "D": -10.02
+     },
+     "density_kg_m3": 203.0
+    },
+    {
+     "id": "G03-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 5 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 330.92,
+      "C1": 17.39,
+      "C2": 0.65,
+      "C3": 7.26,
+      "C4": 1.85,
+      "D": -8.24
+     },
+     "density_kg_m3": 375.0
+    },
+    {
+     "id": "G03-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 6 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 224.15,
+      "C1": 18.14,
+      "C2": 9.14,
+      "C3": 14.02,
+      "C4": 14.92,
+      "D": -7.28
+     },
+     "density_kg_m3": 139.0
+    },
+    {
+     "id": "G03-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.2,
+      "C1": 0.1035,
+      "C2": 0.2195,
+      "C3": 0.4675,
+      "C4": 0.529,
+      "D": -0.514
+     }
+    },
+    {
+     "id": "G03-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 4.53,
+      "C1": 0.7625,
+      "C2": 0.086,
+      "C3": 0.0495,
+      "C4": 0.6935,
+      "D": -0.373
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G03-P1",
+      "G03-P2",
+      "G03-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 22.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G03-P4",
+      "G03-P5",
+      "G03-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 17.4,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G03-P7",
+      "G03-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G04; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G04",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G04-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 1 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 320.61,
+      "C1": 2.02,
+      "C2": 10.56,
+      "C3": 18.07,
+      "C4": 3.53,
+      "D": -3.88
+     },
+     "density_kg_m3": 146.0
+    },
+    {
+     "id": "G04-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 2 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 257.54,
+      "C1": 12.48,
+      "C2": 1.39,
+      "C3": 18.8,
+      "C4": 5.18,
+      "D": -4.21
+     },
+     "density_kg_m3": 1549.0
+    },
+    {
+     "id": "G04-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 3 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 360.03,
+      "C1": 11.35,
+      "C2": 0.9,
+      "C3": 14.23,
+      "C4": 9.18,
+      "D": -3.51
+     },
+     "density_kg_m3": 1330.0
+    },
+    {
+     "id": "G04-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 4 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.51,
+      "C1": 0.0469,
+      "C2": 0.0464,
+      "C3": 0.1027,
+      "C4": 0.1759,
+      "D": -0.1402
+     },
+     "density_kg_m3": 467.0
+    },
+    {
+     "id": "G04-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 5 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.3,
+      "C1": 0.092,
+      "C2": 0.0806,
+      "C3": 0.1121,
+      "C4": 0.0869,
+      "D": -0.1494
+     },
+     "density_kg_m3": 854.0
+    },
+    {
+     "id": "G04-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 6 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.61,
+      "C1": 0.1606,
+      "C2": 0.0637,
+      "C3": 0.1605,
+      "C4": 0.0267,
+      "D": -0.1492
+     },
+     "density_kg_m3": 1110.0
+    },
+    {
+     "id": "G04-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 16.53,
+      "C1": 0.7265,
+      "C2": 0.3785,
+      "C3": 0.192,
+      "C4": 0.557,
+      "D": -0.3615
+     }
+    },
+    {
+     "id": "G04-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 6.13,
+      "C1": 0.0195,
+      "C2": 0.6085,
+      "C3": 0.714,
+      "C4": 0.1615,
+      "D": -0.0185
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G04-P1",
+      "G04-P2",
+      "G04-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 55.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G04-P4",
+      "G04-P5",
+      "G04-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 8.4,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G04-P7",
+      "G04-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G05; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G05",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G05-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 1 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 360.1,
+      "C1": 16.58,
+      "C2": 19.24,
+      "C3": 5.42,
+      "C4": 7.84,
+      "D": -0.93
+     },
+     "density_kg_m3": 772.0
+    },
+    {
+     "id": "G05-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 2 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 48.91,
+      "C1": 8.92,
+      "C2": 11.3,
+      "C3": 1.35,
+      "C4": 5.08,
+      "D": -0.88
+     },
+     "density_kg_m3": 716.0
+    },
+    {
+     "id": "G05-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 3 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 223.03,
+      "C1": 8.48,
+      "C2": 19.28,
+      "C3": 1.8,
+      "C4": 8.49,
+      "D": -13.19
+     },
+     "density_kg_m3": 1496.0
+    },
+    {
+     "id": "G05-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 4 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 356.87,
+      "C1": 10.91,
+      "C2": 3.23,
+      "C3": 0.27,
+      "C4": 17.85,
+      "D": -12.09
+     },
+     "density_kg_m3": 795.0
+    },
+    {
+     "id": "G05-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 5 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 113.16,
+      "C1": 14.48,
+      "C2": 14.16,
+      "C3": 2.92,
+      "C4": 8.54,
+      "D": -0.2
+     },
+     "density_kg_m3": 1706.0
+    },
+    {
+     "id": "G05-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 6 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 329.45,
+      "C1": 6.37,
+      "C2": 15.34,
+      "C3": 17.07,
+      "C4": 14.32,
+      "D": -6.79
+     },
+     "density_kg_m3": 527.0
+    },
+    {
+     "id": "G05-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 5.81,
+      "C1": 0.5835,
+      "C2": 0.897,
+      "C3": 0.9635,
+      "C4": 0.8695,
+      "D": -0.7445
+     }
+    },
+    {
+     "id": "G05-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 17.15,
+      "C1": 0.3255,
+      "C2": 0.192,
+      "C3": 0.089,
+      "C4": 0.563,
+      "D": -0.432
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G05-P1",
+      "G05-P2",
+      "G05-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 149.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G05-P4",
+      "G05-P5",
+      "G05-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 1.3,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G05-P7",
+      "G05-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G06; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G06",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G06-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 1 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 69.5,
+      "C1": 2.12,
+      "C2": 8.76,
+      "C3": 17.21,
+      "C4": 12.07,
+      "D": -13.48
+     },
+     "density_kg_m3": 566.0
+    },
+    {
+     "id": "G06-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 2 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 101.6,
+      "C1": 3.85,
+      "C2": 6.09,
+      "C3": 16.16,
+      "C4": 13.8,
+      "D": -13.37
+     },
+     "density_kg_m3": 574.0
+    },
+    {
+     "id": "G06-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 3 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 77.35,
+      "C1": 10.77,
+      "C2": 10.99,
+      "C3": 16.81,
+      "C4": 18.91,
+      "D": -0.11
+     },
+     "density_kg_m3": 1449.0
+    },
+    {
+     "id": "G06-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 4 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 104.23,
+      "C1": 10.73,
+      "C2": 9.86,
+      "C3": 0.22,
+      "C4": 18.23,
+      "D": -4.5
+     },
+     "density_kg_m3": 1655.0
+    },
+    {
+     "id": "G06-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 5 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 236.88,
+      "C1": 1.58,
+      "C2": 18.49,
+      "C3": 13.72,
+      "C4": 7.59,
+      "D": -6.37
+     },
+     "density_kg_m3": 545.0
+    },
+    {
+     "id": "G06-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 6 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 350.84,
+      "C1": 18.73,
+      "C2": 5.76,
+      "C3": 16.4,
+      "C4": 4.48,
+      "D": -2.25
+     },
+     "density_kg_m3": 603.0
+    },
+    {
+     "id": "G06-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 14.63,
+      "C1": 0.408,
+      "C2": 0.9235,
+      "C3": 0.94,
+      "C4": 0.496,
+      "D": -0.651
+     }
+    },
+    {
+     "id": "G06-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 5.87,
+      "C1": 0.5375,
+      "C2": 0.9165,
+      "C3": 0.248,
+      "C4": 0.249,
+      "D": -0.507
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G06-P1",
+      "G06-P2",
+      "G06-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 39.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G06-P4",
+      "G06-P5",
+      "G06-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 17.6,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G06-P7",
+      "G06-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G07; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G07",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G07-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 1 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.67,
+      "C1": 0.1166,
+      "C2": 0.1028,
+      "C3": 0.0084,
+      "C4": 0.09,
+      "D": -0.076
+     },
+     "density_kg_m3": 1032.0
+    },
+    {
+     "id": "G07-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 2 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 0.47,
+      "C1": 0.0329,
+      "C2": 0.1374,
+      "C3": 0.0873,
+      "C4": 0.0204,
+      "D": -0.114
+     },
+     "density_kg_m3": 1276.0
+    },
+    {
+     "id": "G07-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 3 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.92,
+      "C1": 0.0671,
+      "C2": 0.1205,
+      "C3": 0.1357,
+      "C4": 0.1892,
+      "D": -0.1001
+     },
+     "density_kg_m3": 1791.0
+    },
+    {
+     "id": "G07-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 4 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 0.6,
+      "C1": 0.1843,
+      "C2": 0.1755,
+      "C3": 0.0587,
+      "C4": 0.1073,
+      "D": -0.0348
+     },
+     "density_kg_m3": 1423.0
+    },
+    {
+     "id": "G07-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 5 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.93,
+      "C1": 0.0448,
+      "C2": 0.0706,
+      "C3": 0.0882,
+      "C4": 0.0578,
+      "D": -0.056
+     },
+     "density_kg_m3": 1378.0
+    },
+    {
+     "id": "G07-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 6 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.89,
+      "C1": 0.0567,
+      "C2": 0.1834,
+      "C3": 0.0762,
+      "C4": 0.0589,
+      "D": -0.0719
+     },
+     "density_kg_m3": 652.0
+    },
+    {
+     "id": "G07-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 7 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 18.46,
+      "C1": 0.0085,
+      "C2": 0.747,
+      "C3": 0.071,
+      "C4": 0.302,
+      "D": -0.612
+     }
+    },
+    {
+     "id": "G07-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 8 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 3.29,
+      "C1": 0.1345,
+      "C2": 0.223,
+      "C3": 0.237,
+      "C4": 0.805,
+      "D": -0.0425
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G07-P1",
+      "G07-P2",
+      "G07-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 209.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G07-P4",
+      "G07-P5",
+      "G07-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 18.2,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G07-P7",
+      "G07-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "complete"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G08; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G08",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G08-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 1 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.82,
+      "C1": 0.0698,
+      "C2": 0.1079,
+      "C3": 0.097,
+      "C4": 0.1213,
+      "D": -0.0189
+     },
+     "density_kg_m3": 862.0
+    },
+    {
+     "id": "G08-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 2 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.89,
+      "C1": 0.0564,
+      "C2": 0.1232,
+      "C3": 0.1779,
+      "C4": 0.1032,
+      "D": -0.0544
+     },
+     "density_kg_m3": 275.0
+    },
+    {
+     "id": "G08-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 3 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.06,
+      "C1": 0.086,
+      "C2": 0.1766,
+      "C3": 0.0346,
+      "C4": 0.06,
+      "D": -0.0624
+     },
+     "density_kg_m3": 141.0
+    },
+    {
+     "id": "G08-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 373.16,
+      "C1": 2.66,
+      "C2": 13.44,
+      "C4": 9.14,
+      "D": -7.23
+     },
+     "density_kg_m3": 46.0
+    },
+    {
+     "id": "G08-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 250.3,
+      "C1": 14.4,
+      "C2": 2.65,
+      "C3": 13.44,
+      "C4": 2.28,
+      "D": -11.43
+     },
+     "density_kg_m3": 196.0
+    },
+    {
+     "id": "G08-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 42.92,
+      "C1": 11.19,
+      "C2": 12.26,
+      "C3": 11.4,
+      "C4": 1.52,
+      "D": -5.8
+     },
+     "density_kg_m3": 1031.0
+    },
+    {
+     "id": "G08-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 7 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 1.42,
+      "C1": 0.134,
+      "C2": 0.552,
+      "C3": 0.023,
+      "C4": 0.0185,
+      "D": -0.3045
+     }
+    },
+    {
+     "id": "G08-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 8 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 4.65,
+      "C1": 0.057,
+      "C2": 0.1225,
+      "C3": 0.327,
+      "C4": 0.468,
+      "D": -0.005
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G08-P1",
+      "G08-P2",
+      "G08-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 124.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G08-P4",
+      "G08-P5",
+      "G08-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 18.8,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G08-P7",
+      "G08-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "partial_c"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G09; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G09",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G09-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 1 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0.27,
+      "C1": 0.0766,
+      "C2": 0.1113,
+      "C3": 0.0448,
+      "C4": 0.119
+     },
+     "density_kg_m3": 689.0
+    },
+    {
+     "id": "G09-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 2 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0.63,
+      "C1": 0.0125,
+      "C2": 0.1599,
+      "C3": 0.0129,
+      "C4": 0.122,
+      "D": -0.0607
+     },
+     "density_kg_m3": 1265.0
+    },
+    {
+     "id": "G09-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 3 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.02,
+      "C1": 0.0641,
+      "C2": 0.0111,
+      "C3": 0.052,
+      "C4": 0.0746,
+      "D": -0.012
+     },
+     "density_kg_m3": 326.0
+    },
+    {
+     "id": "G09-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 4 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 182.17,
+      "C1": 18.59,
+      "C2": 8.33,
+      "C3": 7.5,
+      "C4": 19.74,
+      "D": -5.57
+     },
+     "density_kg_m3": 1329.0
+    },
+    {
+     "id": "G09-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 5 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 336.23,
+      "C1": 0.83,
+      "C2": 13.83,
+      "C3": 14.67,
+      "C4": 3.77,
+      "D": -2.73
+     },
+     "density_kg_m3": 1487.0
+    },
+    {
+     "id": "G09-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 6 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 276.29,
+      "C1": 19.17,
+      "C2": 10.91,
+      "C3": 8.21,
+      "C4": 12.17,
+      "D": -3.02
+     },
+     "density_kg_m3": 1028.0
+    },
+    {
+     "id": "G09-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 10.42,
+      "C1": 0.872,
+      "C2": 0.7535,
+      "C3": 0.0395,
+      "C4": 0.811,
+      "D": -0.383
+     }
+    },
+    {
+     "id": "G09-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 12.19,
+      "C1": 0.157,
+      "C2": 0.917,
+      "C3": 0.027,
+      "C4": 0.802,
+      "D": -0.2875
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G09-P1",
+      "G09-P2",
+      "G09-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 224.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G09-P4",
+      "G09-P5",
+      "G09-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 2.7,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G09-P7",
+      "G09-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "missing_d"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G10; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G10",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G10-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 1 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": -364.39,
+      "C1": 8.01,
+      "C2": 3.16,
+      "C3": 19.17,
+      "C4": 17.69,
+      "D": -11.98
+     },
+     "density_kg_m3": 1017.0
+    },
+    {
+     "id": "G10-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 2 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": -30.37,
+      "C1": 3.16,
+      "C2": 7.42,
+      "C3": 2.03,
+      "C4": 7.15,
+      "D": -9.63
+     },
+     "density_kg_m3": 930.0
+    },
+    {
+     "id": "G10-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 3 (FAM-N fictional panel)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": -221.42,
+      "C1": 15.57,
+      "C2": 19.3,
+      "C3": 5.83,
+      "C4": 1.7,
+      "D": -8.95
+     },
+     "density_kg_m3": 1094.0
+    },
+    {
+     "id": "G10-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 4 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": -3.4,
+      "C1": 0.0283,
+      "C2": 0.0724,
+      "C3": 0.079,
+      "C4": 0.1062,
+      "D": -0.0313
+     },
+     "density_kg_m3": 228.0
+    },
+    {
+     "id": "G10-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 5 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": -1.63,
+      "C1": 0.1444,
+      "C2": 0.1245,
+      "C3": 0.0685,
+      "C4": 0.0892,
+      "D": -0.011
+     },
+     "density_kg_m3": 1105.0
+    },
+    {
+     "id": "G10-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 6 (FAM-L fictional block)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": -0.61,
+      "C1": 0.1796,
+      "C2": 0.1521,
+      "C3": 0.0335,
+      "C4": 0.0014,
+      "D": -0.114
+     },
+     "density_kg_m3": 964.0
+    },
+    {
+     "id": "G10-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": -4.93,
+      "C1": 0.97,
+      "C2": 0.369,
+      "C3": 0.7865,
+      "C4": 0.563,
+      "D": -0.66
+     }
+    },
+    {
+     "id": "G10-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": -4.56,
+      "C1": 0.7705,
+      "C2": 0.049,
+      "C3": 0.105,
+      "C4": 0.5805,
+      "D": -0.7185
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G10-P1",
+      "G10-P2",
+      "G10-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 211.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G10-P4",
+      "G10-P5",
+      "G10-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 18.5,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G10-P7",
+      "G10-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "negative_values"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G11; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G11",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G11-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 1 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 127.62,
+      "C1": 7.66,
+      "C2": 19.98,
+      "C3": 19.27,
+      "C4": 1.67,
+      "D": -14.16
+     },
+     "density_kg_m3": 445.0
+    },
+    {
+     "id": "G11-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 2 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 222.36,
+      "C1": 0.63,
+      "C2": 12.25,
+      "C3": 6.89,
+      "C4": 16.85,
+      "D": -4.49
+     },
+     "density_kg_m3": 751.0
+    },
+    {
+     "id": "G11-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 3 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 357.73,
+      "C1": 11.62,
+      "C2": 13.29,
+      "C3": 14.17,
+      "C4": 7.19,
+      "D": -11.94
+     },
+     "density_kg_m3": 1002.0
+    },
+    {
+     "id": "G11-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 4 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.74,
+      "C1": 0.046,
+      "C2": 0.0409,
+      "C3": 0.1201,
+      "C4": 0.0034,
+      "D": -0.0029
+     },
+     "density_kg_m3": 1537.0
+    },
+    {
+     "id": "G11-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 5 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 0.25,
+      "C1": 0.1726,
+      "C2": 0.0114,
+      "C3": 0.0072,
+      "C4": 0.1074,
+      "D": -0.1395
+     },
+     "density_kg_m3": 1776.0
+    },
+    {
+     "id": "G11-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 6 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.29,
+      "C1": 0.1731,
+      "C2": 0.0644,
+      "C3": 0.1208,
+      "C4": 0.1158,
+      "D": -0.0269
+     },
+     "density_kg_m3": 1292.0
+    },
+    {
+     "id": "G11-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 7 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0,
+      "C1": 0.727,
+      "C2": 0.3255,
+      "C3": 0.215,
+      "C4": 0.5895,
+      "D": 0
+     }
+    },
+    {
+     "id": "G11-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 8 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0,
+      "C1": 0.4265,
+      "C2": 0.546,
+      "C3": 0.6005,
+      "C4": 0.6445,
+      "D": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G11-P1",
+      "G11-P2",
+      "G11-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 28.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G11-P4",
+      "G11-P5",
+      "G11-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 15.1,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G11-P7",
+      "G11-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "true_zero"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G12; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G12",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G12-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 1 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 155.64,
+      "C1": 10.55,
+      "C2": 11.49,
+      "C3": 7.31,
+      "C4": 1.57,
+      "D": -14.36,
+      "A1": 77.82,
+      "A2": 46.692,
+      "A3": 31.128
+     },
+     "density_kg_m3": 604.0
+    },
+    {
+     "id": "G12-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 2 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 399.68,
+      "C1": 15.82,
+      "C2": 19.56,
+      "C3": 6.29,
+      "C4": 7.97,
+      "D": -6.4,
+      "A1": 199.84,
+      "A2": 119.904,
+      "A3": 79.936
+     },
+     "density_kg_m3": 1517.0
+    },
+    {
+     "id": "G12-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 3 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 399.36,
+      "C1": 0.2,
+      "C2": 17.54,
+      "C3": 12.53,
+      "C4": 16.67,
+      "D": -8.61,
+      "A1": 199.68,
+      "A2": 119.808,
+      "A3": 79.872
+     },
+     "density_kg_m3": 1083.0
+    },
+    {
+     "id": "G12-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 4 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 304.88,
+      "C1": 14.57,
+      "C2": 5.45,
+      "C3": 3.37,
+      "C4": 13.62,
+      "D": -0.42
+     },
+     "density_kg_m3": 187.0
+    },
+    {
+     "id": "G12-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 5 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 60.17,
+      "C1": 4.67,
+      "C2": 8.55,
+      "C3": 2.66,
+      "C4": 2.03,
+      "D": -4.08
+     },
+     "density_kg_m3": 1389.0
+    },
+    {
+     "id": "G12-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 6 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 241.55,
+      "C1": 17.98,
+      "C2": 15.93,
+      "C3": 15.93,
+      "C4": 3.29,
+      "D": -5.35
+     },
+     "density_kg_m3": 1430.0
+    },
+    {
+     "id": "G12-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 7 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 6.58,
+      "C1": 0.7645,
+      "C2": 0.1305,
+      "C3": 0.932,
+      "C4": 0.59,
+      "D": -0.307
+     }
+    },
+    {
+     "id": "G12-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 8 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 11.29,
+      "C1": 0.3885,
+      "C2": 0.826,
+      "C3": 0.6235,
+      "C4": 0.5695,
+      "D": -0.2635
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G12-P1",
+      "G12-P2",
+      "G12-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 49.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G12-P4",
+      "G12-P5",
+      "G12-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 14.3,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G12-P7",
+      "G12-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "aggregate_overlap"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G13; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G13",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G13-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 1 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 357.15,
+      "C1": 5.97,
+      "C2": 2.93,
+      "C3": 17.47,
+      "C4": 1.61,
+      "D": -1.93
+     },
+     "density_kg_m3": 562.0
+    },
+    {
+     "id": "G13-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 2 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 46.98,
+      "C1": 1.34,
+      "C2": 11.64,
+      "C3": 4.02,
+      "C4": 17.43,
+      "D": -7.98
+     },
+     "density_kg_m3": 183.0
+    },
+    {
+     "id": "G13-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 3 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 342.5,
+      "C1": 15.05,
+      "C2": 0.92,
+      "C3": 17.7,
+      "C4": 4.54,
+      "D": -14.33
+     },
+     "density_kg_m3": 389.0
+    },
+    {
+     "id": "G13-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 4 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "C1": 17.4,
+      "C2": 19.97,
+      "C3": 13.91,
+      "C4": 10.73,
+      "D": -10.15,
+      "A1": 86.125,
+      "A2": 51.675,
+      "A3": 34.45
+     },
+     "density_kg_m3": 1607.0
+    },
+    {
+     "id": "G13-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 5 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "C1": 0.43,
+      "C2": 10.17,
+      "C3": 1.21,
+      "C4": 17.11,
+      "D": -7.2,
+      "A1": 152.87,
+      "A2": 91.722,
+      "A3": 61.148
+     },
+     "density_kg_m3": 37.0
+    },
+    {
+     "id": "G13-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 6 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "C1": 8.34,
+      "C2": 9.81,
+      "C3": 7.73,
+      "C4": 13.39,
+      "D": -4.78,
+      "A1": 118.8,
+      "A2": 71.28,
+      "A3": 47.52
+     },
+     "density_kg_m3": 1344.0
+    },
+    {
+     "id": "G13-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 16.32,
+      "C1": 0.6265,
+      "C2": 0.977,
+      "C3": 0.778,
+      "C4": 0.049,
+      "D": -0.147
+     }
+    },
+    {
+     "id": "G13-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.13,
+      "C1": 0.873,
+      "C2": 0.998,
+      "C3": 0.9795,
+      "C4": 0.1755,
+      "D": -0.55
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G13-P1",
+      "G13-P2",
+      "G13-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 48.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G13-P4",
+      "G13-P5",
+      "G13-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 16.6,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G13-P7",
+      "G13-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "submodules_only"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G14; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G14",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G14-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 1 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 258.88,
+      "C1": 10.72,
+      "C2": 14.26,
+      "C3": 19.07,
+      "C4": 9.2,
+      "D": -1.82
+     },
+     "density_kg_m3": 1077.0
+    },
+    {
+     "id": "G14-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 2 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 9.83,
+      "C1": 11.89,
+      "C2": 12.14,
+      "C3": 14.9,
+      "C4": 3.3,
+      "D": -3.17
+     },
+     "density_kg_m3": 1585.0
+    },
+    {
+     "id": "G14-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 3 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 317.35,
+      "C1": 4.54,
+      "C2": 5.77,
+      "C3": 12.86,
+      "C4": 14.76,
+      "D": -13.78
+     },
+     "density_kg_m3": 649.0
+    },
+    {
+     "id": "G14-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "C1": 7.18,
+      "C2": 13.8,
+      "C3": 5.3,
+      "C4": 1.26,
+      "D": -5.12,
+      "A1": 137.67,
+      "A2": 82.602
+     },
+     "density_kg_m3": 1498.0
+    },
+    {
+     "id": "G14-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 199.58,
+      "C1": 0.81,
+      "C2": 4.41,
+      "C3": 16.67,
+      "C4": 2.61,
+      "D": -8.0
+     },
+     "density_kg_m3": 415.0
+    },
+    {
+     "id": "G14-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 393.63,
+      "C1": 0.35,
+      "C2": 19.9,
+      "C3": 15.76,
+      "C4": 3.01,
+      "D": -7.44
+     },
+     "density_kg_m3": 1053.0
+    },
+    {
+     "id": "G14-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 16.74,
+      "C1": 0.2705,
+      "C2": 0.959,
+      "C3": 0.5795,
+      "C4": 0.5405,
+      "D": -0.2375
+     }
+    },
+    {
+     "id": "G14-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 6.35,
+      "C1": 0.9875,
+      "C2": 0.0045,
+      "C3": 0.907,
+      "C4": 0.8475,
+      "D": -0.562
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G14-P1",
+      "G14-P2",
+      "G14-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 220.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G14-P4",
+      "G14-P5",
+      "G14-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 19.1,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G14-P7",
+      "G14-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "partial_submodules"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G15; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G15",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G15-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 1 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.45,
+      "C1": 0.0678,
+      "C2": 0.0788,
+      "C3": 0.1989,
+      "C4": 0.0186,
+      "D": -0.0954
+     },
+     "density_kg_m3": 449.0
+    },
+    {
+     "id": "G15-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 2 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 0.81,
+      "C1": 0.1988,
+      "C2": 0.1538,
+      "C3": 0.1718,
+      "C4": 0.0568,
+      "D": -0.0262
+     },
+     "density_kg_m3": 125.0
+    },
+    {
+     "id": "G15-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 3 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 0.59,
+      "C1": 0.1099,
+      "C2": 0.1516,
+      "C3": 0.1304,
+      "C4": 0.1743,
+      "D": -0.1454
+     },
+     "density_kg_m3": 1471.0
+    },
+    {
+     "id": "G15-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 4 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.44,
+      "C1": 0.05,
+      "C2": 0.0995,
+      "C3": 0.1459,
+      "C4": 0.1609,
+      "D": -0.1389
+     },
+     "density_kg_m3": 846.0
+    },
+    {
+     "id": "G15-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 5 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.89,
+      "C1": 0.1305,
+      "C2": 0.1257,
+      "C3": 0.027,
+      "C4": 0.1339,
+      "D": -0.0993
+     },
+     "density_kg_m3": 1169.0
+    },
+    {
+     "id": "G15-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 6 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 1.68,
+      "C1": 0.0216,
+      "C2": 0.1098,
+      "C3": 0.0166,
+      "C4": 0.1632,
+      "D": -0.0835
+     },
+     "density_kg_m3": 322.0
+    },
+    {
+     "id": "G15-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 10.7,
+      "C1": 0.3025,
+      "C2": 0.8385,
+      "C3": 0.7705,
+      "C4": 0.819,
+      "D": -0.1565
+     }
+    },
+    {
+     "id": "G15-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 16.1,
+      "C1": 0.703,
+      "C2": 0.72,
+      "C3": 0.1315,
+      "C4": 0.6115,
+      "D": -0.0205
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G15-P1",
+      "G15-P2",
+      "G15-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 74.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G15-P4",
+      "G15-P5",
+      "G15-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 13.8,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [],
+     "multiplier": 1
+    }
+   ],
+   "edge": "empty_pool"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G16; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G16",
+    "area_m2": 2.0
+   },
+   "products": [
+    {
+     "id": "G16-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 1 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 157.83,
+      "C1": 15.31,
+      "C2": 18.05,
+      "C3": 11.41,
+      "C4": 15.28,
+      "D": -10.37
+     },
+     "density_kg_m3": 1557.0
+    },
+    {
+     "id": "G16-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 2 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 209.58,
+      "C1": 3.02,
+      "C2": 16.43,
+      "C3": 5.12,
+      "C4": 14.52,
+      "D": -14.27
+     },
+     "density_kg_m3": 470.0
+    },
+    {
+     "id": "G16-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 3 (FAM-L fictional block)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 91.86,
+      "C1": 14.43,
+      "C2": 15.51,
+      "C3": 18.02,
+      "C4": 17.37,
+      "D": -4.48
+     },
+     "density_kg_m3": 314.0
+    },
+    {
+     "id": "G16-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 4 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.01,
+      "C1": 0.1659,
+      "C2": 0.0144,
+      "C3": 0.0267,
+      "C4": 0.0834,
+      "D": -0.1219
+     },
+     "density_kg_m3": 102.0
+    },
+    {
+     "id": "G16-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 5 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.99,
+      "C1": 0.1012,
+      "C2": 0.1259,
+      "C3": 0.0185,
+      "C4": 0.1448,
+      "D": -0.0299
+     },
+     "density_kg_m3": 341.0
+    },
+    {
+     "id": "G16-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 6 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0.8,
+      "C1": 0.0521,
+      "C2": 0.08,
+      "C3": 0.048,
+      "C4": 0.0305,
+      "D": -0.1488
+     },
+     "density_kg_m3": 1181.0
+    },
+    {
+     "id": "G16-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 7 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 12.85,
+      "C1": 0.6165,
+      "C2": 0.2315,
+      "C3": 0.0655,
+      "C4": 0.4495,
+      "D": -0.686
+     }
+    },
+    {
+     "id": "G16-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 8 (FAM-K fictional board)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 19.24,
+      "C1": 0.8105,
+      "C2": 0.9505,
+      "C3": 0.9325,
+      "C4": 0.006,
+      "D": -0.048
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G16-P1",
+      "G16-P2",
+      "G16-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 51.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G16-P4",
+      "G16-P5",
+      "G16-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 12.6,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G16-P7",
+      "G16-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "fu_2m2"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G17; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G17 <script>alert(\"x\")</script> & 'q'",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G17-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 1 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 186.74,
+      "C1": 3.44,
+      "C2": 15.93,
+      "C3": 10.81,
+      "C4": 8.57,
+      "D": -1.45
+     },
+     "density_kg_m3": 376.0
+    },
+    {
+     "id": "G17-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 2 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 340.69,
+      "C1": 13.27,
+      "C2": 13.34,
+      "C3": 5.49,
+      "C4": 6.65,
+      "D": -14.02
+     },
+     "density_kg_m3": 833.0
+    },
+    {
+     "id": "G17-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 3 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 274.53,
+      "C1": 9.0,
+      "C2": 0.16,
+      "C3": 0.14,
+      "C4": 12.89,
+      "D": -13.23
+     },
+     "density_kg_m3": 136.0
+    },
+    {
+     "id": "G17-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 4 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 70.46,
+      "C1": 13.61,
+      "C2": 7.59,
+      "C3": 0.82,
+      "C4": 2.48,
+      "D": -1.24
+     },
+     "density_kg_m3": 871.0
+    },
+    {
+     "id": "G17-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 5 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 373.01,
+      "C1": 14.47,
+      "C2": 6.08,
+      "C3": 4.16,
+      "C4": 1.12,
+      "D": -6.77
+     },
+     "density_kg_m3": 1170.0
+    },
+    {
+     "id": "G17-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 6 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 354.93,
+      "C1": 2.64,
+      "C2": 0.85,
+      "C3": 12.53,
+      "C4": 9.2,
+      "D": -9.45
+     },
+     "density_kg_m3": 1355.0
+    },
+    {
+     "id": "G17-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 12.92,
+      "C1": 0.958,
+      "C2": 0.126,
+      "C3": 0.1905,
+      "C4": 0.9635,
+      "D": -0.087
+     }
+    },
+    {
+     "id": "G17-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 7.58,
+      "C1": 0.209,
+      "C2": 0.0955,
+      "C3": 0.7445,
+      "C4": 0.471,
+      "D": -0.4985
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "<img src=x onerror=alert(1)> fictional",
+     "product_ids": [
+      "G17-P1",
+      "G17-P2",
+      "G17-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 81.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G17-P4",
+      "G17-P5",
+      "G17-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 15.0,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G17-P7",
+      "G17-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "markup_label"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G18; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G18",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G18-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 1 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": "",
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 0.44,
+      "C1": 0.0526,
+      "C2": 0.089,
+      "C3": 0.0675,
+      "C4": 0.1365,
+      "D": -0.1252
+     },
+     "density_kg_m3": 635.0
+    },
+    {
+     "id": "G18-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 2 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.47,
+      "C1": 0.1985,
+      "C2": 0.0585,
+      "C3": 0.0642,
+      "C4": 0.0863,
+      "D": -0.1183
+     },
+     "density_kg_m3": 1782.0
+    },
+    {
+     "id": "G18-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 3 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.34,
+      "C1": 0.0313,
+      "C2": 0.1241,
+      "C3": 0.1653,
+      "C4": 0.0735,
+      "D": -0.0628
+     },
+     "density_kg_m3": 856.0
+    },
+    {
+     "id": "G18-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 4 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 281.9,
+      "C1": 5.0,
+      "C2": 16.97,
+      "C3": 19.03,
+      "C4": 11.4,
+      "D": -11.36
+     },
+     "density_kg_m3": 58.0
+    },
+    {
+     "id": "G18-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 5 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 238.56,
+      "C1": 0.6,
+      "C2": 11.66,
+      "C3": 15.25,
+      "C4": 3.72,
+      "D": -13.08
+     },
+     "density_kg_m3": 1356.0
+    },
+    {
+     "id": "G18-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 6 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 313.42,
+      "C1": 19.12,
+      "C2": 16.08,
+      "C3": 4.63,
+      "C4": 18.07,
+      "D": -2.0
+     },
+     "density_kg_m3": 957.0
+    },
+    {
+     "id": "G18-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 4.53,
+      "C1": 0.241,
+      "C2": 0.064,
+      "C3": 0.0945,
+      "C4": 0.0725,
+      "D": -0.081
+     }
+    },
+    {
+     "id": "G18-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G18 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 4.92,
+      "C1": 0.728,
+      "C2": 0.0755,
+      "C3": 0.587,
+      "C4": 0.7135,
+      "D": -0.56
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G18-P1",
+      "G18-P2",
+      "G18-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 214.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G18-P4",
+      "G18-P5",
+      "G18-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 9.3,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G18-P7",
+      "G18-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "blank_q"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G19; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G19",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G19-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 1 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 0,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 324.61,
+      "C1": 1.05,
+      "C2": 18.97,
+      "C3": 18.07,
+      "C4": 18.17,
+      "D": -5.34
+     },
+     "density_kg_m3": 177.0
+    },
+    {
+     "id": "G19-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 2 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 340.77,
+      "C1": 3.31,
+      "C2": 11.3,
+      "C3": 4.31,
+      "C4": 12.15,
+      "D": -11.82
+     },
+     "density_kg_m3": 1739.0
+    },
+    {
+     "id": "G19-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 3 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 393.65,
+      "C1": 16.9,
+      "C2": 10.04,
+      "C3": 18.94,
+      "C4": 7.37,
+      "D": -0.91
+     },
+     "density_kg_m3": 952.0
+    },
+    {
+     "id": "G19-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 380.29,
+      "C1": 5.35,
+      "C2": 2.72,
+      "C3": 18.68,
+      "C4": 5.17,
+      "D": -1.12
+     },
+     "density_kg_m3": 376.0
+    },
+    {
+     "id": "G19-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 394.74,
+      "C1": 11.53,
+      "C2": 1.51,
+      "C3": 9.41,
+      "C4": 0.33,
+      "D": -14.24
+     },
+     "density_kg_m3": 1284.0
+    },
+    {
+     "id": "G19-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 222.02,
+      "C1": 18.52,
+      "C2": 0.18,
+      "C3": 4.12,
+      "C4": 16.95,
+      "D": -13.72
+     },
+     "density_kg_m3": 780.0
+    },
+    {
+     "id": "G19-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 7 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 9.55,
+      "C1": 0.0125,
+      "C2": 0.41,
+      "C3": 0.026,
+      "C4": 0.923,
+      "D": -0.3965
+     }
+    },
+    {
+     "id": "G19-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G19 product 8 (FAM-M fictional foam)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 1.06,
+      "C1": 0.993,
+      "C2": 0.393,
+      "C3": 0.3035,
+      "C4": 0.7385,
+      "D": -0.59
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G19-P1",
+      "G19-P2",
+      "G19-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 129.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G19-P4",
+      "G19-P5",
+      "G19-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 18.5,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G19-P7",
+      "G19-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "zero_q"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G20; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G20",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G20-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 1 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": "nan",
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.79,
+      "C1": 0.1255,
+      "C2": 0.0443,
+      "C3": 0.1303,
+      "C4": 0.1147,
+      "D": -0.0273
+     },
+     "density_kg_m3": 630.0
+    },
+    {
+     "id": "G20-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 2 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.17,
+      "C1": 0.1217,
+      "C2": 0.1045,
+      "C3": 0.0753,
+      "C4": 0.0397,
+      "D": -0.1028
+     },
+     "density_kg_m3": 1695.0
+    },
+    {
+     "id": "G20-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 3 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.95,
+      "C1": 0.1561,
+      "C2": 0.1844,
+      "C3": 0.1566,
+      "C4": 0.0343,
+      "D": -0.1296
+     },
+     "density_kg_m3": 863.0
+    },
+    {
+     "id": "G20-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 4 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 3.2,
+      "C1": 0.157,
+      "C2": 0.0034,
+      "C3": 0.1821,
+      "C4": 0.0908,
+      "D": -0.0258
+     },
+     "density_kg_m3": 388.0
+    },
+    {
+     "id": "G20-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 5 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 2.62,
+      "C1": 0.0032,
+      "C2": 0.0618,
+      "C3": 0.0754,
+      "C4": 0.0109,
+      "D": -0.0223
+     },
+     "density_kg_m3": 333.0
+    },
+    {
+     "id": "G20-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 6 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 1.25,
+      "C1": 0.0354,
+      "C2": 0.0589,
+      "C3": 0.1837,
+      "C4": 0.1412,
+      "D": -0.1356
+     },
+     "density_kg_m3": 1336.0
+    },
+    {
+     "id": "G20-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.98,
+      "C1": 0.897,
+      "C2": 0.1535,
+      "C3": 0.0595,
+      "C4": 0.7345,
+      "D": -0.4265
+     }
+    },
+    {
+     "id": "G20-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G20 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.63,
+      "C1": 0.169,
+      "C2": 0.226,
+      "C3": 0.946,
+      "C4": 0.891,
+      "D": -0.492
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G20-P1",
+      "G20-P2",
+      "G20-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 133.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G20-P4",
+      "G20-P5",
+      "G20-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 14.9,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G20-P7",
+      "G20-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "nan_q"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G21; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G21",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G21-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 1 (FAM-P fictional coating)",
+     "unit": "piece",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 280.85,
+      "C1": 2.27,
+      "C2": 18.13,
+      "C3": 11.26,
+      "C4": 18.87,
+      "D": -8.24
+     },
+     "density_kg_m3": 1176.0
+    },
+    {
+     "id": "G21-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 2 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 34.35,
+      "C1": 15.3,
+      "C2": 5.01,
+      "C3": 16.01,
+      "C4": 13.74,
+      "D": -3.47
+     },
+     "density_kg_m3": 1485.0
+    },
+    {
+     "id": "G21-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 3 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 267.85,
+      "C1": 11.43,
+      "C2": 12.15,
+      "C3": 4.63,
+      "C4": 6.1,
+      "D": -9.8
+     },
+     "density_kg_m3": 1129.0
+    },
+    {
+     "id": "G21-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 367.85,
+      "C1": 14.05,
+      "C2": 6.22,
+      "C3": 11.96,
+      "C4": 1.98,
+      "D": -2.26
+     },
+     "density_kg_m3": 347.0
+    },
+    {
+     "id": "G21-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 168.62,
+      "C1": 19.55,
+      "C2": 8.6,
+      "C3": 1.6,
+      "C4": 16.12,
+      "D": -1.1
+     },
+     "density_kg_m3": 1186.0
+    },
+    {
+     "id": "G21-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 141.01,
+      "C1": 4.8,
+      "C2": 1.36,
+      "C3": 13.83,
+      "C4": 5.29,
+      "D": -8.94
+     },
+     "density_kg_m3": 1728.0
+    },
+    {
+     "id": "G21-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 13.69,
+      "C1": 0.7865,
+      "C2": 0.507,
+      "C3": 0.189,
+      "C4": 0.4325,
+      "D": -0.4285
+     }
+    },
+    {
+     "id": "G21-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G21 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 10.93,
+      "C1": 0.8535,
+      "C2": 0.464,
+      "C3": 0.0315,
+      "C4": 0.5015,
+      "D": -0.5105
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G21-P1",
+      "G21-P2",
+      "G21-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 236.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G21-P4",
+      "G21-P5",
+      "G21-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 12.3,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G21-P7",
+      "G21-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "unsupported_unit"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G22; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G22",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G22-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 1 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.57,
+      "C1": 0.1259,
+      "C2": 0.1137,
+      "C3": 0.0485,
+      "C4": 0.0633,
+      "D": -0.1375
+     },
+     "density_kg_m3": 680.0
+    },
+    {
+     "id": "G22-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 2 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B-OTHER",
+     "modules": {
+      "A1-A3": 0.83,
+      "C1": 0.1574,
+      "C2": 0.05,
+      "C3": 0.1848,
+      "C4": 0.0116,
+      "D": -0.131
+     },
+     "density_kg_m3": 846.0
+    },
+    {
+     "id": "G22-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 3 (FAM-N fictional panel)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.21,
+      "C1": 0.0532,
+      "C2": 0.017,
+      "C3": 0.0802,
+      "C4": 0.1785,
+      "D": -0.1169
+     },
+     "density_kg_m3": 117.0
+    },
+    {
+     "id": "G22-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 4 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 130.04,
+      "C1": 12.77,
+      "C2": 3.74,
+      "C3": 1.13,
+      "C4": 19.24,
+      "D": -0.04
+     },
+     "density_kg_m3": 127.0
+    },
+    {
+     "id": "G22-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 5 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 284.01,
+      "C1": 2.78,
+      "C2": 15.36,
+      "C3": 8.76,
+      "C4": 17.97,
+      "D": -13.96
+     },
+     "density_kg_m3": 451.0
+    },
+    {
+     "id": "G22-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 6 (FAM-P fictional coating)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 69.69,
+      "C1": 17.15,
+      "C2": 18.83,
+      "C3": 10.26,
+      "C4": 12.4,
+      "D": -13.67
+     },
+     "density_kg_m3": 1593.0
+    },
+    {
+     "id": "G22-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 5.73,
+      "C1": 0.365,
+      "C2": 0.5275,
+      "C3": 0.922,
+      "C4": 0.6225,
+      "D": -0.024
+     }
+    },
+    {
+     "id": "G22-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G22 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 7.0,
+      "C1": 0.34,
+      "C2": 0.703,
+      "C3": 0.021,
+      "C4": 0.43,
+      "D": -0.586
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G22-P1",
+      "G22-P2",
+      "G22-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 198.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G22-P4",
+      "G22-P5",
+      "G22-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 2.8,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G22-P7",
+      "G22-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "scenario_conflict"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G23; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G23",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G23-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 1 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 1.41,
+      "C1": 0.0409,
+      "C2": 0.1639,
+      "C3": 0.0167,
+      "C4": 0.0075,
+      "D": -0.1377,
+      "B4": 1.0
+     },
+     "density_kg_m3": 853.0
+    },
+    {
+     "id": "G23-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 2 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.69,
+      "C1": 0.122,
+      "C2": 0.1474,
+      "C3": 0.1525,
+      "C4": 0.1818,
+      "D": -0.1013
+     },
+     "density_kg_m3": 877.0
+    },
+    {
+     "id": "G23-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 3 (FAM-M fictional foam)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 0.78,
+      "C1": 0.1485,
+      "C2": 0.1953,
+      "C3": 0.1586,
+      "C4": 0.0634,
+      "D": -0.0325
+     },
+     "density_kg_m3": 1241.0
+    },
+    {
+     "id": "G23-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 4 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 302.15,
+      "C1": 14.64,
+      "C2": 10.97,
+      "C3": 1.51,
+      "C4": 1.72,
+      "D": -13.83
+     },
+     "density_kg_m3": 220.0
+    },
+    {
+     "id": "G23-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 5 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 188.99,
+      "C1": 14.07,
+      "C2": 14.72,
+      "C3": 8.44,
+      "C4": 14.15,
+      "D": -14.46
+     },
+     "density_kg_m3": 1062.0
+    },
+    {
+     "id": "G23-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 6 (FAM-M fictional foam)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 121.38,
+      "C1": 14.78,
+      "C2": 16.97,
+      "C3": 16.25,
+      "C4": 10.11,
+      "D": -3.41
+     },
+     "density_kg_m3": 795.0
+    },
+    {
+     "id": "G23-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 7 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 2.57,
+      "C1": 0.474,
+      "C2": 0.9835,
+      "C3": 0.733,
+      "C4": 0.699,
+      "D": -0.0435
+     }
+    },
+    {
+     "id": "G23-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G23 product 8 (FAM-P fictional coating)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 5.11,
+      "C1": 0.062,
+      "C2": 0.515,
+      "C3": 0.6515,
+      "C4": 0.774,
+      "D": -0.6415
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G23-P1",
+      "G23-P2",
+      "G23-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 233.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-M fictional foam layer",
+     "product_ids": [
+      "G23-P4",
+      "G23-P5",
+      "G23-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 12.4,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G23-P7",
+      "G23-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "b4_module"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G24; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G24",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G24-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 1 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 1.55,
+      "C1": 0.0757,
+      "C2": 0.0244,
+      "C3": 0.0241,
+      "C4": 0.1662,
+      "D": -0.0871
+     }
+    },
+    {
+     "id": "G24-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 2 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 1.27,
+      "C1": 0.1477,
+      "C2": 0.1595,
+      "C3": 0.1509,
+      "C4": 0.0957,
+      "D": -0.1091
+     },
+     "density_kg_m3": 249.0
+    },
+    {
+     "id": "G24-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 3 (FAM-P fictional coating)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.79,
+      "C1": 0.1628,
+      "C2": 0.0538,
+      "C3": 0.1137,
+      "C4": 0.1205,
+      "D": -0.1021
+     },
+     "density_kg_m3": 679.0
+    },
+    {
+     "id": "G24-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 4 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 199.53,
+      "C1": 15.7,
+      "C2": 1.27,
+      "C3": 18.43,
+      "C4": 18.03,
+      "D": -1.69
+     },
+     "density_kg_m3": 299.0
+    },
+    {
+     "id": "G24-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 5 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 391.63,
+      "C1": 10.36,
+      "C2": 19.93,
+      "C3": 16.39,
+      "C4": 10.71,
+      "D": -4.4
+     },
+     "density_kg_m3": 984.0
+    },
+    {
+     "id": "G24-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 6 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-A",
+     "modules": {
+      "A1-A3": 41.99,
+      "C1": 1.76,
+      "C2": 6.5,
+      "C3": 18.66,
+      "C4": 14.74,
+      "D": -10.95
+     },
+     "density_kg_m3": 1640.0
+    },
+    {
+     "id": "G24-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 7 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 13.65,
+      "C1": 0.62,
+      "C2": 0.954,
+      "C3": 0.556,
+      "C4": 0.779,
+      "D": -0.208
+     }
+    },
+    {
+     "id": "G24-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G24 product 8 (FAM-N fictional panel)",
+     "unit": "m2",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 5.29,
+      "C1": 0.5925,
+      "C2": 0.001,
+      "C3": 0.271,
+      "C4": 0.237,
+      "D": -0.431
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-P fictional coating layer",
+     "product_ids": [
+      "G24-P1",
+      "G24-P2",
+      "G24-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 32.0,
+      "unit": "mm"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G24-P4",
+      "G24-P5",
+      "G24-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 14.8,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-N fictional panel layer",
+     "product_ids": [
+      "G24-P7",
+      "G24-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "kg_no_density"
+  },
+  {
+   "schema": "baucode-demo-input/1",
+   "label": "SYNTHETIC",
+   "note": "GENERATED fictional assembly G25; reference area = wall.area_m2 of fictional assembly (equivalence unverified)",
+   "wall": {
+    "id": "G25",
+    "area_m2": 1.0
+   },
+   "products": [
+    {
+     "id": "G25-P1",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 1 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 387.54,
+      "C1": 1.63,
+      "C2": 16.6,
+      "C3": 17.06,
+      "C4": 3.93,
+      "D": -2.25
+     },
+     "density_kg_m3": 918.0
+    },
+    {
+     "id": "G25-P2",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 2 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 207.49,
+      "C1": 6.47,
+      "C2": 2.0,
+      "C3": 7.55,
+      "C4": 1.73,
+      "D": -7.72
+     },
+     "density_kg_m3": 964.0
+    },
+    {
+     "id": "G25-P3",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 3 (FAM-K fictional board)",
+     "unit": "m3",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-B",
+     "modules": {
+      "A1-A3": 371.27,
+      "C1": 0.17,
+      "C2": 1.08,
+      "C3": 4.23,
+      "C4": 4.22,
+      "D": -5.75
+     },
+     "density_kg_m3": 595.0
+    },
+    {
+     "id": "G25-P4",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 4 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 5,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.05,
+      "C1": 0.1574,
+      "C2": 0.1938,
+      "C3": 0.1941,
+      "C4": 0.1541,
+      "D": -0.1364
+     },
+     "density_kg_m3": 1670.0
+    },
+    {
+     "id": "G25-P5",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 5 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.44,
+      "C1": 0.1523,
+      "C2": 0.1014,
+      "C3": 0.1785,
+      "C4": 0.0434,
+      "D": -0.1161
+     },
+     "density_kg_m3": 35.0
+    },
+    {
+     "id": "G25-P6",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 6 (FAM-K fictional board)",
+     "unit": "kg",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.34,
+      "C1": 0.1006,
+      "C2": 0.0971,
+      "C3": 0.1275,
+      "C4": 0.0814,
+      "D": -0.1303
+     },
+     "density_kg_m3": 167.0
+    },
+    {
+     "id": "G25-P7",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 7 (FAM-L fictional block)",
+     "unit": "m2",
+     "ref_quantity": 2,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 2.45,
+      "C1": 0.0655,
+      "C2": 0.548,
+      "C3": 0.2815,
+      "C4": 0.408,
+      "D": -0.7285
+     }
+    },
+    {
+     "id": "G25-P8",
+     "source": "generated: baucode-gallery-generator/1 seed 20261107 assembly G25 product 8 (FAM-L fictional block)",
+     "unit": "m2",
+     "ref_quantity": 1,
+     "scenario": "GEN-EOL-C",
+     "modules": {
+      "A1-A3": 3.07,
+      "C1": 0.186,
+      "C2": 0.201,
+      "C3": 0.682,
+      "C4": 0.385,
+      "D": -0.487
+     }
+    }
+   ],
+   "layers": [
+    {
+     "id": "L1",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G25-P1",
+      "G25-P2",
+      "G25-P3"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 140.0,
+      "unit": "in"
+     }
+    },
+    {
+     "id": "L2",
+     "name": "FAM-K fictional board layer",
+     "product_ids": [
+      "G25-P4",
+      "G25-P5",
+      "G25-P6"
+     ],
+     "multiplier": 1,
+     "thickness": {
+      "value": 11.4,
+      "unit": "cm"
+     }
+    },
+    {
+     "id": "L3",
+     "name": "FAM-L fictional block layer",
+     "product_ids": [
+      "G25-P7",
+      "G25-P8"
+     ],
+     "multiplier": 1
+    }
+   ],
+   "edge": "bad_thickness_unit"
+  }
+ ]
+}

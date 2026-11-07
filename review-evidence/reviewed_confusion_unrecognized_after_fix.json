@@ -1,0 +1,13 @@
+{
+ "recorded_utc": "2026-11-07T14:13:35Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/confusion_exact20.py",
+  "review-evidence/reviewed_derived_results_status_removed.json"
+ ],
+ "exit_code": 0,
+ "stdout": "positives 15: TP 14 FN 0 unrecognized 1 not-executed 0 | negatives 18: TN 14 FP 0 abstained 3 unrecognized 1 not-executed 0 | numeric assertion residuals n=67 max_abs 2.7755575615628914e-17 max_rel 1.1564823173178715e-16\n",
+ "stderr": ""
+}

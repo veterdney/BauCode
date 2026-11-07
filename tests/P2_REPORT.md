@@ -1,0 +1,15 @@
+# P2 report (EVIDENCE ONLY, written by nora from independently observed results; no implementation)
+
+State: branch review/baucode-verified-20261107, HEAD f3575fb2 (old frozen base; NOT upstream main dddec8d5). Final rerun 2026-11-07 15:28 CET, Python 3.14.7, Windows 11.
+
+History (true): one Claude Code job (claude-opus-5-5, firstParty, list-cost estimate 1.47 USD) made the P2 edits, then the CLI exited 1 after 44 turns with "session limit - resets 7pm". It did not complete or write this report. No retry, no other model. 5 normal-permission denials, no bypass.
+
+Supplementary P2 probes (tests/repro_p2.py, not numbered cases): before fixes 2/15 held (exit 1; TypeError on dict/list unit in lib.to_metres; raw <script> and broken Markdown tables). After: 15/15 (exit 0): {}/[] unit -> REJECTED exit 2 UNIT_UNSUPPORTED; to_metres dict/list -> THICKNESS_UNIT_UNSUPPORTED; 10**400 in 6 fields -> REJECTED exit 2 with named codes, no numbers; Markdown HTML/pipe/newline escaped, tables consistent.
+
+Final reruns (CWD repo root): run_exact20 0 (20/20 cases, 79/79 required probes, optional 1 PASS/4 UNKNOWN/2 NOT RUN); fault-hook C07-density-x2 1 (intended; C07 fails, oracle unchanged); run_demo 0; run_demo replaced 0 (input sensitivity 185->230, C 21.2->30.2; not accuracy); run_gallery 0 (25 assemblies, 200 product records, 200 unique product IDs, 25 unique assembly IDs; 13 full/2 partial/2 incomplete/8 rejected); check_gallery 0 (29 demonstration checks, not acceptance); repro_input_boundary 0 (6 malformed rejected + 1 control evaluated); confusion 0 (positive = expected REJECTED: TP15 FN0; negatives 18 = TN15 FP0 + 3 abstentions; 33 decision probes; residuals n=67 max_abs 2.8e-17); repro_p2 0 (15/15).
+
+Labels (values unchanged): "A1-A3 + C1-C4 known subtotal ... complete for selected modules" (A4/A5/B out of scope; not a life-cycle total); "D known subtotal (partial; separate, not subtracted)"; "known mass subtotal". check_gallery line 118 now asserts the new D header string (label update only).
+Conservative C/D coupling (documented, not changed): wall C and D subtotals count only layers with known A1-A3; independent C/D completeness is not claimed.
+Frozen oracles unchanged: tests/exact20_manifest.json 6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc; demo/expected/synthetic_wall.expected.json 30dd644f...ddd9; synthetic_wall_replaced.expected.json 509b3d8e...80dc; tests/results_reviewed.json 2a68e2f8... (pre-P2 history).
+Limits: SYNTHETIC only, agent hand-derived expectations (DRAFT, not GOLD), no holdout, no scientific validity or health/safety claim, m2 != equivalence. C18 formula UNKNOWN. Historical real-report C19 finding UNKNOWN (separate from synthetic C19). Legacy python analysis/run.py still fails: missing analysis/products.csv.
+Upstream: PR #4 (63f8bdb3) and PR #5 (dddec8d5) merged after this base. demo/README.md "no adapter" sentence is SUPERSEDED: PR #5 adds analysis/levels/dataset_fill.py, an adapter feeding the 3-level scoring (not the wall/six-system pipeline or this demo). These tests do NOT validate PR #4/#5.

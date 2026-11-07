@@ -1,0 +1,12 @@
+{
+ "recorded_utc": "2026-11-07T14:15:03Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "demo/run_demo.py"
+ ],
+ "exit_code": 0,
+ "stdout": "SYNTHETIC demo: EVALUATED -> demo/output/default/result.json, layers.csv, report.md\n  A1-A3 total=185 known subtotal=185 | C known=21.2 complete=yes | D separate=-2 complete=no (kgCO2e)\n  matches synthetic_wall.expected.json (23 agent hand-derived values)\n",
+ "stderr": ""
+}

@@ -1,0 +1,154 @@
+{
+ "schema": "baucode-demo-result/1",
+ "label": "SYNTHETIC",
+ "status": "EVALUATED",
+ "exit_code": 0,
+ "input": {
+  "name": "synthetic_wall.json",
+  "sha256": "216b1f966d45d446f0957cef64afbcefde1b781caf43bef244c2d1416b41154d"
+ },
+ "wall": {
+  "id": "SYN-WALL-1",
+  "area_m2": 10.0
+ },
+ "units": {
+  "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+  "mass": "kg",
+  "thickness": "m"
+ },
+ "layers": [
+  {
+   "id": "L1",
+   "name": "synthetic board",
+   "status": "KNOWN",
+   "reason": null,
+   "products": [
+    "SYN-P1",
+    "SYN-P2",
+    "SYN-P3"
+   ],
+   "sources": [
+    "synthetic: demo default board, pool member 1",
+    "synthetic: demo default board, pool member 2",
+    "synthetic: demo default board, pool member 3"
+   ],
+   "scenario": "SYN-EOL-A",
+   "reference_units": [
+    "m3"
+   ],
+   "thickness_m": 0.02,
+   "multiplier": 1.0,
+   "pool_size": 3,
+   "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+   "a13": 60.0,
+   "a13_source": "aggregate",
+   "a13_overlap": false,
+   "c_known": 1.2,
+   "c_modules": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "c_missing": [],
+   "c_complete": true,
+   "d": -2.0,
+   "mass_kg": 100.0,
+   "density_used_kg_m3": null,
+   "density_note": "not used: m3 reference basis"
+  },
+  {
+   "id": "L2",
+   "name": "synthetic insulation",
+   "status": "KNOWN",
+   "reason": null,
+   "products": [
+    "SYN-P4"
+   ],
+   "sources": [
+    "synthetic: demo default insulation (no D declared)"
+   ],
+   "scenario": "SYN-EOL-B",
+   "reference_units": [
+    "kg"
+   ],
+   "thickness_m": 0.1,
+   "multiplier": 1.0,
+   "pool_size": 1,
+   "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+   "a13": 75.0,
+   "a13_source": "aggregate",
+   "a13_overlap": false,
+   "c_known": 15.0,
+   "c_modules": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "c_missing": [],
+   "c_complete": true,
+   "d": null,
+   "mass_kg": 50.0,
+   "density_used_kg_m3": 50.0,
+   "density_note": "used: kg reference basis converted with product density (lib.dens)"
+  },
+  {
+   "id": "L3",
+   "name": "synthetic coating",
+   "status": "KNOWN",
+   "reason": null,
+   "products": [
+    "SYN-P5"
+   ],
+   "sources": [
+    "synthetic: demo default coating (area basis)"
+   ],
+   "scenario": "SYN-EOL-C",
+   "reference_units": [
+    "m2"
+   ],
+   "thickness_m": null,
+   "multiplier": 1.0,
+   "pool_size": 1,
+   "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+   "a13": 50.0,
+   "a13_source": "aggregate",
+   "a13_overlap": false,
+   "c_known": 5.0,
+   "c_modules": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "c_missing": [],
+   "c_complete": true,
+   "d": 0.0,
+   "mass_kg": null,
+   "density_used_kg_m3": null,
+   "density_note": "not used: m2 reference basis"
+  }
+ ],
+ "totals": {
+  "layers_known": 3,
+  "layers_total": 3,
+  "layers_complete": true,
+  "a13_known_subtotal": 185.0,
+  "a13_total": 185.0,
+  "c_known_subtotal": 21.2,
+  "c_complete": true,
+  "a1_c_known_subtotal": 206.2,
+  "d_known_subtotal": -2.0,
+  "d_complete": false,
+  "mass_known_kg": 150.0,
+  "mass_complete": false
+ },
+ "notes": [
+  "SYNTHETIC demo data; these numbers describe no real wall or product.",
+  "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+  "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+  "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+  "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "label": "SYNTHETIC",
+ "for_input": "demo/input/synthetic_wall_replaced.json",
+ "derivation": "agent hand-derived (claude-opus-5-5) from the input numbers, written before the demo code existed; NOT human-reviewed; NOT computed by the implementation under test",
+ "tolerance": {"abs": 1e-9, "rel": 1e-9, "why": "same as synthetic_wall.expected.json"},
+ "hand_arithmetic": [
+  "only change vs default: L2 thickness 100 mm -> 160 mm (0.160 m); L1 and L3 unchanged (60 / 1.2 / -2 / 100 kg and 50 / 5 / 0 / UNKNOWN)",
+  "L2 A = 75 per m3 x 0.160 = 12 per m2; x10 = 120",
+  "L2 C = 15 per m3 x 0.160 = 2.4 per m2; x10 = 24; D still UNKNOWN",
+  "L2 mass = 10 x 0.160 x 50 = 80 kg",
+  "totals: A1-A3 = 60+120+50 = 230; C known = 1.2+24+5 = 30.2; A1-C known = 260.2; D known = -2 (incomplete); mass known = 100+80 = 180 (incomplete)"
+ ],
+ "expect": {
+  "label": "SYNTHETIC",
+  "status": "EVALUATED",
+  "exit_code": 0,
+  "layers.0.a13": 60,
+  "layers.1.a13": 120,
+  "layers.1.c_known": 24,
+  "layers.1.d": null,
+  "layers.1.mass_kg": 80,
+  "layers.2.a13": 50,
+  "totals.a13_total": 230,
+  "totals.c_known_subtotal": 30.2,
+  "totals.c_complete": true,
+  "totals.a1_c_known_subtotal": 260.2,
+  "totals.d_known_subtotal": -2,
+  "totals.d_complete": false,
+  "totals.mass_known_kg": 180,
+  "totals.mass_complete": false
+ }
+}

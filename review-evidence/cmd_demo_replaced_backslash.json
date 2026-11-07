@@ -1,0 +1,16 @@
+{
+ "recorded_utc": "2026-11-07T14:01:33Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "demo/run_demo.py",
+  "--input",
+  "demo\\input\\synthetic_wall_replaced.json",
+  "--out",
+  "review-evidence/path_check_backslash"
+ ],
+ "exit_code": 0,
+ "stdout": "SYNTHETIC demo: EVALUATED -> review-evidence/path_check_backslash/result.json, layers.csv, report.md\n  A1-A3 total=230 known subtotal=230 | C known=30.2 complete=yes | D separate=-2 complete=no (kgCO2e)\n  matches synthetic_wall_replaced.expected.json (17 agent hand-derived values)\n",
+ "stderr": ""
+}

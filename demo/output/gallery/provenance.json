@@ -1,0 +1,57 @@
+{
+ "label": "SYNTHETIC",
+ "records_kind": "GENERATED demonstration records: not evaluation cases, not GOLD, not a holdout, not accuracy evidence, not real assemblies",
+ "generator": "baucode-gallery-generator/1",
+ "seed": 20261107,
+ "input_source": "generated_inputs.json",
+ "inputs_sha256": "fe8deb6b298cab9c44e93ba978b79b88e265144b4eb7abbabc1a26e1f15260d5",
+ "schema_in": "baucode-demo-input/1",
+ "schema_out": "baucode-demo-result/1",
+ "evaluator": "demo/run_demo.py evaluate() -> analysis/lib.py, analysis/model.py",
+ "reference_area": "1 m2 of a fictional assembly; Same reference area (1 m2 of a fictional assembly); equivalence unverified. Sharing a reference area does not establish thermal, structural, fire or acoustic equivalence.",
+ "summary": {
+  "assemblies": 25,
+  "product_records": 200,
+  "by_category": {
+   "EVALUATED_FULL_COVERAGE": 13,
+   "EVALUATED_PARTIAL_COVERAGE": 2,
+   "INCOMPLETE_LAYERS": 2,
+   "REJECTED": 8
+  },
+  "same_reference_area_equivalence_unverified": 16,
+  "edges": {
+   "G01": "complete",
+   "G02": "complete",
+   "G03": "complete",
+   "G04": "complete",
+   "G05": "complete",
+   "G06": "complete",
+   "G07": "complete",
+   "G08": "partial_c",
+   "G09": "missing_d",
+   "G10": "negative_values",
+   "G11": "true_zero",
+   "G12": "aggregate_overlap",
+   "G13": "submodules_only",
+   "G14": "partial_submodules",
+   "G15": "empty_pool",
+   "G16": "fu_2m2",
+   "G17 <script>alert(\"x\")</script> & 'q'": "markup_label",
+   "G18": "blank_q",
+   "G19": "zero_q",
+   "G20": "nan_q",
+   "G21": "unsupported_unit",
+   "G22": "scenario_conflict",
+   "G23": "b4_module",
+   "G24": "kg_no_density",
+   "G25": "bad_thickness_unit"
+  }
+ },
+ "equivalence": "unverified: no independent expected values exist for generated records",
+ "files_sha256": {
+  "generated_inputs.json": "285df0ad9075af1867e754452bd224aac856b6a2226eca3bad5a89f27642128d",
+  "gallery.json": "7770346249d64fb18bc295a9d98d0b1e381f3227849b8074941286c77ce0ce8b",
+  "gallery.csv": "4d934c34b4b7787e1cb49b1e9ce1f649973e010fe86e42d16fb755775f3156a4",
+  "gallery.html": "4d4ea968427c1edc2c587f03a4caae622023314b256455a6844175858e5812bc"
+ }
+}

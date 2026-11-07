@@ -1,0 +1,12 @@
+{
+ "recorded_utc": "2026-11-07T14:10:06Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "demo/run_gallery.py"
+ ],
+ "exit_code": 0,
+ "stdout": "SYNTHETIC GENERATED gallery: 25 assemblies, 200 product records, seed 20261107 -> demo/output/gallery/gallery.html\n  EVALUATED_FULL_COVERAGE 13, EVALUATED_PARTIAL_COVERAGE 2, INCOMPLETE_LAYERS 2, REJECTED 8 | same-FU comparable 16\n",
+ "stderr": ""
+}

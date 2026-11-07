@@ -1,0 +1,3155 @@
+{
+ "label": "SYNTHETIC",
+ "kind": "GENERATED demonstration records: not evaluation cases, not GOLD, not a holdout, not accuracy evidence, not real assemblies",
+ "provenance": {
+  "label": "SYNTHETIC",
+  "records_kind": "GENERATED demonstration records: not evaluation cases, not GOLD, not a holdout, not accuracy evidence, not real assemblies",
+  "generator": "baucode-gallery-generator/1",
+  "seed": 20261107,
+  "input_source": "generated_inputs.json",
+  "inputs_sha256": "fe8deb6b298cab9c44e93ba978b79b88e265144b4eb7abbabc1a26e1f15260d5",
+  "schema_in": "baucode-demo-input/1",
+  "schema_out": "baucode-demo-result/1",
+  "evaluator": "demo/run_demo.py evaluate() -> analysis/lib.py, analysis/model.py",
+  "reference_area": "1 m2 of a fictional assembly; Same reference area (1 m2 of a fictional assembly); equivalence unverified. Sharing a reference area does not establish thermal, structural, fire or acoustic equivalence.",
+  "summary": {
+   "assemblies": 25,
+   "product_records": 200,
+   "by_category": {
+    "EVALUATED_FULL_COVERAGE": 13,
+    "EVALUATED_PARTIAL_COVERAGE": 2,
+    "INCOMPLETE_LAYERS": 2,
+    "REJECTED": 8
+   },
+   "same_reference_area_equivalence_unverified": 16,
+   "edges": {
+    "G01": "complete",
+    "G02": "complete",
+    "G03": "complete",
+    "G04": "complete",
+    "G05": "complete",
+    "G06": "complete",
+    "G07": "complete",
+    "G08": "partial_c",
+    "G09": "missing_d",
+    "G10": "negative_values",
+    "G11": "true_zero",
+    "G12": "aggregate_overlap",
+    "G13": "submodules_only",
+    "G14": "partial_submodules",
+    "G15": "empty_pool",
+    "G16": "fu_2m2",
+    "G17 <script>alert(\"x\")</script> & 'q'": "markup_label",
+    "G18": "blank_q",
+    "G19": "zero_q",
+    "G20": "nan_q",
+    "G21": "unsupported_unit",
+    "G22": "scenario_conflict",
+    "G23": "b4_module",
+    "G24": "kg_no_density",
+    "G25": "bad_thickness_unit"
+   }
+  },
+  "equivalence": "unverified: no independent expected values exist for generated records"
+ },
+ "assemblies": [
+  {
+   "index": 0,
+   "id": "G01",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/0",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/0",
+     "sha256": "1c01ba940a3d79ce5e7094f5fe8e8ca850b3e9d350f1ba936d90579a334f322d"
+    },
+    "wall": {
+     "id": "G01",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G01-P1",
+       "G01-P2",
+       "G01-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 1 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 2 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 3 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.203,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 13.032600000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 4.425400000000001,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.190595,
+      "mass_kg": 347.333,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G01-P4",
+       "G01-P5",
+       "G01-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 4 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 5 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 6 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.012,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 0.4357440000000001,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.2622,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.00588,
+      "mass_kg": 5.904,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G01-P7",
+       "G01-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 7 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G01 product 8 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 8.134,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.08525,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.39495,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 21.602344000000002,
+     "a13_total": 21.602344000000002,
+     "c_known_subtotal": 5.772850000000001,
+     "c_complete": true,
+     "a1_c_known_subtotal": 27.375194000000004,
+     "d_known_subtotal": -1.591425,
+     "d_complete": true,
+     "mass_known_kg": 353.237,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 1,
+   "id": "G02",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/1",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/1",
+     "sha256": "a928b6cfdccaf66061df41a130072c5983c408696ecfe758e129214615dae745"
+    },
+    "wall": {
+     "id": "G02",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G02-P1",
+       "G02-P2",
+       "G02-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 1 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 2 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 3 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.17,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 60.155350000000006,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 23.527320000000003,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -4.3969905,
+      "mass_kg": 97.75,
+      "density_used_kg_m3": 575.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G02-P4",
+       "G02-P5",
+       "G02-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 4 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 5 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 6 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.11800000000000001,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 34.880328000000006,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 23.6450878,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -7.414347100000001,
+      "mass_kg": 111.74600000000001,
+      "density_used_kg_m3": 947.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G02-P7",
+       "G02-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 7 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G02 product 8 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 4.6925,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.033375,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.2555,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 99.72817800000001,
+     "a13_total": 99.72817800000001,
+     "c_known_subtotal": 48.2057828,
+     "c_complete": true,
+     "a1_c_known_subtotal": 147.93396080000002,
+     "d_known_subtotal": -12.066837600000001,
+     "d_complete": true,
+     "mass_known_kg": 209.496,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 2,
+   "id": "G03",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/2",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/2",
+     "sha256": "1e67280b424eb75439ad2d562734003e97ac6f103570d91030960061f8c4dbd1"
+    },
+    "wall": {
+     "id": "G03",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G03-P1",
+       "G03-P2",
+       "G03-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 1 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 2 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 3 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.022,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 4.852759999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.6294916,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.2153976,
+      "mass_kg": 8.756,
+      "density_used_kg_m3": 398.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G03-P4",
+       "G03-P5",
+       "G03-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 4 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 5 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 6 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.174,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 11.516016,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 4.89114,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.6333599999999999,
+      "mass_kg": 35.321999999999996,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G03-P7",
+       "G03-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 7 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G03 product 8 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 1.2525,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.529825,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.14465,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 17.621275999999998,
+     "a13_total": 17.621275999999998,
+     "c_known_subtotal": 7.0504566,
+     "c_complete": true,
+     "a1_c_known_subtotal": 24.6717326,
+     "d_known_subtotal": -0.9934076,
+     "d_complete": true,
+     "mass_known_kg": 44.077999999999996,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 3,
+   "id": "G04",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/3",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/3",
+     "sha256": "4d254a7a4a4abfc8de0792e0010c10e49e3875c7492833f42c6b586a2ae32707"
+    },
+    "wall": {
+     "id": "G04",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G04-P1",
+       "G04-P2",
+       "G04-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 1 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 2 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 3 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.055,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 14.164700000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.9613,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.19305,
+      "mass_kg": 73.15,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G04-P4",
+       "G04-P5",
+       "G04-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.084,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 98.46227999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 14.588893200000001,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -5.4997656,
+      "mass_kg": 71.736,
+      "density_used_kg_m3": 854.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G04-P7",
+       "G04-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 7 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G04 product 8 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 5.665,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.839375,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.095,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 118.29198,
+     "a13_total": 118.29198,
+     "c_known_subtotal": 17.3895682,
+     "c_complete": true,
+     "a1_c_known_subtotal": 135.6815482,
+     "d_known_subtotal": -5.7878156,
+     "d_complete": true,
+     "mass_known_kg": 144.88600000000002,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 4,
+   "id": "G05",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/4",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/4",
+     "sha256": "30af1ddbcfa166f701e4307877874cc13648a4880f493f88b9f73525298d6fb5"
+    },
+    "wall": {
+     "id": "G05",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G05-P1",
+       "G05-P2",
+       "G05-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 1 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 2 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 3 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.149,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 16.615735,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 3.6564599999999996,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.13112,
+      "mass_kg": 115.02799999999999,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G05-P4",
+       "G05-P5",
+       "G05-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.013000000000000001,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 0.9278620000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.26065,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.031434000000000004,
+      "mass_kg": 10.335,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G05-P7",
+       "G05-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 7 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G05 product 8 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 5.739999999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.1207500000000001,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.294125,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 23.283597,
+     "a13_total": 23.283597,
+     "c_known_subtotal": 5.037859999999999,
+     "c_complete": true,
+     "a1_c_known_subtotal": 28.321457,
+     "d_known_subtotal": -0.456679,
+     "d_complete": true,
+     "mass_known_kg": 125.363,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 5,
+   "id": "G06",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/5",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/5",
+     "sha256": "e002ff30a9c822dc84a16844886ee165f6d7226d408f4f981db6d86cdadfefaf"
+    },
+    "wall": {
+     "id": "G06",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G06-P1",
+       "G06-P2",
+       "G06-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 1 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 2 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 3 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.039,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 0.6033299999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.44834399999999996,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.105144,
+      "mass_kg": 22.386,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G06-P4",
+       "G06-P5",
+       "G06-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 4 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 5 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 6 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.17600000000000002,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 12.349568,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.5970240000000002,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.1584,
+      "mass_kg": 106.12800000000001,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G06-P7",
+       "G06-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 7 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G06 product 8 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 8.7825,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.8715000000000002,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.45225000000000004,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 21.735398,
+     "a13_total": 21.735398,
+     "c_known_subtotal": 3.9168680000000005,
+     "c_complete": true,
+     "a1_c_known_subtotal": 25.652266,
+     "d_known_subtotal": -0.715794,
+     "d_complete": true,
+     "mass_known_kg": 128.514,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 6,
+   "id": "G07",
+   "edge": "complete",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/6",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/6",
+     "sha256": "ea3ba718de3946d6866ec86ff4081d8adc9732129cdf579f39d2b06f6b8796be"
+    },
+    "wall": {
+     "id": "G07",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G07-P1",
+       "G07-P2",
+       "G07-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 1 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 2 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 3 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.209,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 218.602296,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 37.069075999999995,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -8.196144,
+      "mass_kg": 266.68399999999997,
+      "density_used_kg_m3": 1276.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G07-P4",
+       "G07-P5",
+       "G07-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.182,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 197.12565600000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 44.5227328,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -4.5063564,
+      "mass_kg": 250.796,
+      "density_used_kg_m3": 1378.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G07-P7",
+       "G07-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 7 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G07 product 8 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 9.559000000000001,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.7042,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.31024999999999997,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 425.28695200000004,
+     "a13_total": 425.28695200000004,
+     "c_known_subtotal": 82.2960088,
+     "c_complete": true,
+     "a1_c_known_subtotal": 507.5829608,
+     "d_known_subtotal": -13.0127504,
+     "d_complete": true,
+     "mass_known_kg": 517.48,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 7,
+   "id": "G08",
+   "edge": "partial_c",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/7",
+   "category": "EVALUATED_PARTIAL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/7",
+     "sha256": "7798a077244097728b7a9b23c5072bfe6d600fe6d3adb3d7694cb0a78959b9d3"
+    },
+    "wall": {
+     "id": "G08",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G08-P1",
+       "G08-P2",
+       "G08-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 1 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 2 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 3 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.124,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 60.284832,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 8.4655296,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.40403664,
+      "mass_kg": 34.1,
+      "density_used_kg_m3": 275.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G08-P4",
+       "G08-P5",
+       "G08-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 4 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 5 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 6 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.188,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 23.528200000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.81702,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C4"
+      ],
+      "c_missing": [
+       "C3"
+      ],
+      "c_complete": false,
+      "d": -1.07442,
+      "mass_kg": 36.848,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G08-P7",
+       "G08-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 7 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G08 product 8 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 1.5175,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.4255,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.077375,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 85.330532,
+     "a13_total": 85.330532,
+     "c_known_subtotal": 10.7080496,
+     "c_complete": false,
+     "a1_c_known_subtotal": 96.0385816,
+     "d_known_subtotal": -1.5558316399999998,
+     "d_complete": true,
+     "mass_known_kg": 70.94800000000001,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 8,
+   "id": "G09",
+   "edge": "missing_d",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/8",
+   "category": "EVALUATED_PARTIAL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/8",
+     "sha256": "63a9fdf7eee96bdf718226f10b557f70adbd2ceb1d32939c11e86acba094b203"
+    },
+    "wall": {
+     "id": "G09",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G09-P1",
+       "G09-P2",
+       "G09-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 1 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 2 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 3 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.224,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 74.48447999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 27.1399856,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": null,
+      "mass_kg": 154.336,
+      "density_used_kg_m3": 689.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G09-P4",
+       "G09-P5",
+       "G09-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.027000000000000003,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 2.459295,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.73116,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.07519500000000001,
+      "mass_kg": 35.883,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G09-P7",
+       "G09-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 7 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G09 product 8 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 2.261,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.4379,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.06705,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 79.20477499999998,
+     "a13_total": 79.20477499999998,
+     "c_known_subtotal": 28.3090456,
+     "c_complete": true,
+     "a1_c_known_subtotal": 107.51382059999999,
+     "d_known_subtotal": -0.142245,
+     "d_complete": false,
+     "mass_known_kg": 190.21900000000002,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 9,
+   "id": "G10",
+   "edge": "negative_values",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/9",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/9",
+     "sha256": "1841ec746901bfd24b6942730d9b043c61682d6d22a32d7de22a98e17acb288b"
+    },
+    "wall": {
+     "id": "G10",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G10-P1",
+       "G10-P2",
+       "G10-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 1 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 2 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 3 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.211,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": -38.443144999999994,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 5.067165,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.26389,
+      "mass_kg": 214.587,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G10-P4",
+       "G10-P5",
+       "G10-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.185,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": -108.78739999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 43.6038525,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.1243375,
+      "mass_kg": 178.34,
+      "density_used_kg_m3": 964.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G10-P7",
+       "G10-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 7 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G10 product 8 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": -1.633,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.6451,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.245625,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": -148.863545,
+     "a13_total": -148.863545,
+     "c_known_subtotal": 49.316117500000004,
+     "c_complete": true,
+     "a1_c_known_subtotal": -99.54742749999998,
+     "d_known_subtotal": -2.6338525,
+     "d_complete": true,
+     "mass_known_kg": 392.927,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 10,
+   "id": "G11",
+   "edge": "true_zero",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/10",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/10",
+     "sha256": "adb6ceb0cadcfe75cc5eca4bd0314ba3b370531825b4a9d75eb21770db1fee86"
+    },
+    "wall": {
+     "id": "G11",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G11-P1",
+       "G11-P2",
+       "G11-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 1 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 2 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 3 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.028,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 1.2452160000000003,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.272048,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.079296,
+      "mass_kg": 21.028,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G11-P4",
+       "G11-P5",
+       "G11-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 4 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 5 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 6 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.151,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 128.370536,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 48.83110479999999,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.0495949599999999,
+      "mass_kg": 232.087,
+      "density_used_kg_m3": 1537.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G11-P7",
+       "G11-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 7 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G11 product 8 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 0.0,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.482875,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": 0.0,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 129.615752,
+     "a13_total": 129.615752,
+     "c_known_subtotal": 50.58602779999999,
+     "c_complete": true,
+     "a1_c_known_subtotal": 180.20177979999997,
+     "d_known_subtotal": -1.1288909599999999,
+     "d_complete": true,
+     "mass_known_kg": 253.11499999999998,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 11,
+   "id": "G12",
+   "edge": "aggregate_overlap",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/11",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/11",
+     "sha256": "4a1092be9b895912cd4ba90009669730c11e4db8df7aeec1b670c17b5b145133"
+    },
+    "wall": {
+     "id": "G12",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G12-P1",
+       "G12-P2",
+       "G12-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 1 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 2 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 3 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.049,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 3.9137280000000008,
+      "a13_source": "aggregate",
+      "a13_overlap": true,
+      "c_known": 0.75754,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.15680000000000002,
+      "mass_kg": 53.067,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G12-P4",
+       "G12-P5",
+       "G12-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 4 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 5 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 6 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.14300000000000002,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 8.604310000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.5195180000000001,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.15301000000000003,
+      "mass_kg": 198.627,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G12-P7",
+       "G12-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 7 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G12 product 8 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 2.774,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.845,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.1031,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 15.292038000000002,
+     "a13_total": 15.292038000000002,
+     "c_known_subtotal": 3.122058,
+     "c_complete": true,
+     "a1_c_known_subtotal": 18.414096,
+     "d_known_subtotal": -0.41291000000000005,
+     "d_complete": true,
+     "mass_known_kg": 251.69400000000002,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 12,
+   "id": "G13",
+   "edge": "submodules_only",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/12",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/12",
+     "sha256": "9a869c8d3be3822bc9850864a844616e27e3f9a7f76998b9b066b59be0cc6f67"
+    },
+    "wall": {
+     "id": "G13",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G13-P1",
+       "G13-P2",
+       "G13-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 1 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 2 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 3 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.048,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 3.2880000000000003,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.330528,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.07660800000000001,
+      "mass_kg": 18.672,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-M fictional foam layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G13-P4",
+       "G13-P5",
+       "G13-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 4 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 5 (FAM-M fictional foam)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 6 (FAM-M fictional foam)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.166,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 14.296750000000001,
+      "a13_source": "sum_submodules",
+      "a13_overlap": false,
+      "c_known": 4.80072,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.84245,
+      "mass_kg": 223.104,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G13-P7",
+       "G13-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 7 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G13 product 8 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 8.9425,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.97175,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.21100000000000002,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 26.527250000000002,
+     "a13_total": 26.527250000000002,
+     "c_known_subtotal": 7.102998,
+     "c_complete": true,
+     "a1_c_known_subtotal": 33.630248,
+     "d_known_subtotal": -1.130058,
+     "d_complete": true,
+     "mass_known_kg": 241.776,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 13,
+   "id": "G14",
+   "edge": "partial_submodules",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/13",
+   "category": "INCOMPLETE_LAYERS",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "INCOMPLETE_LAYERS",
+    "exit_code": 3,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/13",
+     "sha256": "8f427e5afe1900ece5e6a3e3c16249e4a8c576daedbe4cb30a3a4ae619ef8961"
+    },
+    "wall": {
+     "id": "G14",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G14-P1",
+       "G14-P2",
+       "G14-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 1 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 2 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 3 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.22,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 28.4768,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 5.8575,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.20020000000000002,
+      "mass_kg": 236.94,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-K fictional board layer",
+      "status": "UNKNOWN",
+      "reason": "A13_UNDECLARED",
+      "products": [
+       "G14-P4",
+       "G14-P5",
+       "G14-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 4 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 5 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 6 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.19100000000000003,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": null,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 2.6300700000000004,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.4889600000000001,
+      "mass_kg": 201.12300000000002,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G14-P7",
+       "G14-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 7 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G14 product 8 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 9.004999999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.4494,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.17495,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 2,
+     "layers_total": 3,
+     "layers_complete": false,
+     "a13_known_subtotal": 37.4818,
+     "a13_total": null,
+     "c_known_subtotal": 7.3069,
+     "c_complete": false,
+     "a1_c_known_subtotal": 44.7887,
+     "d_known_subtotal": -0.37515,
+     "d_complete": false,
+     "mass_known_kg": 438.063,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 14,
+   "id": "G15",
+   "edge": "empty_pool",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/14",
+   "category": "INCOMPLETE_LAYERS",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "INCOMPLETE_LAYERS",
+    "exit_code": 3,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/14",
+     "sha256": "a3ae6724f6a86044116e27a9b092c6c5f01f8824a90389a06bef72b4ea06e3fe"
+    },
+    "wall": {
+     "id": "G15",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G15-P1",
+       "G15-P2",
+       "G15-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 1 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 2 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 3 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.074,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 32.11193,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 6.0487933,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.5848802,
+      "mass_kg": 33.226,
+      "density_used_kg_m3": 449.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-N fictional panel layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G15-P4",
+       "G15-P5",
+       "G15-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 4 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 5 (FAM-N fictional panel)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G15 product 6 (FAM-N fictional panel)"
+      ],
+      "scenario": "GEN-EOL-A",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.138,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 284.86512,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 33.6437031,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -8.009637300000001,
+      "mass_kg": 116.748,
+      "density_used_kg_m3": 846.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "UNKNOWN",
+      "reason": "EMPTY_POOL",
+      "products": [],
+      "sources": [],
+      "scenario": null,
+      "reference_units": [],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 0,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": null,
+      "a13_source": null,
+      "a13_overlap": false,
+      "c_known": null,
+      "c_modules": [],
+      "c_missing": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_complete": false,
+      "d": null,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": null
+     }
+    ],
+    "totals": {
+     "layers_known": 2,
+     "layers_total": 3,
+     "layers_complete": false,
+     "a13_known_subtotal": 316.97704999999996,
+     "a13_total": null,
+     "c_known_subtotal": 39.6924964,
+     "c_complete": false,
+     "a1_c_known_subtotal": 356.66954639999994,
+     "d_known_subtotal": -9.594517500000002,
+     "d_complete": false,
+     "mass_known_kg": 149.974,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 15,
+   "id": "G16",
+   "edge": "fu_2m2",
+   "reference_area_m2": 2.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/15",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/15",
+     "sha256": "85cfeb3f745faa7eca0db13dd5ee9673b0e8e7c0e3932c1cc9e2f4ceb965d266"
+    },
+    "wall": {
+     "id": "G16",
+     "area_m2": 2.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "FAM-L fictional block layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G16-P1",
+       "G16-P2",
+       "G16-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 1 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 2 (FAM-L fictional block)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 3 (FAM-L fictional block)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.051000000000000004,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 4.275432,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.3327320000000002,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.29110800000000003,
+      "mass_kg": 47.940000000000005,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G16-P4",
+       "G16-P5",
+       "G16-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 4 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 5 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 6 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "kg"
+      ],
+      "thickness_m": 0.126,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 34.200936000000006,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 6.709570560000001,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -1.5666588,
+      "mass_kg": 85.932,
+      "density_used_kg_m3": 341.0,
+      "density_note": "used: kg reference basis converted with product density (lib.dens)"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-K fictional board layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G16-P7",
+       "G16-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 7 (FAM-K fictional board)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G16 product 8 (FAM-K fictional board)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 6.417999999999999,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.8125,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.1468,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 44.89436800000001,
+     "a13_total": 44.89436800000001,
+     "c_known_subtotal": 8.854802560000001,
+     "c_complete": true,
+     "a1_c_known_subtotal": 53.74917056000001,
+     "d_known_subtotal": -2.0045668,
+     "d_complete": true,
+     "mass_known_kg": 133.872,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 16,
+   "id": "G17 <script>alert(\"x\")</script> & 'q'",
+   "edge": "markup_label",
+   "reference_area_m2": 1.0,
+   "same_reference_area": true,
+   "input_locator": "generated_inputs.json#/assemblies/16",
+   "category": "EVALUATED_FULL_COVERAGE",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "EVALUATED",
+    "exit_code": 0,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/16",
+     "sha256": "a95d2fc039609acf294dff0ae18970c616d90ccd52f9b2dcbfd28fffd988bb4b"
+    },
+    "wall": {
+     "id": "G17 <script>alert(\"x\")</script> & 'q'",
+     "area_m2": 1.0
+    },
+    "units": {
+     "carbon": "kgCO2e (GWPtotal A2) for the whole wall area",
+     "mass": "kg",
+     "thickness": "m"
+    },
+    "layers": [
+     {
+      "id": "L1",
+      "name": "<img src=x onerror=alert(1)> fictional",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G17-P1",
+       "G17-P2",
+       "G17-P3"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 1 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 2 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 3 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.081,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 15.125940000000002,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 3.13875,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.535815,
+      "mass_kg": 30.456,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L2",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G17-P4",
+       "G17-P5",
+       "G17-P6"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 4 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 5 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 6 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-C",
+      "reference_units": [
+       "m3"
+      ],
+      "thickness_m": 0.15,
+      "multiplier": 1.0,
+      "pool_size": 3,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 10.6479,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 1.8374999999999997,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.2835,
+      "mass_kg": 175.5,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m3 reference basis"
+     },
+     {
+      "id": "L3",
+      "name": "FAM-P fictional coating layer",
+      "status": "KNOWN",
+      "reason": null,
+      "products": [
+       "G17-P7",
+       "G17-P8"
+      ],
+      "sources": [
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 7 (FAM-P fictional coating)",
+       "generated: baucode-gallery-generator/1 seed 20261107 assembly G17 product 8 (FAM-P fictional coating)"
+      ],
+      "scenario": "GEN-EOL-B",
+      "reference_units": [
+       "m2"
+      ],
+      "thickness_m": null,
+      "multiplier": 1.0,
+      "pool_size": 2,
+      "pool_statistic": "median of product pool (descriptive; not a wall comparison)",
+      "a13": 5.082,
+      "a13_source": "aggregate",
+      "a13_overlap": false,
+      "c_known": 0.9838,
+      "c_modules": [
+       "C1",
+       "C2",
+       "C3",
+       "C4"
+      ],
+      "c_missing": [],
+      "c_complete": true,
+      "d": -0.25795,
+      "mass_kg": null,
+      "density_used_kg_m3": null,
+      "density_note": "not used: m2 reference basis"
+     }
+    ],
+    "totals": {
+     "layers_known": 3,
+     "layers_total": 3,
+     "layers_complete": true,
+     "a13_known_subtotal": 30.85584,
+     "a13_total": 30.85584,
+     "c_known_subtotal": 5.96005,
+     "c_complete": true,
+     "a1_c_known_subtotal": 36.81589,
+     "d_known_subtotal": -1.0772650000000001,
+     "d_complete": true,
+     "mass_known_kg": 205.956,
+     "mass_complete": false
+    },
+    "notes": [
+     "SYNTHETIC demo data; these numbers describe no real wall or product.",
+     "UNKNOWN (null) means not declared or not computable. It is never zero and never a favourable result.",
+     "D is reported separately and is never subtracted from A1-A3 + C1-C4.",
+     "a1_c_known_subtotal is the A1-A3 + C1-C4 known subtotal for the selected modules only; A4, A5 and B modules are outside scope, so it is not a life-cycle total.",
+     "Layer pool statistic: median of product pool (descriptive; not a wall comparison)."
+    ]
+   }
+  },
+  {
+   "index": 17,
+   "id": "G18",
+   "edge": "blank_q",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/17",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/17",
+     "sha256": "839a27e07d1a29f5e5b0364370cade860a26574d7e657d6195f24e7636a10405"
+    },
+    "errors": [
+     {
+      "where": "products[0]",
+      "code": "REF_QTY_BLANK",
+      "detail": "unit='kg' ref_quantity=''"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 18,
+   "id": "G19",
+   "edge": "zero_q",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/18",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/18",
+     "sha256": "439d0fe5f1a5b1f9f4a4ef5335852e4d8cf035e27edcfbe122df2ef944e86426"
+    },
+    "errors": [
+     {
+      "where": "products[0]",
+      "code": "REF_QTY_NOT_POSITIVE",
+      "detail": "unit='m3' ref_quantity=0"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 19,
+   "id": "G20",
+   "edge": "nan_q",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/19",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/19",
+     "sha256": "1c7c6aef4d96d16c1f725f25c2b878b441ff65c52f2757a9d12f3bf44579eb2e"
+    },
+    "errors": [
+     {
+      "where": "products[0]",
+      "code": "REF_QTY_NOT_FINITE",
+      "detail": "unit='kg' ref_quantity='nan'"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 20,
+   "id": "G21",
+   "edge": "unsupported_unit",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/20",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/20",
+     "sha256": "1be24f846f42ec68bb095d6bef2277f53e873893644d45b1844be8fb373e30e1"
+    },
+    "errors": [
+     {
+      "where": "products[0]",
+      "code": "UNIT_UNSUPPORTED",
+      "detail": "unit='piece' ref_quantity=1"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 21,
+   "id": "G22",
+   "edge": "scenario_conflict",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/21",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/21",
+     "sha256": "9df35babc4b8f290d7939a29c931fdaaa9f2d01fef67060e82af48af34b3d8fe"
+    },
+    "errors": [
+     {
+      "where": "layers[0].product_ids",
+      "code": "SCENARIO_CONFLICT",
+      "detail": "pool mixes scenarios GEN-EOL-B, GEN-EOL-B-OTHER"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 22,
+   "id": "G23",
+   "edge": "b4_module",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/22",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/22",
+     "sha256": "52cb204ab133530f00a9ff6cc0ffe40e94e0aff88f5ec34a184a8af77d932e8b"
+    },
+    "errors": [
+     {
+      "where": "products[0].modules.B4",
+      "code": "MODULE_UNSUPPORTED",
+      "detail": "allowed: A1-A3, A1, A2, A3, C1, C2, C3, C4, D"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 23,
+   "id": "G24",
+   "edge": "kg_no_density",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/23",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/23",
+     "sha256": "a4de940eed43c1ca68e29e25bcebd366a673d560c166875f49160a67d087bc11"
+    },
+    "errors": [
+     {
+      "where": "products[0]",
+      "code": "DENSITY_REQUIRED",
+      "detail": "unit='kg' ref_quantity=1"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  },
+  {
+   "index": 24,
+   "id": "G25",
+   "edge": "bad_thickness_unit",
+   "reference_area_m2": 1.0,
+   "same_reference_area": false,
+   "input_locator": "generated_inputs.json#/assemblies/24",
+   "category": "REJECTED",
+   "result": {
+    "schema": "baucode-demo-result/1",
+    "label": "SYNTHETIC",
+    "status": "REJECTED",
+    "exit_code": 2,
+    "input": {
+     "name": "generated_inputs.json#/assemblies/24",
+     "sha256": "776fac4bc2313b0eb721ac5ce5d02e1373656b00852bc6d50689d4ff252ecee2"
+    },
+    "errors": [
+     {
+      "where": "layers[0].thickness",
+      "code": "THICKNESS_UNIT_UNSUPPORTED",
+      "detail": "{'value': 140.0, 'unit': 'in'}"
+     }
+    ],
+    "notes": [
+     "Input rejected; no numeric result is produced for invalid input."
+    ]
+   }
+  }
+ ]
+}

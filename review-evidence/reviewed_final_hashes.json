@@ -1,0 +1,31 @@
+{
+ "recorded_utc": "2026-11-07T14:15:14Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "sha256": {
+  "tests/exact20_manifest.json": "6911268bde11377778f571f6f43dfa25a99ab5afe84ce295f2de4f37d1e26ecc",
+  "tests/run_exact20.py": "f560546099f948dac81653aac25174eb591e253d4724b53717cb4c4ba1653212",
+  "tests/results_before.json": "f696964146ea8f1dc416e5a0d8c2c5a247df3d1dd742ef74fc274fb2fd04f669",
+  "tests/results_after.json": "0de58287a860d7bc5032a60c35c265b209d96d55dc3c820eb6c593efa1080fee",
+  "tests/results_final.json": "2d8a98b6e592edc2b5c0156fe0aafe657859062ae8c2c3dae7528654c754d99d",
+  "tests/results_faultproof.json": "a5c004d973786ad2796ff4d5b8f8bdb0358b491d38a1c634d90a9d0f1851757d",
+  "tests/results_reviewed.json": "2a68e2f8561175420a6d080492a45442a8137b230f7b9ecc56d1dcd9d1c5a597",
+  "tests/results_faultproof_reviewed.json": "cc5fa872844389ba49b7bef958598eb460d475bee58162214739fe70793fc169",
+  "tests/detection_metrics_reviewed.json": "6a633fb1a9a1e5f3fa5869ddc783771a10660fe9cffced05acf1b2749c78745d",
+  "tests/confusion_exact20.py": "f497def66e65696d4d7b39200c1931c58e6b6ba7db39790faca5446aa6f5a324",
+  "tests/repro_input_boundary.py": "fb4f5e46a441790d397990cc8e1d5fb5ac2a469c9ccc0e44b3e3a1a606697e1b",
+  "demo/run_demo.py": "d76ad988be3c03968e0066cc2f56bb0f804134da157ebf56116825a370ce9e1b",
+  "demo/run_gallery.py": "16add6df37bb701d67d9cdce91d090f6e0b2e8494353d617817145ff9be87b6f",
+  "demo/check_gallery.py": "c7d255b24275f86df92042742851a138ec96931ce2dc7a793a370a468fcec6b5",
+  "demo/output/default/result.json": "4f63c657904aa7673ab5cc7d34c8be7fc2d02f1eccf6e036f1546a4fea054f96",
+  "demo/output/replaced/result.json": "28fadfc4562cd6ef85fbd96ada94a27f0c89795c5be190ca18603bb672fb13c9",
+  "demo/output/gallery/gallery.html": "6b87122021a3c1cf209c3bf490f0304fd484f9a7debc113c640370f8546f465c",
+  "demo/output/gallery/gallery.json": "88ffaf59c934fd809123d3be7fb7293623c90cf1cef1fe4ae2c201c2413771c7",
+  "demo/output/gallery/gallery.csv": "a8e07ff15e56e11c528dbf777f179c3856a309bdc3ca01a224a2208aebcfef71",
+  "demo/output/gallery/generated_inputs.json": "285df0ad9075af1867e754452bd224aac856b6a2226eca3bad5a89f27642128d",
+  "demo/output/gallery/provenance.json": "965c97463e74781d44b42c5aec2b9d1e6a1ec9c01c2b9054a4b79c82cc3b5996",
+  "analysis/lib.py": "fa5da4f267cda86937a2d22e83c8cccff860d4d1230bf79039139157ddd2b7b8",
+  "analysis/model.py": "802ba9474c742e632fb47fde15162ea7c5c4fb212b259209d79c6bcd458459ef",
+  "analysis/run.py": "7e2c30fd757773e7bd58a36b27509c6d84b477ff1e3b58d63bd18220dad28b17"
+ }
+}

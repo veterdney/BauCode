@@ -1,0 +1,12 @@
+{
+ "recorded_utc": "2026-11-07T14:15:05Z",
+ "python": "3.14.7",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "argv": [
+  "python",
+  "tests/repro_input_boundary.py"
+ ],
+ "exit_code": 0,
+ "stdout": "OK   dict_element           {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"PRODUCT_REF_INVALID\"], \"has_numbers\": false, \"a13_total\": null}\nOK   list_element           {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"PRODUCT_REF_INVALID\"], \"has_numbers\": false, \"a13_total\": null}\nOK   number_element         {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"PRODUCT_REF_INVALID\"], \"has_numbers\": false, \"a13_total\": null}\nOK   duplicate_reference    {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"DUPLICATE_PRODUCT_REF\"], \"has_numbers\": false, \"a13_total\": null}\nOK   whitespace_reference   {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"PRODUCT_REF_INVALID\"], \"has_numbers\": false, \"a13_total\": null}\nOK   whitespace_product_id  {\"status\": \"REJECTED\", \"exit_code\": 2, \"error_codes\": [\"PRODUCT_ID_INVALID\", \"UNKNOWN_PRODUCT_ID\"], \"has_numbers\": false, \"a13_total\": null}\nOK   control_unmodified     {\"status\": \"EVALUATED\", \"exit_code\": 0, \"error_codes\": [], \"has_numbers\": true, \"a13_total\": 185.0}\ninput-boundary reproduction: 7/7 variants meet the boundary expectation (supplemental, not an eval statistic)\n",
+ "stderr": ""
+}
