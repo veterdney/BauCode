@@ -1,2 +1,5 @@
 .idea/
 __pycache__/
+analysis/eval/runs/
+analysis/eval/judge_queue.jsonl
+analysis/eval/judge_results.jsonl

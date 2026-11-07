@@ -55,3 +55,5 @@ Reproduce: `python3 -I analysis/extract.py && python3 -I analysis/run.py` from t
 - `compare6/comparison-report.md`: six structural systems, four equally weighted criteria.
 - `levels/report/README.md`: three-level scoring (layer, building part, building) with Glaser checks and layer-compatibility tables; one file per alternative (`alt-1.md` … `alt-6.md`).
   Reproduce: `python3 -I analysis/levels/report.py` from the repo root.
+- `eval/README.md`: golden eval set (72 cases) for an AI agent doing this kind of material comparison, with runner, grader and judge.
+  Check it: `python3 -I analysis/eval/grade.py --selftest` from the repo root.
